@@ -1,0 +1,90 @@
+title: 'Bugo Vanilla Boilerplate'
+description: 'This is a Bugo starter project. Bugo is a full-featured static site framework. Build low-maintenance, secure, high performance websites.'
+baseURL: /
+languageCode: en-us
+summaryLength: 25
+canonifyURLs: true
+enableRobotsTXT: true
+contentDir: ../../content
+googleAnalytics: ""
+blackFriday:
+ hrefTargetBlank: true
+taxonomies:
+ category: categories
+ tags: tags
+theme:
+ - offcanvas-screen-menu
+ - bugo-vanilla-theme
+metaDataFormat: yaml
+frontmatter:
+ -
+  date:
+   - date
+   - publishDate
+   - lastmod
+ -
+  lastmod:
+   - ':git'
+   - lastmod
+   - date
+   - publishDate
+  date: []
+ -
+  publishDate:
+   - publishDate
+   - date
+  date: []
+ -
+  expiryDate: expiryDate
+  date: []
+archetypeDir: ../../archetypes
+assetDir: ../../assets
+contentDir: ../../content
+dataDir: ../../data
+layoutDir: ../../layouts
+staticDir: ../../static
+themesDir: ../../themes
+mediaTypes:
+ text/vcard:
+  suffixes:
+   - vcf
+outputFormats:
+ vcf:
+  name: vcf
+  baseName: contact-info
+  mediaType: text/vcard
+  isPlainText: true
+outputs:
+ home:
+  - HTML
+  - RSS
+ page:
+  - HTML
+  - vcf
+ section:
+  - HTML
+enable_inline_shortcodes: true
+enableEmoji: true
+paginate: 10
+menu:
+ main:
+  -
+   identifier: docs
+   name: Blog
+   title: Blog
+   url: /blog/
+   weight: 1
+   pre: ""
+   post: ""
+   parent: ""
+ secondary: []
+ footer: []
+ privacy:
+  -
+   identifier: sitemap
+   title: Sitemap
+   name: Sitemap
+   url: /sitemap/
+   weight: null
+   pre: ""
+   post: ""

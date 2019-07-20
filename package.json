@@ -2,9 +2,16 @@
   "name": "bugo-vanilla-theme",
   "version": "1.0.0",
   "description": "This is a basic theme to be used as a base for more complex themes.",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
-    "test": "test"
+    "theme-new": "gulp customTheme",
+    "theme-install": "gulp installTheme",
+    "theme-build": "gulp buildTheme",
+    "start": "gulp",
+    "remove-theme": "gulp removeTheme",
+    "access": "gulp access",
+    "lighthouse": "gulp checkLighthouse",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -30,5 +37,15 @@
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^8.14.0",
     "webfontloader": "^1.6.28"
+  },
+  "devDependencies": {
+    "child_process": "^1.0.2",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.0",
+    "prompt": "^1.0.0",
+    "read-yaml": "^1.1.0",
+    "webpack": "^4.36.1",
+    "webpack-stream": "^5.2.1",
+    "yamljs": "^0.3.0"
   }
 }
