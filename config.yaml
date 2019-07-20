@@ -12,7 +12,6 @@ taxonomies:
  category: categories
  tags: tags
 theme:
- - offcanvas-screen-menu
  - bugo-vanilla-theme
 metaDataFormat: yaml
 frontmatter:
