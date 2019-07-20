@@ -1,0 +1,7 @@
+<div class="site-footer-logo">
+  {{ if .site.Data.organization.logos.footer_logo.image }}
+  {{ partial "components/figure" ( dict "page" .Page "site" .site "media" .site.Data.organization.logos.footer_logo ) }}
+  {{ else }}
+  {{ .site.Data.organization.organization_name }}
+  {{ end }}
+</div>

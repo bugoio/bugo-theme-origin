@@ -1,0 +1,53 @@
+.flex {
+  display: flex;
+}
+
+.unstyled-list {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style-type: none;
+
+    a {
+      display: block;
+      @include ms-respond(margin-right,1);
+    }
+  }
+}
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* text helpers */
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+/* Responsive Embeds */
+.embed-responsive {
+  width: 100%;
+  .embed-responsive-item {
+    width: 100%;
+  }
+}
+
+/* Responsive Images */
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,0 +1,24 @@
+{{/**
+   * Landing Page Template
+	 *
+	 * Landing pages use content blocks to build the page.
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+{{ define "main" }}
+ <main id="main" class="" tabindex="0">
+   <h1 {{ if .Page.IsHome }}class="sr-only"{{ end }}>{{ .Title }}</h1>
+   {{ .Content }}
+   {{ partial "blocks/blocks" (dict "page" .Page "site" .Site "content" .Params.content ) }}
+ </main>
+{{ end }}
+{{ define "aside" }}
+  {{ if .Params.show_sidebar }}
+    {{ .Params.show_sidebar }}
+    <aside class="sidebar" tabindex="0">
+        {{ partial "widgets/widgets" (dict "page" .Page "site" .Site "content" .Site.Data.sidebar_widgets ) }}
+    </aside>
+  {{ end }}
+{{ end }}

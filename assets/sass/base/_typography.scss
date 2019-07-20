@@ -1,0 +1,164 @@
+html {
+  width: 100%;
+}
+
+body {
+  @include ms-respond(font-size,1);
+  @include ms-respond(padding-right,2);
+  @include ms-respond(padding-left,2);
+  line-height: 1.5;
+  max-width: 100%;
+  margin: 0 auto;
+  font-family: "Roboto";
+  color: $heading-text-color;
+  @media (prefers-color-scheme: dark) {
+      color: $heading-text-color-dark;
+  }   
+}
+
+a {
+  color: $link-text-color;
+  @media (prefers-color-scheme: dark) {
+      color: $link-text-color-dark;
+  }   
+
+  &:hover {
+    color: darken($link-text-color,20%);
+    @media (prefers-color-scheme: dark) {
+        color: darken($link-text-color-dark,20%);
+    }   
+  }
+}
+
+h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+  font-family: "serif";
+  line-height: 1.2;
+  margin-top: var(--heading-margin-top);
+  margin-bottom: var(--heading-margin-bottom);
+
+  color: $heading-text-color;
+  @media (prefers-color-scheme: dark) {
+      color: $heading-text-color-dark;
+  }   
+
+  a {
+    text-decoration: none;
+    color: $heading-link-color;
+    @media (prefers-color-scheme: dark) {
+        color: $heading-link-color-dark;
+    }
+    &:hover {
+      color: darken($header-link-color,10%);
+      @media (prefers-color-scheme: dark) {
+          color: darken($heading-link-color-dark,10%);
+      }
+    }   
+  }
+}
+
+h1 {
+  @include ms-respond(font-size,6);
+  margin-top: 0 !important;
+  line-height: 1.1;
+}
+
+h2 {
+  @include ms-respond(font-size,5);
+}
+
+h3 {
+  @include ms-respond(font-size,4);
+}
+
+h4 {
+  @include ms-respond(font-size,3);
+  line-height: 1.5;
+}
+
+h5 {
+  @include ms-respond(font-size,2);
+  line-height: 1.5;
+}
+
+h6 {
+  @include ms-respond(font-size,1);
+  line-height: 1.5;
+}
+
+header {
+  h1 {
+    margin-top: 0 !important;
+  }
+}
+
+small,.small {
+  @include ms-respond(font-size,1);
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: var(--global-margin);
+  max-width: $max-char;
+}
+
+blockquote {
+  background-color: rgba(0,0,0,0.2);
+  @include ms-respond(padding,2);
+  padding: var(--global-padding);
+  margin-top: var(--global-margin);
+  margin-bottom: var(--global-margin);
+  padding-left: 5em !important;
+  position: relative;
+
+  &:before {
+    display: block;
+    content: "“";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 5rem;
+    @include ms-respond(font-size,8);
+    line-height: .9;
+  }
+
+  p:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+aside {
+  @include ms-respond(font-size,1);
+
+  h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+    line-height: 1.2;
+    margin-bottom: var(--heading-margin-bottom);
+  }
+
+  h1 {
+    @include ms-respond(font-size,4);
+  }
+
+  h2 {
+    @include ms-respond(font-size,3);
+  }
+
+  h3 {
+    @include ms-respond(font-size,2);
+  }
+
+  h4 {
+    @include ms-respond(font-size,1);
+    line-height: 1.5;
+  }
+
+  h5 {
+    @include ms-respond(font-size,1);
+    line-height: 1.5;
+  }
+
+  h6 {
+    @include ms-respond(font-size,1);
+    line-height: 1.5;
+  }
+}

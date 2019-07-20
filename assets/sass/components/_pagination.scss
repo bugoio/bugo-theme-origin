@@ -1,0 +1,17 @@
+.pagination {
+  .pagination-list {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0;
+
+    li {
+      list-style-type: none;
+      margin: 0 0.5rem 0 0;
+
+      a {
+        @extend button;
+        color: $black;
+      }
+    }
+  }
+}

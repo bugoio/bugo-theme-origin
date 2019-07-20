@@ -1,0 +1,37 @@
+{{/**
+   * Share Buttons
+   *
+   * Social Media share butons
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+<!-- Social Button HTML -->
+<div class="share-buttons">
+  <span>
+    Share:
+  </span>
+  <!-- Twitter -->
+  <a href="http://twitter.com/share?url={{ .Permalink | absURL | urlize }}&text={{ .Summary  | urlize }}" target="new" class="btn share-btn twitter" title="Share on Twitter (Opens in a new window)" aria-label="Share on Twitter (Opens in a new window)" tabindex="0">
+    {{ partial "icons/twitter" }}
+    <span class="sr-only">Share on Twitter (Opens in a new window)</span>
+  </a>
+
+  <!-- Facebook -->
+  <a href="http://www.facebook.com/sharer/sharer.php?u={{ .Permalink | absURL | urlize }}" target="new" class="btn share-btn facebook" title="Share on Faecbook (Opens in a new window)" aria-label="Share on Faecbook (Opens in a new window)" tabindex="0">
+    {{ partial "icons/facebook" }}
+    <span class="sr-only">Share on Faecbook (Opens in a new window)</span>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="http://www.linkedin.com/shareArticle?url={{ .Permalink  | absURL | urlize }}&title={{ .Title  | urlize }}&summary={{ .Summary | urlize  }}&source={{ .Permalink | urlize }}" target="new" class="btn share-btn linkedin" title="Share on LinkedIn (Opens in a new window)" aria-label="Share on LinkedIn" tabindex="0">
+    {{ partial "icons/linkedin"}}
+    <span class="sr-only">Share on LinkedIn (Opens in a new window)</span>
+  </a>
+  <!-- Email -->
+  <a href="mailto:?subject={{ .Title | urlize }}&body={{ .Title  | urlize }}%0A%0A{{ .Permalink | absURL | urlize }}%0A%0A{{ .Summary  | urlize }}" target="new" class="btn share-btn email" title="Share by Email (Opens in a new window)" aria-label="Share by Email (Opens in a new window)" tabindex="0">
+    {{ partial "icons/email" }}
+    <span class="sr-only">Share by Email (Opens in a new window)</span>
+  </a>
+</div>

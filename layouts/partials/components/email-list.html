@@ -1,0 +1,33 @@
+{{/**
+   * Email List
+	 *
+	 * Display profile or organization emails
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+{{ $page := .page }}
+<div class="email-list">
+
+  {{/* loop through email addresses */}}
+  {{ range .email_addresses }}
+  <div class="email email-{{ .label | urlize }}">
+    {{ with .label }}
+    <span class="label">{{ . }}:</span>
+    {{ end }}
+    <a href="mailto:{{ .email_address }}" title="Email {{ $page.Title }}">
+    {{/* add the icon */}}
+    <span class="sr-only">
+      Email {{ $page.Title }}
+    </span>
+    {{ partial "icons/email" }}
+    {{/* add the label */}}
+    {{/* add link */}}
+    <span class="text">
+      {{ .email_address }}
+    </span>
+    </a>
+  </div>
+  {{ end }}
+</div>

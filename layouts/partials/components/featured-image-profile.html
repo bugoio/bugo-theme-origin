@@ -1,0 +1,58 @@
+{{/**
+   * Featured Image
+	 *
+	 * Display a featured image at the top of the page
+   *
+   * @version 1.0.0
+	 *
+   */}}
+{{ if and (or (.page.Params.featured_image.image) (.site.Data.config.media.default_featured_image.image)) ( ne ( in .site.Data.config.media.default_featured_image.excluded_pages .page.File.Path ) true )  }}
+{{/* add page's featured image */}}
+<div class="featured-image featured-image-profile">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 figure-container">
+        <figure class="background-image">
+          {{ if and ( .page.Params.featured_image.image ) }}
+          {{ $image := .page.Params.featured_image.image }}
+          <div class="img-container">
+            <img 
+              class="img-responsive" 
+              src="{{ partial "utilities/image-url" ( dict "page" .page "url" $image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_498,w_1024" ) }}"
+              srcset="
+                {{ partial "utilities/image-url" ( dict "page" .page "url" $image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_350,w_500" ) | safeURL }} 500w
+                {{ partial "utilities/image-url" ( dict "page" .page "url" $image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_700,w_1440" ) | safeURL }} 1440w
+              "
+              {{ if isset .media "title" }} 
+              title="{{ .media.title }}" 
+              {{ end }}
+            />
+          </div>
+          <!-- ( ne ( in .site.Data.config.media.default_featured_image.excluded_pages .page ) false ) -->
+          {{ else if .site.Data.config.media.default_featured_image.image  }}
+          {{ $image := .site.Data.config.media.default_featured_image.image }}
+          <div class="img-container">
+            <img 
+              class="img-responsive" 
+              src="{{ partial "utilities/image-url" ( dict "page" .page "url" $image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_498,w_1024" ) }}"
+              srcset="
+                {{ partial "utilities/image-url" ( dict "page" .page "url" $image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_350,w_500" ) | safeURL }} 500w
+                {{ partial "utilities/image-url" ( dict "page" .page "url" $image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_700,w_1440" ) | safeURL }} 1440w
+              "
+              {{ if isset .media "title" }} 
+              title="{{ .media.title }}" 
+              {{ end }}
+            />
+          </div>
+          {{ end }}
+          {{ if isset .media "caption" }}
+          <figcaption>{{ .media.caption | safeHTML | markdownify }}</figcaption>
+          {{ end }}
+        </figure>
+        {{ .page.Params }}
+        {{ partial "components/figure" ( dict "page" .page "site" .site "media" .page.Params.featured_image "transform" "c_fill,g_faces:center,h_700,w_1440") }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

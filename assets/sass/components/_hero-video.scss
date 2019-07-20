@@ -1,0 +1,43 @@
+.hero-video {
+  position: relative;
+  overflow: hidden;
+
+  video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    display: none;
+  }
+
+  #video-bg-control {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    right: var(--global-padding);
+    bottom: var(--global-padding);
+    background-color: transparent;
+    opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  @include respond-to('lg'){
+    video,
+    #video-bg-control {
+      display: block;
+    }
+
+    img {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{{/**
+   * Head Template
+	 *
+	 * The header for the site.
+   * It is used on every page.
+   *
+   * @version 1.0.0
+	 *
+   */}}
+{{- $page := . -}}
+{{- $site := .Site -}}
+{{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>
+    {{- if .Params.page_meta.meta_title -}}
+      {{- .Params.page_meta.meta_title -}}
+    {{- else -}}
+      {{- .Title -}}
+    {{- end -}}
+    {{ if (eq .Params.layout "list") }}
+    {{ if  .Paginator }}
+      - Page {{ substr .Paginator -1 1 }}
+    {{ end }}
+    {{ end }}
+  </title>
+  <meta name="description" content="
+    {{- if .Params.page_meta.meta_description -}}
+      {{ .Params.page_meta.meta_description }}
+    {{- else -}}
+      {{ .Summary | truncate 60 }}
+    {{- end -}}
+  ">
+  {{ with .Params.page_meta.meta_keywords }}
+  <meta name="keywords" content="{{ . }}">
+  {{ end }}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Open Graph Meta Data -->
+  {{ partial "components/opengraph" . }}
+  <!-- JSON-LD Organization markup for Google Structured Data -->
+  <script type="application/ld+json">
+    {{ partial "components/structured-data-organization" . | safeJS }}
+  </script>
+  <!-- JSON-LD Article markup for Google Structured Data -->
+  <script type="application/ld+json">
+    {{ partial "components/structured-data-article" . | safeJS }}
+  </script>
+
+  {{- range .Site.Data.config.addresses -}}
+  <!-- JSON-LD Local Business markup for Google Structured Data -->
+  <script type="application/ld+json">
+    {
+    "@context" : "http://schema.org",
+    "@type" : "LocalBusiness",
+    {{- with $site.Title -}}
+      "name" : "{{ . }}",
+    {{- end -}}
+    {{ with $.Site.Data.config.seo_logo.image }}
+      "image" : "{{ partial "utilities/image-url" (dict "page" $.Page "url" . ) }}",
+    {{ end }}
+
+    {{- with $.Site.Data.config.phone -}}
+    "telephone" : "+1{{ . }}",
+    {{- end -}}
+
+    {{- with .info.company_email -}}
+    "email" : "{{ . }}",
+    {{- end -}}
+    "address" : {
+      "@type" : "PostalAddress",
+
+      {{ $address2 := .address_2 }}
+      {{- with .address_1 -}}
+      "streetAddress" : "{{ . }} {{ $address2 }}",
+      {{- end -}}
+
+      {{- with .city -}}
+      "addressLocality" : "{{ . }}",
+      {{- end -}}
+
+      {{- with .state -}}
+      "addressRegion" : "{{ . }}",
+      {{- end -}}
+
+      {{- with .country -}}
+      "addressCountry" : "{{ . }}",
+      {{- end -}}
+
+      {{- with .zip_code -}}
+      "postalCode" : "{{ . }}"
+      {{- end -}}
+    },
+    "url" : "{{ $.Permalink }}"
+    }
+  </script>
+  {{- end -}}
+  <!-- add fonts -->
+  {{- $scratch := newScratch -}}
+  {{- $scratch.Set "fontfamiliesstring" "" -}}
+    {{- with $page.Site.Data.styles.global_font -}}
+    {{- $scratch.Set "fontstring" "" -}}
+    {{- $scratch.Set "fontstring"  ( printf  "%s:" .font_family ) -}}
+    {{- $fontFamily :=  . -}}
+    {{- range $weight := .font_weights -}}
+      {{- $scratch.Set "fontstring"  ( printf  "%s%s," ( $scratch.Get "fontstring" ) . ) -}}
+      {{- if in $fontFamily.font_italics . -}}
+        {{- $scratch.Set "fontstring"  ( printf  "%s%si," ( $scratch.Get "fontstring" ) . ) -}}
+      {{- end -}}
+    {{- end -}}
+    {{ end }}
+    {{- $scratch.Set "fontstring"  ( printf  `"%s"` (strings.TrimRight "," ($scratch.Get "fontstring") ) ) -}}
+    {{- $scratch.Set "fontfamiliesstring" ( printf "%s%s," ($scratch.Get "fontfamiliesstring")  ($scratch.Get "fontstring") ) -}}
+
+    {{- with $page.Site.Data.styles.header_font -}}
+    {{- $scratch.Set "fontstring" "" -}}
+    {{- $scratch.Set "fontstring"  ( printf  "%s:" .font_family ) -}}
+    {{- $fontFamily :=  . -}}
+    {{- range $weight := .font_weights -}}
+      {{- $scratch.Set "fontstring"  ( printf  "%s%s," ( $scratch.Get "fontstring" ) . ) -}}
+      {{- if in $fontFamily.font_italics . -}}
+        {{- $scratch.Set "fontstring"  ( printf  "%s%si," ( $scratch.Get "fontstring" ) . ) -}}
+      {{- end -}}
+    {{- end -}}
+    {{ end }}
+    {{- $scratch.Set "fontstring"  ( printf  `"%s"` (strings.TrimRight "," ($scratch.Get "fontstring") ) ) -}}
+    {{- $scratch.Set "fontfamiliesstring" ( printf "%s%s," ($scratch.Get "fontfamiliesstring")  ($scratch.Get "fontstring") ) -}}
+
+  <script type="text/javascript">
+    //{{ $scratch.Get "fontfamiliesstring" }}
+    fontFamilies = [ {{- strings.TrimRight "," ($scratch.Get "fontfamiliesstring") | safeJS -}} ];
+  </script>
+  <style>
+    :root {
+      --font-family-global: "{{- $page.Site.Data.styles.global_font.font_family -}}", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      --font-family-header: {{ with  $page.Site.Data.styles.header_font.font_family }}"{{- . -}}",{{ end }} "{{- $page.Site.Data.styles.global_font.font_family -}}", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+    {{ with $page.Site.Data.styles.custom_css }}
+      {{ . | safeCSS }}
+    {{ end }}
+  </style>
+  {{ $options := (dict "enableSourceMap" true ) }}
+  {{ $base := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "style.theme.scss" . }}
+  {{ $processed := $base | toCSS $options | resources.PostCSS | minify }}
+  {{ $styles := $processed | fingerprint }}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+</head>

@@ -1,0 +1,32 @@
+{{ define "main" }} <!-- https://gist.github.com/eddiewebb/735feb48f50f0ddd65ae5606a1cb41ae -->
+<main id="main">
+  <div class="search">
+      <header>
+          <h1>Search results for: "<script>
+              var url_string = window.location.href;
+              var url = new URL(url_string);
+              var q = url.searchParams.get("q");
+              document.write(q);
+            </script>"
+          </h1>
+          {{/* partial "debugprint.html" (site.GetPage "/search") */}}
+      </header>
+
+      <hr />
+
+      <div id="search-results"></div>
+  </div>
+
+  <script id="search-result-template" type="text/x-js-template"><div id="summary-${key}">
+          <h2 class="post-title no-text-decoration"><a href="${link}">${title}</a></h2>
+          <p><em>${snippet}&hellip;</em></p>
+      </div></script>
+</main>
+{{ end }}
+
+{{ define "footer" }}
+<script src={{ "/assets/js/libs/jquery/3.3.1/jquery.min.js" | absURL }}></script>
+<script src={{ "/assets/js/libs/fuse.js/3.2.1/fuse.min.js" | absURL }}></script>
+<script src={{ "/assets/js/libs/mark.js/8.11.1/jquery.mark.min.js" | absURL }}></script>
+<script src={{ "/assets/js/search.js" | absURL }}></script>
+{{ end }}

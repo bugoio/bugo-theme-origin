@@ -1,0 +1,10 @@
+<article class="" tabindex="0">
+  <header>
+      <h2><a href="{{ .page.Permalink | relURL }}">{{ .page.Title}}</a></h2>
+  </header>
+  {{ partial "components/thumbnail" (dict "page" .page "site" .site ) }}
+  <div class="summary">
+    <time>{{ .Date.Format "January _2, 2006" }}</time>
+    {{ .page.Summary | markdownify }}
+  </div>
+</article>

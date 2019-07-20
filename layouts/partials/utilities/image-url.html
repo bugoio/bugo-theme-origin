@@ -1,0 +1,17 @@
+{{/**
+   * Image URL Template
+   *
+   * Returns a formatted URL based on the URL passed into it. Allows for cloudinary transforms.
+   *
+   * @version 1.0.0
+	 *
+   */}}
+{{- if and (.site.Data.config.media.cloudinary_name) (not (strings.Contains .url "cloudinary.com")) -}}
+{{- if .transform -}}
+{{ (printf "https://res.cloudinary.com/%s/image/upload/%s%s" .site.Data.config.media.cloudinary_name .transform .url)}}
+{{- else -}}
+{{- (printf "https://res.cloudinary.com/%s/image/upload%s" .site.Data.config.media.cloudinary_name .url) -}}
+{{- end -}}
+{{- else -}}
+{{- .url | absURL -}}
+{{- end -}}

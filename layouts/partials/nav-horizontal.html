@@ -1,0 +1,70 @@
+{{/**
+   * Horizontal Menu Template
+   *
+   * Displays a Hugo menu horizontally
+   *
+   * @version 1.0.0
+	 *
+   */}}
+{{ $currentPage := . }}
+{{ $location := .Scratch.Get "location" }}
+{{ $display := .Scratch.Get "datadisplay" }}
+<nav class="nav-horizontal" role="navigation" aria-label="{{ $location }}">
+  <ul>
+    {{ $scratch := .Scratch }}
+    {{ range $index, $menuItem := .Scratch.Get "menu" }}
+      <li class="{{ if .HasChildren }}nested {{ end }}{{ if $currentPage.IsMenuCurrent $location . }}current{{ end }}{{ if $currentPage.HasMenuCurrent $location . }}current{{ end }}">
+      {{ if $menuItem.HasChildren }}
+      <a 
+        class="dropdown-trigger nav-link {{ $menuItem.Name | urlize }} {{if or ($currentPage.IsMenuCurrent $location .) ($currentPage.HasMenuCurrent $location .) }} current{{end}}" 
+        href="#" id="navbarDropdown" 
+        role="button" data-toggle="dropdown" 
+        data-display="static" 
+        aria-haspopup="true" aria-expanded="false" tabindex="0"
+        title="{{ .Name }}"
+        aria-label="{{ .Name }}"
+      >
+        {{ $menuItem.Pre }}
+        {{ $menuItem.Name }}
+        {{ $menuItem.Post }}
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="container nav-link-container">
+          <ul>
+            {{ range $menuItem.Children }}
+            <li>
+              <a 
+                class="dropdown-item {{ $menuItem.Name | urlize }}{{ if $currentPage.IsMenuCurrent $location . }} current{{ end }}" 
+                href="{{ .URL }}" {{ if or ( in .URL "http://" ) (in .URL "https://" )}} 
+                target="new" {{ end }} 
+                title="{{ .Name }}"
+                aria-label="{{ .Name }}"
+                tabindex="0"
+              >
+                {{ .Name }}
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      {{ else }}
+      <a class="nav-link {{ if .HasChildren }}dropdown-toggle{{ end }} $page {{ $menuItem.Name | urlize }}" 
+        href="{{ .URL }}" {{ if or ( in .URL "http://" ) (in .URL "https://" )}} 
+        target="new" {{ end }} 
+        tabindex="0"
+        title="{{ .Name }}"
+        aria-label="{{ .Name }}"
+      >
+        {{ $menuItem.Pre }}
+        {{ $menuItem.Name }}
+        {{ $menuItem.Post }}
+        {{ if $menuItem.HasChildren }}
+        <i class='icon-chevron-down'></i>
+        {{ end }}
+      </a>
+      {{ end }}
+    </li>
+    {{ end }}
+  </ul>
+</nav>

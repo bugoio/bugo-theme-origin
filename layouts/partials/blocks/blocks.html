@@ -1,0 +1,33 @@
+{{/**
+   * Blocks
+   *
+   * Adds blocks of content to a landing page
+   * 
+   * @version 1.0.0
+   */}}
+
+{{ $page := .page }}
+{{ $site := .site }}
+{{/* loop through the landing page's contend blocks and include the appropriate partial */}}
+{{ range $index, $block := .content }}
+{{ $path := printf "blocks/%s" .template }}
+<div 
+  id="{{ $block.title | anchorize }}-block" 
+  class="block {{ .template }}
+  {{ if $block.block_options.content_full_width }} content-full-width {{ end }}
+  {{ if $block.block_options.text_alignment  }} text-{{ $block.block_options.text_alignment | urlize }} {{ end }}
+  {{ if $block.block_options.text_size }} {{ $block.block_options.text_size | urlize }} {{ end }}
+  {{ if $block.block_options.remove_padding }} py-0 {{ end }}
+  {{ if $block.block_options.remove_horizontal_padding }} px-0 {{ end }}
+  {{ if $block.block_options.remove_margin }} m-0 {{ end }}
+  {{ if $block.block_options.block_height }} {{ $block.block_options.block_height | urlize }} {{ end }}
+  {{ if $block.block_options.color_scheme }} {{ $block.block_options.color_scheme | urlize }} {{ end }}
+  " {{ if $block.background_image.image }} style="background-image: url({{ partial "utilities/image-url" (dict "page" $page "site" $site "url" $block.background_image.image "transform" "c_fill,w_1280,h_600") }});" {{ end }}
+  aria-label="{{ $block.title }}"
+  role="region"
+  tabindex="0"
+>
+
+  {{ partial $path (dict "page" $page "block" . "site" $site ) }}
+</div>
+{{ end }}

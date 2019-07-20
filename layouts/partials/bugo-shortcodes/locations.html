@@ -1,0 +1,20 @@
+<div id="locations" class="d-flex" role="list" aria-label="locations">
+  {{ range .site.Data.organization.contact_information.locations }}
+  <span class="d-block pr-4 my-4" role="listitem" tabindex="0" {{ with .location_name }}aria-label="{{ . }}"{{ end }}>
+      {{ with .location_name }}
+      <strong>{{ . }}</strong><br/>
+      {{ end }}
+      {{ .address_1 }}{{ with .address_2 }}, {{ . }}{{ end }}<br/>
+      {{ .city }}{{ with .state }}, {{substr . -1 2 }}{{ end }}{{ with .zip_code }} {{ . }}{{ end }}
+      {{ with .phones }}
+      <span class="d-flex">
+        {{ range . }}
+        <span>
+          {{ .phone }}          
+        </span>
+        {{ end }}
+      </span>
+      {{ end }}
+  </span>
+  {{ end }}
+</div>

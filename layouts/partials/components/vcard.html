@@ -1,0 +1,16 @@
+{{/**
+   * Vcard Link
+	 *
+   * Display a vcard link to Profile contact information
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+{{ $page := .page }}
+<div class="vcard">
+  <a href="./contact-info.vcf" title="Download vCard" rel="profile">
+    {{ partial "icons/vcard" }}
+    <span class="text">Download vCard</span>    
+  </a>
+</div>

@@ -1,0 +1,68 @@
+{{/**
+   * Footer Template
+	 *
+	 * The footer for the site.
+   * It is used on every page.
+   *
+   * @version 1.0.0
+	 *
+   */}}
+{{ if gt ( len .Site.Data.config.layout_options.footer.blocks ) 0 }}
+<div class="above-footer-content">
+  {{ partial "blocks/blocks" (dict "page" .Page "site" .Site "content" .Site.Data.config.layout_options.footer.blocks) }}
+</div>
+{{ end }}
+<footer class="site-footer footer-default{{ with .Site.Data.config.layout_options.footer.color_scheme }} {{ . | urlize }} {{ end }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="site-footer-logo">
+          {{ if .Site.Data.organization.logos.footer_logo.svg_code }}
+          {{ .Site.Data.organization.logos.footer_logo.svg_code | safeHTML }}
+          {{ else if .Site.Data.organization.logos.footer_logo.image }}
+          {{ partial "components/figure" ( dict "page" .Page "site" .Site "media" .Site.Data.organization.logos.footer_logo ) }}
+          {{ else }}
+          {{ .Site.Data.organization.organization_name }}
+          {{ end }}
+        </div>
+        <div>
+          <ul class="list-inline locations">
+            {{ range .Site.Data.organization.contact_information.locations }}
+            <li class="list-inline-item">
+              <h5>{{ .location_name }}</h5>
+              {{ .address_1 }}{{ with .address_2 }}, {{ . }}{{ end }}<br />
+              {{ .city }}, {{ substr .state -1 2 }} {{ .zip_code }}<br />
+              <div class="contact-list list-inline">
+                {{ range .phones }}
+                <div class="contact list-inline-item">
+                  <span class="contact-label"></span>{{ .label }} {{ .phone }}
+                </div>
+                {{ end }}
+              </div>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      <div class="col-12">
+        {{ partial "nav-horizontal" (dict "menu" .Site.Menus.footer "location" "footer" "page" .Page "site" .Site) }}
+      </div>
+      <div class="col-12 text-center pt-4 small">
+        <div class="d-flex justify-content-center">
+        {{ partial "components/social-account-list" .Site.Data.organization.contact_information }}
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="copyright">
+            {{ with  .Site.Data.organization.organization_name }}
+            ©{{ dateFormat "2006" now }} {{ . }} &nbsp;<span class="">•</span>&nbsp; All rights reserved.
+            {{ end }}
+          </div>
+          {{ .Scratch.Set "location" "privacy" }}
+          {{ .Scratch.Set "datadisplay" "static" }}
+          {{ .Scratch.Set "menu" .Site.Menus.privacy }}
+          {{ partial "nav-horizontal" . }}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

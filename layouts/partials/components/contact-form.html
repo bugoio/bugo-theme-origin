@@ -1,0 +1,60 @@
+<form id="contact-form-{{ .block.title }}" class="my-5" method="post" name="contact" role="form" data-netlify="true" data-netlify-recaptcha="true">
+
+  <div class="messages"></div>
+
+  <div class="controls">
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <input autocomplete="given-name" id="form_name" type="text" name="name" class="form-control" required="required" data-error="Firstname is required.">
+          <label for="form_name">Firstname *</label>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <input autocomplete="family-name" id="form_lastname" type="text" name="lastname" class="form-control" required="required" data-error="Lastname is required.">
+          <label for="form_lastname">Lastname *</label>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <input autocomplete="email" id="form_email" type="email" name="email" class="form-control" required="required" data-error="Valid email is required.">
+          <label for="form_email">Email *</label>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <input autocomplete="tel" id="form_phone" type="text" name="phone" class="form-control">
+          <label for="form_phone">Phone</label>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <textarea id="form_message" name="message" class="form-control" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+          <label for="form_message">Message *</label>
+          <div class="help-block with-errors"></div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div data-netlify-recaptcha="true"></div>
+        <input type="submit" class="btn btn-lg btn-primary text-white btn-send mt-4" value="Send message" tabindex="0">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="text-muted mt-4">
+          <strong>*</strong> These fields are required.
+      </div>
+    </div>
+  </div>
+
+</form>

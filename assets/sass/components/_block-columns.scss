@@ -1,0 +1,18 @@
+.block-columns {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    
+    @include respond-to('md'){
+      grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    }
+
+    @include respond-to('lg'){
+      grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+    }
+
+    .item {
+        padding: var(--global-padding);
+    }
+  }
+}

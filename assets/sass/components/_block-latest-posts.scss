@@ -1,0 +1,15 @@
+.block-latest-posts {
+  .container {
+    display: grid;
+    grid-column-gap: var(--global-margin);
+
+    h2 {
+      margin-top: 0 !important;
+      @include ms-respond(font-size,2);
+    }
+
+    @include respond-to('lg'){
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

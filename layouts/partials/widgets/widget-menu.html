@@ -1,0 +1,14 @@
+{{/**
+   * Menu Widget
+   *
+   * Display the site's sidebar menu
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+
+{{ if .widget.widget_options.show_title }}
+<h3 class="widget-title">{{ .widget.title }}</h3>
+{{ end }}
+{{ partial "nav-vertical" (dict "menu" .site.Menus.sidebar "location" "sidebar" "page" .page "site" .site) }}

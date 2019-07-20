@@ -1,0 +1,65 @@
+body {
+  display: grid;
+  padding: 0;
+  grid-template-columns: 1fr;
+  grid-row-gap: 0;
+  grid-template-areas: 
+    "header"
+    "wrap"
+    "footer";
+  @include ms-respond(grid-column-gap,4);
+
+  .wrap {
+    display: grid;
+    grid-area: wrap;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-areas: "main";
+    
+    main {
+      grid-area: main;
+    }
+
+    aside {
+      grid-area: aside;
+    }
+  }
+}
+
+body.sidebar {
+  .wrap {
+    grid-template-columns: repeat(3,1fr);
+    @include ms-respond(grid-column-gap,4);
+    grid-template-areas: "main main aside";
+  }
+}
+
+footer {
+  grid-area: footer;
+}
+
+main,
+aside {
+  @include ms-respond(padding-top,2);
+}
+
+@include respond-to('md') {
+  body.sidebar {
+    main {
+    }
+
+    aside {
+    }
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  transition: max-width 0.125s;
+
+  @each $key, $value in $breakpoints {
+    @media (min-width: $value) {
+      max-width: map-get($container-max-widths,$key);
+    }
+  }
+}

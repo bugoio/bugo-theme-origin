@@ -1,0 +1,79 @@
+//Colors from Hugo Site Data
+$primary:       {{ .Site.Data.styles.theme_colors.primary | default "#F983D1" }} !default;
+$secondary:     {{ .Site.Data.styles.theme_colors.secondary | default "#45D045" }} !default;
+$accent-1:      {{ .Site.Data.styles.theme_colors.accent_1 | default "#FAE44C" }};
+$accent-2:      {{ .Site.Data.styles.theme_colors.accent_2 | default "#77AEFA" }};
+$light:         {{ .Site.Data.styles.theme_colors.light | default "#EBEBEB" }} !default;
+$dark:          {{ .Site.Data.styles.theme_colors.dark | default "#22365D" }} !default;
+$white:         {{ .Site.Data.styles.theme_colors.white | default "#22365D" }} !default;
+$black:         {{ .Site.Data.styles.theme_colors.black | default "#22365D" }} !default;
+$success:       #28a745 !default;
+$info:          #17a2b8 !default;
+$warning:       #ffc107  !default;
+$danger:        #dc3545 !default;
+
+//Color mixes generated from Hugo Site Data
+{{ range $index, $mix := .Site.Data.styles.color_schemes.color_mixes }}  
+  .{{ $mix.name | anchorize }} {
+    background-color: ${{ $mix.background_color | default "none" | anchorize }};
+    color: ${{ $mix.text_color | anchorize }};
+    h1,h2,h3,h4,h5,h6 {
+      color: {{ if $mix.heading_color }}${{ end }}{{ $mix.heading_color | default "inherit" | anchorize }};
+
+      a {
+        color: {{ if $mix.heading_color }}${{ end }}{{ $mix.heading_color | default "inherit" | anchorize }};
+      }
+    }
+  }
+{{ end }}
+
+//Vendors
+@import "../../../../node_modules/mathsass/dist/math";
+@import "../../../../node_modules/modularscale-sass/stylesheets/modularscale";
+@import "../../../../node_modules/sweetalert2/src/sweetalert2.scss";
+@import "../../../../node_modules/slick-carousel/slick/slick.scss";
+
+//Utilities
+@import "utils/global-variables";
+@import "utils/helpers";
+@import "utils/wcag";
+@import "utils/mixins";
+@import "utils/responsive";
+
+//Base
+@import "base/reset";
+@import "base/typography";
+
+//components
+@import "components/article";
+@import "components/blocks";
+@import "components/block-columns";
+@import "components/block-google-map";
+@import "components/block-latest-posts";
+@import "components/block-logos";
+@import "components/block-slideshow";
+@import "components/breadcrumbs";
+@import "components/buttons";
+@import "components/forms";
+@import "components/hero";
+@import "components/hero-video";
+@import "components/pagination";
+@import "components/thumbnail";
+@import "components/widget-latest-posts";
+@import "components/widget-search-form";
+
+//layouts
+@import "layouts/body";
+@import "layouts/footer";
+@import "layouts/grid";
+@import "layouts/header";
+@import "layouts/main";
+@import "layouts/navigation";
+@import "layouts/nav-main";
+@import "layouts/sidebar";
+
+//pages
+@import "pages/landing-page";
+
+//themes
+@import "themes/front-end";

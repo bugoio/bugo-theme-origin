@@ -1,0 +1,25 @@
+BEGIN:VCARD
+VERSION:4.0
+N:{{ .Params.profile.last_name }};{{ .Params.profile.first_name }};{{ .Params.profile.middle_name }};;
+FN:{{ .Params.profile.first_name }}{{ with .Params.profile.middle_name }} {{.}}{{ end }} {{ .Params.profile.last_name }}
+
+{{ range .Params.profile.email_addresses }}
+EMAIL:{{ .email_address }}
+{{ end }}
+
+{{ range .Params.profile.phones }}
+TEL;type={{ .label }}:{{ .phone }}
+{{ end }}
+
+ORG:{{ .Site.Data.organization.organization_name }}
+URL;type=pref:{{ .Permalink | absURL }}
+{{ range .Site.Data.organization.contact_information.locations }}
+ADR:;{{ .address_1 }};{{ .address_2 }};{{ .city }};{{ .state }};{{ .zip_code }};usa
+{{ end }}
+
+{{ range .Params.profile.social_media }}
+{{ if gt ( len . ) 0 }}
+URL:{{ . }}
+{{ end }}
+{{ end }}
+END:VCARD

@@ -1,0 +1,5 @@
+<div class="copyright">
+  {{ with  .site.Data.organization.organization_name }}
+  ©{{ dateFormat "2006" now }} {{ . }} &nbsp;<span class="">•</span>&nbsp; All rights reserved.
+  {{ end }}
+</div>

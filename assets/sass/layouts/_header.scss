@@ -1,0 +1,37 @@
+.site-header {
+  grid-area: header;
+  position: relative;
+  padding: var(--global-padding) 0;
+  @include ms-respond(padding-bottom,2);
+  background-color: $header-bg;
+
+  @media (prefers-color-scheme: dark) {
+      color: $header-text-color-dark;
+      background-color: $header-bg-dark;
+  }
+
+  > .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+      "brand nav-main"
+      "breadcrumbs breadcrumbs";
+    align-items: center;
+  }
+
+  .site-brand {
+    grid-area: brand;
+    margin-right: var(--global-margin);
+    white-space: nowrap;
+
+    a {
+      @include ms-respond(font-size,3);
+      font-weight: bold;
+      text-decoration: none;
+      color: $header-link-color;
+      @media (prefers-color-scheme: dark) {
+          color: $header-link-color-dark;
+      }      
+    }
+  }
+}

@@ -1,0 +1,3 @@
+{{- $.Scratch.Add "index" slice -}}
+{{- $.Scratch.Add "index" (dict "title" .Title "featured_image" .Params.featured_image "contents" .Content "permalink" (.Permalink | relURL )) -}}
+{{- $.Scratch.Get "index" | jsonify -}}

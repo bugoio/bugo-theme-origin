@@ -1,0 +1,9 @@
+.block {
+  padding-top: var(--global-padding);
+  padding-bottom: var(--global-padding);
+  max-width: 100vw;
+
+  img {
+    max-width: 100%;
+  }
+}

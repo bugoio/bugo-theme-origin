@@ -1,0 +1,57 @@
+
+  {{ if ne .Site.Data.config.media.default_featured_image.show_featured_image_in_content true }}
+  {{ $scratch := newScratch }}
+  {{ $scratch.Set "img" .Page.Params.featured_image }}
+  {{ $scratch.Set "alt" (humanize (index (split (path.Base ($scratch.Get "img").image ) ".") 0)) }}
+    <div class="hero">
+      <div class="container">
+            <figure>
+              {{ if .Page.Params.featured_image.image }}
+              {{ $image := .Page.Params.featured_image }}
+              {{ $alt := humanize (index (split (path.Base $image.image ) ".") 0) }}
+                <img 
+                  class="img-responsive" 
+                  src="{{ partial "utilities/image-url" ( dict "page" .Page "site" .Site "url" $image.image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_498,w_1024" ) }}"
+                  srcset="
+                    {{ partial "utilities/image-url" ( dict "page" .Page "site" .Site "url" $image.image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_350,w_500" ) | safeURL }} 500w,
+                    {{ partial "utilities/image-url" ( dict "page" .Page "site" .Site "url" $image.image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_700,w_1440" ) | safeURL }} 1440w
+                  "
+                  {{ if  $image.title }} 
+                  title="{{ $image.title }}" 
+                  {{ end }}
+                  alt="{{ $alt }}"
+                />
+              <div class="container">
+                <figcaption>
+                  <h1>{{ .Page.Title }}</h1>
+                </figcaption>
+              </div>
+              {{ else if .Site.Data.config.media.default_featured_image.image  }}
+              {{ $image := .Site.Data.config.media.default_featured_image }}
+              {{ $alt := humanize (index (split (path.Base $image.image ) ".") 0) }}
+                <img 
+                  class="img-responsive" 
+                  src="{{ partial "utilities/image-url" ( dict "page" .Page "site" .Site "url" $image.image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_498,w_1024" ) }}"
+                  srcset="
+                    {{ partial "utilities/image-url" ( dict "page" .Page "site" .Site "url" $image.image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_350,w_500" ) | safeURL }} 500w,
+                    {{ partial "utilities/image-url" ( dict "page" .Page "site" .Site "url" $image.image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_700,w_1440" ) | safeURL }} 1440w
+                  "
+                  {{ if $image.title }} 
+                  title="{{ $image.title }}" 
+                  {{ end }}
+                  alt="{{ $alt }}"
+                />
+              <figcaption>
+                {{ if $image.caption }}
+                  {{ $image.caption | markdownify }}
+                {{ else }}
+                  <h1>{{ .Page.Title }}</h1>
+                {{ end }}
+              </figcaption>
+              {{ end }}
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{ end }}

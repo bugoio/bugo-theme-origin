@@ -1,0 +1,44 @@
+{{/**
+   * Base Template
+	 *
+	 * The default layout for the site, which is extended by all other layouts.
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+
+<!doctype html>
+<html class="" lang="en">
+  {{ partial "head" . }}
+  <body class="{{ partial "utilities/body-class" . }} {{ partial "utilities/sidebar-class" . }}">
+    {{- partial "header" . }}
+    <div class="wrap container">
+      {{ block "main" . }}{{ end }}
+      {{ block "aside" . }}{{ end }}
+    </div>
+    {{ if .Site.Data.config.layout_options.footer.footer_template }}
+      {{/* use footer template system */}}
+      {{ $footer := printf "footer-%s" .Site.Data.config.layout_options.footer.footer_template | urlize }}
+      {{ partial $footer . }}
+    {{ else }}
+      {{/* use flexible footer */}} 
+      {{ partial "footer" . }}
+    {{ end }}
+    
+    {{ block "footer" . }}{{ end }}
+    {{ if .Site.Data.organization.footer_dislaimer }}
+    <div class="footer-disclaimer py-4{{ with .Site.Data.config.layout_options.footer.color_scheme }} {{ . | urlize }} {{ end }}">
+      <div class="container">
+        {{ .Site.Data.organization.footer_dislaimer | markdownify }}
+      </div>
+    </div>
+    {{ end }}
+    <!-- Javascript -->
+    <script defer src="/js/main.js" type="text/javascript"></script>
+    {{ template "_internal/google_analytics_async.html" . }}
+    <div aria-hidden="true">
+      {{ partial "icons/icon_sprite" . }}
+    </div>
+  </body>
+</html>

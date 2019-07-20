@@ -1,0 +1,92 @@
+{{/**
+   * Featured Image
+	 *
+	 * Display a featured image at the top of the page
+   *
+   * @version 1.0.0
+	 *
+   */}}
+{{ if and (or (.Page.Params.featured_image.image) (.Site.Data.config.media.default_featured_image.image)) ( ne ( in .Site.Data.config.media.default_featured_image.excluded_pages .Page.File.Path ) true )  }}
+{{/* add page's featured image */}}
+<div class="featured-image profile-w-image">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 figure-container">
+        <figure>
+          {{ if and ( .Page.Params.featured_image.image ) }}
+          {{ $image := .Page.Params.featured_image }}
+          {{ $alt := humanize (index (split (path.Base $image.image ) ".") 0) }}
+          <div class="img-container">
+            <img 
+              class="img-responsive" 
+              src="{{ partial "utilities/image-url" ( dict "page" .Page "site" .Site "url" $image.image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_498,w_1024" ) }}"
+              srcset="
+                {{ partial "utilities/image-url" ( dict "page" .Page "site" .Site "url" $image.image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_350,w_500" ) | safeURL }} 500w
+                {{ partial "utilities/image-url" ( dict "page" .Page "site" .Site "url" $image.image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_700,w_1440" ) | safeURL }} 1440w
+              "
+              {{ if isset $image "title" }} 
+              title="{{ $image.title }}" 
+              {{ end }}
+              alt="{{ $alt }}" 
+            />
+          </div>
+          {{ if isset $image "caption" }}
+          <figcaption>{{ $image.caption | safeHTML | markdownify }}</figcaption>
+          {{ end }}
+          {{ else if .Site.Data.config.media.default_featured_image.image  }}
+          {{ $image := .Site.Data.config.media.default_featured_image.image }}
+          {{ $alt := humanize (index (split (path.Base $image) ".") 0) }}
+          <div class="img-container">
+            <img 
+              class="img-responsive" 
+              src="{{ partial "utilities/image-url" ( dict "page" .Page "site" .Site "url" $image.image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_498,w_1024" ) }}"
+              srcset="
+                {{ partial "utilities/image-url" ( dict "page" .Page "site" .Site "url" $image.image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_350,w_500" ) | safeURL }} 500w
+                {{ partial "utilities/image-url" ( dict "page" .Page "site" .Site "url" $image.image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_700,w_1440" ) | safeURL }} 1440w
+              "
+              {{ if isset $image "title" }} 
+              title="{{ $image.title }}" 
+              {{ end }}
+              alt="{{ $alt }}" 
+            />
+          </div>
+          {{ if isset $image "caption" }}
+          <figcaption>{{ $image.caption | safeHTML | markdownify }}</figcaption>
+          {{ end }}
+          {{ end }}
+        </figure>
+        {{ $page := .Page }}
+        {{ $site := .Site }}
+        {{ with .Page.Params.profile.profile_image }}
+        {{ $alt := humanize (index (split (path.Base . ) ".") 0) }}
+          <figure class="profile-image">
+            <img 
+              class="" 
+              src="{{ partial "utilities/image-url" ( dict "page" $page "site" $site "url" . "transform" "c_fit,h_600,w_600" ) }}"
+              title="{{ $page.Title }}" 
+              alt="{{ $alt }}"
+            />
+            <figcaption>
+              <div class="profile-meta">
+                <h1>{{ $page.Title }}</h1>
+                {{ with $page.Params.profile.email_addresses }}
+                {{ partial "components/email-list" (dict "page" $page "email_addresses" . ) }}
+                {{ end }}
+
+                {{ with $page.Params.profile.phones }}
+                {{ partial "components/phone-list" (dict "page" $page "phones" . ) }}
+                {{ end }}
+                {{ with $page.Params.profile.social_media }}
+                {{ partial "components/social-account-list" (dict "page" $page "social_accounts" . ) }}
+                {{ end }}
+                {{ partial "components/vcard" }}
+              </div>
+            </figcaption>
+          </figure>
+        {{ end }}
+        {{/*  {{ partial "components/figure" ( dict "page" .Page "media" .Page.Params.featured_image "transform" "c_fill,g_faces:center,h_700,w_1440") }}  */}}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

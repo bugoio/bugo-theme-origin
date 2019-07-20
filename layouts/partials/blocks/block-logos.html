@@ -1,0 +1,31 @@
+{{/**
+   * Logos Block
+   *
+   * Block for adding columns to a landing page. There is no limit to how many columns get added.
+   * Each column has an id attribute for individula styling.
+   *
+   * @version 1.0.0
+   */}}
+
+  <div class="container">
+    <h2 class="block-title {{ if eq .block.block_options.show_title false }} sr-only {{ end }}">{{ .block.title }}</h2>
+  </div>
+  <div class="container logos-container logos-container-{{ len .block.logos }}">
+    {{ $page := .page }}
+    {{ range .block.logos }}
+      {{ $alt := humanize (index (split (path.Base .) ".") 0) }}
+      <div id="Logo-{{ $alt | urlize }}" class="item">
+        <img 
+          class="" 
+          src="{{ partial "utilities/image-url" ( dict "page" $.Page "url" . "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_498,w_1024" ) }}"
+          srcset="
+            {{ partial "utilities/image-url" ( dict "page" $.Page "url" . "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_350,w_500" ) | safeURL }} 500w
+            {{ partial "utilities/image-url" ( dict "page" $.Page "url" . "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_700,w_1440" ) | safeURL }} 1440w
+          "
+          title="Logo"
+          alt="{{ $alt }}"
+          tabindex="0"
+        />
+      </div>
+    {{ end }}
+  </div>

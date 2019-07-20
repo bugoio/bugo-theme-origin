@@ -1,0 +1,13 @@
+{{/**
+   * Markdown Widget
+   *
+   * Display formatted markdown in the sidebar
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+{{ if .widget.widget_options.show_title }}
+<h3 class="widget-title">{{ .widget.title }}</h3>
+{{ end }}
+{{ .widget.content | markdownify }}

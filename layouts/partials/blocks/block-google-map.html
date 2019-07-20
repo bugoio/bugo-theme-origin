@@ -1,0 +1,30 @@
+{{/**
+   * Google Maps Block
+   *
+   * Block for adisplaying a map on a landing page. 
+   * Requires a Google API key to be set in 
+   * /data/orgainization.yaml or in the block's front matter
+   *
+   * @version 1.0.1
+   *
+   * 
+   */}}
+
+  <div class="container">
+    <h2 class="block-title {{ if eq .block.block_options.show_title false }} sr-only {{ end }}">{{ .block.title }}</h2>
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe
+        src="https://www.google.com/maps/embed/v1/place?key={{ .block.api_key }}&q={{ .block.address_1 }}%20{{ .block.address_2 }}%20{{ .block.city }}%20{{ .block.state }}%20{{ .block.zip_code }} "
+        width="600"
+        height="450"
+        frameborder="0"
+        style="border:0"
+        allowfullscreen
+        class="embed-responsive-item"
+        title="Map of {{ .block.address_1 }}"
+      ></iframe>
+    </div>
+    <div class="map-content mt-4 text-center">
+      {{ .block.map_content |  markdownify }}
+    </div>
+  </div>

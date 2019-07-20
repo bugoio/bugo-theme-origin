@@ -1,0 +1,28 @@
+{{ $scratch := newScratch }}
+
+{{ $scratch.Set "partials" (slice) }}
+{{ $scratch.Set "content" .content }}
+{{ $shortcodes := findRE "{{< ?(#[a-z 0-9]+ )?[a-z 0-9]*? >}}" .content }}
+{{ $shortcodes }}
+{{ $page := .page }}
+{{ $site := .site }}
+
+{{ range $shortcodes }}
+  {{ $scratch.Add "partials" ( trim (trim . " >}}") "{{< ")}}
+{{ end }}
+
+
+{{ range $index, $partial := $scratch.Get "partials" }}
+  {{ if ne $partial nil }}
+    {{ $path := printf "bugo-shortcodes/%s" $partial }}
+    {{ $filePath := printf "partials/bugo-shortcodes/%s.html" $partial }}
+    {{ $shortcode := index $shortcodes $index }}
+    {{ if templates.Exists $filePath }}
+      {{ $rendered := partial $path (dict "page" $page "site" $site "content" . ) }}
+      {{ $scratch.Set "content" (replace ($scratch.Get "content") $shortcode $rendered ) }}
+    {{ else }}
+      {{ $scratch.Set "content" (replace ($scratch.Get "content") $shortcode (templates.Exists $filePath) ) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ return $scratch.Get "content" }}

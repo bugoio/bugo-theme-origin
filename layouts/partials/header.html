@@ -1,0 +1,72 @@
+{{/**
+   * Header Template
+	 *
+	 * The header for the site. It contains the main navigation.
+   * It is used on every page at the top.
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+<a class="skip-link" aria-label="Go to Content" href="#main" tabindex="0">Go to Content</a>
+{{ if .Site.Data.config.layout_options.header.blocks }}
+<div class="promotional-content">
+  {{ partial "blocks/blocks" (dict "page" .Page "site" .Site "content" .Site.Data.config.layout_options.header.blocks) }}
+</div>
+{{ end }}
+<header class="site-header" tabindex="-1">
+  <div class="container">
+    <div class="site-brand">
+      <div>
+        <a href="/" title="Go to the home page" tabindex="0">
+          {{ if .Site.Data.organization.logos.header_logo.image }}
+              {{ $imageParams := (dict "page" .Page "site" .Site "url" .Site.Data.organization.logos.header_logo.image "transform" false ) }}
+              <img 
+                class="img-responsive" 
+                src="{{ partial "utilities/image-url" $imageParams }}" 
+                alt="" 
+              />
+          {{ else }}
+            {{ .Site.Data.organization.organization_name }}        
+          {{ end }}
+        </a>
+        <button id="showMenu">Show Menu</button>
+      </div>
+    </div>
+    <div class="nav-main">
+      {{ .Scratch.Set "location" "main" }}
+      {{ .Scratch.Set "datadisplay" "static" }}
+      {{ .Scratch.Set "menu" .Site.Menus.main }}
+      {{ partial "nav-horizontal" . }}
+      <div class="search-container">
+        <!-- {{ partial "components/search-form" }} -->
+      </div>
+    </div>
+    {{ if .Site.Menus.secondary }}
+    <div class="nav-secondary-container">
+      {{ .Scratch.Set "location" "secondary" }}
+      {{ .Scratch.Set "datadisplay" "static" }}
+      {{ .Scratch.Set "menu" .Site.Menus.secondary }}
+      {{ partial "nav-horizontal" . }}
+      <div class="search-container">
+        <!-- {{ partial "components/search-form" "header" }} -->
+      </div>
+    </div>
+    {{ end }}
+    {{ if .Site.Menus.mobile }}
+    <div id="mobile-nav-container" class="collapse">
+      {{ partial "nav-vertical" (dict "menu" .Site.Menus.mobile "location" "mobile" "page" .Page "site" .Site) }}
+    </div>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#mobile-nav-container" aria-controls="mobile-nav-container" aria-expanded="false" aria-label="Toggle navigation">
+      {{ partial "icons/menu-toggle" }}
+    </button>
+    {{ end }}
+  </div>
+  {{ partial "components/hero-video" . }}
+
+  {{ if and (not .IsHome) (ne .Params.layout "landing") (.Site.Data.config.show_breadcrumbs) }}
+    <div class="breadcrumbs">
+      {{ partial "components/breadcrumbs" . }}
+    </div>
+  {{ end }}
+</header>

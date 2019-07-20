@@ -1,0 +1,23 @@
+{{/**
+   * Category Widget
+   *
+   * Display links to the websites categories in the sidebar
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+<section class="widget widget-categories
+  {{ with .widget.widget_options.background_color }}bg-{{ . | urlize }}{{ end }}
+  {{ with .widget.widget_options.text_color }}text-{{ . | urlize }}{{ end }}">
+  {{ if .widget.widget_options.show_title }}
+  <h3 class="widget-title">{{ .widget.title }}</h3>
+  {{ end }}
+  <ul class="list-unstyled">
+    {{ range $name, $taxonomy := .site.Taxonomies.categories }}
+    {{ with $.site.GetPage (printf "/categories/%s" $name) }}
+    <li><a href="{{ .Permalink | relURL }}">{{ .Title }}</a></li>
+    {{ end }}
+    {{ end }}
+  </ul>
+</section>

@@ -1,0 +1,39 @@
+{{/**
+   * Text Slideshow Block
+   *
+   * Block for adding a text slideshow to a landing page. 
+   *
+   * @version 1.0.0
+   */}}
+
+{{ $page := .page }}
+{{ $block := .block }}
+<h2 class="block-title {{ if eq .block.block_options.show_title false }} sr-only {{ end }}">{{ .block.title }}</h2>
+<div class="">
+  <div id="slideshow-{{ .block.title | urlize }}" class="carousel slide" data-ride="carousel" data-pause="false">
+    <ol class="carousel-indicators">
+      {{ range $index, $slide := .block.slides }}
+        <li data-target="#slideshow-{{ $block.title | urlize }}" data-slide-to="{{ $index }}" class="{{ if eq $index 0 }}active{{ end }}"></li>
+      {{ end }}
+    </ol>
+    <div class="carousel-inner d-flex align-items-stretch">
+      {{ range $index, $slide := .block.slides }}
+      <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
+        <div class="container">
+          <div class="content-wrapper">
+            {{ .content | markdownify }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <a class="carousel-control-prev" href="#slideshow-{{ .block.title | urlize }}" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#slideshow-{{ .block.title | urlize }}" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>

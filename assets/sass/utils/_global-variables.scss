@@ -1,0 +1,156 @@
+/* Modular Scale */
+$modularscale: (
+  base: 12px,
+  ratio: 1.3,
+  576px: (
+    base: 13px,
+    // ratio: 1.5,
+  ),
+  768px: (
+    base: 14px,
+    // ratio: 1.5,
+  ),
+  992px: (
+    base: 15px,
+    // ratio: 1.5,
+  ),
+  1200px: (
+    base: 16px,
+    // ratio: 1.5,
+  ),
+  1400px: (
+    base: 17px,
+    // ratio: 1.5,
+  ),
+  2000px: (
+    base: 18px,
+    // ratio: 1.5,
+  )
+);
+
+/* Spacing */
+:root {
+  @include ms-respond(--global-margin,4);
+  @include ms-respond(--global-padding,4);
+  @include ms-respond(--heading-margin-top,4);
+  @include ms-respond(--heading-margin-bottom,2);
+}
+
+/* Box Effects */
+$global-radius: 4px;
+$global-box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
+
+/* Breakpoints */
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 2000px
+) !default;
+
+$container-max-widths : (
+  xs: calc(100vw - 36px),
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1164px,
+  xxl: 1300px,
+  xxxl: 1600px
+) !default;
+
+/* typography */
+$max-char: 85ch;
+
+
+/* colors */
+
+$theme-colors: (
+  primary:        $primary,
+  secondary:      $secondary,
+  accent-1:       $accent-1,
+  accent-2:       $accent-2,
+  light:          $light,
+  dark:           $dark,
+  white:          $white,
+  black:          $black,
+  success:        $success,
+  info:           $info,
+  warning:        $warning,
+  danger:         $danger
+);
+
+$dark-colors: (
+  primary:        $primary,
+  secondary:      $secondary,
+  accent-1:       $accent-1,
+  accent-2:       $accent-2,
+  light:          $light,
+  dark:           $dark,
+  white:          $white,
+  black:          $black
+);
+
+/* Layout Colors */
+$body-bg:         $light;
+$body-bg-dark:    $dark;
+$header-bg:       $light;
+$header-bg-dark:  $dark;
+$header-text-color:       $dark;
+$header-text-color-dark:  $light;
+$header-link-color:       $dark;
+$header-link-color-dark:  $light;
+
+/* Navigation colors */
+$main-dropdown-bg:        $white;
+$main-dropdown-color:     $black;
+$main-dropdown-bg-dark:   lighten($dark,10%);
+$main-dropdown-color-dark: $white;
+
+/* Text color */
+$base-text-color:           $dark;
+$base-text-color-dark:      $light;
+$link-text-color:           darken($accent-2,20%);
+$link-text-color-dark:      $primary;
+$heading-text-color:        $black;
+$heading-text-color-dark:   $white;
+$heading-link-color:        lighten($dark,15%);
+$heading-link-color-dark:   darken($light,25%);
+
+/* Forms */
+
+$button-radius:               $global-radius;
+$button-default-bg:           $dark;
+$button-default-color:        $light;
+$button-default-bg-dark:      $light;
+$button-default-color-dark:   $dark;
+
+
+/**
+ *
+ * Layouts
+ * -display: accepts any display property
+ * 
+ **/
+
+
+/* List Pages */
+
+$list-thumbnail-display:  block;
+$list-header-display:     block;
+$list-summary-display:    block;
+
+
+/**
+ *
+ * Widgets
+ *
+ **/
+
+/* Latest Posts */
+
+$latest-thumbnail-display:  block;
+$latest-header-display:     block;
+$latest-summary-display:    block;

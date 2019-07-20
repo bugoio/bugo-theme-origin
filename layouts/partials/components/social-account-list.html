@@ -1,0 +1,23 @@
+{{/**
+   * Social Account List
+	 *
+	 * Display profile or organization social accounts
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+{{ $page := .page }}
+<div class="social-list justify-content-center my-4">
+  {{ range $index, $account := .social_accounts }}
+    {{ if gt ( len . ) 0 }}
+      <div class="social social-{{ $index | urlize }}">
+        <a href="{{ . }}" target="new" rel="noreferrer">
+          {{ $iconName := ( printf "icons/%s" $index | urlize )  }}
+          {{ partial $iconName }}
+          <span class="text sr-only">Follow Us on {{ $index | title }}. Opens in a new window</span>
+        </a>
+      </div>
+    {{ end }}
+  {{ end }}
+</div>

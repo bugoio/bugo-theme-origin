@@ -1,0 +1,41 @@
+.breadcrumbs {
+  grid-area: breadcrumbs;
+
+  ol {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0 2rem 0 0;
+      position: relative;
+
+      &:not(:first-child) {
+        &::before {
+          content: "»";
+          display: block;
+          position: absolute;
+          top: -0.5rem;
+          margin-left: -1.25rem;
+          @include ms-respond(font-size,2);
+        }
+      }
+
+      a {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 40ch;
+
+        @include respond-to('md') {
+          max-width: 50ch;
+        }
+
+        @include respond-to('lg') {
+          max-width: 65ch;
+        }
+      }
+    }
+  }
+}

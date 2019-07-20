@@ -1,0 +1,21 @@
+{{/**
+   * Related Posts Block
+   *
+   * Block for adding columns. There is no limit to how many columns get added.
+   * Each column has an id attribute for individula styling.
+   *
+   * @version 1.0.0
+   */}}
+
+{{ $related := .site.RegularPages.RelatedIndices .page "categories" "date" | first 5 }}
+<h2 class="block-title {{ if eq .block.block_options.show_title false }} sr-only {{ end }}">{{ .block.title }}</h2>
+{{ with $related }}
+<h3>See Also</h3>
+<ul>
+  {{ range . }}
+  <li>
+    <a href="{{ .Permalink | relURL }}">{{ .Title }}</a>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}

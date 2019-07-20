@@ -1,0 +1,4 @@
+<figure class="full-width">
+  {{ $content := .Inner | markdownify }}
+  {{ replace $content "<p></p>" ""  | safeHTML }}
+</figure>

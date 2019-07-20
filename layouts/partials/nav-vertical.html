@@ -1,0 +1,48 @@
+{{/**
+   * Vertical Menu Template
+   *
+   * Displays a Hugo menu vertically
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+
+{{ $currentPage := . }}
+{{ $location := .Scratch.Get "location" }}
+{{ $display := .Scratch.Get "datadisplay" }}
+<nav class="nav-vertical nav-{{ $location }}">
+  <ul class="list-unstyled">
+    {{ range $index, $menuItem := .Scratch.Get "menu" }}
+    <li class="{{ if .HasChildren }}nested {{ end }}{{ if $currentPage.IsMenuCurrent $location . }}current{{ end }}">
+      {{ if $menuItem.HasChildren }}
+      <a 
+        title="{{ .Name }}"
+        aria-label="{{ .Name }}"
+        class="nav-link dropdown-trigger $page {{ $menuItem.Name | urlize }} {{if or ($currentPage.IsMenuCurrent $location .) ($currentPage.HasMenuCurrent $location .) }} current{{end}}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+        {{ $menuItem.Pre }}
+        {{ $menuItem.Name }}
+        {{ $menuItem.Post }}
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        {{ range $menuItem.Children }}
+        <a class="dropdown-item {{ $menuItem.Name | urlize }}{{ if $currentPage.IsMenuCurrent "main" . }} current{{ end }}" href="{{ .URL }}" {{ if or ( in .URL "http://" ) (in .URL "https://" )}} target="new" {{ end }}>{{ .Name }}</a>
+        {{ end }}
+      </div>
+      {{ else }}
+      <a
+        title="{{ .Name }}"
+        aria-label="{{ .Name }}"
+        class="nav-link {{ if .HasChildren }}dropdown-toggle{{ end }} $page {{ $menuItem.Name | urlize }}" href="{{ .URL }}" {{ if or ( in .URL "http://" ) (in .URL "https://" )}} target="new" {{ end }}>
+        {{ $menuItem.Pre }}
+        {{ $menuItem.Name }}
+        {{ $menuItem.Post }}
+        {{ if $menuItem.HasChildren }}
+        <i class='icon-chevron-down'></i>
+        {{ end }}
+      </a>
+      {{ end }}
+    </li>
+    {{ end }}
+  </ul>
+</nav>

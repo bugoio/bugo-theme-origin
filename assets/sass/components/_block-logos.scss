@@ -1,0 +1,17 @@
+.block-logos {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20%,1fr));
+
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+        img {
+        width: 85%;
+        height: auto;
+      }
+    }
+  }
+}

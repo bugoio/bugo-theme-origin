@@ -1,0 +1,5 @@
+User-agent: *
+
+{{ if ne hugo.Environment "production" }}
+Disallow: /
+{{ end }}

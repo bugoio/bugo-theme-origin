@@ -1,0 +1,19 @@
+{{/**
+   * Columns Block
+   *
+   * Block for adding columns to a landing page. There is no limit to how many columns get added.
+   * Each column has an id attribute for individula styling.
+   *
+   * @version 1.0.0
+   */}}
+
+  <div class="container column-container-{{ len .block.columns }}">
+    <h2 class="block-title {{ if eq .block.block_options.show_title false }} sr-only {{ end }}">{{ .block.title }}</h2>
+    {{ $page := .page }}
+    {{ $site := .site }}
+    {{ range .block.columns }}
+    <div id="column-{{ .title  | anchorize }}" class="item {{ .color_scheme | urlize }} text-{{ .text_align }}" role="region" tabindex="0">
+      {{ partial "utilities/process-shortcodes" (dict "page" $page "site" $site "content" .content) | markdownify }}
+    </div>
+    {{ end }}
+  </div>

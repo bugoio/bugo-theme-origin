@@ -1,0 +1,21 @@
+{{/**
+   * Latest Posts widget
+   *
+   * widget for displaying the website's latest blog posts on a landing page
+   *
+   * @version 1.0.0
+   */}}
+
+
+{{ $page := .page }}
+{{ $site := .site }}
+{{ $posts := where (where .site.RegularPages "Section" "posts") ".Title" "!=" .page.Title }}
+{{ if $posts }}
+  {{ if .widget.widget_options.show_title }}
+    <h2 class="widget-title">{{ .widget.title }}</h2>
+  {{ end }}
+  {{ $widget := .widget }}
+  {{ range first .widget.show_quantity $posts  }}
+    {{ partial "components/article-summary" (dict "page" . "site" $site )}}
+  {{ end }}
+{{ end }}

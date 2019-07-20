@@ -1,0 +1,43 @@
+{{/**
+   * Default Single Profile Layout
+	 *
+	 * The default single for the site.
+   * All pages and posts will default to this template.
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+{{ define "main" }}
+<main id="main" tabindex="0">
+  <article class="main-article" tabindex="0">
+    <!-- <header>
+      <h1>{{ .Title }}</h1>
+    </header> -->
+    <div>
+      {{ .Content }}
+    </div>
+    <footer>
+      {{ partial "share_buttons" . }}
+    </footer>
+  </article>
+</main>
+{{ end }}
+
+{{ define "aside" }}
+<aside class="sidebar" tabindex="0">
+  <div class="widget widget-profile-contact-info" tabindex="0">
+    {{ $page := .Page }}
+    {{ with .Page.Params.profile.email_addresses }}
+    {{ partial "components/email-list" (dict "page" $page "email_addresses" . ) }}
+    {{ end }}
+    {{ with .Page.Params.profile.phones }}
+    {{ partial "components/phone-list" (dict "page" $page "phones" . ) }}
+    {{ end }}
+    {{ with .Page.Params.profile.social_media }}
+    {{ partial "components/social-account-list" (dict "page" $page "social_accounts" . ) }}
+    {{ end }}
+  </div>
+  {{ partial "widgets/widgets" (dict "page" .Page "site" .Site "content" .Site.Data.config.sidebar_widgets.widgets ) }}
+</aside>
+{{ end }}
