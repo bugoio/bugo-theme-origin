@@ -1,0 +1,34 @@
+{
+  "name": "bugo-vanilla-theme",
+  "version": "1.0.0",
+  "description": "This is a basic theme to be used as a base for more complex themes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bugoio/bugo-vanilla.git"
+  },
+  "keywords": [
+    "Hugo",
+    "theme",
+    "forestry"
+  ],
+  "author": "Matthew Antone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bugoio/bugo-vanilla/issues"
+  },
+  "homepage": "https://github.com/bugoio/bugo-vanilla#readme",
+  "dependencies": {
+    "animated-scroll-to": "^1.2.2",
+    "jquery": "^3.4.1",
+    "mathsass": "^0.10.1",
+    "modularscale-sass": "^3.0.8",
+    "normalize.css": "^8.0.1",
+    "slick-carousel": "^1.8.1",
+    "sweetalert2": "^8.14.0",
+    "webfontloader": "^1.6.28"
+  }
+}
