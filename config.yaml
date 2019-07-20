@@ -5,7 +5,6 @@ languageCode: en-us
 summaryLength: 25
 canonifyURLs: true
 enableRobotsTXT: true
-contentDir: ../../content
 googleAnalytics: ""
 blackFriday:
  hrefTargetBlank: true

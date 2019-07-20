@@ -204,7 +204,7 @@ function removeTheme(cb) {
 }
 
 function startHugo(cb) { 
-  const config = '../../config.yaml';
+  const config = './config.yaml';
   const content = '../../content';
   const data = '../../data';
 
