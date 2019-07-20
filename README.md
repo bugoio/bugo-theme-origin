@@ -1,0 +1,1 @@
+# bugo-vanilla
