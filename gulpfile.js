@@ -7,7 +7,7 @@ const YAML = require('yamljs');
 const compiler = require('webpack');
 const webpack = require('webpack-stream');
 // const axe = require('gulp-axe-webdriver');
-const jsonfile = require('jsonfile');
+// const jsonfile = require('jsonfile');
 
 let name;
 
