@@ -1,1 +1,1 @@
-# bugo-vanilla
+# Bugo Vanilla Theme
