@@ -306,6 +306,8 @@ function wcagTest(cb) {
 
 function installTheme(cb) {
   console.log("Begin Installation");
+  src(['./_forestry/**/*'])
+    .pipe(dest('../../.forestry/'));
   cb()
 }
 
