@@ -10,6 +10,7 @@ body {
   max-width: 100%;
   margin: 0 auto;
   font-family: "Roboto";
+  font-display: auto;
   color: $heading-text-color;
   @media (prefers-color-scheme: dark) {
       color: $heading-text-color-dark;
@@ -32,6 +33,7 @@ a {
 
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
   font-family: "serif";
+  font-display: auto;
   line-height: 1.2;
   margin-top: var(--heading-margin-top);
   margin-bottom: var(--heading-margin-bottom);

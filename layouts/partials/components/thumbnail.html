@@ -1,6 +1,6 @@
 {{ if .Params.images }}
   <div class="thumbnail">
-    <a class="thumbnail-link" href="{{ .Permalink | relURL }}" aria-label="Read more about {{ .Title }}" tabindex=”0”>
+    <a class="thumbnail-link" href="{{ .Permalink | relURL }}" aria-hidden="true" tabindex=”0”>
       {{ range $index, $image := .Params.images }}
         {{ $ext := path.Ext $image }}
         {{ $jp2 := replace $image $ext ".jp2" }}
@@ -8,15 +8,16 @@
         {{ if eq $index 0 }}
           {{ $smOptions := dict "context" . "image" $image "transform" "c_fill,w_300"}}
           {{ $smURL := partial "utilities/cloudinary-transform" $smOptions }}
-          {{ $mdOptions := dict "context" . "image" $image "transform" "c_fill,w_700"}}
+          {{ $mdOptions := dict "context" . "image" $image "transform" "c_fill,w_768"}}
           {{ $mdURL := partial "utilities/cloudinary-transform" $mdOptions }}
-          {{ $lgOptions := dict "context" . "image" $image "transform" "c_fill,w_1440"}}
+          {{ $lgOptions := dict "context" . "image" $image "transform" "c_fill,w_1600"}}
           {{ $lgURL := partial "utilities/cloudinary-transform" $lgOptions }}
-          {{ $srcSet := printf "%v 500w %v 1440w" $mdURL $lgURL }}
+          {{ $srcSet := printf "%v 576w %v 1440w" $mdURL $lgURL }}
           <img
             class="" {{- printf "src=%q" $smURL | safeHTMLAttr -}}
              {{- printf "srcset=%v" $srcSet | safeHTMLAttr -}}
-            aria-hidden="hidden" 
+            aria-hidden="hidden"
+            alt=""
             />
         {{ end }}
       {{ end }}

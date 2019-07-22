@@ -12,7 +12,7 @@
 {{ range $index, $widget := .content }}
   <section 
     id="{{ $widget.title | urlize }}"
-    aria-title="{{ $widget.title }}"
+    aria-label="{{ $widget.title }}"
     class="widget {{ .template }}
     {{ if $widget.widget_options.content_full_width }} content-full-width {{ end }}
     {{ if $widget.widget_options.text_alignment  }} text-{{ $widget.widget_options.text_alignment | urlize }} {{ end }}
