@@ -225,6 +225,7 @@ function startHugo(cb) {
     'server',
     '--config', './config.yaml',
     '-d', '../../public',
+    '-e', 'production',
     '--watch',
     '--disableFastRender',
     '--cleanDestinationDir', 'true',
@@ -254,30 +255,65 @@ function startHugo(cb) {
     let tmp = data;
     console.log('Bugo: Compiling .js files into ' + tmp.theme[0]);
 
-    const watcher = watch(['./assets/js/**/*.js'], function(cb) {
-      console.log(`Compiling JS`);
-      src(['./assets/js/**/*.js']) 
+    const jsWatcher = watch(['./assets/js/app.js'], function(cb) {
+      cb();
+    });
+
+    jsWatcher.on('change', function (path, stats) {
+      console.log(`File ${path} was changed`);
+      src(path)
       .pipe(webpack({
         config : require('./webpack.config.js')
         }), compiler, function(err, stats) {
         /* Use stats to do more things if needed */
+          console.log(e);
         })
-        .pipe(dest('./static/js/'));
-      console.log(`Compiled.`);
-      cb();
-    });
-    watcher.on('change', function(path, stats) {
-      console.log(`File ${path} was changed`);
+      .pipe(dest('./assets/dist/'));
     });
 
-    watcher.on('add', function(path, stats) {
+    jsWatcher.on('add', function(path, stats) {
       console.log(`File ${path} was added`);
     });
 
-    watcher.on('unlink', function(path, stats) {
+    jsWatcher.on('unlink', function(path, stats) {
       console.log(`File ${path} was removed`);
     });
+
+    const cssWatcher = watch(['../../public/style.theme.css'], function(cb) {
+      cb();
+    });
+
+    cssWatcher.on('change', function (path, stats) {
+      console.log(`File ${path} was changed`);
+      src(path)
+      .pipe(dest('./assets/dist/'));
+    });
+
+    cssWatcher.on('add', function(path, stats) {
+      console.log(`File ${path} was added`);
+    });
+
+    cssWatcher.on('unlink', function(path, stats) {
+      console.log(`File ${path} was removed`);
+    });
+
+
+    cb();
   });
+}
+
+function assets(cb) {
+    return new Promise((resolve, reject) => {
+        webpack(webpackConfig, (err, stats) => {
+            if (err) {
+                return reject(err)
+            }
+            if (stats.hasErrors()) {
+                return reject(new Error(stats.compilation.errors.join('\n')))
+            }
+            resolve()
+        })
+    })
 }
 
 

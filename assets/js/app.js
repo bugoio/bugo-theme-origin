@@ -6,7 +6,7 @@ import animateScrollTo from 'animated-scroll-to'; // Animate scroll to
 import $ from 'jquery';
 import Swal from 'sweetalert2';
 import 'slick-carousel';
-import { brotliDecompressSync } from 'zlib';
+// import { brotliDecompressSync } from 'zlib';
 
 // require("../../static/assets/css/main.css");
 

@@ -141,9 +141,15 @@
       {{ . | safeCSS }}
     {{ end }}
   </style>
-  {{ $options := (dict "enableSourceMap" true ) }}
-  {{ $base := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "style.theme.scss" . }}
-  {{ $processed := $base | toCSS $options | resources.PostCSS | minify }}
-  {{ $styles := $processed | fingerprint }}
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+  {{ if eq hugo.Environment "development" }}
+    {{ $options := (dict "enableSourceMap" true ) }}
+    {{ $base := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "style.theme.scss" . }}
+    {{ $styles := $base | toCSS $options }}
+
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+  {{ else }}
+    {{ $base := resources.Get "dist/style.theme.css" }}
+    {{ $styles := $base | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+  {{ end }}
 </head>
