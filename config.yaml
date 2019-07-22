@@ -12,7 +12,8 @@ taxonomies:
  category: categories
  tags: tags
 theme:
- - bugo-vanilla-theme
+ - hugo-debugprint
+ - bugo-theme-vanilla
 metaDataFormat: yaml
 frontmatter:
  -
@@ -65,24 +66,7 @@ enable_inline_shortcodes: true
 enableEmoji: true
 paginate: 10
 menu:
- main:
-  -
-   identifier: docs
-   name: Blog
-   title: Blog
-   url: /blog/
-   weight: 1
-   pre: ""
-   post: ""
-   parent: ""
+ main: []
  secondary: []
  footer: []
- privacy:
-  -
-   identifier: sitemap
-   title: Sitemap
-   name: Sitemap
-   url: /sitemap/
-   weight: null
-   pre: ""
-   post: ""
+ privacy: []

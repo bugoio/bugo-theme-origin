@@ -1,23 +1,20 @@
-{{ if .page.Params.featured_image.image }}
-  {{ $image := .page.Params.featured_image.image }}
-  {{ $alt := humanize (index (split (path.Base $image) ".") 0) }}
-<div class="thumbnail">
-    <a class="thumbnail-link" href="{{ .page.Permalink | relURL }}" aria-label="Read more about {{ .page.Title }}" tabindex=”0”>
-        <img
-          class="" 
-          src="{{ partial "utilities/image-url" ( dict "page" .page "site" .site "url" $image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_498,w_1024" ) }}"
-          srcset="
-            {{ partial "utilities/image-url" ( dict "page" .page "site" .site "url" $image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_350,w_500" ) | safeURL }} 500w
-            {{ partial "utilities/image-url" ( dict "page" .page "site" .site "url" $image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_700,w_1440" ) | safeURL }} 1440w
-          "
-          {{ if .site.Data.config.media.default_featured_image.title }} 
-          title="{{ .site.Data.config.media.default_featured_image.title }}"
-          {{ else }}
-          title="{{ .page.Title }}"
-          {{ end }}
-          alt="{{ $alt }}" 
-          />
+{{ if .Params.images }}
+  <div class="thumbnail">
+    <a class="thumbnail-link" href="{{ .Permalink | relURL }}" aria-label="Read more about {{ .Title }}" tabindex=”0”>
+      {{ range $index, $image := .Params.images }}
+        {{ if eq $index 0 }}
+          {{ $smOptions := dict "context" . "image" $image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_498,w_1024"}}
+          {{ $smURL := partial "utilities/cloudinary-transform" $smOptions }}
+          {{ $mdOptions := dict "context" . "image" $image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_350,w_500"}}
+          {{ $mdURL := partial "utilities/cloudinary-transform" $mdOptions }}
+          {{ $lgOptions := dict "context" . "image" $image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,h_700,w_1440"}}
+          {{ $lgURL := partial "utilities/cloudinary-transform" $lgOptions }}
+          <img
+            class="" {{- printf "src=%q" $smURL | safeHTMLAttr -}} {{- printf "srcset=%s 500w %s 1440w" $mdURL $lgURL | safeHTMLAttr -}}
+            aria-hidden="hidden" 
+            />
+        {{ end }}
+      {{ end }}
     </a>
-    {{/*  {{ partial "components/figure" ( dict "page" .page "media" .page.Params.featured_image "transform" "c_fill,g_faces:center,h_700,w_1440") }}  */}}
-</div>
+  </div>
 {{ end }}

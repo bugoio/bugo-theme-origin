@@ -28,10 +28,10 @@ $danger:        #dc3545 !default;
 {{ end }}
 
 //Vendors
-@import "../../../../node_modules/mathsass/dist/math";
-@import "../../../../node_modules/modularscale-sass/stylesheets/modularscale";
-@import "../../../../node_modules/sweetalert2/src/sweetalert2.scss";
-@import "../../../../node_modules/slick-carousel/slick/slick.scss";
+@import "../../node_modules/mathsass/dist/math";
+@import "../../node_modules/modularscale-sass/stylesheets/modularscale";
+@import "../../node_modules/sweetalert2/src/sweetalert2.scss";
+@import "../../node_modules/slick-carousel/slick/slick.scss";
 
 //Utilities
 @import "utils/global-variables";

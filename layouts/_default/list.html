@@ -15,7 +15,7 @@
      {{ $site := .Site }}
       <p class="post-count" tabindex="0">{{ len .Data.Pages }} {{ .Section | pluralize }} found. </p>
         {{ range .Data.Pages }}
-          {{ partial "components/article-summary" (dict "page" . "site" $site )}}
+          {{ partial "components/article-summary" . }}
         {{ end }}
       <div class="pagination">
         {{ partial "components/pagination.html" . }}

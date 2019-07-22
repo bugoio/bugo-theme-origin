@@ -19,8 +19,8 @@
     <div class="site-brand">
       <div>
         <a href="/" title="Go to the home page" tabindex="0">
-          {{ if .Site.Data.organization.logos.header_logo.image }}
-              {{ $imageParams := (dict "page" .Page "site" .Site "url" .Site.Data.organization.logos.header_logo.image "transform" false ) }}
+          {{ if .Site.Data.organization.header_logo }}
+              {{ $imageParams := (dict "page" .Page "site" .Site "url" .Site.Data.organization.header_logo "transform" false ) }}
               <img 
                 class="img-responsive" 
                 src="{{ partial "utilities/image-url" $imageParams }}" 
@@ -30,7 +30,6 @@
             {{ .Site.Data.organization.organization_name }}        
           {{ end }}
         </a>
-        <button id="showMenu">Show Menu</button>
       </div>
     </div>
     <div class="nav-main">
@@ -62,7 +61,11 @@
     </button>
     {{ end }}
   </div>
-  {{ partial "components/hero-video" . }}
+  {{ if .Params.videos }}
+    {{ partial "components/hero-video" . }}
+  {{ else if .Params.images}}
+    {{ partial "components/hero" . }}
+  {{ end }}
 
   {{ if and (not .IsHome) (ne .Params.layout "landing") (.Site.Data.config.show_breadcrumbs) }}
     <div class="breadcrumbs">

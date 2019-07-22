@@ -1,0 +1,4 @@
+{{- if .transform -}}
+ {{- $tmp := split .image "upload" -}}
+ {{- index $tmp 0 -}}upload/{{- .transform -}}{{- index $tmp 1 -}}
+{{- end -}}

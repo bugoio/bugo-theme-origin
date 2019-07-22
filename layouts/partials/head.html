@@ -19,32 +19,34 @@
     {{- else -}}
       {{- .Title -}}
     {{- end -}}
-    {{ if (eq .Params.layout "list") }}
-    {{ if  .Paginator }}
-      - Page {{ substr .Paginator -1 1 }}
-    {{ end }}
-    {{ end }}
+    {{- if (eq .Params.layout "list") -}}
+      {{- if  .Paginator }}
+        - Page {{- substr .Paginator -1 1 -}}
+      {{- end -}}
+    {{- end -}}
   </title>
   <meta name="description" content="
     {{- if .Params.page_meta.meta_description -}}
       {{ .Params.page_meta.meta_description }}
     {{- else -}}
-      {{ .Summary | truncate 60 }}
+      {{- .Summary | truncate 60 -}}
     {{- end -}}
   ">
-  {{ with .Params.page_meta.meta_keywords }}
+  {{- with .Params.page_meta.meta_keywords -}}
   <meta name="keywords" content="{{ . }}">
-  {{ end }}
+  {{- end -}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Open Graph Meta Data -->
-  {{ partial "components/opengraph" . }}
+  {{- template "_internal/opengraph.html" . -}}
+  <!-- Twitter Card -->
+  {{- template "_internal/twitter_cards.html" . -}}
   <!-- JSON-LD Organization markup for Google Structured Data -->
   <script type="application/ld+json">
-    {{ partial "components/structured-data-organization" . | safeJS }}
+    {{- partial "components/structured-data-organization" . | safeJS -}}
   </script>
   <!-- JSON-LD Article markup for Google Structured Data -->
   <script type="application/ld+json">
-    {{ partial "components/structured-data-article" . | safeJS }}
+    {{- partial "components/structured-data-article" . | safeJS -}}
   </script>
 
   {{- range .Site.Data.config.addresses -}}
