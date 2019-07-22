@@ -9,8 +9,10 @@
           {{ $mdURL := partial "utilities/cloudinary-transform" $mdOptions }}
           {{ $lgOptions := dict "context" . "image" $image "transform" "c_fill,e_unsharp_mask:100,g_faces:center,w_1440"}}
           {{ $lgURL := partial "utilities/cloudinary-transform" $lgOptions }}
+          {{ $srcSet := printf "%v 500w %v 1440w" $mdURL $lgURL }}
           <img
-            class="" {{- printf "src=%q" $smURL | safeHTMLAttr -}} {{- printf "srcset=%s 500w %s 1440w" $mdURL $lgURL | safeHTMLAttr -}}
+            class="" {{- printf "src=%q" $smURL | safeHTMLAttr -}}
+            srcset="{{$srcSet}}"
             aria-hidden="hidden" 
             />
         {{ end }}
