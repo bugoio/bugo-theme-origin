@@ -35,8 +35,8 @@
     </div>
     {{ end }}
     <!-- Javascript -->
-    {{ $js := resources.Get "dist/main.js" }}
-    <script defer src="{{ $js.Permalink }}" type="text/javascript"></script>
+    {{ $js := resources.Get "dist/main.js" | resources.Fingerprint "sha512"}}
+    <script defer src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}" type="text/javascript"></script>
     {{ template "_internal/google_analytics_async.html" . }}
     <div aria-hidden="true">
       {{ partial "icons/icon_sprite" . }}
