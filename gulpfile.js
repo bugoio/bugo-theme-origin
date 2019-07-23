@@ -208,24 +208,11 @@ function startHugo(cb) {
   const content = '../../content';
   const data = '../../data';
 
-
-  //start webpack
-  // const webpackProcess = spawn(webpackBin, ['--watch'], { cwd: path.join(process.cwd(), 'themes')})
-  // webpackProcess.stdout.on('data', (data) => { console.log(`Bugo: ${data}`)})
-  // webpackProcess.stderr.on('data', (data) => { console.log(`Bugo: ERROR ${data}`)})
-  // webpackProcess.on('close', (code) => { console.log(`Exited with code: ${code}`)})
-  // const THEME_PATH = 'themes'
-  // const WEBPACK_BIN = './node_modules/.bin/webpack'
-
-  // spawn(WEBPACK_BIN, ['--watch'], [] ,(err) => {
-  //   if (err) return cb(err)
-  //   cb()
-  // })
   const hugoOptions = [
     'server',
     '--config', './config.yaml',
     '-d', '../../public',
-    '-e', 'production',
+    // '-e', 'production',
     '--watch',
     '--disableFastRender',
     '--cleanDestinationDir', 'true',
