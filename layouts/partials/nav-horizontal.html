@@ -25,7 +25,7 @@
         aria-label="{{ .Name }}"
       >
         {{ $menuItem.Pre }}
-        {{ $menuItem.Name }}
+        {{ $menuItem.Name | humanize | title }}
         {{ $menuItem.Post }}
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -41,7 +41,7 @@
                 aria-label="{{ .Name }}"
                 tabindex="0"
               >
-                {{ .Name }}
+                {{ .Name | humanize | title }}
               </a>
             </li>
             {{ end }}
@@ -53,11 +53,11 @@
         href="{{ .URL }}" {{ if or ( in .URL "http://" ) (in .URL "https://" )}} 
         target="new" {{ end }} 
         tabindex="0"
-        title="{{ .Name }}"
-        aria-label="{{ .Name }}"
+        title="{{ .Name | humanize | title }}"
+        aria-label="{{ .Name | humanize | title }}"
       >
         {{ $menuItem.Pre }}
-        {{ $menuItem.Name }}
+        {{ $menuItem.Name | humanize | title }}
         {{ $menuItem.Post }}
         {{ if $menuItem.HasChildren }}
         <i class='icon-chevron-down'></i>
