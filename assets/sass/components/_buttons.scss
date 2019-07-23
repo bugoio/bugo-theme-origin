@@ -1,6 +1,6 @@
 /*csslint outline-none:false*/
 
-button, .pure-button {
+button, .button {
     font-family: inherit;
     font-display: auto;
     font-size: 100%;
@@ -28,36 +28,49 @@ button, .pure-button {
     box-sizing: border-box;
 }
 
+.button-lg {
+  font-size: 120%;
+}
+
+.button-sm {
+  font-size: 70%;
+}
+
+.button-xs {
+  font-size: 60%;
+}
+
+
 button:hover,
 button:focus,
-.pure-button:hover,
-.pure-button:focus {
+.button:hover,
+.button:focus {
     background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
 }
 button:focus,
-.pure-button:focus {
+.button:focus {
     outline: 0;
 }
 
 button::-moz-focus-inner,
-.pure-button::-moz-focus-inner {
+.button::-moz-focus-inner {
     padding: 0;
     border: 0;
 }
 
 button:active,
-.pure-button-active,
-.pure-button:active {
+.button-active,
+.button:active {
     box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset;
     border-color: #000;
 }
 
 button[disabled],
-.pure-button[disabled],
-.pure-button-disabled,
-.pure-button-disabled:hover,
-.pure-button-disabled:focus,
-.pure-button-disabled:active {
+.button[disabled],
+.button-disabled,
+.button-disabled:hover,
+.button-disabled:focus,
+.button-disabled:active {
     border: none;
     background-image: none;
     /* csslint ignore:start */
@@ -69,13 +82,13 @@ button[disabled],
     pointer-events: none;
 }
 
-.pure-button-hidden {
+.button-hidden {
     display: none;
 }
 
 @each $name, $color in $theme-colors {
-  .pure-button-#{$name},
-  a.pure-button-#{$name} {
+  .button-#{$name},
+  a.button-#{$name} {
     background-color: $color;
     color: #fff;
   }
@@ -83,8 +96,8 @@ button[disabled],
 
 /* Button Groups */
 
-/* Inherit .pure-g styles */
-.pure-button-group {
+/* Inherit .g styles */
+.button-group {
     letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
     *letter-spacing: normal; /* reset IE < 8 */
     *word-spacing: -0.43em; /* IE < 8: collapse white-space between units */
@@ -92,12 +105,12 @@ button[disabled],
 }
 
 .opera-only :-o-prefocus,
-.pure-button-group {
+.button-group {
     word-spacing: -0.43em;
 }
 
-.pure-button-group .pure-button,
-.pure-button-group button {
+.button-group .button,
+.button-group button {
     margin: 0;
     border-radius: 0;
     border-right: 1px solid #111;  /* fallback color for rgba() for IE7/8 */
@@ -105,12 +118,19 @@ button[disabled],
 
 }
 
-.pure-button-group .pure-button:first-child {
+.button-group .button:first-child {
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
 }
-.pure-button-group .pure-button:last-child {
+.button-group .button:last-child {
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
     border-right: none;
+}
+
+@each $name, $color in $theme-colors {
+  .button-#{$name}{
+    background-color: $color;
+    color: white;
+  }
 }
