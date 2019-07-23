@@ -10,6 +10,9 @@ article {
 
   header {
     grid-area: ahead;
+    p {
+      @include ms-respond('margin-bottom',1);
+    }
   }
 
   .thumbnail {
@@ -45,7 +48,8 @@ article {
 
 /* list page articles */
 
-body.list {
+body.list,
+body.taxonomy {
   main {
     article {
       grid-template-columns: 1fr;
