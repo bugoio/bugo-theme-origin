@@ -9,7 +9,7 @@ googleAnalytics: ""
 blackFriday:
  hrefTargetBlank: true
 taxonomies:
- category: categories
+ category: category
  tags: tags
 theme:
  - hugo-debugprint
