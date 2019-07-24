@@ -1,22 +1,36 @@
 .hero {
-  height: 100%;
   display: grid;
   align-items: stretch;
   grid-area: hero;
-  margin: 0;
+  margin: 0 0 var(--global-margin);
   background-size: cover; 
   background-position: 50%;
-  @include ms-respond(min-height,14);
+  @include ms-respond(min-height,13);
+
+  @include respond-to(md){
+    height: 50vh;
+    @include ms-respond(min-height,18);
+  }
+
+  @include respond-to(xxxl){
+    height: 100%;
+  }
 
   .container {
     height: 100%;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1,1fr);
     grid-template-areas: 
-      "....."
-      "herotxt"
-      ".....";
-  }
+      "herotxt";
+
+      @include respond-to(md){
+        grid-template-columns: repeat(6,1fr);
+        grid-template-areas: 
+          "..... ..... ..... ..... ..... ..... "
+          "..... herotxt herotxt herotxt herotxt ....."
+          "..... ..... ..... ..... ..... ..... ";
+      }
+    }
 
   .hero-text {
     grid-area: herotxt;
@@ -30,7 +44,7 @@
       display: block;
       color: #fff;
       margin: 0;
-      @include respond-to(lg){
+      @include respond-to(md){
         max-width: 25ch;
       }
     }

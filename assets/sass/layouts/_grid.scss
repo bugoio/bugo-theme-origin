@@ -32,9 +32,17 @@ body {
 
 body.sidebar {
   .wrap {
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(1,1fr);
     @include ms-respond(grid-column-gap,4);
-    grid-template-areas: "main main aside";
+    grid-template-areas:
+      "main" 
+      "aside";
+
+    @include respond-to('xxl') {
+      grid-template-columns: repeat(3,1fr);
+      grid-template-areas: 
+        "main main aside";
+    }
   }
 }
 

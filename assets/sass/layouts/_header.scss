@@ -15,10 +15,10 @@
 
   @include respond-to(xxxl) {
     height: 66vh;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas: 
-      "ncon hero hero hero"
-      "ncon hero hero hero";
+      "ncon hero hero"
+      "ncon hero hero";
     grid-template-rows: 100%;
     align-items: stretch;
   }
@@ -46,20 +46,37 @@
 
   .nav-container {
     background-color: $header-bg;
+    position: relative;
+    z-index: 1000;
     @extend .container;
-
     width: inherit;
     margin: 0 auto;
     padding: var(--global-padding) 0;
     display: grid;
     align-items: center;
+
+    &::before {
+      content: "";
+      background-color: $header-bg;
+      position: absolute;
+      top: 0;
+      right: -100%;
+      bottom: 0;
+      left: -100%;
+      z-index: 0;
+
+      @include respond-to(md){
+        display: none;
+      }
+    }
+
     grid-area: ncon;
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas: 
       "brand brand ..... ..... ..... ..... ..... ..... ..... ..... ..... mbut";
     @include respond-to(md){
       grid-template-areas: 
-        "brand brand scon scon scon scon scon scon scon scon scon scon"
+        "brand brand brand scon scon scon scon scon scon scon scon scon"
         "brand brand nmain nmain nmain nmain nmain nmain nmain nmain nmain nmain"
         "brand brand ..... ..... ..... ..... ..... ..... ..... ..... ..... .....";
     }
@@ -77,7 +94,16 @@
     }
   }
 
+  .site-brand,
+  .nav-main,
+  .nav-secondary{
+    // position: relative;
+    // z-index: 100;
+  }
+
   .site-brand {
+    position: relative;
+    z-index: 100;
     grid-area: brand;
     white-space: nowrap;
     a {

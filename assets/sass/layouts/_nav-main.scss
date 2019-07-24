@@ -8,6 +8,7 @@
 
   a {
     color: $main-dropdown-color;
+    white-space: nowrap;
     @media (prefers-color-scheme: dark) {
         color: $main-dropdown-color-dark;
     }      

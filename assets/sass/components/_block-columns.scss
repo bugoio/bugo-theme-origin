@@ -9,6 +9,7 @@
       height: 100%;
       z-index: 0;
       object-fit: fill;
+      display: none;
     }
 
     .container {
@@ -22,6 +23,10 @@
     }
     
     @include respond-to('md'){
+      video {
+        display: block;
+      }
+
       &.column-container-2,
       &.column-container-4,
       &.column-container-6 {

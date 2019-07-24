@@ -1,14 +1,8 @@
 body.landing-page {
-  // .site-header {
-  //   > .container {
-  //     display: grid;
-  //     grid-template-columns: repeat(2, 1fr);
-  //     grid-template-areas: 
-  //       "ncon ncon"
-  //       "hero hero";
-  //     align-items: center;
-  //   }
-  // }
+  .hero {
+    margin-bottom: 0;
+  }
+
   .breadcrumbs {
     display: none;
   }
