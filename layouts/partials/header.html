@@ -15,50 +15,46 @@
 </div>
 {{ end }}
 <header class="site-header" tabindex="-1">
-  <div class="container">
+  <div class="nav-container">
     <div class="site-brand">
-      <div>
-        <a href="/" title="Go to the home page" tabindex="0">
-          {{ if .Site.Data.organization.header_logo }}
-              {{ $imageParams := (dict "page" .Page "site" .Site "url" .Site.Data.organization.header_logo "transform" false ) }}
-              <img 
-                class="img-responsive" 
-                src="{{ partial "utilities/image-url" $imageParams }}" 
-                alt="" 
-              />
-          {{ else }}
-            {{ .Site.Data.organization.organization_name }}        
-          {{ end }}
-        </a>
-      </div>
+      <a href="/" title="Go to the home page" tabindex="0">
+        {{ if .Site.Data.organization.header_logo }}
+            {{ $imageParams := (dict "page" .Page "site" .Site "url" .Site.Data.organization.header_logo "transform" false ) }}
+            <img 
+              class="img-responsive" 
+              src="{{ partial "utilities/image-url" $imageParams }}" 
+              alt="" 
+            />
+        {{ else }}
+          {{ .Site.Data.organization.organization_name }}        
+        {{ end }}
+      </a>
     </div>
     <div class="nav-main">
       {{ .Scratch.Set "location" "main" }}
-      {{ .Scratch.Set "datadisplay" "static" }}
       {{ .Scratch.Set "menu" .Site.Menus.main }}
-      {{ partial "nav-horizontal" . }}
-      <div class="search-container">
-        <!-- {{ partial "components/search-form" }} -->
-      </div>
+      {{ partial "nav-horizontal" .}}
     </div>
     {{ if .Site.Menus.secondary }}
-    <div class="nav-secondary-container">
-      {{ .Scratch.Set "location" "secondary" }}
-      {{ .Scratch.Set "datadisplay" "static" }}
-      {{ .Scratch.Set "menu" .Site.Menus.secondary }}
+      {{ .Scratch.Set "location" "main" }}
+      {{ .Scratch.Set "menu" .Site.Menus.main }}
+    <div class="nav-secondary">
       {{ partial "nav-horizontal" . }}
-      <div class="search-container">
-        <!-- {{ partial "components/search-form" "header" }} -->
-      </div>
     </div>
     {{ end }}
-    {{ if .Site.Menus.mobile }}
-    <div id="mobile-nav-container" class="collapse">
-      {{ partial "nav-vertical" (dict "menu" .Site.Menus.mobile "location" "mobile" "page" .Page "site" .Site) }}
+    <div class="search-container">
+      {{ partial "components/search-form" }}
     </div>
-    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#mobile-nav-container" aria-controls="mobile-nav-container" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="mobile-nav-button toggler" type="button" data-target-class="active" data-target="#mobile-nav" aria-controls="mobile-nav-container" aria-expanded="false" aria-label="Toggle navigation">
       {{ partial "icons/menu-toggle" }}
     </button>
+    <!-- Mobile Navigation -->
+    {{ if .Site.Menus.mobile }}
+      {{ .Scratch.Set "location" "mobile" }}
+      {{ .Scratch.Set "menu" .Site.Menus.mobile }}
+      <div id="mobile-nav" class="">
+        {{ partial "nav-vertical" . }}
+      </div>
     {{ end }}
   </div>
   {{ if .Params.videos }}

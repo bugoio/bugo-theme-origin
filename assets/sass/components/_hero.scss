@@ -1,12 +1,15 @@
 .hero {
-  // @extend .full-width;
-  margin: var(--global-padding) 0;
+  height: 100%;
+  display: grid;
+  align-items: stretch;
+  grid-area: hero;
+  margin: 0;
   background-size: cover; 
   background-position: 50%;
-  @include ms-respond(height,14);
+  @include ms-respond(min-height,14);
 
   .container {
-    @include ms-respond(height,14);
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: 

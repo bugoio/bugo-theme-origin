@@ -9,16 +9,7 @@
 
 {{ define "main" }}
  <main id="main" class="" tabindex="0">
-   <h1 {{ if .Page.IsHome }}class="sr-only"{{ end }}>{{ .Title }}</h1>
-   {{ .Content }}
-   {{ partial "blocks/blocks" (dict "page" .Page "site" .Site "content" .Params.content ) }}
+    <h1 class="sr-only">{{ .Title }}</h1>
+   {{ partial "blocks/blocks" . }}
  </main>
-{{ end }}
-{{ define "aside" }}
-  {{ if .Params.show_sidebar }}
-    {{ .Params.show_sidebar }}
-    <aside class="sidebar" tabindex="0">
-        {{ partial "widgets/widgets" (dict "page" .Page "site" .Site "content" .Site.Data.sidebar_widgets ) }}
-    </aside>
-  {{ end }}
 {{ end }}

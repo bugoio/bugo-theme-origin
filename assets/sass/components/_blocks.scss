@@ -1,3 +1,13 @@
+
+.blocks {
+  display: grid;
+  grid-template-columns: 1rf;
+
+  @include respond-to(xxxl){
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .block {
   padding-top: var(--global-padding);
   padding-bottom: var(--global-padding);

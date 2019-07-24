@@ -58,6 +58,13 @@ WebFont.load({
 
 // On Document Ready
 $(document).ready(function () {
+
+  //mobile navigation
+  $('.toggler').on('click', function () {
+    const target = $(this).attr('data-target');
+    const targetClass = $(this).attr('data-target-class');
+    $(target).toggleClass(targetClass);
+  })
   
   $('.slideshow').slick({
     accessibility: true,

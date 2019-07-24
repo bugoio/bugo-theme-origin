@@ -1,29 +1,85 @@
 .site-header {
   grid-area: header;
   position: relative;
-  padding: var(--global-padding) 0;
-  @include ms-respond(padding-bottom,2);
+  z-index: 1000;
+  padding: 0;
+  // @include ms-respond(padding-bottom,2);
   background-color: $header-bg;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: 
+    "ncon ncon"
+    "hero hero"
+    "breadcrumbs breadcrumbs";
+  align-items: center;
+
+  @include respond-to(xxxl) {
+    height: 66vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+      "ncon hero hero hero"
+      "ncon hero hero hero";
+    grid-template-rows: 100%;
+    align-items: stretch;
+  }
 
   @media (prefers-color-scheme: dark) {
       color: $header-text-color-dark;
       background-color: $header-bg-dark;
   }
 
-  > .container {
+  // > .container {
+  //   position: relative;
+  //   margin: 0;
+  //   max-width: none;
+
+  //   @include respond-to(xxl) {
+  //     height: 100vh;
+  //     grid-template-columns: repeat(3, 1fr);
+  //     grid-template-areas: 
+  //       "ncon hero hero"
+  //       "ncon hero hero";
+  //     grid-template-rows: 100%;
+  //     align-items: stretch;
+  //   }
+  // }
+
+  .nav-container {
+    background-color: $header-bg;
+    @extend .container;
+
+    width: inherit;
+    margin: 0 auto;
+    padding: var(--global-padding) 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: 
-      "brand nav-main"
-      "breadcrumbs breadcrumbs";
     align-items: center;
+    grid-area: ncon;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: 
+      "brand brand ..... ..... ..... ..... ..... ..... ..... ..... ..... mbut";
+    @include respond-to(md){
+      grid-template-areas: 
+        "brand brand scon scon scon scon scon scon scon scon scon scon"
+        "brand brand nmain nmain nmain nmain nmain nmain nmain nmain nmain nmain"
+        "brand brand ..... ..... ..... ..... ..... ..... ..... ..... ..... .....";
+    }
+
+    @include respond-to(xxxl) {
+      height: inherit;
+      grid-gap: 0;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
+        ".... .... ...."
+        ".... brand ....."
+        ".... nmain ...."
+        ".... scon ...."
+        ".... .... ....";
+    }
   }
 
   .site-brand {
     grid-area: brand;
-    margin-right: var(--global-margin);
     white-space: nowrap;
-
     a {
       @include ms-respond(font-size,3);
       font-weight: bold;
@@ -33,5 +89,62 @@
           color: $header-link-color-dark;
       }      
     }
+  @include respond-to(xxxl) {
+      margin: 0 auto;
+    }
+  }
+
+
+  .nav-main {
+    grid-area: nmain;
+    display: none;
+
+    @include respond-to(md){
+      display: block;
+    }
+  }
+
+  .nav-secondary {
+    grid-area: nsec;
+    display: none;
+
+    @include respond-to(md){
+      display: block;
+    }
+  }
+
+  .search-container {
+    grid-area: scon;
+    display: none;
+
+    @include respond-to(md){
+      display: block;
+    }
+
+    form {
+      margin: 0;
+      display: flex;
+      float: right;
+      
+      input {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .mobile-nav {
+    grid-area: nmob;
+  }
+
+  .mobile-nav-button {
+    grid-area: mbut;
+  }
+
+  .hero {
+    grid-area: hero;
+  }
+
+  .breadcrumbs {
+    grid-area: breadcrumbs;
   }
 }

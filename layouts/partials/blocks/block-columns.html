@@ -7,8 +7,17 @@
    * @version 1.0.0
    */}}
 
+  {{ with .block.background_video_url }}
+      <video preload autoplay muted loop id="video-bg">
+        <source src="{{ . }}" type="video/mp4">
+      </video>
+  {{ end }}
   <div class="container column-container-{{ len .block.columns }}">
-    <h2 class="block-title {{ if eq .block.block_options.show_title false }} sr-only {{ end }}">{{ .block.title }}</h2>
+    <h2 class="block-title {{ if eq .block.show_block_title false }}sr-only{{ end }}">{{ .block.title }}</h2>
+    {{ range $index, $video := .Params.videos }}
+      {{ if eq $index 0 }}
+      {{ end }}
+    {{ end }}
     {{ $page := .page }}
     {{ $site := .site }}
     {{ range .block.columns }}

@@ -8,19 +8,24 @@ body {
     "wrap"
     "footer";
   @include ms-respond(grid-column-gap,4);
+      
+  @include respond-to('xxl') {
+  }
 
   .wrap {
     display: grid;
     grid-area: wrap;
     grid-template-columns: repeat(1,1fr);
     grid-template-areas: "main";
-    
+
     main {
       grid-area: main;
+      padding: 0;
     }
 
     aside {
       grid-area: aside;
+      padding: 0;
     }
   }
 }
@@ -33,13 +38,13 @@ body.sidebar {
   }
 }
 
-footer {
+.site-footer {
   grid-area: footer;
 }
 
 main,
 aside {
-  @include ms-respond(padding-top,2);
+  padding: var(--global-padding) 0;
 }
 
 @include respond-to('md') {
@@ -55,7 +60,7 @@ aside {
 .container {
   margin: 0 auto;
   width: 100%;
-  transition: max-width 0.125s;
+  // transition: max-width 0.125s;
 
   @each $key, $value in $breakpoints {
     @media (min-width: $value) {

@@ -10,7 +10,6 @@
 
 {{ $currentPage := . }}
 {{ $location := .Scratch.Get "location" }}
-{{ $display := .Scratch.Get "datadisplay" }}
 <nav class="nav-vertical nav-{{ $location }}">
   <ul class="list-unstyled">
     {{ range $index, $menuItem := .Scratch.Get "menu" }}
