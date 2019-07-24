@@ -1,4 +1,6 @@
-{{- if .transform -}}
+{{- if and .transform (strings.Contains .url "cloudinary.com") -}}
  {{- $tmp := split .image "upload" -}}
  {{- index $tmp 0 -}}upload/{{- .transform -}}{{- index $tmp 1 -}}
+{{- else -}}
+  {{- .image -}}
 {{- end -}}
