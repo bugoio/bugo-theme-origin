@@ -76,9 +76,8 @@
       "brand brand ..... ..... ..... ..... ..... ..... ..... ..... ..... mbut";
     @include respond-to(md){
       grid-template-areas: 
-        "brand brand brand scon scon scon scon scon scon scon scon scon"
-        "brand brand nmain nmain nmain nmain nmain nmain nmain nmain nmain nmain"
-        "brand brand ..... ..... ..... ..... ..... ..... ..... ..... ..... .....";
+        "brand brand scon scon scon scon scon scon scon scon scon scon"
+        "brand brand nmain nmain nmain nmain nmain nmain nmain nmain nmain nmain";
     }
 
     @include respond-to(xxxl) {

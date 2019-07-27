@@ -3350,7 +3350,7 @@ aside {
           display: none; } }
     @media (min-width: 768px) {
       .site-header .nav-container {
-        grid-template-areas: "brand brand brand scon scon scon scon scon scon scon scon scon" "brand brand nmain nmain nmain nmain nmain nmain nmain nmain nmain nmain" "brand brand ..... ..... ..... ..... ..... ..... ..... ..... ..... ....."; } }
+        grid-template-areas: "brand brand scon scon scon scon scon scon scon scon scon scon" "brand brand nmain nmain nmain nmain nmain nmain nmain nmain nmain nmain"; } }
     @media (min-width: 2000px) {
       .site-header .nav-container {
         height: inherit;
