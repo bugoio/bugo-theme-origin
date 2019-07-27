@@ -1,3 +1,3 @@
-{{- if and ( eq .IsHome false ) | or ((eq .Params.show_sidebar true) | (ne .Params.layout "landing-page")) -}}
+{{- if and ( eq .IsHome false ) (ne .Params.layout "landing-page") -}}
   sidebar 
 {{- end -}}
