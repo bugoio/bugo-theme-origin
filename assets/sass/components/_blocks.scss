@@ -1,14 +1,11 @@
 
 .blocks {
   display: grid;
-  grid-template-columns: 1rf;
-
-  @include respond-to(xxxl){
-    grid-template-columns: 1fr 1fr;
-  }
+  grid-template-columns: 1fr;
 }
 
 .block {
+  // grid-area: block;
   padding-top: var(--global-padding);
   padding-bottom: var(--global-padding);
   max-width: 100vw;

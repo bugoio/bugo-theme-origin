@@ -1,3 +1,15 @@
+.container {
+  margin: 0 auto;
+  width: 100%;
+  // transition: max-width 0.125s;
+
+  @each $key, $value in $breakpoints {
+    @media (min-width: $value) {
+      max-width: map-get($container-max-widths,$key);
+    }
+  }
+}
+
 body {
   display: grid;
   padding: 0;
@@ -24,8 +36,18 @@ body {
     }
 
     aside {
+      display: none;
       grid-area: aside;
       padding: 0;
+    }
+  }
+
+  @include respond-to('xxxl') {
+    .wrap {
+      max-width: 100vw;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: ".... main main"; 
+      grid-column-gap: 0;
     }
   }
 }
@@ -44,6 +66,15 @@ body.sidebar {
         "main main aside";
     }
   }
+
+  @include respond-to('xxxl') {
+    .wrap {
+      grid-template-columns: repeat(6,1fr);
+      grid-template-areas: "..... ..... main main main sidebar"; 
+      grid-column-gap: 0;
+    }
+
+  }
 }
 
 .site-footer {
@@ -55,24 +86,5 @@ aside {
   padding: var(--global-padding) 0;
 }
 
-@include respond-to('md') {
-  body.sidebar {
-    main {
-    }
 
-    aside {
-    }
-  }
-}
 
-.container {
-  margin: 0 auto;
-  width: 100%;
-  // transition: max-width 0.125s;
-
-  @each $key, $value in $breakpoints {
-    @media (min-width: $value) {
-      max-width: map-get($container-max-widths,$key);
-    }
-  }
-}

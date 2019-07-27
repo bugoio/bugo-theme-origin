@@ -74,7 +74,8 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas: 
       "brand brand ..... ..... ..... ..... ..... ..... ..... ..... ..... mbut";
-    @include respond-to(md){
+    transition: grid-template-areas 2s;
+      @include respond-to(md){
       grid-template-areas: 
         "brand brand scon scon scon scon scon scon scon scon scon scon"
         "brand brand nmain nmain nmain nmain nmain nmain nmain nmain nmain nmain";
@@ -93,12 +94,12 @@
     }
   }
 
-  .site-brand,
-  .nav-main,
-  .nav-secondary{
-    // position: relative;
-    // z-index: 100;
+@include respond-to(xxxl){
+  .nav-container {
+    position: fixed;
+    width: 33vw;
   }
+}
 
   .site-brand {
     position: relative;

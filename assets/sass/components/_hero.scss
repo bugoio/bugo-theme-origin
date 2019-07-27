@@ -22,14 +22,6 @@
     grid-template-columns: repeat(1,1fr);
     grid-template-areas: 
       "herotxt";
-
-      @include respond-to(md){
-        grid-template-columns: repeat(6,1fr);
-        grid-template-areas: 
-          "..... ..... ..... ..... ..... ..... "
-          "..... herotxt herotxt herotxt herotxt ....."
-          "..... ..... ..... ..... ..... ..... ";
-      }
     }
 
   .hero-text {
