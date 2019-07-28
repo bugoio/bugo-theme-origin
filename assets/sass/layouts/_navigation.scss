@@ -37,8 +37,8 @@ nav {
     opacity: 0;
     display: none;
     @include ms-respond(padding,-1);
-    background-color: #E0E0E0;
-    margin-top: 2rem;
+    background-color: darken($light, 20%);
+    margin-top: 1.5rem;
 
     &::before{
       content: "";

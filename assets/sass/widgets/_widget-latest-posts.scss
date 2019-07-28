@@ -1,0 +1,19 @@
+.widget-latest-posts {
+  article {
+    display: grid;
+    grid-template-columns: repeat(1,fr);
+    grid-template-areas: "thum" "head" "summ";
+
+    header {
+      grid-area: head;
+    }
+
+    .thumbnail {
+      grid-area: thum;
+    }
+
+    .summary {
+      grid-area: summ;
+    }
+  }
+}

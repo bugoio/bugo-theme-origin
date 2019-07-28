@@ -64,6 +64,7 @@ outputs:
 enable_inline_shortcodes: true
 enableEmoji: true
 paginate: 10
+sectionPagesMenu: main
 menu:
  main: []
  secondary: []

@@ -1,6 +1,5 @@
 .hero {
   grid-area: hero;
-
   display: grid;
   align-items: stretch;
   margin: 0;
@@ -29,8 +28,8 @@
       display: block;
       color: #fff;
       margin: 0;
-      @include respond-to(md){
-        max-width: 25ch;
+      @include respond-to(lg){
+        max-width: 20ch;
       }
     }
   }

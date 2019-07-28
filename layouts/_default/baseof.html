@@ -17,15 +17,7 @@
       {{ block "main" . }}{{ end }}
       {{ block "aside" . }}{{ end }}
     </div>
-    {{ if .Site.Data.config.layout_options.footer.footer_template }}
-      {{/* use footer template system */}}
-      {{ $footer := printf "footer-%s" .Site.Data.config.layout_options.footer.footer_template | urlize }}
-      {{ partial $footer . }}
-    {{ else }}
-      {{/* use flexible footer */}} 
-      {{ partial "footer" . }}
-    {{ end }}
-    
+    {{ partial "footer" . }}
     {{ block "footer" . }}{{ end }}
     {{ if .Site.Data.organization.footer_dislaimer }}
     <div class="footer-disclaimer py-4{{ with .Site.Data.config.layout_options.footer.color_scheme }} {{ . | urlize }} {{ end }}">

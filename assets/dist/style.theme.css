@@ -1165,6 +1165,9 @@ body.swal2-no-backdrop .swal2-shown {
 /* Text color */
 /* Forms */
 /**
+ * Share Buttons
+ **/
+/**
  * Header Variables
  * margin and padding is in _grid-header.scss
  **/
@@ -2613,7 +2616,7 @@ body.page main article {
         content: "»";
         display: block;
         position: absolute;
-        top: -0.5rem;
+        top: -0.125rem;
         margin-left: -1.25rem;
         font-size: 21.97px; }
         @media (min-width: 576px) and (max-width: 768px) {
@@ -3121,16 +3124,15 @@ legend {
       display: block;
       color: #fff;
       margin: 0; }
-      @media (min-width: 768px) {
+      @media (min-width: 992px) {
         .hero .hero-text h1, .hero .hero-text h2, .hero .hero-text h3, .hero .hero-text h4, .hero .hero-text h5, .hero .hero-text h6 {
-          max-width: 25ch; } }
+          max-width: 20ch; } }
 
 .hero-video {
   position: relative;
   overflow: hidden; }
   .hero-video .container, .hero-video .nav-container {
-    position: relative;
-    max-width: 100%; }
+    position: relative; }
   .hero-video img {
     position: absolute;
     width: 100%;
@@ -3138,10 +3140,10 @@ legend {
     object-fit: cover; }
   .hero-video video {
     position: absolute;
+    top: 0;
     right: 0;
     bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
+    left: 0;
     display: none; }
   .hero-video #video-bg-control {
     display: none;
@@ -3173,14 +3175,60 @@ legend {
     .pagination .pagination-list li a {
       color: #000000; }
 
+.share-buttons {
+  margin: 0;
+  padding: 0;
+  font-size: 21.97px; }
+  @media (min-width: 576px) and (max-width: 768px) {
+    .share-buttons {
+      font-size: calc( 21.97px + -1.81 * ( ( 100vw - 576px) / 192 )); } }
+  @media (min-width: 768px) and (max-width: 992px) {
+    .share-buttons {
+      font-size: calc( 20.16px + 1.44 * ( ( 100vw - 768px) / 224 )); } }
+  @media (min-width: 992px) and (max-width: 1200px) {
+    .share-buttons {
+      font-size: calc( 21.6px + 1.44 * ( ( 100vw - 992px) / 208 )); } }
+  @media (min-width: 1200px) and (max-width: 1400px) {
+    .share-buttons {
+      font-size: calc( 23.04px + 1.44 * ( ( 100vw - 1200px) / 200 )); } }
+  @media (min-width: 1400px) and (max-width: 2200px) {
+    .share-buttons {
+      font-size: calc( 24.48px + 15.84 * ( ( 100vw - 1400px) / 800 )); } }
+  @media (min-width: 2200px) {
+    .share-buttons {
+      font-size: 40.32px; } }
+  .share-buttons a {
+    text-decoration: none;
+    margin: 0 0.125rem;
+    padding: 0.125rem; }
+    .share-buttons a svg {
+      width: 28.561px;
+      height: auto;
+      fill: #5db9e1; }
+      @media (min-width: 576px) and (max-width: 768px) {
+        .share-buttons a svg {
+          width: calc( 28.561px + -4.369 * ( ( 100vw - 576px) / 192 )); } }
+      @media (min-width: 768px) and (max-width: 992px) {
+        .share-buttons a svg {
+          width: calc( 24.192px + 1.728 * ( ( 100vw - 768px) / 224 )); } }
+      @media (min-width: 992px) and (max-width: 1200px) {
+        .share-buttons a svg {
+          width: calc( 25.92px + 1.728 * ( ( 100vw - 992px) / 208 )); } }
+      @media (min-width: 1200px) and (max-width: 1400px) {
+        .share-buttons a svg {
+          width: calc( 27.648px + 1.728 * ( ( 100vw - 1200px) / 200 )); } }
+      @media (min-width: 1400px) and (max-width: 2200px) {
+        .share-buttons a svg {
+          width: calc( 29.376px + 19.008 * ( ( 100vw - 1400px) / 800 )); } }
+      @media (min-width: 2200px) {
+        .share-buttons a svg {
+          width: 48.384px; } }
+      @media (prefers-color-scheme: dark) {
+        .share-buttons a svg {
+          fill: #F967CD; } }
+
 .thumbnail {
   margin-bottom: var(--global-margin); }
-
-.widget-search-form form {
-  display: flex; }
-  .widget-search-form form input {
-    flex-basis: 66%;
-    margin-right: 1rem; }
 
 .container, .nav-container {
   margin: 0 auto;
@@ -3202,10 +3250,10 @@ legend {
       max-width: 1164px; } }
   @media (min-width: 1400px) {
     .container, .nav-container {
-      max-width: 1300px; } }
+      max-width: 1360px; } }
   @media (min-width: 2200px) {
     .container, .nav-container {
-      max-width: 1800px; } }
+      max-width: 2100px; } }
 
 /** 
  * Body Grid
@@ -3788,8 +3836,8 @@ nav li a {
   opacity: 0;
   display: none;
   padding: 10px;
-  background-color: #E0E0E0;
-  margin-top: 2rem; }
+  background-color: #b8b8b8;
+  margin-top: 1.5rem; }
   @media (min-width: 576px) and (max-width: 768px) {
     .nav-horizontal .dropdown-menu {
       padding: calc( 10px + 1.66666667 * ( ( 100vw - 576px) / 192 )); } }
@@ -3962,7 +4010,7 @@ nav li a {
       .nav-main a {
         color: #FFFFFF; } }
   .nav-main .dropdown-menu {
-    background-color: #FFFFFF;
+    background-color: #d2d1d1;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
     border-radius: 0; }
     .nav-main .dropdown-menu::before {
@@ -3972,7 +4020,7 @@ nav li a {
       height: 0;
       border-left: 0.5rem solid transparent;
       border-right: 0.5rem solid transparent;
-      border-bottom: 1rem solid #FFFFFF; }
+      border-bottom: 1rem solid #d2d1d1; }
     @media (prefers-color-scheme: dark) {
       .nav-main .dropdown-menu {
         background-color: #283a57; }
@@ -4025,6 +4073,49 @@ nav li a {
   @media (min-width: 768px) {
     .mobile-nav-button {
       display: none; } }
+
+.widget {
+  margin: 0;
+  padding: 0;
+  font-size: 13px; }
+  @media (min-width: 576px) and (max-width: 768px) {
+    .widget {
+      font-size: calc( 13px + 1 * ( ( 100vw - 576px) / 192 )); } }
+  @media (min-width: 768px) and (max-width: 992px) {
+    .widget {
+      font-size: calc( 14px + 1 * ( ( 100vw - 768px) / 224 )); } }
+  @media (min-width: 992px) and (max-width: 1200px) {
+    .widget {
+      font-size: calc( 15px + 1 * ( ( 100vw - 992px) / 208 )); } }
+  @media (min-width: 1200px) and (max-width: 1400px) {
+    .widget {
+      font-size: calc( 16px + 1 * ( ( 100vw - 1200px) / 200 )); } }
+  @media (min-width: 1400px) and (max-width: 2200px) {
+    .widget {
+      font-size: calc( 17px + 11 * ( ( 100vw - 1400px) / 800 )); } }
+  @media (min-width: 2200px) {
+    .widget {
+      font-size: 28px; } }
+
+.widget-latest-posts article {
+  display: grid;
+  grid-template-columns: repeat(1, fr);
+  grid-template-areas: "thum" "head" "summ"; }
+  .widget-latest-posts article header {
+    grid-area: head; }
+  .widget-latest-posts article .thumbnail {
+    grid-area: thum; }
+  .widget-latest-posts article .summary {
+    grid-area: summ; }
+
+.widget-search-form form {
+  display: flex; }
+  .widget-search-form form input {
+    flex-basis: 66%;
+    margin-right: 1rem; }
+
+body.landing-page .wrap {
+  padding: 0; }
 
 body.landing-page .hero {
   margin-bottom: 0; }

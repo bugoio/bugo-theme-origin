@@ -1,0 +1,5 @@
+.widget {
+  margin: $widget-margin;
+  padding: $widget-padding;
+  @include ms-respond(font-size,$widget-font-size); 
+}

@@ -37,9 +37,11 @@ $danger:        #dc3545 !default;
 @import "utils/mixins";
 @import "utils/variables/global-variables";
 @import "utils/variables/colors";
+@import "utils/variables/components";
 @import "utils/variables/forms";
 @import "utils/variables/header";
 @import "utils/variables/hero";
+@import "utils/variables/widgets";
 @import "utils/helpers";
 @import "utils/wcag";
 @import "utils/responsive";
@@ -62,9 +64,8 @@ $danger:        #dc3545 !default;
 @import "components/hero";
 @import "components/hero-video";
 @import "components/pagination";
+@import "components/share-buttons";
 @import "components/thumbnail";
-@import "components/widget-latest-posts";
-@import "components/widget-search-form";
 
 //layouts
 @import "layouts/grid/grid";
@@ -76,6 +77,12 @@ $danger:        #dc3545 !default;
 @import "layouts/nav-mobile";
 @import "layouts/nav-secondary";
 @import "layouts/sidebar";
+
+//widgets
+@import "widgets/widgets";
+@import "widgets/widget-latest-posts";
+@import "widgets/widget-search-form";
+
 
 //pages
 @import "pages/landing-page";

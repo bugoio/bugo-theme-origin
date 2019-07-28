@@ -28,7 +28,7 @@ $main-nav-padding:          0;
 $main-nav-color:            $black;
 $main-nav-link-margin:      0 0.5rem;
 $main-nav-link-padding:     0.25rem 0.5rem;
-$main-dropdown-bg:          $white;
+$main-dropdown-bg:          darken($light,10%);
 $main-dropdown-color:       $black;
 $main-dropdown-bg-dark:     lighten($dark,10%);
 $main-dropdown-color-dark:  $white;

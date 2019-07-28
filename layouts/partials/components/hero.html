@@ -1,5 +1,5 @@
 {{ $context := . }}
-{{ range $index, $image := .Params.images }}
+{{ range $index, $image := first 1 .Params.images }}
   {{ if eq $index 0 }}
     {{ $options := dict "context" $context "image" $image "transform" "w_1600"}}
     {{ $imgURL := partial "utilities/cloudinary-transform" $options }}
@@ -12,3 +12,4 @@
     </div>
   {{ end }}
 {{ end }}
+    

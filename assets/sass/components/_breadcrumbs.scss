@@ -15,7 +15,7 @@
           content: "»";
           display: block;
           position: absolute;
-          top: -0.5rem;
+          top: -0.125rem;
           margin-left: -1.25rem;
           @include ms-respond(font-size,2);
         }

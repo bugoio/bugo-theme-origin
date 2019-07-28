@@ -3,21 +3,22 @@
 {{ range $index, $video := .Params.videos }}
   {{ if eq $index 0 }}
     <div class="hero hero-video">
-          <video preload autoplay muted loop id="video-bg">
-              <source src="{{ $video }}" type="video/mp4">
-          </video>
-          {{ range $index, $image := $images }}
-            {{ if eq $index 0 }}
-              <img src="{{ . }}"/>
-            {{ end }}
-          {{ end }}
-          <div class="container">
-            <div class="hero-text">
-                <h1>Video can add some motion to your site, without hiding any information.</h1>
-            </details>
-          </div>
-          <button id="video-bg-control" onclick="myFunction()">{{ partial "icons/pause" }}</button>
-    </div>
+      <video preload autoplay muted loop id="video-bg">
+          <source src="{{ $video }}" type="video/mp4">
+      </video>
+      {{ range $index, $image := $images }}
+        {{ if eq $index 0 }}
+          <img src="{{ . }}"/>
+        {{ end }}
+      {{ end }}
+      <div class="container">
+        <div class="hero-text">
+            <h1>Video can add some motion to your site, without hiding any information.</h1>
+        </details>
+      </div>
+      <button id="video-bg-control" onclick="myFunction()">{{ partial "icons/pause" }}</button>
+      </div>
+    </div>  
     <script>
     // Get the video
     var video = document.getElementById("video-bg");
