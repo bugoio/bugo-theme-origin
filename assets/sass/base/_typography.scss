@@ -72,7 +72,7 @@ h1 {
   }
 
   @include respond-to(xl){
-    @include ms-respond(font-size,10);
+    @include ms-respond(font-size,8);
   }
 }
 

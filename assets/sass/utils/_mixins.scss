@@ -19,3 +19,10 @@
   }
 }
 
+@mixin responsive-property($values,$property) {
+  @each $breakpoint, $value in $values {
+    @include respond-to($breakpoint){
+      #{$property}: $value;
+    }
+  }
+}

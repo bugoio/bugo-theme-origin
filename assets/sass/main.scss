@@ -34,10 +34,14 @@ $danger:        #dc3545 !default;
 @import "../../node_modules/slick-carousel/slick/slick.scss";
 
 //Utilities
-@import "utils/global-variables";
+@import "utils/mixins";
+@import "utils/variables/global-variables";
+@import "utils/variables/colors";
+@import "utils/variables/forms";
+@import "utils/variables/header";
+@import "utils/variables/hero";
 @import "utils/helpers";
 @import "utils/wcag";
-@import "utils/mixins";
 @import "utils/responsive";
 
 //Base
@@ -63,9 +67,8 @@ $danger:        #dc3545 !default;
 @import "components/widget-search-form";
 
 //layouts
-@import "layouts/body";
+@import "layouts/grid/grid";
 @import "layouts/footer";
-@import "layouts/grid";
 @import "layouts/header";
 @import "layouts/main";
 @import "layouts/navigation";

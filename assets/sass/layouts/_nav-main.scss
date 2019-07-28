@@ -1,14 +1,23 @@
 .nav-main {
   position: relative;
   z-index: 100;
+  margin: $main-nav-margin;
+  padding: $main-nav-padding;
+  color: $main-nav-color;
 
   ul {
     justify-content: flex-end;
   }
 
+  li {
+    
+  } 
+  
   a {
-    color: $main-dropdown-color;
+    color: $main-nav-color;
     white-space: nowrap;
+    padding: $main-nav-link-padding;
+    margin: $main-nav-link-margin;
     @media (prefers-color-scheme: dark) {
         color: $main-dropdown-color-dark;
     }      
@@ -27,10 +36,6 @@
       border-left: 0.5rem solid transparent;
       border-right: 0.5rem solid transparent;
       border-bottom: 1rem solid $main-dropdown-bg;
-      // position: absolute;
-      // bottom: 100%;
-      // left: 50%;
-      // transform: translateX(-50%);
     }
 
     @media (prefers-color-scheme: dark) {

@@ -1,20 +1,13 @@
 .hero {
+  grid-area: hero;
+
   display: grid;
   align-items: stretch;
-  grid-area: hero;
-  margin: 0 0 var(--global-margin);
+  margin: 0;
   background-size: cover; 
   background-position: 50%;
-  @include ms-respond(min-height,13);
 
-  @include respond-to(md){
-    height: 50vh;
-    @include ms-respond(min-height,18);
-  }
-
-  @include respond-to(xxxl){
-    height: 100%;
-  }
+  @include responsive-property($hero-min-height,'min-height');  
 
   .container {
     height: 100%;

@@ -1,0 +1,79 @@
+/** 
+ * Header Grid
+ **/
+// SPACING
+$header-padding: 0;
+$header-margin: 0;
+ // AREAS
+$header-grid-area: header;
+// xs
+$header-xs-template-areas:
+  "ncon"
+  "hero"
+  "breadcrumbs";
+// sm
+$header-sm-template-areas: $header-xs-template-areas;
+// md
+$header-md-template-areas: $header-xs-template-areas;
+// lg
+$header-lg-template-areas: $header-xs-template-areas;
+// xl
+$header-xl-template-areas: $header-xs-template-areas;
+// xxl
+$header-xxl-template-areas: $header-xs-template-areas;
+// xxxl
+$header-xxxl-template-areas: $header-xs-template-areas;
+
+// COLUMNS
+// xs
+$header-xs-template-columns: repeat(1, 1fr);
+// sm
+$header-sm-template-columns: $header-xs-template-columns;
+// md
+$header-md-template-columns: $header-xs-template-columns;
+// lg
+$header-lg-template-columns: $header-xs-template-columns;
+// xl
+$header-xl-template-columns: $header-xs-template-columns;
+// xxl
+$header-xxl-template-columns: $header-xs-template-columns;
+// xxxl
+$header-xxxl-template-columns: $header-xs-template-columns;
+
+$header-template-areas: (
+  xs: $header-xs-template-areas,
+  sm: $header-sm-template-areas,
+  md: $header-md-template-areas,
+  lg: $header-lg-template-areas,
+  xl: $header-xl-template-areas,
+  xxl: $header-xxl-template-areas,
+  xxxl: $header-xxxl-template-areas
+);
+
+$header-template-columns: (
+  xs: $header-xs-template-columns,
+  sm: $header-sm-template-columns,
+  md: $header-md-template-columns,
+  lg: $header-lg-template-columns,
+  xl: $header-xl-template-columns,
+  xxl: $header-xxl-template-columns,
+  xxxl: $header-xxxl-template-columns
+);
+
+header{
+  padding: $header-padding;
+  margin: $header-margin;
+  display: grid;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  grid-template-columns: 1fr;
+  @include responsive-property($header-template-areas,'grid-template-areas');
+  @include responsive-property($header-template-columns,'grid-template-columns');
+  aside {
+    display: block;
+  }
+}
+
+.breadcrumbs {
+  grid-area: breadcrumbs;
+}

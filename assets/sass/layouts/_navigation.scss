@@ -15,7 +15,6 @@ nav {
     li {
       position: relative;
       list-style-type: none;
-      @include ms-respond(margin-right,-1);
 
       &.current {
         font-weight: bold;
@@ -23,8 +22,6 @@ nav {
       
 
       a {
-        @include ms-respond(padding-left,-1);
-        @include ms-respond(padding-right,-1);
       }
     }
   }

@@ -1,59 +1,21 @@
 .site-header {
-  grid-area: header;
   position: relative;
   z-index: 1000;
-  padding: 0;
-  // @include ms-respond(padding-bottom,2);
   background-color: $header-bg;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: 
-    "ncon ncon"
-    "hero hero"
-    "breadcrumbs breadcrumbs";
   align-items: center;
-
-  @include respond-to(xxxl) {
-    height: 66vh;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: 
-      "ncon hero hero"
-      "ncon hero hero";
-    grid-template-rows: 100%;
-    align-items: stretch;
-  }
+  padding: $header-padding;
+  margin: $header-margin;
 
   @media (prefers-color-scheme: dark) {
       color: $header-text-color-dark;
       background-color: $header-bg-dark;
   }
 
-  // > .container {
-  //   position: relative;
-  //   margin: 0;
-  //   max-width: none;
-
-  //   @include respond-to(xxl) {
-  //     height: 100vh;
-  //     grid-template-columns: repeat(3, 1fr);
-  //     grid-template-areas: 
-  //       "ncon hero hero"
-  //       "ncon hero hero";
-  //     grid-template-rows: 100%;
-  //     align-items: stretch;
-  //   }
-  // }
-
   .nav-container {
     background-color: $header-bg;
-    position: relative;
+    position: relative; 
     z-index: 1000;
-    @extend .container;
-    width: inherit;
-    margin: 0 auto;
-    padding: var(--global-padding) 0;
-    display: grid;
-    align-items: center;
 
     &::before {
       content: "";
@@ -69,37 +31,7 @@
         display: none;
       }
     }
-
-    grid-area: ncon;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-areas: 
-      "brand brand ..... ..... ..... ..... ..... ..... ..... ..... ..... mbut";
-    transition: grid-template-areas 2s;
-      @include respond-to(md){
-      grid-template-areas: 
-        "brand brand scon scon scon scon scon scon scon scon scon scon"
-        "brand brand nmain nmain nmain nmain nmain nmain nmain nmain nmain nmain";
-    }
-
-    @include respond-to(xxxl) {
-      height: inherit;
-      grid-gap: 0;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-areas:
-        ".... .... ...."
-        ".... brand ....."
-        ".... nmain ...."
-        ".... scon ...."
-        ".... .... ....";
-    }
   }
-
-@include respond-to(xxxl){
-  .nav-container {
-    position: fixed;
-    width: 33vw;
-  }
-}
 
   .site-brand {
     position: relative;
@@ -113,16 +45,16 @@
       color: $header-link-color;
       @media (prefers-color-scheme: dark) {
           color: $header-link-color-dark;
-      }      
-    }
-  @include respond-to(xxxl) {
-      margin: 0 auto;
+      }
+      img {
+        width: $branding-image-width;
+        height: auto;
+      }   
     }
   }
 
 
   .nav-main {
-    grid-area: nmain;
     display: none;
 
     @include respond-to(md){
@@ -131,7 +63,6 @@
   }
 
   .nav-secondary {
-    grid-area: nsec;
     display: none;
 
     @include respond-to(md){
@@ -140,7 +71,6 @@
   }
 
   .search-container {
-    grid-area: scon;
     display: none;
 
     @include respond-to(md){
@@ -152,25 +82,11 @@
       display: flex;
       float: right;
       
-      input {
-        margin-right: 1rem;
+      button, input {
+        // padding: $header-search-field-padding;
+        margin: $header-search-field-margin;
+        @include ms-respond(font-size,$header-search-font-size);
       }
     }
-  }
-
-  .mobile-nav {
-    grid-area: nmob;
-  }
-
-  .mobile-nav-button {
-    grid-area: mbut;
-  }
-
-  .hero {
-    grid-area: hero;
-  }
-
-  .breadcrumbs {
-    grid-area: breadcrumbs;
   }
 }
