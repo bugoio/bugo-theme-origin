@@ -8,7 +8,7 @@ $main-padding:  1;
 // AREAS
 $main-grid-area: main;
 // xs
-$main-xs-template-areas: "header" "wrap""footer";
+$main-xs-template-areas: "article";
 // sm
 $main-sm-template-areas: $main-xs-template-areas;
 // md
@@ -62,7 +62,7 @@ main {
   margin: $main-margin;
   padding: $main-padding;
   grid-area: main;
-  display: grid;
+  // display: grid;
   grid-column-gap: 0;
   grid-row-gap: 0;
   grid-template-columns: 1fr;

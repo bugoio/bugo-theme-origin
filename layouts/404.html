@@ -8,9 +8,13 @@
    */}}
 
    {{ define "main" }}
-     {{ .Content }}
+   <main>
+     <h2>We couldn't find the page your looking for. Please check your URL and try again.</h2>
+   </main>
    {{ end }}
 
    {{ define "aside" }}
-     sidebar
+    <aside class="sidebar" tabindex="0">
+      {{ partial "widgets/widgets" (dict "page" .Page "site" .Site "content" .Site.Data.config.sidebar_widgets.widgets ) }}
+    </aside>
    {{ end }}

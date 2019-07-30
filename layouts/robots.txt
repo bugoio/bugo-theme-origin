@@ -2,4 +2,6 @@ User-agent: *
 
 {{ if ne hugo.Environment "production" }}
 Disallow: /
+{{ else }}
+Disallow: /admin/*
 {{ end }}

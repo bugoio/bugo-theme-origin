@@ -31,8 +31,7 @@ $danger:        #dc3545 !default;
 @import "../../node_modules/mathsass/dist/math";
 @import "../../node_modules/modularscale-sass/stylesheets/modularscale";
 @import "../../node_modules/sweetalert2/src/sweetalert2.scss";
-@import "../../node_modules/slick-carousel/slick/slick.scss";
-
+@import "../../node_modules/flexslider/flexslider";
 //Utilities
 @import "utils/mixins";
 @import "utils/variables/global-variables";
@@ -65,6 +64,7 @@ $danger:        #dc3545 !default;
 @import "components/hero-video";
 @import "components/pagination";
 @import "components/share-buttons";
+@import "components/slideshow";
 @import "components/thumbnail";
 
 //layouts
@@ -81,6 +81,7 @@ $danger:        #dc3545 !default;
 //widgets
 @import "widgets/widgets";
 @import "widgets/widget-latest-posts";
+@import "widgets/widget-related-posts";
 @import "widgets/widget-search-form";
 
 

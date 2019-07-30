@@ -1,0 +1,57 @@
+{
+  "_from": "slippry",
+  "_id": "slippry@1.4.0",
+  "_inBundle": false,
+  "_integrity": "sha1-2XLDLf9C99V9W78IxVIdJ1Tzc78=",
+  "_location": "/slippry",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "slippry",
+    "name": "slippry",
+    "escapedName": "slippry",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/slippry/-/slippry-1.4.0.tgz",
+  "_shasum": "d972c32dff42f7d57d5bbf08c5521d2754f373bf",
+  "_spec": "slippry",
+  "_where": "/Users/matthewantone/Dropbox (Personal)/Projects/Bugo/Dev/bugo-vanilla-dev-site/themes/bugo-theme-vanilla",
+  "author": {
+    "name": "Lukas Jakob Hafner",
+    "email": "luki@booncon.com"
+  },
+  "bugs": {
+    "url": "https://github.com/booncon/slippry/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Responsive slider plugin for jQuery. Intrinsic trick to enable responsive resizing without js!",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-less": "~0.8.1",
+    "grunt-contrib-sass": "~0.7.3",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-watch": "~0.5.3"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "homepage": "http://slippry.com",
+  "license": "MIT",
+  "name": "slippry",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/booncon/slippry.git"
+  },
+  "version": "1.4.0"
+}

@@ -8,15 +8,15 @@ $wrap-sidebar-xs-template-areas: "main" "sidebar";
 // sm
 $wrap-sidebar-sm-template-areas: $wrap-sidebar-xs-template-areas;
 // md
-$wrap-sidebar-md-template-areas: "main main main sidebar";
+$wrap-sidebar-md-template-areas: $wrap-sidebar-xs-template-areas;
 // lg
-$wrap-sidebar-lg-template-areas: $wrap-sidebar-md-template-areas;
+$wrap-sidebar-lg-template-areas: "main main main sidebar";
 // xl
-$wrap-sidebar-xl-template-areas: $wrap-sidebar-md-template-areas;
+$wrap-sidebar-xl-template-areas: $wrap-sidebar-lg-template-areas;
 // xxl
-$wrap-sidebar-xxl-template-areas: $wrap-sidebar-md-template-areas;
+$wrap-sidebar-xxl-template-areas: $wrap-sidebar-lg-template-areas;
 // xxxl
-$wrap-sidebar-xxxl-template-areas: $wrap-sidebar-md-template-areas;
+$wrap-sidebar-xxxl-template-areas: $wrap-sidebar-lg-template-areas;
 
 // COLUMNS
 // xs
@@ -24,15 +24,15 @@ $wrap-sidebar-xs-template-columns: repeat(1, 1fr);
 // sm
 $wrap-sidebar-sm-template-columns: $wrap-sidebar-xs-template-columns;
 // md
-$wrap-sidebar-md-template-columns: repeat(4, 1fr);
+$wrap-sidebar-md-template-columns: $wrap-sidebar-xs-template-columns;
 // lg
-$wrap-sidebar-lg-template-columns: $wrap-sidebar-md-template-columns;
+$wrap-sidebar-lg-template-columns: repeat(4, 1fr);
 // xl
-$wrap-sidebar-xl-template-columns: $wrap-sidebar-md-template-columns;
+$wrap-sidebar-xl-template-columns: $wrap-sidebar-lg-template-columns;
 // xxl
-$wrap-sidebar-xxl-template-columns: $wrap-sidebar-md-template-columns;
+$wrap-sidebar-xxl-template-columns: $wrap-sidebar-lg-template-columns;
 // xxxl
-$wrap-sidebar-xxxl-template-columns: $wrap-sidebar-md-template-columns;
+$wrap-sidebar-xxxl-template-columns: $wrap-sidebar-lg-template-columns;
 
 $wrap-sidebar-template-areas: (
   xs: $wrap-sidebar-xs-template-areas,

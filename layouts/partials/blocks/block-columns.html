@@ -22,7 +22,9 @@
     {{ $site := .site }}
     {{ range .block.columns }}
     <div id="column-{{ .title  | anchorize }}" class="item {{ .color_scheme | urlize }} text-{{ .text_align }}" role="region" tabindex="0">
-      {{ partial "utilities/process-shortcodes" (dict "page" $page "site" $site "content" .content) | markdownify }}
+      <div>
+        {{ partial "utilities/process-shortcodes" (dict "page" $page "site" $site "content" .content) | markdownify }}
+      </div>
     </div>
     {{ end }}
   </div>

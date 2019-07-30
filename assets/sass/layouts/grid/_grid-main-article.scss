@@ -1,0 +1,93 @@
+/** 
+ * main-article Grid
+ **/
+// SPACING 
+$main-article-margin:   0;
+$main-article-padding:  1;
+
+// AREAS
+$main-article-grid-area: main-article;
+// xs
+$main-article-xs-template-areas: "head" "summ" "footer";
+// sm
+$main-article-sm-template-areas: $main-article-xs-template-areas;
+// md
+$main-article-md-template-areas: $main-article-xs-template-areas;
+// lg
+$main-article-lg-template-areas: $main-article-xs-template-areas;
+// xl
+$main-article-xl-template-areas: $main-article-xs-template-areas;
+// xxl
+$main-article-xxl-template-areas: $main-article-xs-template-areas;
+// xxxl
+$main-article-xxxl-template-areas: $main-article-xs-template-areas;
+
+// COLUMNS
+// xs
+$main-article-xs-template-columns: repeat(1, 1fr);
+// sm
+$main-article-sm-template-columns: $main-article-xs-template-columns;
+// md
+$main-article-md-template-columns: $main-article-xs-template-columns;
+// lg
+$main-article-lg-template-columns: $main-article-xs-template-columns;
+// xl
+$main-article-xl-template-columns: $main-article-xs-template-columns;
+// xxl
+$main-article-xxl-template-columns: $main-article-xs-template-columns;
+// xxxl
+$main-article-xxxl-template-columns: $main-article-xs-template-columns;
+
+$main-article-template-areas: (
+  xs: $main-article-xs-template-areas,
+  sm: $main-article-sm-template-areas,
+  md: $main-article-md-template-areas,
+  lg: $main-article-lg-template-areas,
+  xl: $main-article-xl-template-areas,
+  xxl: $main-article-xxl-template-areas,
+  xxxl: $main-article-xxxl-template-areas
+);
+
+$main-article-template-columns: (
+  xs: $main-article-xs-template-columns,
+  sm: $main-article-sm-template-columns,
+  md: $main-article-md-template-columns,
+  lg: $main-article-lg-template-columns,
+  xl: $main-article-xl-template-columns,
+  xxl: $main-article-xxl-template-columns,
+  xxxl: $main-article-xxxl-template-columns
+);
+
+.main-article {
+  margin: $main-article-margin;
+  padding: $main-article-padding;
+  grid-area: article;
+  display: grid;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
+  grid-template-columns: 1fr;
+  // grid-template-rows: 100px;
+
+  align-items: start;
+
+  @include responsive-property($main-article-template-areas,'grid-template-areas');
+  @include responsive-property($main-article-template-columns,'grid-template-columns');
+
+  aside {
+    display: block;
+  }
+
+  header {
+    grid-area: head;
+    display: block;
+    grid-template-areas: "";
+  }
+
+  .summary {
+    grid-area: summ;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+}

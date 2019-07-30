@@ -1,8 +1,14 @@
+const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
- 
+
+
 module.exports = {
-    // entry : './src/app.js',
+    resolve: {
+        alias: {
+            'slippry': 'slippry/src/slippry'  // relative to node_modules
+        }
+    },
     module : {
         rules : [
             {
@@ -22,6 +28,10 @@ module.exports = {
     },
     // devtool: 'source-map',
     plugins: [
+        new webpack.ProvidePlugin({
+          $: "jquery",
+          jQuery: "jquery"
+        }),
         new MiniCssExtractPlugin({
             filename: "styles.css"
         })

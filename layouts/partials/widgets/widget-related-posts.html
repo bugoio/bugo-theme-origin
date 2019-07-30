@@ -1,0 +1,19 @@
+{{/**
+   * Related Pages Widget
+   *
+   * Display a pages related pages
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+{{ $page := .page }}
+{{ $site := .site }}
+{{ $related := .site.RegularPages.Related .page | first 5 }}
+{{ if $related }}
+    <h2 class="widget-title">{{ .widget.title }}</h2>
+  {{ $widget := .widget }}
+  {{ range first .widget.show_quantity $related  }}
+    {{ partial "components/article-summary" . }}
+  {{ end }}
+{{ end }}

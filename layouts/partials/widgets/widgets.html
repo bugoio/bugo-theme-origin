@@ -13,15 +13,8 @@
   <section 
     id="{{ $widget.title | urlize }}"
     aria-label="{{ $widget.title }}"
-    class="widget {{ .template }}
-    {{ if $widget.widget_options.content_full_width }} content-full-width {{ end }}
-    {{ if $widget.widget_options.text_alignment  }} text-{{ $widget.widget_options.text_alignment | urlize }} {{ end }}
-    {{ if $widget.widget_options.text_size }} {{ $widget.widget_options.text_size | urlize }} {{ end }}
-    {{ if $widget.widget_options.remove_padding }} p-0 {{ end }}
-    {{ if $widget.widget_options.remove_margin }} m-0 {{ end }}
-    {{ if $widget.widget_options.widget_height }} {{ $widget.widget_options.widget_height | urlize }} {{ end }}
-    {{ if $widget.widget_options.color_scheme }} {{ $widget.widget_options.color_scheme | urlize }} {{ end }}
-    " {{ if $widget.background_image.image }} style="background-image: url({{ partial "utilities/image-url" (dict "page" .page "url" $widget.background_image.image "transform" "c_fill,w_1280,h_600") }});" {{ end }}>
+    class="widget {{ .template }}"
+    {{ if $widget.background_image.image }} style="background-image: url({{ partial "utilities/image-url" (dict "page" .page "url" $widget.background_image.image "transform" "c_fill,w_1280,h_600") }});" {{ end }}>
   {{ $path := printf "widgets/%s" .template }}
   {{ partial $path (dict "page" $page "widget" . "site" $site ) }}
   </section>

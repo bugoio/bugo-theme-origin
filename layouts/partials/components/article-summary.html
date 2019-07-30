@@ -1,13 +1,15 @@
 <article class="" tabindex="0">
   <header>
-      <h2><a href="{{ .Page.Permalink | relURL }}">{{ .Page.Title}}</a></h2>
-      {{ with .Params.category }}
-      <p class="category"><a class="button button-sm" href="{{ "category" | absURL }}/{{ . | urlize }}">{{ . }}</a>
+      <h3><a href="{{ .Page.Permalink | relURL }}">{{ .Page.Title}}</a></h3>
+      {{ with .Params.categories }}
+      <p class="taxonomy"><a class="button button-sm" href="{{ "categories" | absURL }}/{{ . | urlize }}">{{ . }}</a>
       {{ end }}
       {{ with .Params.tags }}
+      <span class="tags">
           {{ range . }}
             <a class="button button-xs" href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a> 
           {{ end }}
+      </span>
         </p>
       {{ end }}
   </header>

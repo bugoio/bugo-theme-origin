@@ -4,8 +4,11 @@
 import WebFont from 'webfontloader';              // Web Font Loader - https://www.npmjs.com/package/webfontloader
 import animateScrollTo from 'animated-scroll-to'; // Animate scroll to 
 import $ from 'jquery';
+window.jQuery = $;
+jQuery = $;
+import 'flexslider';
 import Swal from 'sweetalert2';
-import 'slick-carousel';
+// require('slippry')($);
 // import { brotliDecompressSync } from 'zlib';
 
 // require("../../static/assets/css/main.css");
@@ -17,70 +20,43 @@ WebFont.load({
   }
 });
 
-//modals
-
-// Swal.fire({
-//   title: 'Submit your Github username',
-//   input: 'text',
-//   inputAttributes: {
-//     autocapitalize: 'off'
-//   },
-//   showCancelButton: true,
-//   confirmButtonText: 'Look up',
-//   showLoaderOnConfirm: true,
-//   preConfirm: (login) => {
-//     return fetch(`//api.github.com/users/${login}`)
-//       .then(response => {
-//         if (!response.ok) {
-//           throw new Error(response.statusText)
-//         }
-//         return response.json()
-//       })
-//       .catch(error => {
-//         Swal.showValidationMessage(
-//           `Request failed: ${error}`
-//         )
-//       })
-//   },
-//   allowOutsideClick: () => !Swal.isLoading()
-// }).then((result) => {
-//   if (result.value) {
-//     Swal.fire({
-//       title: `${result.value.login}'s avatar`,
-//       imageUrl: result.value.avatar_url
-//     })
-//   }
-// })
-
-//show outline if user is tabbing
-
-
-
 // On Document Ready
 $(document).ready(function () {
 
-  //mobile navigation
-  $('.toggler').on('click', function () {
+  // WooCommerce FlexSlider
+  $('.flexslider').flexslider({
+    animation: "slide",
+    animationLoop: true,
+    controlsContainer: $(".custom-controls-container"),
+    customDirectionNav: $(".custom-navigation a"),
+  });
+
+  $('.slideshow').on('mouseenter', function () {
+    $(this).addClass('hover');
+  });
+
+  $('.slideshow').on('mouseout', function () {
+    $(this).removeClass('hover');
+  });
+
+  // Mobile navigation
+  $('.toggler').on('click', function (e) {
+    e.preventDefault();
     const target = $(this).attr('data-target');
     const targetClass = $(this).attr('data-target-class');
     $(target).toggleClass(targetClass);
   })
-  
-  $('.slideshow').slick({
-    accessibility: true,
-    autoplay: false,
-    prevArrow: '<button type="button" class="slick-prev"><svg width="40" height="40" viewBox="0 0 512 512" class="previous icon arrow-left"><use xlink:href="#arrow-left"></use></svg></button>',
-    nextArrow: '<button type="button" class="slick-next"><svg width="40" height="40" viewBox="0 0 512 512" class="next icon arrow-right"><use xlink:href="#arrow-right"></use></svg></button>',
-  });
 
-  //automatically animate links to anchors
+  // Smooth ScrollTo
   $('a[href*="#"][role!="button"]').on('click', function (e) {
     console.log(this);
     e.preventDefault();
     let target = $(this).attr('href');
     console.log(target);
     // animateScrollTo($(target));
-    animateScrollTo(document.querySelector(target));
+    if ($(target)[0]) { 
+      animateScrollTo(document.querySelector(target));
+    }
   });
 
 

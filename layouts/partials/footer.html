@@ -14,9 +14,18 @@
 {{ end }}
 <footer class="site-footer">
 	<div class="container">
-			<div class="col-12">
-				&copy; {{ now.Format "2006" }} {{ .Site.Title }} All Rights Reserved<br>
-			</div>
-		</div>
-	</div>
+    <div class="site-footer-logo">
+      {{ if .Site.Data.organization.logos.footer_logo.image }}
+      {{ partial "components/figure" ( dict "page" .Page "site" .site "media" .Site.Data.organization.logos.footer_logo ) }}
+      {{ end }}
+    </div>
+    <div class="copyright text-center">
+      {{ with .Site.Data.organization.organization_name }}
+      <span tabindex="0">©{{ dateFormat "2006" now }} {{ . }} &nbsp;<span class="">•</span>&nbsp; All rights reserved.</span>
+      {{ end }}
+    </div>
+    <div class="text-center">
+      <small><a href="https://bugo.io" title="Bugo. Made with Bugo" tabindex="0"><img class="d-inline-block my-0 mr-2" src="https://bit.ly/2VF39WV" width="20" height="auto" alt="Bugo. "/>Made with Bugo.</a></small>
+    </div>
+  </div>
 </footer>

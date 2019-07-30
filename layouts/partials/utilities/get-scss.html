@@ -1,0 +1,12 @@
+    {{ $scratch := .scratch }}
+    <p>{{ .item }}</p>
+    {{ range (readDir .item ) }}
+      {{ if and .IsDir (ne .Name "node_modules")}}
+        {{ partial "utilities/get-scss" dict "item" .  }}
+      {{ else }}
+      {{ .Name }}
+        {{ if in .Name ".scss" }}
+          {{ .Name }}
+        {{ end }}
+      {{ end }}
+    {{ end }}

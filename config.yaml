@@ -9,7 +9,7 @@ googleAnalytics: ""
 blackFriday:
  hrefTargetBlank: true
 taxonomies:
- category: category
+ category: categories
  tags: tags
 theme:
  - bugo-theme-vanilla
@@ -58,7 +58,6 @@ outputs:
   - RSS
  page:
   - HTML
-  - vcf
  section:
   - HTML
 enable_inline_shortcodes: true
@@ -70,3 +69,12 @@ menu:
  secondary: []
  footer: []
  privacy: []
+related:
+  threshold: 80
+  includeNewer: false
+  toLower: false
+  indices:
+  - name: categories
+    weight: 100
+  - name: tags
+    weight: 10

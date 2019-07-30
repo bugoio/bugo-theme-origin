@@ -5,11 +5,34 @@
   margin: 0;
   background-size: cover; 
   background-position: 50%;
+  padding-bottom: 120%;
+  position: relative;
+  // @include responsive-property($hero-min-height,'min-height');  
+  @include respond-to(sm){
+    padding-bottom: 70%;
+  }
 
-  @include responsive-property($hero-min-height,'min-height');  
+  @include respond-to(md){
+    padding-bottom: 56.2%;
+  }
 
+  @include respond-to(lg){
+    padding-bottom: 45%;
+  }
+
+  @include respond-to(xxl){
+    padding-bottom: 36%;
+  }
+
+  @include respond-to(xxxl){
+    padding-bottom: 30%;
+  }
   .container {
     height: 100%;
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     display: grid;
     grid-template-columns: repeat(1,1fr);
     grid-template-areas: 

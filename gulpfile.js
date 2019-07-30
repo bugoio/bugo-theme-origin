@@ -208,32 +208,7 @@ function startHugo(cb) {
   const content = '../../content';
   const data = '../../data';
 
-  const hugoOptions = [
-    'server',
-    '--config', './config.yaml',
-    '-d', '../../public',
-    // '-e', 'production',
-    '--watch',
-    '--disableFastRender',
-    '--cleanDestinationDir', 'true',
-  ];
-  const hugo = spawn("hugo", hugoOptions );
-  // Log message from Bugo
-  hugo.stdout.on('data', (data) => {
-    console.log(`Bugo: ${data}`);
-    // compileJs();
-  });
-
-  // Log Errors
-  hugo.stderr.on('data', (data) => {
-    console.log(`Bugo: ERROR ${data}`);
-    cb()
-  });
-
-  // Log Exit
-  hugo.on('close', (code) => {
-    console.log(`Bugo exited with code ${code}`);
-  });
+  // c
 
   console.log('updating config file');
 
