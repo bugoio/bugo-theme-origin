@@ -1,12 +1,14 @@
-// jquery
+import $ from 'jquery';                           // jquery
 // import validator from 'validator';                // javascript form validator - https://www.npmjs.com/package/validator
 // import YouTubePlayer from 'youtube-player';       // YouTube player - https://www.npmjs.com/package/youtube-player
 import WebFont from 'webfontloader';              // Web Font Loader - https://www.npmjs.com/package/webfontloader
 import animateScrollTo from 'animated-scroll-to'; // Animate scroll to 
-import $ from 'jquery';
+
 window.jQuery = $;
 jQuery = $;
+
 import 'flexslider';
+
 import Swal from 'sweetalert2';
 // require('slippry')($);
 // import { brotliDecompressSync } from 'zlib';
