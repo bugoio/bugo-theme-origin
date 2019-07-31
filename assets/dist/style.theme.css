@@ -1423,7 +1423,7 @@ html[xmlns] .flexslider .slides {
   margin-left: -50vw;
   margin-right: -50vw; }
 
-.no-container .container, .no-container .block .block-title, .block .no-container .block-title, .no-container .nav-container {
+.no-container .container, .no-container .block .block-title, .block .no-container .block-title, .no-container .block-latest-posts [class^=latest-posts-], .block-latest-posts .no-container [class^=latest-posts-], .no-container .nav-container {
   max-width: none !important; }
 
 .no-padding {
@@ -2532,7 +2532,7 @@ aside {
   @media (min-width: 768px) {
     .block video {
       display: block; } }
-  .block .container, .block .block-title, .block .nav-container {
+  .block .container, .block .block-title, .block .block-latest-posts [class^=latest-posts-], .block-latest-posts .block [class^=latest-posts-], .block .nav-container {
     position: relative;
     z-index: 1; }
   .block img {
@@ -2540,41 +2540,41 @@ aside {
 
 .block-columns {
   position: relative; }
-  .block-columns .container, .block-columns .block .block-title, .block .block-columns .block-title, .block-columns .nav-container {
+  .block-columns .container, .block-columns .block .block-title, .block .block-columns .block-title, .block-columns .block-latest-posts [class^=latest-posts-], .block-latest-posts .block-columns [class^=latest-posts-], .block-columns .nav-container {
     position: relative;
     z-index: 1;
     display: grid;
     grid-template-columns: 100%; }
-    .block-columns .container .item, .block-columns .block .block-title .item, .block .block-columns .block-title .item, .block-columns .nav-container .item {
+    .block-columns .container .item, .block-columns .block .block-title .item, .block .block-columns .block-title .item, .block-columns .block-latest-posts [class^=latest-posts-] .item, .block-latest-posts .block-columns [class^=latest-posts-] .item, .block-columns .nav-container .item {
       align-items: center; }
     @media (min-width: 768px) {
-      .block-columns .container.column-container-2, .block-columns .block .column-container-2.block-title, .block .block-columns .column-container-2.block-title, .block-columns .column-container-2.nav-container, .block-columns .container.column-container-4, .block-columns .block .column-container-4.block-title, .block .block-columns .column-container-4.block-title, .block-columns .column-container-4.nav-container, .block-columns .container.column-container-6, .block-columns .block .column-container-6.block-title, .block .block-columns .column-container-6.block-title, .block-columns .column-container-6.nav-container {
+      .block-columns .container.column-container-2, .block-columns .block .column-container-2.block-title, .block .block-columns .column-container-2.block-title, .block-columns .block-latest-posts .column-container-2[class^=latest-posts-], .block-latest-posts .block-columns .column-container-2[class^=latest-posts-], .block-columns .column-container-2.nav-container, .block-columns .container.column-container-4, .block-columns .block .column-container-4.block-title, .block .block-columns .column-container-4.block-title, .block-columns .block-latest-posts .column-container-4[class^=latest-posts-], .block-latest-posts .block-columns .column-container-4[class^=latest-posts-], .block-columns .column-container-4.nav-container, .block-columns .container.column-container-6, .block-columns .block .column-container-6.block-title, .block .block-columns .column-container-6.block-title, .block-columns .block-latest-posts .column-container-6[class^=latest-posts-], .block-latest-posts .block-columns .column-container-6[class^=latest-posts-], .block-columns .column-container-6.nav-container {
         grid-template-columns: 1fr 1fr; }
-      .block-columns .container.column-container-3, .block-columns .block .column-container-3.block-title, .block .block-columns .column-container-3.block-title, .block-columns .column-container-3.nav-container {
+      .block-columns .container.column-container-3, .block-columns .block .column-container-3.block-title, .block .block-columns .column-container-3.block-title, .block-columns .block-latest-posts .column-container-3[class^=latest-posts-], .block-latest-posts .block-columns .column-container-3[class^=latest-posts-], .block-columns .column-container-3.nav-container {
         grid-template-columns: 1fr 1fr 1fr; }
-      .block-columns .container.column-container-5, .block-columns .block .column-container-5.block-title, .block .block-columns .column-container-5.block-title, .block-columns .column-container-5.nav-container {
+      .block-columns .container.column-container-5, .block-columns .block .column-container-5.block-title, .block .block-columns .column-container-5.block-title, .block-columns .block-latest-posts .column-container-5[class^=latest-posts-], .block-latest-posts .block-columns .column-container-5[class^=latest-posts-], .block-columns .column-container-5.nav-container {
         grid-template-columns: 1fr 1fr; }
-        .block-columns .container.column-container-5 :nth-child(2), .block-columns .block .column-container-5.block-title :nth-child(2), .block .block-columns .column-container-5.block-title :nth-child(2), .block-columns .column-container-5.nav-container :nth-child(2) {
+        .block-columns .container.column-container-5 :nth-child(2), .block-columns .block .column-container-5.block-title :nth-child(2), .block .block-columns .column-container-5.block-title :nth-child(2), .block-columns .block-latest-posts .column-container-5[class^=latest-posts-] :nth-child(2), .block-latest-posts .block-columns .column-container-5[class^=latest-posts-] :nth-child(2), .block-columns .column-container-5.nav-container :nth-child(2) {
           grid-column: 1 / span 2; } }
     @media (min-width: 992px) {
-      .block-columns .container.column-container-3, .block-columns .block .column-container-3.block-title, .block .block-columns .column-container-3.block-title, .block-columns .column-container-3.nav-container, .block-columns .container.column-container-6, .block-columns .block .column-container-6.block-title, .block .block-columns .column-container-6.block-title, .block-columns .column-container-6.nav-container {
+      .block-columns .container.column-container-3, .block-columns .block .column-container-3.block-title, .block .block-columns .column-container-3.block-title, .block-columns .block-latest-posts .column-container-3[class^=latest-posts-], .block-latest-posts .block-columns .column-container-3[class^=latest-posts-], .block-columns .column-container-3.nav-container, .block-columns .container.column-container-6, .block-columns .block .column-container-6.block-title, .block .block-columns .column-container-6.block-title, .block-columns .block-latest-posts .column-container-6[class^=latest-posts-], .block-latest-posts .block-columns .column-container-6[class^=latest-posts-], .block-columns .column-container-6.nav-container {
         grid-template-columns: 1fr 1fr 1fr; }
-      .block-columns .container.column-container-4, .block-columns .block .column-container-4.block-title, .block .block-columns .column-container-4.block-title, .block-columns .column-container-4.nav-container {
+      .block-columns .container.column-container-4, .block-columns .block .column-container-4.block-title, .block .block-columns .column-container-4.block-title, .block-columns .block-latest-posts .column-container-4[class^=latest-posts-], .block-latest-posts .block-columns .column-container-4[class^=latest-posts-], .block-columns .column-container-4.nav-container {
         grid-template-columns: 1fr 1fr 1fr 1fr; }
-      .block-columns .container.column-container-5, .block-columns .block .column-container-5.block-title, .block .block-columns .column-container-5.block-title, .block-columns .column-container-5.nav-container {
+      .block-columns .container.column-container-5, .block-columns .block .column-container-5.block-title, .block .block-columns .column-container-5.block-title, .block-columns .block-latest-posts .column-container-5[class^=latest-posts-], .block-latest-posts .block-columns .column-container-5[class^=latest-posts-], .block-columns .column-container-5.nav-container {
         grid-template-columns: 1fr 1fr; }
-        .block-columns .container.column-container-5 :nth-child(2), .block-columns .block .column-container-5.block-title :nth-child(2), .block .block-columns .column-container-5.block-title :nth-child(2), .block-columns .column-container-5.nav-container :nth-child(2) {
+        .block-columns .container.column-container-5 :nth-child(2), .block-columns .block .column-container-5.block-title :nth-child(2), .block .block-columns .column-container-5.block-title :nth-child(2), .block-columns .block-latest-posts .column-container-5[class^=latest-posts-] :nth-child(2), .block-latest-posts .block-columns .column-container-5[class^=latest-posts-] :nth-child(2), .block-columns .column-container-5.nav-container :nth-child(2) {
           grid-column: 1 / span 2; } }
     @media (min-width: 1200px) {
-      .block-columns .container.column-container-3, .block-columns .block .column-container-3.block-title, .block .block-columns .column-container-3.block-title, .block-columns .column-container-3.nav-container, .block-columns .container.column-container-6, .block-columns .block .column-container-6.block-title, .block .block-columns .column-container-6.block-title, .block-columns .column-container-6.nav-container {
+      .block-columns .container.column-container-3, .block-columns .block .column-container-3.block-title, .block .block-columns .column-container-3.block-title, .block-columns .block-latest-posts .column-container-3[class^=latest-posts-], .block-latest-posts .block-columns .column-container-3[class^=latest-posts-], .block-columns .column-container-3.nav-container, .block-columns .container.column-container-6, .block-columns .block .column-container-6.block-title, .block .block-columns .column-container-6.block-title, .block-columns .block-latest-posts .column-container-6[class^=latest-posts-], .block-latest-posts .block-columns .column-container-6[class^=latest-posts-], .block-columns .column-container-6.nav-container {
         grid-template-columns: 1fr 1fr 1fr; }
-      .block-columns .container.column-container-4, .block-columns .block .column-container-4.block-title, .block .block-columns .column-container-4.block-title, .block-columns .column-container-4.nav-container {
+      .block-columns .container.column-container-4, .block-columns .block .column-container-4.block-title, .block .block-columns .column-container-4.block-title, .block-columns .block-latest-posts .column-container-4[class^=latest-posts-], .block-latest-posts .block-columns .column-container-4[class^=latest-posts-], .block-columns .column-container-4.nav-container {
         grid-template-columns: 1fr 1fr 1fr 1fr; }
-      .block-columns .container.column-container-5, .block-columns .block .column-container-5.block-title, .block .block-columns .column-container-5.block-title, .block-columns .column-container-5.nav-container {
+      .block-columns .container.column-container-5, .block-columns .block .column-container-5.block-title, .block .block-columns .column-container-5.block-title, .block-columns .block-latest-posts .column-container-5[class^=latest-posts-], .block-latest-posts .block-columns .column-container-5[class^=latest-posts-], .block-columns .column-container-5.nav-container {
         grid-template-columns: 1fr 1fr 1fr 1fr; }
-        .block-columns .container.column-container-5 :nth-child(2), .block-columns .block .column-container-5.block-title :nth-child(2), .block .block-columns .column-container-5.block-title :nth-child(2), .block-columns .column-container-5.nav-container :nth-child(2) {
+        .block-columns .container.column-container-5 :nth-child(2), .block-columns .block .column-container-5.block-title :nth-child(2), .block .block-columns .column-container-5.block-title :nth-child(2), .block-columns .block-latest-posts .column-container-5[class^=latest-posts-] :nth-child(2), .block-latest-posts .block-columns .column-container-5[class^=latest-posts-] :nth-child(2), .block-columns .column-container-5.nav-container :nth-child(2) {
           grid-column: 1 / span 4; } }
-    .block-columns .container .item, .block-columns .block .block-title .item, .block .block-columns .block-title .item, .block-columns .nav-container .item {
+    .block-columns .container .item, .block-columns .block .block-title .item, .block .block-columns .block-title .item, .block-columns .block-latest-posts [class^=latest-posts-] .item, .block-latest-posts .block-columns [class^=latest-posts-] .item, .block-columns .nav-container .item {
       padding: var(--global-padding); }
 
 .block-google-map iframe {
@@ -2584,42 +2584,43 @@ aside {
   margin-top: var(--global-margin);
   margin-bottom: 0; }
 
-.block-latest-posts .container, .block-latest-posts .block .block-title, .block .block-latest-posts .block-title, .block-latest-posts .nav-container {
+.block-latest-posts [class^=latest-posts-] {
   display: grid;
-  grid-column-gap: var(--global-margin); }
-  .block-latest-posts .container h2, .block-latest-posts .block .block-title h2, .block .block-latest-posts .block-title h2, .block-latest-posts .nav-container h2 {
+  grid-column-gap: var(--global-margin);
+  grid-template-columns: 1fr; }
+  .block-latest-posts [class^=latest-posts-] h2 {
     margin-top: 0 !important;
     font-size: 21.97px; }
     @media (min-width: 576px) and (max-width: 768px) {
-      .block-latest-posts .container h2, .block-latest-posts .block .block-title h2, .block .block-latest-posts .block-title h2, .block-latest-posts .nav-container h2 {
+      .block-latest-posts [class^=latest-posts-] h2 {
         font-size: calc( 21.97px + -1.81 * ( ( 100vw - 576px) / 192 )); } }
     @media (min-width: 768px) and (max-width: 992px) {
-      .block-latest-posts .container h2, .block-latest-posts .block .block-title h2, .block .block-latest-posts .block-title h2, .block-latest-posts .nav-container h2 {
+      .block-latest-posts [class^=latest-posts-] h2 {
         font-size: calc( 20.16px + 1.44 * ( ( 100vw - 768px) / 224 )); } }
     @media (min-width: 992px) and (max-width: 1200px) {
-      .block-latest-posts .container h2, .block-latest-posts .block .block-title h2, .block .block-latest-posts .block-title h2, .block-latest-posts .nav-container h2 {
+      .block-latest-posts [class^=latest-posts-] h2 {
         font-size: calc( 21.6px + 1.44 * ( ( 100vw - 992px) / 208 )); } }
     @media (min-width: 1200px) and (max-width: 1400px) {
-      .block-latest-posts .container h2, .block-latest-posts .block .block-title h2, .block .block-latest-posts .block-title h2, .block-latest-posts .nav-container h2 {
+      .block-latest-posts [class^=latest-posts-] h2 {
         font-size: calc( 23.04px + 1.44 * ( ( 100vw - 1200px) / 200 )); } }
     @media (min-width: 1400px) and (max-width: 2200px) {
-      .block-latest-posts .container h2, .block-latest-posts .block .block-title h2, .block .block-latest-posts .block-title h2, .block-latest-posts .nav-container h2 {
+      .block-latest-posts [class^=latest-posts-] h2 {
         font-size: calc( 24.48px + 15.84 * ( ( 100vw - 1400px) / 800 )); } }
     @media (min-width: 2200px) {
-      .block-latest-posts .container h2, .block-latest-posts .block .block-title h2, .block .block-latest-posts .block-title h2, .block-latest-posts .nav-container h2 {
+      .block-latest-posts [class^=latest-posts-] h2 {
         font-size: 40.32px; } }
   @media (min-width: 992px) {
-    .block-latest-posts .container, .block-latest-posts .block .block-title, .block .block-latest-posts .block-title, .block-latest-posts .nav-container {
+    .block-latest-posts [class^=latest-posts-] {
       grid-template-columns: repeat(3, 1fr); } }
 
-.block-logos .container, .block-logos .block .block-title, .block .block-logos .block-title, .block-logos .nav-container {
+.block-logos .container, .block-logos .block .block-title, .block .block-logos .block-title, .block-logos .block-latest-posts [class^=latest-posts-], .block-latest-posts .block-logos [class^=latest-posts-], .block-logos .nav-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20%, 1fr)); }
-  .block-logos .container .item, .block-logos .block .block-title .item, .block .block-logos .block-title .item, .block-logos .nav-container .item {
+  .block-logos .container .item, .block-logos .block .block-title .item, .block .block-logos .block-title .item, .block-logos .block-latest-posts [class^=latest-posts-] .item, .block-latest-posts .block-logos [class^=latest-posts-] .item, .block-logos .nav-container .item {
     display: flex;
     align-items: center;
     justify-content: center; }
-    .block-logos .container .item img, .block-logos .block .block-title .item img, .block .block-logos .block-title .item img, .block-logos .nav-container .item img {
+    .block-logos .container .item img, .block-logos .block .block-title .item img, .block .block-logos .block-title .item img, .block-logos .block-latest-posts [class^=latest-posts-] .item img, .block-latest-posts .block-logos [class^=latest-posts-] .item img, .block-logos .nav-container .item img {
       width: 85%;
       height: auto; }
 
@@ -3179,7 +3180,7 @@ legend {
   @media (min-width: 2200px) {
     .hero {
       padding-bottom: 30%; } }
-  .hero .container, .hero .block .block-title, .block .hero .block-title, .hero .nav-container {
+  .hero .container, .hero .block .block-title, .block .hero .block-title, .hero .block-latest-posts [class^=latest-posts-], .block-latest-posts .hero [class^=latest-posts-], .hero .nav-container {
     height: 100%;
     position: absolute;
     width: 100%;
@@ -3425,29 +3426,29 @@ legend {
 .thumbnail {
   margin-bottom: var(--global-margin); }
 
-.container, .block .block-title, .nav-container {
+.container, .block .block-title, .block-latest-posts [class^=latest-posts-], .nav-container {
   margin: 0 auto;
   width: 100%; }
   @media (min-width: 0) {
-    .container, .block .block-title, .nav-container {
+    .container, .block .block-title, .block-latest-posts [class^=latest-posts-], .nav-container {
       max-width: calc(100vw - 36px); } }
   @media (min-width: 576px) {
-    .container, .block .block-title, .nav-container {
+    .container, .block .block-title, .block-latest-posts [class^=latest-posts-], .nav-container {
       max-width: 540px; } }
   @media (min-width: 768px) {
-    .container, .block .block-title, .nav-container {
+    .container, .block .block-title, .block-latest-posts [class^=latest-posts-], .nav-container {
       max-width: 720px; } }
   @media (min-width: 992px) {
-    .container, .block .block-title, .nav-container {
+    .container, .block .block-title, .block-latest-posts [class^=latest-posts-], .nav-container {
       max-width: 960px; } }
   @media (min-width: 1200px) {
-    .container, .block .block-title, .nav-container {
+    .container, .block .block-title, .block-latest-posts [class^=latest-posts-], .nav-container {
       max-width: 1164px; } }
   @media (min-width: 1400px) {
-    .container, .block .block-title, .nav-container {
+    .container, .block .block-title, .block-latest-posts [class^=latest-posts-], .nav-container {
       max-width: 1360px; } }
   @media (min-width: 2200px) {
-    .container, .block .block-title, .nav-container {
+    .container, .block .block-title, .block-latest-posts [class^=latest-posts-], .nav-container {
       max-width: 2100px; } }
 
 /** 
@@ -3968,6 +3969,9 @@ sidebar {
     .site-footer {
       grid-template-columns: repeat(1, 1fr); } }
 
+.site-footer #privacy-nav {
+  display: inline-block; }
+
 .site-header {
   position: relative;
   z-index: 1000;
@@ -4134,7 +4138,7 @@ nav li a {
     display: block;
     opacity: 1;
     transform: translateX(-50%) translateY(0); }
-  .nav-horizontal .dropdown-menu .container, .nav-horizontal .dropdown-menu .block .block-title, .block .nav-horizontal .dropdown-menu .block-title, .nav-horizontal .dropdown-menu .nav-container {
+  .nav-horizontal .dropdown-menu .container, .nav-horizontal .dropdown-menu .block .block-title, .block .nav-horizontal .dropdown-menu .block-title, .nav-horizontal .dropdown-menu .block-latest-posts [class^=latest-posts-], .block-latest-posts .nav-horizontal .dropdown-menu [class^=latest-posts-], .nav-horizontal .dropdown-menu .nav-container {
     display: block; }
   .nav-horizontal .dropdown-menu ul {
     display: flex;
@@ -4245,7 +4249,7 @@ nav li a {
   .nav-vertical .dropdown-menu.open {
     display: block;
     opacity: 1; }
-  .nav-vertical .dropdown-menu .container, .nav-vertical .dropdown-menu .block .block-title, .block .nav-vertical .dropdown-menu .block-title, .nav-vertical .dropdown-menu .nav-container {
+  .nav-vertical .dropdown-menu .container, .nav-vertical .dropdown-menu .block .block-title, .block .nav-vertical .dropdown-menu .block-title, .nav-vertical .dropdown-menu .block-latest-posts [class^=latest-posts-], .block-latest-posts .nav-vertical .dropdown-menu [class^=latest-posts-], .nav-vertical .dropdown-menu .nav-container {
     display: block; }
   .nav-vertical .dropdown-menu ul {
     display: flex;

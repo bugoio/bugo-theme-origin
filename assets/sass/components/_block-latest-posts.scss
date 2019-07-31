@@ -1,7 +1,10 @@
 .block-latest-posts {
-  .container {
+  [class^=latest-posts-] {
+    @extend .container;
+
     display: grid;
     grid-column-gap: var(--global-margin);
+    grid-template-columns: 1fr;
 
     h2 {
       margin-top: 0 !important;
@@ -13,3 +16,4 @@
     }
   }
 }
+

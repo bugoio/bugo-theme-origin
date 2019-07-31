@@ -5,18 +5,12 @@
    *
    * @version 1.0.0
    */}}
-
-  {{ if .block.block_options.show_title }}
-  <div class="container">
-    <h2 class="block-title">{{ .block.title }}</h2>
-  </div>
-  {{ end }}
-  <div class="container latest-posts-{{ .block.show_quantity }}">
+  <div class="latest-posts-{{ .block.show_quantity }}">
     {{ $page := .page }}
-    {{ $posts := where .site.RegularPages "Section" "posts" }}
+    {{ $posts := where .context.Site.RegularPages "Section" "posts" }}
     {{ $site := .site }}
     {{ $block := .block }}
     {{ range first .block.show_quantity $posts  }}
-      {{ partial "components/article-summary" (dict "page" . "site" $site )}}
+      {{ partial "components/article-summary" . }}
     {{ end }}
   </div>
