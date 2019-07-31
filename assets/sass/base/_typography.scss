@@ -116,26 +116,25 @@ p {
 }
 
 blockquote {
-  background-color: rgba(0,0,0,0.2);
-  @include ms-respond(padding,2);
-  padding: var(--global-padding);
-  margin-top: var(--global-margin);
-  margin-bottom: var(--global-margin);
-  padding-left: 5em !important;
-  position: relative;
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
 
-  &:before {
-    display: block;
-    content: "“";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 5rem;
-    @include ms-respond(font-size,8);
-    line-height: .9;
-  }
-
+blockquote {
   p:last-child {
     margin-bottom: 0 !important;
   }

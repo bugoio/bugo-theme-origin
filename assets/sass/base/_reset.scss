@@ -10,6 +10,10 @@ pre,table,fieldset,hr{
     @include ms-respond(margin-bottom,2);
 }
 
+pre {
+  padding: 1rem;
+}
+
 // header,main,aside,footer,a,div,span{
 //   outline: 0;
 

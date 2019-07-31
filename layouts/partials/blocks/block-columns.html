@@ -7,24 +7,18 @@
    * @version 1.0.0
    */}}
 
-  {{ with .block.background_video_url }}
-      <video preload autoplay muted loop id="video-bg">
-        <source src="{{ . }}" type="video/mp4">
-      </video>
-  {{ end }}
-  <div class="container column-container-{{ len .block.columns }}">
     <h2 class="block-title {{ if eq .block.show_block_title false }}sr-only{{ end }}">{{ .block.title }}</h2>
-    {{ range $index, $video := .Params.videos }}
-      {{ if eq $index 0 }}
-      {{ end }}
-    {{ end }}
     {{ $page := .page }}
     {{ $site := .site }}
-    {{ range .block.columns }}
-    <div id="column-{{ .title  | anchorize }}" class="item {{ .color_scheme | urlize }} text-{{ .text_align }}" role="region" tabindex="0">
-      <div>
-        {{ partial "utilities/process-shortcodes" (dict "page" $page "site" $site "content" .content) | markdownify }}
+    {{ with .block.columns }}
+      {{ range . }}
+      <div id="column-{{ .title  | anchorize }}" class="item {{ .color_scheme | urlize }} text-{{ .text_align }}" role="region" tabindex="0">
+        <div>
+          {{ partial "utilities/process-shortcodes" (dict "page" $page "site" $site "content" .content) | markdownify }}
+        </div>
       </div>
-    </div>
+      {{ end }}
+    {{ else }}
+      {{ partial "messages/danger" "You have not added any columns to this block yet."}}
     {{ end }}
-  </div>
+

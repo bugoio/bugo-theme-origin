@@ -33,6 +33,7 @@ $danger:        #dc3545 !default;
 @import "../../node_modules/sweetalert2/src/sweetalert2.scss";
 @import "../../node_modules/flexslider/flexslider";
 //Utilities
+@import "utils/functions";
 @import "utils/mixins";
 @import "utils/variables/global-variables";
 @import "utils/variables/colors";
@@ -62,6 +63,7 @@ $danger:        #dc3545 !default;
 @import "components/forms";
 @import "components/hero";
 @import "components/hero-video";
+@import "components/messages";
 @import "components/pagination";
 @import "components/share-buttons";
 @import "components/slideshow";

@@ -1,0 +1,41 @@
+.message {
+  max-width: 768px;
+  margin: var(--global-margin) auto;
+  padding: 0.5rem;
+  grid-gap: 1rem;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  align-items: center;
+  border: 2px solid;
+  border-radius: $global-radius;
+  @include ms-respond(font-size,0);
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  &.danger {
+    border-color: darken($danger,20%);
+    color: color-level($danger);
+    background-color: $danger;
+  }
+
+  &.info {
+    border-color: darken($info,20%);
+    color: color-level($info);
+    background-color: $info;
+  }
+
+  &.success {
+    border-color: darken($success,20%);
+    color: color-level($success);
+    background-color: $success;
+  }
+
+  &.warning {
+    border-color: darken($warning,20%);
+    color: color-level($warning);
+    background-color: $warning;
+  }
+}

@@ -14,7 +14,9 @@
               {{ partial "utilities/cloudinary-transform" (dict "image" . "transform" "ar_16:9,c_fill,w_1200") }} 1400w,
               {{ partial "utilities/cloudinary-transform" (dict "image" . "transform" "ar_16:9,c_fill,w_2000") }} 1600w,
             "
-            alt="{{ index $captions $index }}"
+            {{ with $captions }}
+            alt="{{ index . $index }}"
+            {{ end }}
           />
       </li>
       {{ end }}

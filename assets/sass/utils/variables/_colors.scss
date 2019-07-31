@@ -26,6 +26,8 @@ $dark-colors: (
   black:          $black
 );
 
+$yiq-contrasted-threshold:  150 !default;
+
 /* Layout Colors */
 $body-bg:         $light;
 $body-bg-dark:    $dark;
