@@ -1,0 +1,155 @@
+---
+label: Organization
+hide_body: true
+fields:
+- type: text
+  name: organization_name
+  label: Organization Name
+  description: Used to make your organization visible to search engines.
+- type: textarea
+  name: organization_description
+  label: Organization Description
+  description: Used to describe your organization to search engines
+- name: header_logo
+  type: file
+  config:
+    maxSize: 250
+  label: Header Logo
+  description: Some themes have a place to display your logo in the header.
+- name: footer_logo
+  type: file
+  config:
+    maxSize: 250
+  label: Footer Logo
+  description: Some themes display a logo in the footer.
+- name: seo_logo
+  type: file
+  config:
+    maxSize: 250
+  label: SEO Logo
+  description: Specify a logo for search engines to use. Should be a .jpg or .png
+    file
+- type: field_group
+  name: logos
+  label: logos
+  fields:
+  - type: field_group
+    name: header_logo
+    label: header_logo
+    fields:
+    - type: text
+      name: title
+      label: title
+    - type: text
+      name: image
+      label: image
+    - type: text
+      name: caption
+      label: caption
+    - type: text
+      name: svg_code
+      label: svg_code
+  - type: field_group
+    name: footer_logo
+    label: footer_logo
+    fields:
+    - type: text
+      name: title
+      label: title
+    - type: text
+      name: image
+      label: image
+    - type: text
+      name: caption
+      label: caption
+    - type: text
+      name: svg_code
+      label: svg_code
+  - type: text
+    name: seo_logo
+    label: seo_logo
+  - type: text
+    name: favicon
+    label: favicon
+- type: field_group
+  name: contact_information
+  label: contact_information
+  fields:
+  - type: boolean
+    name: show_email_labels
+    label: show_email_labels
+  - type: boolean
+    name: show_phone_labels
+    label: show_phone_labels
+  - type: field_group
+    name: contact_info
+    label: contact_info
+    fields:
+    - type: list
+      name: email_addresses
+      label: email_addresses
+    - type: list
+      name: phones
+      label: phones
+  - type: field_group
+    name: social_accounts
+    label: social_accounts
+    fields:
+    - type: text
+      name: facebook
+      label: facebook
+    - type: text
+      name: twitter
+      label: twitter
+    - type: text
+      name: linkedin
+      label: linkedin
+    - type: text
+      name: youtube
+      label: youtube
+    - type: text
+      name: vimeo
+      label: vimeo
+    - type: text
+      name: instagram
+      label: instagram
+    - type: text
+      name: pinterest
+      label: pinterest
+    - type: text
+      name: github
+      label: github
+  - type: list
+    name: locations
+    label: locations
+  - type: field_group_list
+    name: email_addresses
+    label: email_addresses
+    fields:
+    - type: text
+      name: email_address
+      label: email_address
+    - type: text
+      name: label
+      label: label
+  - type: field_group_list
+    name: phones
+    label: phones
+    fields:
+    - type: text
+      name: phone
+      label: phone
+    - type: text
+      name: label
+      label: label
+- type: text
+  name: google_api_key
+  label: google_api_key
+- type: text
+  name: footer_dislaimer
+  label: footer_dislaimer
+- type: text
+  name: google_verification_meta_field
+  label: google_verification_meta_field
+pages:
+- data/organization.yaml

@@ -1,0 +1,65 @@
+---
+label: Block - Slideshow
+hide_body: false
+display_field: title
+fields:
+- type: text
+  name: title
+  label: Title
+  description: Giving this block a title will help organization.
+  config:
+    required: true
+- name: show_block_title
+  type: boolean
+  label: Show Block Title
+- name: image_ratio
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - '1:1'
+    - '4:3'
+    - '3:4'
+    - '16:9'
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Image Ratio
+- name: color_scheme
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: documents
+      section: site-styles
+      file: data/styles.yaml
+      path: color_scheme_dropdown
+  label: Color Scheme
+  description: "(optional) Pick a color for the entire block."
+- name: background_image
+  type: file
+  config:
+    maxSize: 250
+  label: Background Image
+  description: Add a background image.
+- name: background_video_url
+  type: text
+  config:
+    required: false
+  label: Background Video URL
+  description: Add a video background to this block. Must have a background image
+    for devices that cannot play background video.
+- name: no_padding
+  type: boolean
+  label: No padding
+  description: Remove the padding and column gaps.
+- name: no_container
+  type: boolean
+  label: No Container
+  description: Display this block's content full width.
+  default: true
