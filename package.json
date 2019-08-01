@@ -57,7 +57,6 @@
     "prompt": "^1.0.0",
     "read-yaml": "^1.1.0",
     "sass-loader": "^7.1.0",
-    "slick-carousel": "file:vendors/slick",
     "style-loader": "^0.23.1",
     "webpack": "^4.36.1",
     "webpack-stream": "^5.2.1",
