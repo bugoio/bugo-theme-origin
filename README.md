@@ -17,6 +17,7 @@ Origin is meant to be used as a starter theme used by designers and developers a
 * Social Media Ready
 * Google Maps
 * Configurable Sidebar Widgets
+* Forestry.io Cloudinary support
 * Page/Post level galleries
     * Images
     * Videos
@@ -32,6 +33,7 @@ Origin is meant to be used as a starter theme used by designers and developers a
 * Transpiled Modern JS
 * WooCommerce FlexSlider
 * Sweet Alert 2
+* Cloudindary image transformation support
 
 ## Easy New Installation
 
