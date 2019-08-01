@@ -12,7 +12,7 @@ taxonomies:
  category: categories
  tags: tags
 theme:
- - bugo-theme-vanilla
+ - bugo-theme-origin
 metaDataFormat: yaml
 frontmatter:
  -
