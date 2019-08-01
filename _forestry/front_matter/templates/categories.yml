@@ -1,0 +1,14 @@
+---
+label: Categories
+hide_body: true
+fields:
+- name: site_categories
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+    source:
+      type: simple
+  label: Site Categories
+  description: Add categories for your posts.

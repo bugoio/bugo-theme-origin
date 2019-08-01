@@ -1,0 +1,100 @@
+---
+label: Template (Post)
+hide_body: false
+fields:
+- type: text
+  label: Layout
+  name: layout
+  hidden: true
+  config:
+    required: true
+  default: post
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+  description: Add a title to the page.
+- name: slug
+  type: text
+  config:
+    required: false
+  label: Slug
+- name: meta_title
+  type: text
+  config:
+    required: false
+  label: Meta Title
+  description: Add a meta title. This is for SEO Purposes and is the title that google
+    displays.
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Description
+  description: Google uses this field's text under the title of the page in its search
+    results.
+- name: categories
+  type: list
+  config:
+    use_select: true
+    min: 
+    max: 
+    source:
+      type: documents
+      section: categories
+      file: data/categories.yaml
+      path: site_categories
+  label: Categories
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
+- name: hero_text
+  type: textarea
+  default: This text will display if your theme uses a hero on this page.
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Hero Text
+- name: images
+  type: image_gallery
+  config: {}
+  label: Page Images
+  description: Add images to this page. These images will be used on social media.
+    Some themes will use them for display on your site. If you leave this blank a
+    default image may be used by your theme.
+- name: videos
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+  label: Page Videos
+  description: Add Video to this page. These videos are used for social media purposes.
+    Some themes will display these videos.
+- name: aliases
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+    source:
+      type: simple
+  label: Redirects
+  description: Enter URL's you'd like to redirect to this page.
