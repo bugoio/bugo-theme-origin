@@ -88,7 +88,7 @@ So you have to run a Hugo server and Origin's build tool.
 hugo server -d public --watch
 
 # In a second terminal from your project root
-cd themes/bugo-theme-origin && npm start=
+cd themes/bugo-theme-origin && npm start
 ```
 
 Now Hugo will watch for changes sitewide. Origin will watch for changes in ```/themes/bugo-theme-origin/assests/js/```.
