@@ -30,7 +30,6 @@
   "homepage": "https://github.com/bugoio/bugo-vanilla#readme",
   "dependencies": {
     "animated-scroll-to": "^1.2.2",
-    "bootstrap": "^4.3.1",
     "flexslider": "^2.7.2",
     "jquery": "^3.4.1",
     "mathsass": "^0.10.1",
