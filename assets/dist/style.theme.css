@@ -3242,6 +3242,27 @@ legend {
     .hero-video img {
       display: none; } }
 
+.highlight pre {
+  font-size: 13px; }
+  @media (min-width: 576px) and (max-width: 768px) {
+    .highlight pre {
+      font-size: calc( 13px + 1 * ( ( 100vw - 576px) / 192 )); } }
+  @media (min-width: 768px) and (max-width: 992px) {
+    .highlight pre {
+      font-size: calc( 14px + 1 * ( ( 100vw - 768px) / 224 )); } }
+  @media (min-width: 992px) and (max-width: 1200px) {
+    .highlight pre {
+      font-size: calc( 15px + 1 * ( ( 100vw - 992px) / 208 )); } }
+  @media (min-width: 1200px) and (max-width: 1400px) {
+    .highlight pre {
+      font-size: calc( 16px + 1 * ( ( 100vw - 1200px) / 200 )); } }
+  @media (min-width: 1400px) and (max-width: 2200px) {
+    .highlight pre {
+      font-size: calc( 17px + 11 * ( ( 100vw - 1400px) / 800 )); } }
+  @media (min-width: 2200px) {
+    .highlight pre {
+      font-size: 28px; } }
+
 .message {
   max-width: 768px;
   margin: var(--global-margin) auto;
@@ -3971,6 +3992,9 @@ sidebar {
 
 .site-footer #privacy-nav {
   display: inline-block; }
+
+.made-with-bugo a {
+  text-decoration: none; }
 
 .site-header {
   position: relative;
