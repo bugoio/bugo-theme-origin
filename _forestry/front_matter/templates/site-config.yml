@@ -1,0 +1,187 @@
+---
+label: Site Config
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: Site Title
+- type: text
+  name: baseURL
+  label: Base URL
+- type: text
+  name: languageCode
+  label: Language Code
+- type: number
+  name: summaryLength
+  label: Summary Length
+  description: Enter a number of characters to show from a post or page when summarized.
+- type: text
+  name: googleAnalytics
+  label: Google Analytics
+  description: Enter your Google Analytics tracking ID.
+- name: params
+  type: field_group
+  config: {}
+  fields:
+  - name: title
+    type: text
+    config:
+      required: true
+    label: Social Media Title
+    description: Used to let social media know the name of your website. This can
+      be the same as your site's title.
+  - name: description
+    type: textarea
+    default: ''
+    config:
+      required: true
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Social Media Description
+    description: Used to describe your site to social media.
+  - name: images
+    type: image_gallery
+    config: {}
+    label: Social Images
+    description: Images to use when someone shares this page to social media.
+  - name: videos
+    type: list
+    config:
+      use_select: false
+      min: 
+      max: 
+    label: Social Videos
+    description: Videos to share when someone shares this site to social media.
+  - name: google_cloud_api
+    type: text
+    config:
+      required: false
+    label: Google Cloud API
+    description: Enter your Google Cloud API Key
+  label: Site Options
+  description: Personalize your site here.
+- type: list
+  name: theme
+  label: Themes & Modules
+  description: You site's themes and modules. They must already be in your site's
+    theme folder. This will not install them.
+- type: number
+  name: paginate
+  label: Pagination
+  description: How many posts or pages to list when your site lists them.
+- type: field_group
+  name: menu
+  label: Menus
+  fields:
+  - type: field_group_list
+    name: main
+    label: Main Navigation
+    fields:
+    - type: text
+      name: identifier
+      label: identifier
+    - type: text
+      name: name
+      label: name
+    - type: text
+      name: title
+      label: title
+    - type: text
+      name: url
+      label: url
+    - type: number
+      name: weight
+      label: weight
+    - type: text
+      name: pre
+      label: pre
+    - type: text
+      name: post
+      label: post
+    - type: text
+      name: parent
+      label: parent
+  - type: field_group_list
+    name: secondary
+    label: Secondary Navigation
+    fields:
+    - type: text
+      name: identifier
+      label: identifier
+    - type: text
+      name: name
+      label: name
+    - type: text
+      name: title
+      label: title
+    - type: text
+      name: url
+      label: url
+    - type: number
+      name: weight
+      label: weight
+    - type: text
+      name: pre
+      label: pre
+    - type: text
+      name: post
+      label: post
+    - type: text
+      name: parent
+      label: parent
+  - type: field_group_list
+    name: footer
+    label: Footer Navigation
+    fields:
+    - type: text
+      name: identifier
+      label: identifier
+    - type: text
+      name: name
+      label: name
+    - type: text
+      name: title
+      label: title
+    - type: text
+      name: url
+      label: url
+    - type: number
+      name: weight
+      label: weight
+    - type: text
+      name: pre
+      label: pre
+    - type: text
+      name: post
+      label: post
+    - type: text
+      name: parent
+      label: parent
+  - type: field_group_list
+    name: privacy
+    label: privacy
+    fields:
+    - type: text
+      name: identifier
+      label: identifier
+    - type: text
+      name: title
+      label: title
+    - type: text
+      name: name
+      label: name
+    - type: text
+      name: url
+      label: url
+    - type: text
+      name: weight
+      label: weight
+    - type: text
+      name: pre
+      label: pre
+    - type: text
+      name: post
+      label: post
+pages:
+- config.yaml
