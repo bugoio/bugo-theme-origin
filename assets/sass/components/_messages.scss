@@ -1,5 +1,5 @@
 .message {
-  max-width: 768px;
+  // max-width: 768px;
   margin: var(--global-margin) auto;
   padding: 0.5rem;
   grid-gap: 1rem;
@@ -16,26 +16,26 @@
   }
 
   &.danger {
-    border-color: darken($danger,20%);
-    color: color-level($danger);
-    background-color: $danger;
+    border-color: $danger;
+    color: $danger;
+    background-color: lighten($danger,40%);
   }
 
   &.info {
-    border-color: darken($info,20%);
-    color: color-level($info);
-    background-color: $info;
+    border-color: $info;
+    color: $info;
+    background-color: lighten($info,40%);
   }
 
   &.success {
-    border-color: darken($success,20%);
-    color: color-level($success);
-    background-color: $success;
+    border-color: $success;
+    color: $success;
+    background-color: lighten($success,40%);
   }
 
   &.warning {
-    border-color: darken($warning,20%);
-    color: color-level($warning);
-    background-color: $warning;
+    border-color: $warning;
+    color: $warning;
+    background-color: lighten($warning,40%);
   }
 }

@@ -11,7 +11,7 @@ body {
   margin: 0 auto;
   font-family: "Roboto";
   font-display: auto;
-  color: $heading-text-color;
+  color: $base-text-color;
   @media (prefers-color-scheme: dark) {
       color: $heading-text-color-dark;
   }   
@@ -32,8 +32,9 @@ a {
 }
 
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
-  font-family: "serif";
+  font-family: 'Playfair Display', serif;
   font-display: auto;
+  font-weight: 400;
   line-height: 1.2;
   margin-top: var(--heading-margin-top);
   margin-bottom: var(--heading-margin-bottom);
@@ -72,7 +73,7 @@ h1 {
   }
 
   @include respond-to(xl){
-    @include ms-respond(font-size,8);
+    @include ms-respond(font-size,9);
   }
 }
 
@@ -112,7 +113,7 @@ small,.small {
 
 p {
   margin-bottom: var(--global-margin);
-  max-width: $max-char;
+  max-width: 100%;
 }
 
 blockquote {

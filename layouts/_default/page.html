@@ -8,6 +8,21 @@
 	 *
    */}}
 
+{{ define "hero" }}
+  {{ if .Params.videos }}
+    {{ partial "components/hero-video" . }}
+  {{ else if .Params.images}}
+    {{ partial "components/hero" . }}
+  {{ end }}
+{{ end }}
+
+{{ define "breadcrumbs" }}
+  {{ if and (not .IsHome) (ne .Params.layout "landing") (.Site.Data.config.show_breadcrumbs) }}
+    <div class="breadcrumbs">
+      {{ partial "components/breadcrumbs" . }}
+    </div>
+  {{ end }}
+{{ end }}
 
 {{ define "main" }}
 <main id="main" tabindex="0">

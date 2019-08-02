@@ -10,16 +10,6 @@
 {{/* loop through the landing page's contend blocks and include the appropriate partial */}}
 {{ $context := . }}
 <div class="blocks">
-  <!-- add the pages content here -->
-  {{ with .Content }}
-  <div class="block block-columns">
-    <div class="container column-container-1">
-      <div id="column-video-column-text" class="item no-padding" role="region" tabindex="0">
-        {{ . }}
-      </div>
-     </div>
-  </div>
-  {{ end }}
   {{ range $index, $block := .Params.blocks }}
     {{ $path := printf "blocks/%s" .template }}
     {{ $options := dict "context" $context "image" .background_image "transform" "w_1600"}}
@@ -47,5 +37,15 @@
         {{ partial $path (dict "context" $context "block" . ) }}
       </div>
     </div>
+  {{ end }}
+  <!-- add the pages content here -->
+  {{ with .Content }}
+  <div class="block block-columns">
+    <div class="container column-container-1">
+      <div id="column-video-column-text" class="item no-padding" role="region" tabindex="0">
+        {{ . }}
+      </div>
+     </div>
+  </div>
   {{ end }}
 </div>

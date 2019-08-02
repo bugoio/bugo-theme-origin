@@ -5,7 +5,9 @@
 $body-grid-area: body;
 // xs
 $body-xs-template-areas:
-  "header"
+  // "head"
+  "hero"
+  "breadcrumbs" 
   "wrap"
   "footer";
 // sm
@@ -58,7 +60,8 @@ $body-template-columns: (
 );
 
 body{
-  padding: 0;
+  position: relative;
+  padding: 8rem 0 0;
   margin: 0;
   display: grid;
   grid-column-gap: 0;
@@ -69,4 +72,8 @@ body{
   aside {
     display: block;
   }
+}
+
+body.home {
+  padding-top: 0;
 }

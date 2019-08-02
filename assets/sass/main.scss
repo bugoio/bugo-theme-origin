@@ -1,12 +1,13 @@
 //Colors from Hugo Site Data
-$primary:       {{ .Site.Data.styles.theme_colors.primary | default "#F983D1" }} !default;
-$secondary:     {{ .Site.Data.styles.theme_colors.secondary | default "#45D045" }} !default;
-$accent-1:      {{ .Site.Data.styles.theme_colors.accent_1 | default "#FAE44C" }};
-$accent-2:      {{ .Site.Data.styles.theme_colors.accent_2 | default "#77AEFA" }};
-$light:         {{ .Site.Data.styles.theme_colors.light | default "#EBEBEB" }} !default;
-$dark:          {{ .Site.Data.styles.theme_colors.dark | default "#22365D" }} !default;
-$white:         {{ .Site.Data.styles.theme_colors.white | default "#22365D" }} !default;
-$black:         {{ .Site.Data.styles.theme_colors.black | default "#22365D" }} !default;
+// http://colorpalette.glyphix.com/?n=white&n=light&n=primary&n=secondary&n=accent-1&n=accent-2&n=dark&n=black&v=FFFFFF&v=FFF5E7&v=AC5E0D&v=536F48&v=FFDE2F&v=5F336A&v=5B5551&v=000000
+$primary:       {{ .Site.Data.styles.theme_colors.primary | default "#AC5E0D" }} !default;
+$secondary:     {{ .Site.Data.styles.theme_colors.secondary | default "#536F48" }} !default;
+$accent-1:      {{ .Site.Data.styles.theme_colors.accent_1 | default "#FFDE2F" }};
+$accent-2:      {{ .Site.Data.styles.theme_colors.accent_2 | default "#5F336A" }};
+$light:         {{ .Site.Data.styles.theme_colors.light | default "#FFF5E7" }} !default;
+$dark:          {{ .Site.Data.styles.theme_colors.dark | default "#5B5551" }} !default;
+$white:         {{ .Site.Data.styles.theme_colors.white | default "#FFFCF6" }} !default;
+$black:         {{ .Site.Data.styles.theme_colors.black | default "#252524" }} !default;
 $success:       #28a745 !default;
 $info:          #17a2b8 !default;
 $warning:       #ffc107  !default;
@@ -51,7 +52,7 @@ $danger:        #dc3545 !default;
 @import "base/typography";
 
 //components
-@import "components/article";
+@import "components/article-summary";
 @import "components/blocks";
 @import "components/block-columns";
 @import "components/block-google-map";
@@ -90,6 +91,7 @@ $danger:        #dc3545 !default;
 
 //pages
 @import "pages/landing-page";
+@import "pages/list-page";
 
 //themes
 @import "themes/front-end";

@@ -1,5 +1,6 @@
 .breadcrumbs {
   padding: var(--global-padding) 0;
+  grid-area: breadcrumbs;
 
     ol {
     display: flex;
@@ -15,9 +16,10 @@
           content: "»";
           display: block;
           position: absolute;
-          top: -0.125rem;
-          margin-left: -1.25rem;
-          @include ms-respond(font-size,2);
+          top: 45%;
+          transform: translateX(-133%) translateY(-50%);
+          @include ms-respond(font-size,4);
+          line-height: 1;
         }
       }
 

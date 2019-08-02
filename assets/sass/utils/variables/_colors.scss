@@ -40,7 +40,8 @@ $base-text-color:           $dark;
 $base-text-color-dark:      $light;
 $link-text-color:           darken($accent-2,20%);
 $link-text-color-dark:      $primary;
-$heading-text-color:        $black;
+
+$heading-text-color:        $secondary;
 $heading-text-color-dark:   $white;
 $heading-link-color:        lighten($dark,15%);
 $heading-link-color-dark:   darken($light,25%);

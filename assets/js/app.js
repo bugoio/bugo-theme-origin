@@ -18,9 +18,11 @@ import Swal from 'sweetalert2';
 //Load fonts
 WebFont.load({
   google: {
-    families: ["Roboto"]
+    families: ["Roboto","Playfair+Display:400,900"]
   }
 });
+
+
 
 // On Document Ready
 $(document).ready(function () {

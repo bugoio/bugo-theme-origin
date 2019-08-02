@@ -2,16 +2,17 @@
   article {
     display: grid;
     grid-template-columns: repeat(1,fr);
-    grid-template-areas: "thum" "head" "summ";
+    grid-template-areas: "thum" "time" "head" "tax" "summ";
     grid-row-gap: 0;
 
     margin: 0 0 2rem;
 
     header {
       grid-area: head;
+      margin-bottom: 0;
 
       h3{
-        margin: 0 0 1rem;
+        margin: 0;
       }
 
       .taxonomy {
@@ -35,6 +36,16 @@
     .summary {
       display: none;
       grid-area: summ;
+    }
+
+    time {
+      grid-area: time;
+    }
+
+    .taxonomy {
+      grid-area: tax;
+      margin-top: 0.25rem;
+      margin-bottom: 0;
     }
   }
 }

@@ -1,0 +1,9 @@
+.taxonomy {
+  grid-area: tax;
+
+  .tags {
+    a {
+      background: lighten($dark,20%);
+    }
+  }
+}

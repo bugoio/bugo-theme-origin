@@ -1,11 +1,19 @@
 .site-header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100vw;
   z-index: 1000;
   background-color: $header-bg;
   display: grid;
   align-items: center;
   padding: $header-padding;
   margin: $header-margin;
+  transform: translateY(0);
+  transition: transform 0.5s;
+
+  &.scrolled {
+    transform: translateY(-100%);
+  }
 
   @media (prefers-color-scheme: dark) {
       color: $header-text-color-dark;

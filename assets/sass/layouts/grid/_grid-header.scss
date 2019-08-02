@@ -8,9 +8,7 @@ $header-margin: 0;
 $header-grid-area: header;
 // xs
 $header-xs-template-areas:
-  "ncon"
-  "hero"
-  "breadcrumbs";
+  "ncon";
 // sm
 $header-sm-template-areas: $header-xs-template-areas;
 // md
@@ -60,7 +58,8 @@ $header-template-columns: (
   xxxl: $header-xxxl-template-columns
 );
 
-header{
+.site-header{
+  grid-area: head;
   padding: $header-padding;
   margin: $header-margin;
   display: grid;
@@ -72,8 +71,4 @@ header{
   aside {
     display: block;
   }
-}
-
-.breadcrumbs {
-  grid-area: breadcrumbs;
 }

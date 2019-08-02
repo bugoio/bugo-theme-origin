@@ -3,29 +3,33 @@
   display: grid;
   align-items: stretch;
   margin: 0;
+  background-color: lighten($dark,50%);
+  background-blend-mode: screen, luminosity;
   background-size: cover; 
   background-position: 50%;
   padding-bottom: 120%;
   position: relative;
+  
+  transition: padding-bottom 0.5s;
   // @include responsive-property($hero-min-height,'min-height');  
   @include respond-to(sm){
-    padding-bottom: 70%;
+    padding-bottom: 100%;
   }
 
   @include respond-to(md){
-    padding-bottom: 56.2%;
+    padding-bottom: 80%;
   }
 
   @include respond-to(lg){
-    padding-bottom: 45%;
+    padding-bottom: 70%;
   }
 
   @include respond-to(xxl){
-    padding-bottom: 36%;
+    padding-bottom: 60%;
   }
 
   @include respond-to(xxxl){
-    padding-bottom: 30%;
+    padding-bottom: 40%;
   }
   .container {
     height: 100%;
@@ -43,13 +47,17 @@
     grid-area: herotxt;
     position: relative;
     z-index: 100;
-    color: $white;
-    text-shadow: ms(-5) ms(-5) ms(-2) #000;
+    color: $black;
+    // text-shadow: ms(-5) ms(-5) ms(-2) #000;
     align-self: center;
+    @include ms-respond(font-size,4);
+    font-family: 'Play Fair';
+    max-width: 50ch;
 
     h1,h2,h3,h4,h5,h6 {
       display: block;
-      color: #fff;
+      letter-spacing: -0.125rem;
+      color: $black;
       margin: 0;
       @include respond-to(lg){
         max-width: 20ch;
