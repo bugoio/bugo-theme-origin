@@ -10,13 +10,13 @@
 
 <a class="skip-link" aria-label="Go to Content" href="#main" tabindex="0">Go to Content</a>
 <header class="site-header" tabindex="-1">
-  <div class="nav-container">
+  <div class="container nav-container">
     <div class="site-brand">
       <a href="/" title="Go to the home page" tabindex="0">
         {{ if .Site.Data.organization.header_logo }}
             {{ $imageParams := (dict "page" .Page "site" .Site "url" .Site.Data.organization.header_logo "transform" false ) }}
             <img 
-              class="img-responsive" 
+              class="" 
               src="{{ partial "utilities/image-url" $imageParams }}" 
               alt="" 
             />

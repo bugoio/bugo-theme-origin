@@ -15,7 +15,7 @@
           {{ $srcSet := printf "%v 576w %v 1440w" $mdURL $lgURL }}
           <img
             class="" {{- printf "src=%q" $smURL | safeHTMLAttr -}}
-             {{- printf "srcset=%v" $srcSet | safeHTMLAttr -}}
+             
             aria-hidden="hidden"
             alt=""
             />

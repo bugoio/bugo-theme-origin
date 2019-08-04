@@ -6,19 +6,15 @@
    *
    * @version 1.0.0
    */}}
-
-    <h2 class="block-title {{ if eq .block.show_block_title false }}sr-only{{ end }}">{{ .block.title }}</h2>
-    {{ $page := .page }}
-    {{ $site := .site }}
-    {{ with .block.columns }}
-      {{ range . }}
-      <div id="column-{{ .title  | anchorize }}" class="item {{ .color_scheme | urlize }} text-{{ .text_align }}" role="region" tabindex="0">
-        <div>
-          {{ partial "utilities/process-shortcodes" (dict "page" $page "site" $site "content" .content) | markdownify }}
-        </div>
+  {{ with .block.columns }}
+    {{ range . }}
+    <div id="column-{{ .title  | anchorize }}" class="item {{ .color_scheme | urlize }} text-{{ .text_align }}" role="region" tabindex="0">
+      <div>
+        {{ .content | markdownify }}
       </div>
-      {{ end }}
-    {{ else }}
-      {{ partial "messages/danger" "You have not added any columns to this block yet."}}
+    </div>
     {{ end }}
+  {{ else }}
+    {{ partial "messages/warning" "You have not added any columns to this block yet."}}
+  {{ end }}
 

@@ -1,47 +1,29 @@
-html {
-  width: 100%;
-}
-
-body {
-  @include ms-respond(font-size,1);
-  @include ms-respond(padding-right,2);
-  @include ms-respond(padding-left,2);
-  line-height: 1.5;
-  max-width: 100%;
-  margin: 0 auto;
-  font-family: "Roboto";
-  font-display: auto;
-  color: $base-text-color;
-  @media (prefers-color-scheme: dark) {
-      color: $heading-text-color-dark;
-  }   
-}
 
 a {
-  color: $link-text-color;
+  color: $global-link-color;
   @media (prefers-color-scheme: dark) {
-      color: $link-text-color-dark;
+      color: $global-link-dark;
   }   
 
   &:hover {
-    color: darken($link-text-color,20%);
+    color: darken($global-link-color,20%);
     @media (prefers-color-scheme: dark) {
-        color: darken($link-text-color-dark,20%);
+        color: darken($global-link-dark,20%);
     }   
   }
 }
 
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
-  font-family: 'Playfair Display', serif;
+  font-family: $heading-font;
   font-display: auto;
-  font-weight: 400;
-  line-height: 1.2;
-  margin-top: var(--heading-margin-top);
-  margin-bottom: var(--heading-margin-bottom);
+  font-weight: $heading-font-weight;
+  line-height: $heading-line-height;
+  margin-top: $heading-margin;
+  margin-bottom: $heading-padding;
 
-  color: $heading-text-color;
+  color: $heading-color;
   @media (prefers-color-scheme: dark) {
-      color: $heading-text-color-dark;
+      color: $heading-color-dark;
   }   
 
   a {
@@ -60,44 +42,27 @@ h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
 }
 
 h1 {
-  @include ms-respond(font-size,5);
-  margin-top: 0 !important;
-  line-height: 1.1;
-
-  @include respond-to(md){
-    @include ms-respond(font-size,6);
-  }
-
-  @include respond-to(lg){
-    @include ms-respond(font-size,7);
-  }
-
-  @include respond-to(xl){
-    @include ms-respond(font-size,9);
-  }
+  @include heading-size($heading-1);
 }
 
 h2 {
-  @include ms-respond(font-size,5);
+  @include heading-size($heading-2);
 }
 
 h3 {
-  @include ms-respond(font-size,4);
+  @include heading-size($heading-3);
 }
 
 h4 {
-  @include ms-respond(font-size,3);
-  line-height: 1.5;
+  @include heading-size($heading-4);
 }
 
 h5 {
-  @include ms-respond(font-size,2);
-  line-height: 1.5;
+  @include heading-size($heading-5);
 }
 
 h6 {
-  @include ms-respond(font-size,1);
-  line-height: 1.5;
+  @include heading-size($heading-6);
 }
 
 header {
@@ -117,14 +82,14 @@ p {
 }
 
 blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
+  background: lighten($accent_2,55%);
+  border-left: 10px solid $accent_2;
+  margin: var(--global-margin) 0;
+  padding: var(--global-padding);
   quotes: "\201C""\201D""\2018""\2019";
 }
 blockquote:before {
-  color: #ccc;
+  color: $accent_2;
   content: open-quote;
   font-size: 4em;
   line-height: 0.1em;
@@ -133,6 +98,7 @@ blockquote:before {
 }
 blockquote p {
   display: inline;
+  margin: var(--global-margin) 0;
 }
 
 blockquote {
@@ -142,39 +108,39 @@ blockquote {
 }
 
 aside {
-  @include ms-respond(font-size,1);
+  // @include ms-respond(font-size,1);
 
-  h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
-    line-height: 1.2;
-    margin-bottom: var(--heading-margin-bottom);
-  }
+  // h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
+  //   line-height: 1.2;
+  //   margin-bottom: var(--heading-margin-bottom);
+  // }
 
-  h1 {
-    @include ms-respond(font-size,4);
-  }
+  // h1 {
+  //   @include ms-respond(font-size,4);
+  // }
 
-  h2 {
-    @include ms-respond(font-size,3);
-  }
+  // h2 {
+  //   @include ms-respond(font-size,3);
+  // }
 
-  h3 {
-    @include ms-respond(font-size,2);
-  }
+  // h3 {
+  //   @include ms-respond(font-size,2);
+  // }
 
-  h4 {
-    @include ms-respond(font-size,1);
-    line-height: 1.5;
-  }
+  // h4 {
+  //   @include ms-respond(font-size,1);
+  //   line-height: 1.5;
+  // }
 
-  h5 {
-    @include ms-respond(font-size,1);
-    line-height: 1.5;
-  }
+  // h5 {
+  //   @include ms-respond(font-size,1);
+  //   line-height: 1.5;
+  // }
 
-  h6 {
-    @include ms-respond(font-size,1);
-    line-height: 1.5;
-  }
+  // h6 {
+  //   @include ms-respond(font-size,1);
+  //   line-height: 1.5;
+  // }
 }
 
 .text-left {

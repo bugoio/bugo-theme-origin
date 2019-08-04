@@ -32,8 +32,8 @@
             <source src="{{ . }}" type="video/mp4">
           </video>
       {{ end }}
+      <h2 class="block-title {{ if eq $block.show_block_title false }} sr-only {{ end }}">{{ $block.title }}</h2>
       <div class="container {{ with $block.columns }}column-container-{{ len . }}{{ end }}">
-        <h2 class="block-title {{ if eq $block.show_block_title false }} sr-only {{ end }}">{{ $block.title }}</h2>
         {{ partial $path (dict "context" $context "block" . ) }}
       </div>
     </div>
@@ -41,7 +41,7 @@
   <!-- add the pages content here -->
   {{ with .Content }}
   <div class="block block-columns">
-    <div class="container column-container-1">
+    <div class="container">
       <div id="column-video-column-text" class="item no-padding" role="region" tabindex="0">
         {{ . }}
       </div>

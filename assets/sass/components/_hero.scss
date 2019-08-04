@@ -9,28 +9,36 @@
   background-position: 50%;
   padding-bottom: 120%;
   position: relative;
+
   
   transition: padding-bottom 0.5s;
   // @include responsive-property($hero-min-height,'min-height');  
   @include respond-to(sm){
-    padding-bottom: 100%;
-  }
-
-  @include respond-to(md){
     padding-bottom: 80%;
   }
 
+  @include respond-to(md){
+    // padding-bottom: 80%;
+  }
+
   @include respond-to(lg){
-    padding-bottom: 70%;
+    padding-bottom: 60%;
   }
 
   @include respond-to(xxl){
-    padding-bottom: 60%;
+    padding-bottom: 50%;
   }
 
   @include respond-to(xxxl){
     padding-bottom: 40%;
   }
+
+  &.spacer {
+    padding: 0;
+    height: 136px;
+    background-color: transparent;
+  }
+
   .container {
     height: 100%;
     position: absolute;
@@ -42,26 +50,43 @@
     grid-template-areas: 
       "herotxt";
     }
+    z-index: 100;
 
   .hero-text {
     grid-area: herotxt;
     position: relative;
-    z-index: 100;
-    color: $black;
-    // text-shadow: ms(-5) ms(-5) ms(-2) #000;
+    color: $hero-color;
     align-self: center;
-    @include ms-respond(font-size,4);
-    font-family: 'Play Fair';
-    max-width: 50ch;
+    font-size: $hero-font-size;
+    max-width: $hero-maxchar;
 
-    h1,h2,h3,h4,h5,h6 {
-      display: block;
-      letter-spacing: -0.125rem;
-      color: $black;
-      margin: 0;
-      @include respond-to(lg){
-        max-width: 20ch;
-      }
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+      color: $hero-color;
     }
+
+    h1 {
+      @include heading-size($hero-1);
+    }
+
+    h2 {
+      @include heading-size($hero-2);
+    }
+
+    h3 {
+      @include heading-size($hero-3);
+    }
+
+    h4 {
+      @include heading-size($hero-4);
+    }
+
+    h5 {
+      @include heading-size($hero-5);
+    }
+
+    h6 {
+      @include heading-size($hero-6);
+    }
+
   }
 }

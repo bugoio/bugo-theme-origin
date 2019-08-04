@@ -50,93 +50,13 @@
   </script>
 
   {{- range .Site.Data.config.addresses -}}
-  <!-- JSON-LD Local Business markup for Google Structured Data -->
-  <script type="application/ld+json">
-    {
-    "@context" : "http://schema.org",
-    "@type" : "LocalBusiness",
-    {{- with $site.Title -}}
-      "name" : "{{ . }}",
-    {{- end -}}
-    {{ with $.Site.Data.config.seo_logo.image }}
-      "image" : "{{ partial "utilities/image-url" (dict "page" $.Page "url" . ) }}",
-    {{ end }}
-
-    {{- with $.Site.Data.config.phone -}}
-    "telephone" : "+1{{ . }}",
-    {{- end -}}
-
-    {{- with .info.company_email -}}
-    "email" : "{{ . }}",
-    {{- end -}}
-    "address" : {
-      "@type" : "PostalAddress",
-
-      {{ $address2 := .address_2 }}
-      {{- with .address_1 -}}
-      "streetAddress" : "{{ . }} {{ $address2 }}",
-      {{- end -}}
-
-      {{- with .city -}}
-      "addressLocality" : "{{ . }}",
-      {{- end -}}
-
-      {{- with .state -}}
-      "addressRegion" : "{{ . }}",
-      {{- end -}}
-
-      {{- with .country -}}
-      "addressCountry" : "{{ . }}",
-      {{- end -}}
-
-      {{- with .zip_code -}}
-      "postalCode" : "{{ . }}"
-      {{- end -}}
-    },
-    "url" : "{{ $.Permalink }}"
-    }
-  </script>
+    {{- partial "components/structured-data-local-business" . | safeJS -}}
   {{- end -}}
-  <!-- add fonts -->
-  {{- $scratch := newScratch -}}
-  {{- $scratch.Set "fontfamiliesstring" "" -}}
-    {{- with $page.Site.Data.styles.global_font -}}
-    {{- $scratch.Set "fontstring" "" -}}
-    {{- $scratch.Set "fontstring"  ( printf  "%s:" .font_family ) -}}
-    {{- $fontFamily :=  . -}}
-    {{- range $weight := .font_weights -}}
-      {{- $scratch.Set "fontstring"  ( printf  "%s%s," ( $scratch.Get "fontstring" ) . ) -}}
-      {{- if in $fontFamily.font_italics . -}}
-        {{- $scratch.Set "fontstring"  ( printf  "%s%si," ( $scratch.Get "fontstring" ) . ) -}}
-      {{- end -}}
-    {{- end -}}
-    {{ end }}
-    {{- $scratch.Set "fontstring"  ( printf  `"%s"` (strings.TrimRight "," ($scratch.Get "fontstring") ) ) -}}
-    {{- $scratch.Set "fontfamiliesstring" ( printf "%s%s," ($scratch.Get "fontfamiliesstring")  ($scratch.Get "fontstring") ) -}}
+  <!-- Add fonts from forestry settings -->
+  {{- partial "components/head-fonts-scripts" . -}}
 
-    {{- with $page.Site.Data.styles.header_font -}}
-    {{- $scratch.Set "fontstring" "" -}}
-    {{- $scratch.Set "fontstring"  ( printf  "%s:" .font_family ) -}}
-    {{- $fontFamily :=  . -}}
-    {{- range $weight := .font_weights -}}
-      {{- $scratch.Set "fontstring"  ( printf  "%s%s," ( $scratch.Get "fontstring" ) . ) -}}
-      {{- if in $fontFamily.font_italics . -}}
-        {{- $scratch.Set "fontstring"  ( printf  "%s%si," ( $scratch.Get "fontstring" ) . ) -}}
-      {{- end -}}
-    {{- end -}}
-    {{ end }}
-    {{- $scratch.Set "fontstring"  ( printf  `"%s"` (strings.TrimRight "," ($scratch.Get "fontstring") ) ) -}}
-    {{- $scratch.Set "fontfamiliesstring" ( printf "%s%s," ($scratch.Get "fontfamiliesstring")  ($scratch.Get "fontstring") ) -}}
-
-  <script type="text/javascript">
-    //{{ $scratch.Get "fontfamiliesstring" }}
-    fontFamilies = [ {{- strings.TrimRight "," ($scratch.Get "fontfamiliesstring") | safeJS -}} ];
-  </script>
+  <!-- Custom Styles from .Site.Data.styles. Can also be set in Forestry -->
   <style>
-    :root {
-      --font-family-global: "{{- $page.Site.Data.styles.global_font.font_family -}}", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-      --font-family-header: {{ with  $page.Site.Data.styles.header_font.font_family }}"{{- . -}}",{{ end }} "{{- $page.Site.Data.styles.global_font.font_family -}}", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    }
     {{ with $page.Site.Data.styles.custom_css }}
       {{ . | safeCSS }}
     {{ end }}

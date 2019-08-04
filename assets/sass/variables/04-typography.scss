@@ -1,0 +1,10 @@
+/**
+ * Global Typography
+ **/
+$global-font:             var(--font-family-global); // grab the font family from the forestry output
+$global-font-color:       $dark;
+$global-font-color-dark:  $light;
+$global-link-color:       $accent-2;
+$global-link-dark:        $white;
+$global-link-focus:       lighten($accent-1,20%);
+$global-font-size:        0; // modular scale

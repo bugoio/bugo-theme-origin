@@ -27,3 +27,10 @@
   }
 }
 
+@mixin heading-size($heading) {
+  @each $breakpoint, $value in $heading {
+    @include respond-to($breakpoint){
+      @include ms-respond(font-size,$value);
+    }
+  }
+}

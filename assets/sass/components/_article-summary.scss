@@ -7,3 +7,114 @@
     }
   }
 }
+
+.article-summary {
+  margin-bottom: 4rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+  "thumb thumb head head head head"
+  "thumb thumb time time time time"
+  "thumb thumb tax tax tax tax"
+  "summ summ summ summ summ summ";
+  grid-column-gap: 2rem;
+
+  header {
+    grid-area: head;
+
+    h3 {
+      margin-top: 0;
+    }
+  }
+
+  time {
+    grid-area: time;
+  }
+
+  .thumbnail {
+    grid-area: thumb;
+  }
+
+  .summary {
+    grid-area: summ;
+  }
+}
+
+aside   .article-summary {
+  display: grid;
+  // grid-template-columns: repeat(1, 1fr);
+  grid-template-areas:
+  "head head head head head head"
+  "time time time time time time"
+  "tax tax tax tax tax tax"
+  "summ summ summ summ summ summ";
+
+  margin: 0 0 2rem;
+
+  header {
+    margin-bottom: 0;
+
+    h3{
+      margin: 0;
+    }
+
+    .taxonomy {
+      margin: 0 0 1rem;
+      display: none;
+    }
+  }
+
+  .thumbnail {
+    display: none;
+  }
+
+  .summary {
+    display: none;
+  }
+
+  time {
+    // grid-area: time;
+  }
+
+  .taxonomy {
+    grid-area: tax;
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+  }
+}
+
+
+.widget-related-posts {
+  .article-summary {
+    display: grid;
+    grid-template-areas:
+    "thumb thumb thumb head head head"
+    "thumb thumb thumb time time time"
+    "thumb thumb thumb tax tax tax"
+    "summ summ summ summ summ summ";
+    grid-row-gap: 0;
+
+    margin: 0 0 2rem;
+
+    header {
+      h3{
+        margin: 0 0 1rem;
+      }
+
+      .taxonomy {
+        display: none;
+        margin: 0 0 1rem;
+      }
+    }
+
+    .thumbnail {
+      display: block;
+      margin-bottom: 0;
+    }
+
+    .summary {
+      display: none;
+      grid-area: summ;
+    }
+  }
+}

@@ -8,27 +8,45 @@
 	 *
    */}}
 
+{{ define "hero" }}
+  {{ if .Params.videos }}
+    {{ partial "components/hero-video" . }}
+  {{ else if .Params.images}}
+    {{ partial "components/hero" . }}
+  {{ end }}
+{{ end }}
+
+{{ define "breadcrumbs" }}
+  <div class="breadcrumbs">
+    {{ partial "components/breadcrumbs" . }}
+  </div>
+{{ end }}
+
 {{ define "main" }}
-<main id="main" tabindex="0">
-  <article class="main-article">
-    <header>
-      <h1>{{ .Title }}</h1>
-    </header>
-    {{ if eq .Site.Data.config.media.default_featured_image.show_featured_image_in_content true }}
-        {{ partial "components/thumbnail" (dict "page" .Page "site" .Site ) }}
-    {{end}}
-    <div class="summary">
-      {{ .Content }}
-    </div>
-    <footer>
-      {{ partial "components/share_buttons" . }}
-    </footer>
-  </article>
-</main>
+  <main id="main" tabindex="0">
+    <article class="main-article">
+      <header>
+        <h1>{{ .Title }} single</h1>
+      </header>
+      {{ if eq .Site.Data.config.media.default_featured_image.show_featured_image_in_content true }}
+          {{ partial "components/thumbnail" (dict "page" .Page "site" .Site ) }}
+      {{end}}
+      {{ if .Page.Params.show_slideshow }}
+        {{ partial "components/slideshow" . }}
+      {{ end }}
+
+      <div class="summary">
+        {{ .Content }}
+      </div>
+      <footer>
+        {{ partial "components/share_buttons" . }}
+      </footer>
+    </article>
+  </main>
 {{ end }}
 
 {{ define "aside" }}
-<aside class="sidebar" tabindex="0">
-  {{ partial "widgets/widgets" (dict "page" .Page "site" .Site "content" .Site.Data.config.sidebar_widgets.widgets ) }}
-</aside>
+  <aside class="sidebar" tabindex="0">
+    {{ partial "widgets/widgets" (dict "page" .Page "site" .Site "content" .Site.Data.config.sidebar_widgets.widgets ) }}
+  </aside>
 {{ end }}

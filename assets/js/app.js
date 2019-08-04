@@ -15,10 +15,11 @@ import Swal from 'sweetalert2';
 
 // require("../../static/assets/css/main.css");
 
+//["Roboto","Playfair+Display:400,900"]
 //Load fonts
 WebFont.load({
   google: {
-    families: ["Roboto","Playfair+Display:400,900"]
+    families: window.fontFamilies
   }
 });
 
