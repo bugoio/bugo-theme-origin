@@ -9,7 +9,7 @@
       </video>
       {{ range $index, $image := $images }}
         {{ if eq $index 0 }}
-          <img src="{{ . }}"/>
+          <img src="{{ . }}" class="hero-image"/>
         {{ end }}
       {{ end }}
       <div class="container">
