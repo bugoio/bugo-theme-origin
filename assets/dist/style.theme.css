@@ -2088,7 +2088,6 @@ a {
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-family: var(--font-family-header);
-  font-display: auto;
   font-weight: 400;
   line-height: 1.2;
   margin-top: 0;
@@ -3361,7 +3360,6 @@ aside .article-summary {
 /*csslint outline-none:false*/
 button, .pagination .pagination-list li a, .button, .widget-categories a {
   font-family: inherit;
-  font-display: auto;
   font-size: 100%;
   padding: 0.5em 1em;
   border: 1px solid #999;
@@ -5083,7 +5081,7 @@ body {
   grid-row-gap: 0;
   grid-template-columns: 1fr;
   font-family: "Roboto";
-  font-display: auto;
+  font-display: falback;
   font-size: 16.9px;
   line-height: 1.5;
   color: #534D48;

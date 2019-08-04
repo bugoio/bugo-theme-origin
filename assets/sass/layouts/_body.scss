@@ -79,7 +79,7 @@ body{
 
   // Typography
   font-family: "Roboto";
-  font-display: auto;
+  font-display: falback;
   @include ms-respond(font-size,1);
   line-height: 1.5;
 
