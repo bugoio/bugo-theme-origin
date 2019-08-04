@@ -9,9 +9,7 @@
   {{ with .block.columns }}
     {{ range . }}
     <div id="column-{{ .title  | anchorize }}" class="item {{ .color_scheme | urlize }} text-{{ .text_align }}" role="region" tabindex="0">
-      <div>
-        {{ .content | markdownify }}
-      </div>
+      {{ .content | markdownify }}
     </div>
     {{ end }}
   {{ else }}
