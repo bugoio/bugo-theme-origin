@@ -13,10 +13,12 @@ $navcon-xs-template-areas:
 $navcon-sm-template-areas: $navcon-xs-template-areas;
 // md
 $navcon-md-template-areas: 
-  "brand ... ... ... ... ... ... ... ... ... search search"
-  "brand ... ... ... ... ... ... nmain nmain nmain nmain nmain";
+  "brand brand ... ... ... ... ... ... ... ... search search"
+  "brand brand ... ... ... ... ... nmain nmain nmain nmain nmain";
 // lg
-$navcon-lg-template-areas: $navcon-md-template-areas;
+$navcon-lg-template-areas:
+  "brand brand ... ... ... ... ... ... ... ... search search"
+  "brand brand ... ... ... ... ... nmain nmain nmain nmain nmain";
 // xl
 $navcon-xl-template-areas: $navcon-md-template-areas;
 // xxl

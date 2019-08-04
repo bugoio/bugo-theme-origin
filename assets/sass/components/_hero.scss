@@ -3,62 +3,79 @@
   display: grid;
   align-items: stretch;
   margin: 0;
+  position: relative;
+  z-index: 1;
+  border-bottom-color: $hero-border-color;
+  border-bottom-style: $hero-border-style;
+  @include ms-respond(border-bottom-width,$hero-border-width);
+
   background-color: lighten($dark,50%);
   background-blend-mode: screen, luminosity;
   background-size: cover; 
   background-position: 50%;
-  padding-bottom: 120%;
-  position: relative;
 
   
+  // set padding bottom
+  @include aspect-ratio($hero-aspect-ratio);
   transition: padding-bottom 0.5s;
-  // @include responsive-property($hero-min-height,'min-height');  
-  @include respond-to(sm){
-    padding-bottom: 80%;
-  }
-
-  @include respond-to(md){
-    // padding-bottom: 80%;
-  }
-
-  @include respond-to(lg){
-    padding-bottom: 60%;
-  }
-
-  @include respond-to(xxl){
-    padding-bottom: 50%;
-  }
-
-  @include respond-to(xxxl){
-    padding-bottom: 40%;
-  }
-
+  
   &.spacer {
     padding: 0;
     height: 136px;
     background-color: transparent;
   }
 
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: transparentize($light,.2);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+    width: 100vw;
+    transform: translateX(-50%);
+  }
+
+  .hero-image {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: sepia(15%) brightness(120%);
+    z-index: -1;
+  }
+
   .container {
     height: 100%;
-    position: absolute;
+    position: relative;
     width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
     display: grid;
     grid-template-columns: repeat(1,1fr);
+    z-index: 1001;
     grid-template-areas: 
       "herotxt";
-    }
-    z-index: 100;
+
+  } 
 
   .hero-text {
     grid-area: herotxt;
     position: relative;
     color: $hero-color;
     align-self: center;
-    font-size: $hero-font-size;
+    @include ms-respond(font-size,$hero-font);
+    font-family: var(--font-family-header);
     max-width: $hero-maxchar;
+    z-index: 10000000;
 
     h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
       color: $hero-color;

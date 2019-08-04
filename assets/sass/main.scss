@@ -72,7 +72,6 @@ $danger:        {{ .Site.Data.styles.theme_colors.danger | default "#dc3545" }} 
 @import "utils/variables/components";
 @import "utils/variables/forms";
 @import "utils/variables/header";
-@import "utils/variables/hero";
 @import "utils/variables/widgets";
 @import "utils/helpers";
 
@@ -128,3 +127,4 @@ $danger:        {{ .Site.Data.styles.theme_colors.danger | default "#dc3545" }} 
 //pages
 @import "pages/landing-page";
 @import "pages/list-page";
+@import "pages/home";

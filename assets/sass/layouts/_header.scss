@@ -77,7 +77,7 @@ $header-template-columns: (
   position: fixed;
   top: 0;
   width: 100vw;
-  z-index: 1;
+  z-index: 2000;
   background-color: $header-bg;
   display: grid;
   align-items: center;
@@ -130,7 +130,9 @@ $header-template-columns: (
           color: $header-link-color-dark;
       }
       img {
-        width: $branding-image-width;
+        display: block;
+        width: 80%;
+        max-width: 50%;
         height: auto;
       }   
     }

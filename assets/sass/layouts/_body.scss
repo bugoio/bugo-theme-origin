@@ -5,7 +5,7 @@
 $body-grid-area: body;
 // xs
 $body-xs-template-areas:
-  // "head"
+  // "head" // commented out since the header is fixed positioned
   "hero"
   "breadcrumbs" 
   "wrap"

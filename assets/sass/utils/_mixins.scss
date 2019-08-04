@@ -34,3 +34,11 @@
     }
   }
 }
+
+@mixin aspect-ratio($hero) {
+  @each $breakpoint, $value in $hero {
+    @include respond-to($breakpoint){
+      padding-top: $value;
+    }
+  }
+}
