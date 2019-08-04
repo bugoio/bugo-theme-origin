@@ -18,7 +18,8 @@
             <img 
               class="" 
               src="{{ partial "utilities/image-url" $imageParams }}" 
-              aria-hidden="true" 
+              aria-hidden="true"
+              alt="{{ .Site.Data.organization.organization_name }} Logo" 
             />
         {{ else }}
           {{ .Site.Data.organization.organization_name }}        
