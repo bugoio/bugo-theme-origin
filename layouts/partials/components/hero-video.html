@@ -9,7 +9,8 @@
       </video>
       {{ range $index, $image := $images }}
         {{ if eq $index 0 }}
-          <img src="{{ . }}" class="hero-image"/>
+          {{ $alt := humanize (index (split (path.Base $image) ".") 0) }}
+          <img src="{{ . }}" class="hero-image" alt="{{ $alt }}"/>
         {{ end }}
       {{ end }}
       <div class="container">

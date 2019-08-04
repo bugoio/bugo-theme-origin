@@ -4,6 +4,7 @@
     <ul class="slides">
       {{ $captions := .Params.image_captions }}
       {{ range $index, $image := .Params.images }}
+      {{ $alt := humanize (index (split (path.Base $image) ".") 0) }}
       <li>
           <img 
             src="{{ partial "utilities/cloudinary-transform" (dict "image" . "transform" "ar_16:9,c_fill,w_400") }}" 
@@ -15,7 +16,7 @@
               {{ partial "utilities/cloudinary-transform" (dict "image" . "transform" "ar_16:9,c_fill,w_2000") }} 1600w,
             "
             {{ with $captions }}
-            alt="{{ index . $index }}"
+            alt="{{ $alt }}"
             {{ end }}
           />
       </li>

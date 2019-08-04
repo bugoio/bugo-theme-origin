@@ -3,6 +3,7 @@
   {{ if eq $index 0 }}
     {{ $options := dict "context" $context "image" $image "transform" "w_1600"}}
     {{ $imgURL := partial "utilities/cloudinary-transform" $options }}
+    {{ $alt := humanize (index (split (path.Base $image) ".") 0) }}
     <div class="hero">
       <img src="{{ $imgURL }}" class="hero-image" aria-label="hidden"/>
       <div class="container"> 
