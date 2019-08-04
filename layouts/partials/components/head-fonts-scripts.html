@@ -2,8 +2,11 @@
   {{- $scratch.Set "fontfamiliesstring" "" -}}
     {{- with .Page.Site.Data.styles.global_font -}}
     {{- $scratch.Set "fontstring" "" -}}
-    {{- $scratch.Set "fontstring"  ( printf  "%s:" .font_family ) -}}
+    {{- $scratch.Set "fontstring" .font_family -}}
     {{- $fontFamily :=  . -}}
+    {{ if len .font_weights }}
+      {{- $scratch.Set "fontstring"  ( printf  "%s%s," ( $scratch.Get "fontstring" ) ":" ) -}}
+    {{ end }}
     {{- range $weight := .font_weights -}}
       {{- $scratch.Set "fontstring"  ( printf  "%s%s," ( $scratch.Get "fontstring" ) . ) -}}
       {{- if in $fontFamily.font_italics . -}}
@@ -16,8 +19,11 @@
 
     {{- with .Page.Site.Data.styles.header_font -}}
     {{- $scratch.Set "fontstring" "" -}}
-    {{- $scratch.Set "fontstring"  ( printf  "%s:" .font_family ) -}}
+    {{- $scratch.Set "fontstring" .font_family -}}
     {{- $fontFamily :=  . -}}
+    {{ if len .font_weights }}
+      {{- $scratch.Set "fontstring"  ( printf  "%s%s," ( $scratch.Get "fontstring" ) ":" ) -}}
+    {{ end }}
     {{- range $weight := .font_weights -}}
       {{- $scratch.Set "fontstring"  ( printf  "%s%s," ( $scratch.Get "fontstring" ) . ) -}}
       {{- if in $fontFamily.font_italics . -}}
