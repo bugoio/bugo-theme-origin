@@ -1,83 +1,40 @@
-/** 
- * Header Nav Container Grid
+/**
+ *
+ * Header Nav Container
+ *
  **/
-// SPACING
-$navcon-padding: 1rem 0;
-$navcon-margin: 0 auto;
-// AREAS
-$navcon-grid-area: navcon;
-// xs
-$navcon-xs-template-areas:
-  "brand brand brand ... ... ... ... ... ... ... ... mbutton";
-// sm
-$navcon-sm-template-areas: $navcon-xs-template-areas;
-// md
-$navcon-md-template-areas: 
-  "brand brand ... ... ... ... ... ... ... ... search search"
-  "brand brand ... ... ... ... ... nmain nmain nmain nmain nmain";
-// lg
-$navcon-lg-template-areas:
-  "brand brand ... ... ... ... ... ... ... ... search search"
-  "brand brand ... ... ... ... ... nmain nmain nmain nmain nmain";
-// xl
-$navcon-xl-template-areas: $navcon-md-template-areas;
-// xxl
-$navcon-xxl-template-areas: $navcon-md-template-areas;
-// xxxl
-$navcon-xxxl-template-areas: $navcon-md-template-areas;
 
-// COLUMNS
-// xs
-$navcon-xs-template-columns: repeat(12, 1fr);
-// sm
-$navcon-sm-template-columns: $navcon-xs-template-columns;
-// md
-$navcon-md-template-columns: $navcon-xs-template-columns;
-// lg
-$navcon-lg-template-columns: $navcon-xs-template-columns;
-// xl
-$navcon-xl-template-columns: $navcon-xs-template-columns;
-// xxl
-$navcon-xxl-template-columns: $navcon-xs-template-columns;
-// xxxl
-$navcon-xxxl-template-columns: $navcon-xs-template-columns;
-
-$navcon-template-areas: (
-  xs: $navcon-xs-template-areas,
-  sm: $navcon-sm-template-areas,
-  md: $navcon-md-template-areas,
-  lg: $navcon-lg-template-areas,
-  xl: $navcon-xl-template-areas,
-  xxl: $navcon-xxl-template-areas,
-  xxxl: $navcon-xxxl-template-areas
+$nav-con-template-areas: ( 
+  xs: $nav-con-xs-template-areas, 
+  sm: $nav-con-sm-template-areas, 
+  md: $nav-con-md-template-areas, 
+  lg: $nav-con-lg-template-areas, 
+  xl: $nav-con-xl-template-areas, 
+  xxl: $nav-con-xxl-template-areas, 
+  xxxl: $nav-con-xxxl-template-areas
 );
 
-$navcon-template-columns: (
-  xs: $navcon-xs-template-columns,
-  sm: $navcon-sm-template-columns,
-  md: $navcon-md-template-columns,
-  lg: $navcon-lg-template-columns,
-  xl: $navcon-xl-template-columns,
-  xxl: $navcon-xxl-template-columns,
-  xxxl: $navcon-xxxl-template-columns
-);
+$nav-con-template-columns: ( 
+  xs: $nav-con-xs-template-columns, 
+  sm: $nav-con-sm-template-columns, 
+  md: $nav-con-md-template-columns, 
+  lg: $nav-con-lg-template-columns, 
+  xl: $nav-con-xl-template-columns, 
+  xxl: $nav-con-xxl-template-columns, 
+  xxxl: $nav-con-xxxl-template-columns
+ );
 
 .nav-container {
-  @extend .container;
-  margin: $navcon-margin;
-  padding: $navcon-padding;
   grid-area: ncon;
   display: grid;
-  grid-column-gap: 0;
-  grid-row-gap: 1rem;
-  grid-template-columns: 1fr;
-  @include responsive-property($navcon-template-areas,'grid-template-areas');
-  @include responsive-property($navcon-template-columns,'grid-template-columns');
-  align-items: center;
 
-  aside {
-    display: block;
-  }
+  @extend .container;
+  @include space-element( margin, $nav-con-margin-x, $nav-con-margin-y );
+  @include space-element( padding, $nav-con-padding-x, $nav-con-padding-y );  
+
+  @include grid-gaps( $nav-con-column-gap, $nav-con-row-gap );
+  @include responsive-property( $nav-con-template-areas, 'grid-template-areas' );
+  @include responsive-property( $nav-con-template-columns, 'grid-template-columns' );
 }
 
 .site-brand {
@@ -86,7 +43,6 @@ $navcon-template-columns: (
 
 .nav-main {
   grid-area: nmain;
-  display: none;
 }
 
 .nav-secondary {

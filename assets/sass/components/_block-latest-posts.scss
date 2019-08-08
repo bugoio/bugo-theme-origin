@@ -3,12 +3,12 @@
     @extend .container;
 
     display: flex;
-    // grid-column-gap: var(--global-margin);
+    // grid-column-gap: var( --global-margin );
     // grid-template-columns: 1fr;
 
     .article-summary {
       flex: 1 1 0;
-      padding-right: var(--global-padding);
+      padding-right: var( --global-padding );
 
       &:last-child {
         padding-right: 0;

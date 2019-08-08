@@ -1,10 +1,31 @@
-/**
- * Global Typography
- **/
-$global-font:             var(--font-family-global); // grab the font family from the forestry output
-$global-font-color:       $dark;
-$global-font-color-dark:  $light;
-$global-link-color:       $accent-2;
-$global-link-dark:        $white;
-$global-link-focus:       lighten($accent-1,20%);
-$global-font-size:        0; // modular scale
+$paragraph-margin-top:      false; // false | modular scale ratio
+$paragraph-margin-right:    false; // false | modular scale ratio
+$paragraph-margin-bottom:   $global-margin; // false | modular scale ratio
+$paragraph-margin-left:     false; // false | modular scale ratio
+
+$paragraph-padding-top:     false; // false | modular scale ratio
+$paragraph-padding-bottom:  false; // false | modular scale ratio
+$paragraph-padding-right:   false; // false | modular scale ratio
+$paragraph-padding-left:    false; // false | modular scale ratio
+
+$blockquote-margin-top:      false; // false | modular scale ratio
+$blockquote-margin-right:    false; // false | modular scale ratio
+$blockquote-margin-bottom:   $global-margin; // false | modular scale ratio
+$blockquote-margin-left:     false; // false | modular scale ratio
+
+$blockquote-padding-top:     1; // false | modular scale ratio
+$blockquote-padding-bottom:  1; // false | modular scale ratio
+$blockquote-padding-right:   1; // false | modular scale ratio
+$blockquote-padding-left:    1; // false | modular scale ratio
+
+
+$pre-bg:              darken( $light, 5% );
+$pre-margin-top:      false; // false | modular scale ratio
+$pre-margin-right:    false; // false | modular scale ratio
+$pre-margin-bottom:   $global-margin; // false | modular scale ratio
+$pre-margin-left:     false; // false | modular scale ratio
+
+$pre-padding-top:     1; // false | modular scale ratio
+$pre-padding-bottom:  1; // false | modular scale ratio
+$pre-padding-right:   1; // false | modular scale ratio
+$pre-padding-left:    1; // false | modular scale ratio

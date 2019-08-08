@@ -1,3 +1,12 @@
+//Vendors
+@import "../../node_modules/mathsass/dist/math";
+@import "../../node_modules/modularscale-sass/stylesheets/modularscale";
+@import "../../node_modules/sweetalert2/src/sweetalert2.scss";
+@import "../../node_modules/flexslider/flexslider";
+
+@import "utils/functions";
+@import "utils/mixins";
+
 /**
  *
  * Hugo Commands
@@ -9,8 +18,7 @@
 
 /**
  *
- * Theme Colors
- *
+ * Theme Color Variables
  * Assigns global colors variables for use elsewhere.
  *
  **/
@@ -28,26 +36,17 @@ $info:          {{ .Site.Data.styles.theme_colors.info | default "##17a2b8" }} !
 $warning:       {{ .Site.Data.styles.theme_colors.warning | default "#ffc107" }} !default;
 $danger:        {{ .Site.Data.styles.theme_colors.danger | default "#dc3545" }} !default;
 
+@import "utils/variables/colors";
+
 /**
  *
- * Color mixes generated from Hugo Site Data
- *
- * prints a class which contains color and background properties
+ * Generate theme color mixes
+ * returns a class for use with block level eleemnts
  *
  **/
 
 {{ range $index, $mix := .Site.Data.styles.color_mixes }}  
-  .{{ $mix.name | anchorize }} {
-    background-color: ${{ $mix.background_color | default "none" | anchorize }};
-    color: ${{ $mix.text_color | anchorize }};
-    h1,h2,h3,h4,h5,h6 {
-      color: {{ if $mix.heading_color }}${{ end }}{{ $mix.heading_color | default "inherit" | anchorize }};
-
-      a {
-        color: {{ if $mix.heading_color }}${{ end }}{{ $mix.heading_color | default "inherit" | anchorize }};
-      }
-    }
-  }
+  @include color-mixes( {{ $mix.name | anchorize }}, {{ $mix.text_color | anchorize }}, {{ $mix.background_color | anchorize }}, {{ $mix.heading_color | anchorize }} );
 {{ end }}
 
 /**
@@ -56,19 +55,9 @@ $danger:        {{ .Site.Data.styles.theme_colors.danger | default "#dc3545" }} 
  *
  **/
 
-//Vendors
-@import "../../node_modules/mathsass/dist/math";
-@import "../../node_modules/modularscale-sass/stylesheets/modularscale";
-@import "../../node_modules/sweetalert2/src/sweetalert2.scss";
-@import "../../node_modules/flexslider/flexslider";
-
 //Utilities
-@import "utils/functions";
-@import "utils/mixins";
 @import "utils/modularscale";
 @import "variables/00-vars";
-@import "utils/variables/global-variables";
-@import "utils/variables/colors";
 @import "utils/variables/components";
 @import "utils/variables/forms";
 @import "utils/variables/header";

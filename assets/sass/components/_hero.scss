@@ -1,36 +1,42 @@
 .hero {
   grid-area: hero;
+
+  @if $hero-container == true{
+    @extend .container;
+    @include ms-respond( padding-left, $global-padding );
+    @include ms-respond( padding-right, $global-padding );
+  }
+
   display: grid;
   align-items: stretch;
   margin: 0;
   position: relative;
   z-index: 1;
-  border-bottom-color: $hero-border-color;
-  border-bottom-style: $hero-border-style;
-  @include ms-respond(border-bottom-width,$hero-border-width);
 
-  background-color: lighten($dark,50%);
-  background-blend-mode: screen, luminosity;
-  background-size: cover; 
-  background-position: 50%;
+  @if $hero-border == true {
+    border-bottom-color: $hero-border-color;
+    border-bottom-style: $hero-border-style;
+    @include ms-respond( border-bottom-width, $hero-border-width );
+  }
 
+  background-color: $hero-background;
   
   // set padding bottom
-  @include aspect-ratio($hero-aspect-ratio);
+  @include aspect-ratio( $hero-aspect-ratio );
   transition: padding-bottom 0.5s;
   
   &.spacer {
     padding: 0;
-    height: 136px;
+    height: $hero-spacer-height;
     background-color: transparent;
   }
 
   &::before {
     content: "";
-    display: block;
+    display: $hero-screen-display;
     width: 100%;
     height: 100%;
-    background: transparentize($light,.2);
+    background: $hero-screen-bg;
     position: absolute;
     top: 0;
     right: 0;
@@ -38,7 +44,7 @@
     left: 50%;
     z-index: 1;
     width: 100vw;
-    transform: translateX(-50%);
+    transform: translateX( -50% );
   }
 
   .hero-image {
@@ -51,7 +57,7 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
-    filter: sepia(15%) brightness(120%);
+    filter: $hero-image-filter;
     z-index: -1;
   }
 
@@ -60,11 +66,10 @@
     position: relative;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(1,1fr);
+    grid-template-columns: repeat( 1, 1fr );
     z-index: 1001;
     grid-template-areas: 
       "herotxt";
-
   } 
 
   .hero-text {
@@ -72,38 +77,27 @@
     position: relative;
     color: $hero-color;
     align-self: center;
-    @include ms-respond(font-size,$hero-font);
-    font-family: var(--font-family-header);
+    @include ms-respond( font-size, $hero-font );
+    font-family: $hero-font-family;
     max-width: $hero-maxchar;
     z-index: 10000000;
+    @include ms-respond( padding-bottom, $global-padding );
 
     h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
       color: $hero-color;
     }
 
-    h1 {
-      @include heading-size($hero-1);
-    }
+    @include heading-size( h1, $hero-1 );
+    @include heading-size( h2, $hero-2 );
+    @include heading-size( h3, $hero-3 );
+    @include heading-size( h4, $hero-4 );
+    @include heading-size( h5, $hero-5 );
+    @include heading-size( h6, $hero-6 );
 
-    h2 {
-      @include heading-size($hero-2);
+    > * {
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
-
-    h3 {
-      @include heading-size($hero-3);
-    }
-
-    h4 {
-      @include heading-size($hero-4);
-    }
-
-    h5 {
-      @include heading-size($hero-5);
-    }
-
-    h6 {
-      @include heading-size($hero-6);
-    }
-
   }
 }

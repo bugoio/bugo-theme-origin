@@ -1,0 +1,80 @@
+/**
+ *
+ * Article Summary
+ *
+ **/
+$asum-margin-top:      false; // false | modular scale ratio
+$asum-margin-right:    false; // false | modular scale ratio
+$asum-margin-bottom:   $global-margin * 3; // false | modular scale ratio
+$asum-margin-left:     false; // false | modular scale ratio
+
+$asum-padding-top:     false; // false | modular scale ratio
+$asum-padding-bottom:  false; // false | modular scale ratio
+$asum-padding-right:   false; // false | modular scale ratio
+$asum-padding-left:    false; // false | modular scale ratio
+
+$asum-column-gap: 2; // false | modular scale ratio
+$asum-row-gap: false;  // false | modular scale ratio
+$asum-xs-template-areas: 
+  "thumb thumb head head head head"
+  "thumb thumb time time time time"
+  "thumb thumb tax tax tax tax"
+  "summ summ summ summ summ summ";
+$asum-sm-template-areas: $asum-xs-template-areas;
+$asum-md-template-areas: $asum-xs-template-areas;
+$asum-lg-template-areas: $asum-xs-template-areas;
+$asum-xl-template-areas: $asum-xs-template-areas;
+$asum-xxl-template-areas: $asum-xs-template-areas;
+$asum-xxxl-template-areas: $asum-xs-template-areas;
+
+$asum-xs-template-columns: repeat( 6, 1fr );
+$asum-sm-template-columns: $asum-xs-template-columns;
+$asum-md-template-columns: $asum-xs-template-columns;
+$asum-lg-template-columns: $asum-xs-template-columns;
+$asum-xl-template-columns: $asum-xs-template-columns;
+$asum-xxl-template-columns: $asum-xs-template-columns;
+$asum-xxxl-template-columns: $asum-xs-template-columns;
+
+$asum-header-margin: false;
+$asum-thumb-margin: false;
+$asum-summary-margin-top: $asum-column-gap; // false | modular scale ratio
+
+/**
+ *
+ * Breadcrumbs
+ * 
+ **/
+$breadcrumbs-margin-top:      $global-margin; // false | modular scale ratio
+$breadcrumbs-margin-right:    false; // false | modular scale ratio
+$breadcrumbs-margin-bottom:   $global-margin; // false | modular scale ratio
+$breadcrumbs-margin-left:     false; // false | modular scale ratio
+
+$breadcrumbs-padding-top:     false; // false | modular scale ratio
+$breadcrumbs-padding-bottom:  false; // false | modular scale ratio
+$breadcrumbs-padding-right:   false; // false | modular scale ratio
+$breadcrumbs-padding-left:    false; // false | modular scale ratio
+
+$breadcrumbs-char: "/\00a0";
+
+$breadcrumbs-max-chars: (
+  xs: 35ch,
+  sm: 40ch,
+  md: 45ch,
+  lg: 50ch,
+  xl: 60ch,
+  xxl: 70ch,
+  xxxl: 80ch
+);
+
+/**
+ *
+ * Buttons
+ * 
+ **/
+
+
+$button-radius:               $global-radius;
+$button-default-bg:           $dark;
+$button-default-color:        $light;
+$button-default-bg-dark:      $light;
+$button-default-color-dark:   $dark;

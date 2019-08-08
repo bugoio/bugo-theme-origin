@@ -1,7 +1,7 @@
 .message {
   max-width: 768px;
   // float: left;
-  margin: var(--global-margin) auto;
+  margin: var( --global-margin ) auto;
   padding: 0.5rem;
   grid-gap: 1rem;
   display: grid;
@@ -9,7 +9,7 @@
   align-items: center;
   border: 1px solid;
   border-radius: $global-radius;
-  @include ms-respond(font-size,0);
+  @include ms-respond( font-size, 0 );
 
   a {
     color: inherit;
@@ -18,25 +18,25 @@
 
   &.danger {
     border-color: $danger;
-    color: color-yiq(lighten($danger,65%),$danger,lighten($danger,60%));
-    background-color: lighten($danger,65%);
+    color: color-yiq( lighten( $danger, 65% ), $danger, lighten( $danger, 60% ) );
+    background-color: lighten( $danger, 65% );
   }
 
   &.info {
     border-color: $info;
     color: $info;
-    background-color: lighten($info,40%);
+    background-color: lighten( $info, 40% );
   }
 
   &.success {
     border-color: $success;
     color: $success;
-    background-color: lighten($success,40%);
+    background-color: lighten( $success, 40% );
   }
 
   &.warning {
     border-color: $warning;
     color: $warning;
-    background-color: lighten($warning,40%);
+    background-color: lighten( $warning, 40% );
   }
 }

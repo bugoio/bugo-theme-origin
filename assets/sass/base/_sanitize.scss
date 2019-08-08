@@ -2,34 +2,34 @@
  * ========================================================================== */
 
 /**
- * Add border box sizing in all browsers (opinionated).
+ * Add border box sizing in all browsers ( opinionated ).
  */
 
-*,
-*::before,
+*, 
+*::before, 
 *::after {
   box-sizing: border-box;
 }
 
 /**
- * 1. Add text decoration inheritance in all browsers (opinionated).
- * 2. Add vertical alignment inheritance in all browsers (opinionated).
+ * 1. Add text decoration inheritance in all browsers ( opinionated ).
+ * 2. Add vertical alignment inheritance in all browsers ( opinionated ).
  */
 
-::before,
+::before, 
 ::after {
   text-decoration: inherit; /* 1 */
   vertical-align: inherit; /* 2 */
 }
 
 /**
- * 1. Use the default cursor in all browsers (opinionated).
- * 2. Change the line height in all browsers (opinionated).
- * 3. Use a 4-space tab width in all browsers (opinionated).
- * 4. Remove the grey highlight on links in iOS (opinionated).
+ * 1. Use the default cursor in all browsers ( opinionated ).
+ * 2. Change the line height in all browsers ( opinionated ).
+ * 3. Use a 4-space tab width in all browsers ( opinionated ).
+ * 4. Remove the grey highlight on links in iOS ( opinionated ).
  * 5. Prevent adjustments of font size after orientation changes in
  *    IE on Windows Phone and in iOS.
- * 6. Breaks words to prevent overflow in all browsers (opinionated).
+ * 6. Breaks words to prevent overflow in all browsers ( opinionated ).
  */
 
 html {
@@ -47,7 +47,7 @@ html {
  * ========================================================================== */
 
 /**
- * Remove the margin in all browsers (opinionated).
+ * Remove the margin in all browsers ( opinionated ).
  */
 
 body {
@@ -56,7 +56,7 @@ body {
 
 /**
  * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Edge, Firefox, and Safari.
+ * `article` contexts in Chrome,  Edge,  Firefox,  and Safari.
  */
 
 h1 {
@@ -68,13 +68,13 @@ h1 {
  * ========================================================================== */
 
 /**
- * Remove the margin on nested lists in Chrome, Edge, IE, and Safari.
+ * Remove the margin on nested lists in Chrome,  Edge,  IE,  and Safari.
  */
 
-dl dl,
-dl ol,
-dl ul,
-ol dl,
+dl dl, 
+dl ol, 
+dl ul, 
+ol dl, 
 ul dl {
   margin: 0;
 }
@@ -83,9 +83,9 @@ ul dl {
  * Remove the margin on nested lists in Edge 18- and IE.
  */
 
-ol ol,
-ol ul,
-ul ol,
+ol ol, 
+ol ul, 
+ul ol, 
 ul ul {
   margin: 0;
 }
@@ -109,10 +109,10 @@ main {
 }
 
 /**
- * Remove the list style on navigation lists in all browsers (opinionated).
+ * Remove the list style on navigation lists in all browsers ( opinionated ).
  */
 
-nav ol,
+nav ol, 
 nav ul {
   list-style: none;
   padding: 0;
@@ -124,7 +124,7 @@ nav ul {
  */
 
 pre {
-  font-family: monospace, monospace; /* 1 */
+  font-family: monospace,  monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
 
@@ -140,7 +140,7 @@ a {
 }
 
 /**
- * Add the correct text decoration in Edge 18-, IE, and Safari.
+ * Add the correct text decoration in Edge 18-,  IE,  and Safari.
  */
 
 abbr[title] {
@@ -149,10 +149,10 @@ abbr[title] {
 }
 
 /**
- * Add the correct font weight in Chrome, Edge, and Safari.
+ * Add the correct font weight in Chrome,  Edge,  and Safari.
  */
 
-b,
+b, 
 strong {
   font-weight: bolder;
 }
@@ -162,10 +162,10 @@ strong {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 
-code,
-kbd,
+code, 
+kbd, 
 samp {
-  font-family: monospace, monospace; /* 1 */
+  font-family: monospace,  monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
 
@@ -181,14 +181,14 @@ small {
  * ========================================================================== */
 
 /*
- * Change the alignment on media elements in all browsers (opinionated).
+ * Change the alignment on media elements in all browsers ( opinionated ).
  */
 
-audio,
-canvas,
-iframe,
-img,
-svg,
+audio, 
+canvas, 
+iframe, 
+img, 
+svg, 
 video {
   vertical-align: middle;
 }
@@ -197,7 +197,7 @@ video {
  * Add the correct display in IE 9-.
  */
 
-audio,
+audio, 
 video {
   display: inline-block;
 }
@@ -206,13 +206,13 @@ video {
  * Add the correct display in iOS 4-7.
  */
 
-audio:not([controls]) {
+audio:not( [controls] ) {
   display: none;
   height: 0;
 }
 
 /**
- * Remove the border on iframes in all browsers (opinionated).
+ * Remove the border on iframes in all browsers ( opinionated ).
  */
 
 iframe {
@@ -228,10 +228,10 @@ img {
 }
 
 /**
- * Change the fill color to match the text color in all browsers (opinionated).
+ * Change the fill color to match the text color in all browsers ( opinionated ).
  */
 
-svg:not([fill]) {
+svg:not( [fill] ) {
   fill: currentColor;
 }
 
@@ -239,7 +239,7 @@ svg:not([fill]) {
  * Hide the overflow in IE.
  */
 
-svg:not(:root) {
+svg:not( :root ) {
   overflow: hidden;
 }
 
@@ -247,7 +247,7 @@ svg:not(:root) {
  * ========================================================================== */
 
 /**
- * Collapse border spacing in all browsers (opinionated).
+ * Collapse border spacing in all browsers ( opinionated ).
  */
 
 table {
@@ -261,15 +261,15 @@ table {
  * Remove the margin on controls in Safari.
  */
 
-button,
-input,
+button, 
+input, 
 select {
   margin: 0;
 }
 
 /**
  * 1. Show the overflow in IE.
- * 2. Remove the inheritance of text transform in Edge 18-, Firefox, and IE.
+ * 2. Remove the inheritance of text transform in Edge 18-,  Firefox,  and IE.
  */
 
 button {
@@ -281,15 +281,15 @@ button {
  * Correct the inability to style buttons in iOS and Safari.
  */
 
-button,
-[type="button"],
-[type="reset"],
+button, 
+[type="button"], 
+[type="reset"], 
 [type="submit"] {
   -webkit-appearance: button;
 }
 
 /**
- * 1. Change the inconsistent appearance in all browsers (opinionated).
+ * 1. Change the inconsistent appearance in all browsers ( opinionated ).
  * 2. Correct the padding in Firefox.
  */
 
@@ -320,7 +320,7 @@ legend {
 
 /**
  * 1. Add the correct display in Edge 18- and IE.
- * 2. Add the correct vertical alignment in Chrome, Edge, and Firefox.
+ * 2. Add the correct vertical alignment in Chrome,  Edge,  and Firefox.
  */
 
 progress {
@@ -339,7 +339,7 @@ select {
 /**
  * 1. Remove the margin in Firefox and Safari.
  * 2. Remove the default vertical scrollbar in IE.
- * 3. Change the resize direction in all browsers (opinionated).
+ * 3. Change the resize direction in all browsers ( opinionated ).
  */
 
 textarea {
@@ -352,13 +352,13 @@ textarea {
  * Remove the padding in IE 10-.
  */
 
-[type="checkbox"],
+[type="checkbox"], 
 [type="radio"] {
   padding: 0;
 }
 
 /**
- * 1. Correct the odd appearance in Chrome, Edge, and Safari.
+ * 1. Correct the odd appearance in Chrome,  Edge,  and Safari.
  * 2. Correct the outline style in Safari.
  */
 
@@ -371,13 +371,13 @@ textarea {
  * Correct the cursor style of increment and decrement buttons in Safari.
  */
 
-::-webkit-inner-spin-button,
+::-webkit-inner-spin-button, 
 ::-webkit-outer-spin-button {
   height: auto;
 }
 
 /**
- * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ * Correct the text style of placeholders in Chrome,  Edge,  and Safari.
  */
 
 ::-webkit-input-placeholder {
@@ -386,7 +386,7 @@ textarea {
 }
 
 /**
- * Remove the inner padding in Chrome, Edge, and Safari on macOS.
+ * Remove the inner padding in Chrome,  Edge,  and Safari on macOS.
  */
 
 ::-webkit-search-decoration {
@@ -440,7 +440,7 @@ details {
 }
 
 /*
- * Add the correct styles in Edge 18-, IE, and Safari.
+ * Add the correct styles in Edge 18-,  IE,  and Safari.
  */
 
 dialog {
@@ -461,7 +461,7 @@ dialog {
   width: fit-content;
 }
 
-dialog:not([open]) {
+dialog:not( [open] ) {
   display: none;
 }
 
@@ -498,17 +498,17 @@ template {
 /*
  * 1. Remove the tapping delay in IE 10.
  * 2. Remove the tapping delay on clickable elements
-      in all browsers (opinionated).
+      in all browsers ( opinionated ).
  */
 
-a,
-area,
-button,
-input,
-label,
-select,
-summary,
-textarea,
+a, 
+area, 
+button, 
+input, 
+label, 
+select, 
+summary, 
+textarea, 
 [tabindex] {
   -ms-touch-action: manipulation; /* 1 */
   touch-action: manipulation; /* 2 */
@@ -526,7 +526,7 @@ textarea,
  * ========================================================================== */
 
 /**
- * Change the cursor on busy elements in all browsers (opinionated).
+ * Change the cursor on busy elements in all browsers ( opinionated ).
  */
 
 [aria-busy="true"] {
@@ -534,7 +534,7 @@ textarea,
 }
 
 /*
- * Change the cursor on control elements in all browsers (opinionated).
+ * Change the cursor on control elements in all browsers ( opinionated ).
  */
 
 [aria-controls] {
@@ -542,25 +542,25 @@ textarea,
 }
 
 /*
- * Change the cursor on disabled, not-editable, or otherwise
- * inoperable elements in all browsers (opinionated).
+ * Change the cursor on disabled,  not-editable,  or otherwise
+ * inoperable elements in all browsers ( opinionated ).
  */
 
-[aria-disabled="true"],
+[aria-disabled="true"], 
 [disabled] {
   cursor: not-allowed;
 }
 
 /*
  * Change the display on visually hidden accessible elements
- * in all browsers (opinionated).
+ * in all browsers ( opinionated ).
  */
 
 [aria-hidden="false"][hidden] {
   display: initial;
 }
 
-[aria-hidden="false"][hidden]:not(:focus) {
-  clip: rect(0, 0, 0, 0);
+[aria-hidden="false"][hidden]:not( :focus ) {
+  clip: rect( 0,  0,  0,  0 );
   position: absolute;
 }

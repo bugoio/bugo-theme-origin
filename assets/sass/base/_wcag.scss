@@ -24,13 +24,13 @@
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%) translateY(-100%);
+  transform: translateX( -50% ) translateY( -100% );
   transition: transform 0.25s;    
   margin: 0 auto;
   z-index: 1000;
 
   &:focus {
-    transform: translateX(-50%) translateY(1rem);
+    transform: translateX( -50% ) translateY( 1rem );
   } 
 }
 
@@ -39,8 +39,8 @@
   height: 1px !important; 
   width: 1px !important; 
   overflow: hidden !important;
-  clip: rect(1px 1px 1px 1px)  !important; /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px)  !important;
+  clip: rect( 1px 1px 1px 1px )  !important; /* IE6,  IE7 */
+  clip: rect( 1px,  1px,  1px,  1px )  !important;
   margin: 0  !important;
   padding: 0 !important;
   max-width: none;

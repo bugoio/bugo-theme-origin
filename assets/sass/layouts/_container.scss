@@ -5,8 +5,8 @@
   width: 100%;
   
   @each $key, $value in $breakpoints {
-    @media (min-width: $value) {
-      max-width: map-get($container-max-widths,$key);
+    @media ( min-width: $value ) {
+      max-width: map-get( $container-max-widths, $key );
     }
   }
 

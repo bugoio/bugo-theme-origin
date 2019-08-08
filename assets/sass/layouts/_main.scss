@@ -1,9 +1,6 @@
 /** 
  * Main Grid
  **/
-// SPACING 
-$main-margin:   0;
-$main-padding:  1;
 
 // AREAS
 $main-grid-area: main;
@@ -24,7 +21,7 @@ $main-xxxl-template-areas: $main-xs-template-areas;
 
 // COLUMNS
 // xs
-$main-xs-template-columns: repeat(1, 1fr);
+$main-xs-template-columns: repeat( 1, 1fr );
 // sm
 $main-sm-template-columns: $main-xs-template-columns;
 // md
@@ -38,43 +35,29 @@ $main-xxl-template-columns: $main-xs-template-columns;
 // xxxl
 $main-xxxl-template-columns: $main-xs-template-columns;
 
-$main-template-areas: (
-  xs: $main-xs-template-areas,
-  sm: $main-sm-template-areas,
-  md: $main-md-template-areas,
-  lg: $main-lg-template-areas,
-  xl: $main-xl-template-areas,
-  xxl: $main-xxl-template-areas,
+$main-template-areas: ( 
+  xs: $main-xs-template-areas, 
+  sm: $main-sm-template-areas, 
+  md: $main-md-template-areas, 
+  lg: $main-lg-template-areas, 
+  xl: $main-xl-template-areas, 
+  xxl: $main-xxl-template-areas, 
   xxxl: $main-xxxl-template-areas
-);
+ );
 
-$main-template-columns: (
-  xs: $main-xs-template-columns,
-  sm: $main-sm-template-columns,
-  md: $main-md-template-columns,
-  lg: $main-lg-template-columns,
-  xl: $main-xl-template-columns,
-  xxl: $main-xxl-template-columns,
+$main-template-columns: ( 
+  xs: $main-xs-template-columns, 
+  sm: $main-sm-template-columns, 
+  md: $main-md-template-columns, 
+  lg: $main-lg-template-columns, 
+  xl: $main-xl-template-columns, 
+  xxl: $main-xxl-template-columns, 
   xxxl: $main-xxxl-template-columns
-);
+ );
 
 main {
-  margin: $main-margin;
-  padding: $main-padding;
   grid-area: main;
-  // display: grid;
-  grid-column-gap: 0;
-  grid-row-gap: 0;
-  grid-template-columns: 1fr;
-  @include responsive-property($main-template-areas,'grid-template-areas');
-  @include responsive-property($main-template-columns,'grid-template-columns');
-  // overflow: hidden;
-
-  > h1 {
-    line-height: 1;  
-  }
-
-  aside {
-    display: block;
-  }
+  // Spacing
+  @include space-element( margin, $main-margin-x, $main-margin-y );
+  @include space-element( padding, $main-padding-x, $main-padding-y );
 }

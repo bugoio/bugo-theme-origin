@@ -1,71 +1,38 @@
 /** 
  * Wrap Grid
  **/
-// SPACING
-$wrap-padding: 2rem 0;
-$wrap-margin: 0 auto;
-// AREAS
-$wrap-grid-area: wrap;
-// xs
-$wrap-xs-template-areas: "main";
-// sm
-$wrap-sm-template-areas: $wrap-xs-template-areas;
-// md
-$wrap-md-template-areas: $wrap-xs-template-areas;
-// lg
-$wrap-lg-template-areas: $wrap-xs-template-areas;
-// xl
-$wrap-xl-template-areas: $wrap-xs-template-areas;
-// xxl
-$wrap-xxl-template-areas: $wrap-xs-template-areas;
-// xxxl
-$wrap-xxxl-template-areas: $wrap-xs-template-areas;
-
-// COLUMNS
-// xs
-$wrap-xs-template-columns: repeat(1, 1fr);
-// sm
-$wrap-sm-template-columns: $wrap-xs-template-columns;
-// md
-$wrap-md-template-columns: $wrap-xs-template-columns;
-// lg
-$wrap-lg-template-columns: $wrap-xs-template-columns;
-// xl
-$wrap-xl-template-columns: $wrap-xs-template-columns;
-// xxl
-$wrap-xxl-template-columns: $wrap-xs-template-columns;
-// xxxl
-$wrap-xxxl-template-columns: $wrap-xs-template-columns;
-
-$wrap-template-areas: (
-  xs: $wrap-xs-template-areas,
-  sm: $wrap-sm-template-areas,
-  md: $wrap-md-template-areas,
-  lg: $wrap-lg-template-areas,
-  xl: $wrap-xl-template-areas,
-  xxl: $wrap-xxl-template-areas,
+$wrap-template-areas: ( 
+  xs: $wrap-xs-template-areas, 
+  sm: $wrap-sm-template-areas, 
+  md: $wrap-md-template-areas, 
+  lg: $wrap-lg-template-areas, 
+  xl: $wrap-xl-template-areas, 
+  xxl: $wrap-xxl-template-areas, 
   xxxl: $wrap-xxxl-template-areas
-);
+ );
 
-$wrap-template-columns: (
-  xs: $wrap-xs-template-columns,
-  sm: $wrap-sm-template-columns,
-  md: $wrap-md-template-columns,
-  lg: $wrap-lg-template-columns,
-  xl: $wrap-xl-template-columns,
-  xxl: $wrap-xxl-template-columns,
+$wrap-template-columns: ( 
+  xs: $wrap-xs-template-columns, 
+  sm: $wrap-sm-template-columns, 
+  md: $wrap-md-template-columns, 
+  lg: $wrap-lg-template-columns, 
+  xl: $wrap-xl-template-columns, 
+  xxl: $wrap-xxl-template-columns, 
   xxxl: $wrap-xxxl-template-columns
-);
+ );
 
 .wrap {
-  margin: $wrap-margin;
-  padding: $wrap-padding;
+// Spacing
+@include space-element( margin, $wrap-margin-x, $wrap-margin-y );
+@include space-element( padding, $wrap-padding-x, $wrap-padding-y );
+
   display: grid;
-  grid-column-gap: 0;
-  grid-row-gap: 2rem;
-  grid-template-columns: 1fr;
-  @include responsive-property($wrap-template-areas,'grid-template-areas');
-  @include responsive-property($wrap-template-columns,'grid-template-columns');
+  grid-area: wrap;
+  @include grid-gaps( $wrap-column-gap, $wrap-row-gap );
+  // @include ms-respond( grid-row-gap, $wrap-row-gap );
+  @include responsive-property( $wrap-template-areas, 'grid-template-areas' );
+  @include responsive-property( $wrap-template-columns, 'grid-template-columns' );
+
   aside {
     display: none;
   }

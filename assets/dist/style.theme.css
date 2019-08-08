@@ -3095,6 +3095,9 @@ blockquote p:last-child {
 .text-justify {
   text-align: justify; }
 
+pre {
+  background-color: #fff7d6 !important; }
+
 /**
  * WCAG Helpers
  **/
@@ -3893,7 +3896,8 @@ legend {
     font-size: 21.97px;
     font-family: var(--font-family-header);
     max-width: 65ch;
-    z-index: 10000000; }
+    z-index: 10000000;
+    padding-bottom: 21.97px; }
     @media (min-width: 576px) and (max-width: 768px) {
       .hero .hero-text {
         font-size: calc( 21.97px + 1.69 * ( ( 100vw - 576px) / 192 )); } }
@@ -3912,6 +3916,24 @@ legend {
     @media (min-width: 2200px) {
       .hero .hero-text {
         font-size: 47.32px; } }
+    @media (min-width: 576px) and (max-width: 768px) {
+      .hero .hero-text {
+        padding-bottom: calc( 21.97px + 1.69 * ( ( 100vw - 576px) / 192 )); } }
+    @media (min-width: 768px) and (max-width: 992px) {
+      .hero .hero-text {
+        padding-bottom: calc( 23.66px + 1.69 * ( ( 100vw - 768px) / 224 )); } }
+    @media (min-width: 992px) and (max-width: 1200px) {
+      .hero .hero-text {
+        padding-bottom: calc( 25.35px + 1.69 * ( ( 100vw - 992px) / 208 )); } }
+    @media (min-width: 1200px) and (max-width: 1400px) {
+      .hero .hero-text {
+        padding-bottom: calc( 27.04px + 1.69 * ( ( 100vw - 1200px) / 200 )); } }
+    @media (min-width: 1400px) and (max-width: 2200px) {
+      .hero .hero-text {
+        padding-bottom: calc( 28.73px + 18.59 * ( ( 100vw - 1400px) / 800 )); } }
+    @media (min-width: 2200px) {
+      .hero .hero-text {
+        padding-bottom: 47.32px; } }
     .hero .hero-text h1, .hero .hero-text .h1, .hero .hero-text h2, .hero .hero-text .h2, .hero .hero-text h3, .hero .hero-text .h3, .hero .hero-text h4, .hero .hero-text .h4, .hero .hero-text h5, .hero .hero-text .h5, .hero .hero-text h6, .hero .hero-text .h6 {
       color: #252524; }
     @media (min-width: 0) {
@@ -4796,6 +4818,8 @@ legend {
   @media (min-width: 2200px) and (min-width: 2200px) {
     .hero .hero-text h6 {
       font-size: 36.4px; } }
+    .hero .hero-text > *:last-child {
+      margin-bottom: 0; }
 
 .hero-video {
   position: relative;

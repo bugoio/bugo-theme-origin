@@ -4,6 +4,6 @@
 
   pre {
       max-width: 100%;
-      @include ms-respond('font-size', 0);
+      @include ms-respond( 'font-size', 0 );
     }
 }
