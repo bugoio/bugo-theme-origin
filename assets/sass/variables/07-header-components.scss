@@ -2,6 +2,10 @@
  * Branding
  **/
 $branding-image-width: 5rem;
+$brand-position: relative;
+$brand-width: 100%;
+$brand-max-width: 60%;
+$brand-z: 100;
 
 
 /**
@@ -24,4 +28,8 @@ $main-nav-padding-y:  false; // false | modular scale ratio
 
 $main-nav-justify: flex-end;
 $main-nav-whitespace: nowrap;
+
+$search-font: -2; // modular scale ratio
+
+
 

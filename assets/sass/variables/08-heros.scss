@@ -5,7 +5,7 @@
  **/
 
 $hero-container:    false; // true limits the width of the hero to the page container
-$hero-maxchar:      65ch; // Limits the width of the hero to a charachter count.
+$hero-maxchar:      45ch; // Limits the width of the hero to a charachter count.
 $hero-color:        $black;
 $hero-font:         2; // modular scale
 $hero-font-family:  $heading-font;
@@ -33,7 +33,7 @@ $hero-image-filter: sepia( 15% ) brightness( 100% );
 // pseudo element that displays over the hero image 
 // can be used for tinting and other extra effects on the image.
 $hero-screen-display: block; // none | block
-$hero-screen-bg:      transparentize( $light, .2 ); //any background shorthand
+$hero-screen-bg:      transparentize( $light, .15 ); //any background shorthand
 
 // hero spacer used on pages that do not have a hero,  in case spacing is necessary
 $hero-spacer-height: 136px;

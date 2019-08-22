@@ -55,3 +55,10 @@ $global-font-size:          0; // modular scale
 $global-line-height:        1.75;
 $global-small:              $global-font-size - 1;
 $global-small-line-height:  1.2;
+
+/**
+ *
+ * Navigation
+ *
+ **/
+$global-menu-bg: lighten($accent-1, 0.5);

@@ -24,9 +24,16 @@ $nav-con-template-columns: (
   xxxl: $nav-con-xxxl-template-columns
  );
 
+  .nav-container {
+    position: relative; 
+    z-index: 1000;
+  }
+
+
 .nav-container {
   grid-area: ncon;
   display: grid;
+  background-color: $nav-con-bg;
 
   @extend .container;
   @include space-element( margin, $nav-con-margin-x, $nav-con-margin-y );
@@ -35,6 +42,22 @@ $nav-con-template-columns: (
   @include grid-gaps( $nav-con-column-gap, $nav-con-row-gap );
   @include responsive-property( $nav-con-template-areas, 'grid-template-areas' );
   @include responsive-property( $nav-con-template-columns, 'grid-template-columns' );
+
+  &::before {
+    content: "";
+    background-color: $nav-con-bg;;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    left: -100%;
+    z-index: 0;
+
+    @include respond-to( md ){
+      display: none;
+    }
+  }
+
 }
 
 .site-brand {
@@ -54,6 +77,6 @@ $nav-con-template-columns: (
 }
 
 .mobile-nav-button {
-  grid-area: mbutton;
+
 }
 
