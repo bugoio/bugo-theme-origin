@@ -4,6 +4,13 @@ import $ from 'jquery';                           // jquery
 import WebFont from 'webfontloader';              // Web Font Loader - https://www.npmjs.com/package/webfontloader
 import animateScrollTo from 'animated-scroll-to'; // Animate scroll to 
 
+import {
+  jarallax,
+  jarallaxElement,
+  jarallaxVideo
+} from 'jarallax';
+
+
 window.jQuery = $;
 jQuery = $;
 
@@ -27,6 +34,14 @@ WebFont.load({
 
 // On Document Ready
 $(document).ready(function () {
+  
+  
+  jarallax(document.querySelectorAll('.jarallax'), {
+      speed: 0.2
+  });
+
+  jarallaxElement();
+  jarallaxVideo();
 
   // WooCommerce FlexSlider
   $('.flexslider').flexslider({

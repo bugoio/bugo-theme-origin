@@ -68,6 +68,7 @@ $danger:        {{ .Site.Data.styles.theme_colors.danger | default "#dc3545" }} 
 @import "base/reset";
 @import "base/typography";
 @import "base/wcag";
+@import "base/jarallax";
 
 //components
 @import "components/article-summary";

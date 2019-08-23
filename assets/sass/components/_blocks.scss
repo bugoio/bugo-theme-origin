@@ -63,4 +63,17 @@
   img {
     max-width: 100%;
   }
+
+  &.has-bg-image,
+  &.has-bg-video {
+    @include space-element-y(padding, 4, 4);
+    // /* Full height */
+    // height: 100%; 
+
+    // /* Create the parallax scrolling effect */
+    // background-attachment: fixed;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+  }
 }
