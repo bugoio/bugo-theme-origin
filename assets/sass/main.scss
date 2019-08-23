@@ -90,7 +90,6 @@ $danger:        {{ .Site.Data.styles.theme_colors.danger | default "#dc3545" }} 
 @import "components/thumbnail";
 
 //layouts
-@import "layouts/html";
 @import "layouts/body";
 @import "layouts/container";
 @import "layouts/header";
