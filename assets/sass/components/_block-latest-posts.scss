@@ -13,13 +13,14 @@
       &:last-child {
         padding-right: 0;
       }
-      grid-template-rows: 400px auto;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto 1fr auto auto;
       grid-template-areas:
-        "thumb thumb thumb thumb thumb thumb"
-        "head head head head head head"
-        "time time time time time time"
-        "tax tax tax tax tax tax";
-
+        "thumb"
+        "time"
+        "tax"
+        "head";
+    
       .summary {
         display: none;
       }
