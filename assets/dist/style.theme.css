@@ -1477,6 +1477,12 @@ html[xmlns] .flexslider .slides {
  * 
  **/
 /**
+ * Latest Posts Block
+ **/
+.block-latest-posts .article-summary {
+  grid-template-areas: "thumb" "head" "tax" "sum"; }
+
+/**
  *
  * Body
  *
@@ -1589,7 +1595,7 @@ html[xmlns] .flexslider .slides {
         .list-unstyled li a {
           margin-right: 36.4px; } }
 
-.full-width, .no-container {
+.full-width {
   width: 100vw;
   position: relative;
   left: 50%;
@@ -1597,7 +1603,7 @@ html[xmlns] .flexslider .slides {
   margin-left: -50vw;
   margin-right: -50vw; }
 
-.no-container .container, .no-container .block .block-title, .block .no-container .block-title, .no-container .block-latest-posts [class^=latest-posts-], .block-latest-posts .no-container [class^=latest-posts-], .no-container .nav-container {
+.no-container .container, .no-container .block-latest-posts [class^=latest-posts-], .block-latest-posts .no-container [class^=latest-posts-], .no-container .nav-container {
   max-width: none !important; }
 
 .no-padding {
@@ -1613,9 +1619,6 @@ html[xmlns] .flexslider .slides {
 .img-responsive {
   max-width: 100%;
   height: auto; }
-
-.no-container .container, .no-container .block .block-title, .block .no-container .block-title, .no-container .block-latest-posts [class^=latest-posts-], .block-latest-posts .no-container [class^=latest-posts-], .no-container .nav-container {
-  max-width: none; }
 
 .text-left {
   text-align: left !important; }
@@ -4495,44 +4498,6 @@ pre {
       .article-summary .summary {
         margin-top: 47.32px; } }
 
-.blocks {
-  display: grid;
-  grid-template-columns: 1fr;
-  margin-bottom: var(--global-margin); }
-
-.block {
-  padding-top: var(--global-padding);
-  padding-bottom: var(--global-padding);
-  max-width: 100vw;
-  position: relative;
-  background-size: cover;
-  background-position: 50%; }
-  .block .block-title {
-    text-align: center;
-    display: block;
-    margin-bottom: var(--global-margin) !important; }
-  .block h1, .block .h1, .block h2, .block .h2, .block h3, .block .h3, .block h4, .block .h4, .block h5, .block .h5, .block h6, .block .h6 {
-    margin-top: 0; }
-  .block video {
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; }
-  @media (min-width: 768px) {
-    .block video {
-      display: block; } }
-  .block .container, .block .block-title, .block .block-latest-posts [class^=latest-posts-], .block-latest-posts .block [class^=latest-posts-], .block .nav-container {
-    position: relative;
-    z-index: 1; }
-  .block img {
-    max-width: 100%; }
-
 .block-columns {
   position: relative;
   padding: var(--global-padding) 0; }
@@ -4550,37 +4515,37 @@ pre {
   .block-columns.no-container .column-container-1 .item {
     padding-left: var(--global-padding);
     padding-right: var(--global-padding); }
-  .block-columns .container, .block-columns .block .block-title, .block .block-columns .block-title, .block-columns .block-latest-posts [class^=latest-posts-], .block-latest-posts .block-columns [class^=latest-posts-], .block-columns .nav-container {
+  .block-columns .container, .block-columns .block-latest-posts [class^=latest-posts-], .block-latest-posts .block-columns [class^=latest-posts-], .block-columns .nav-container {
     position: relative;
     z-index: 1;
     display: grid;
     grid-template-columns: 100%; }
     @media (min-width: 768px) {
-      .block-columns .container.column-container-2, .block-columns .block .column-container-2.block-title, .block .block-columns .column-container-2.block-title, .block-columns .block-latest-posts .column-container-2[class^=latest-posts-], .block-latest-posts .block-columns .column-container-2[class^=latest-posts-], .block-columns .column-container-2.nav-container, .block-columns .container.column-container-4, .block-columns .block .column-container-4.block-title, .block .block-columns .column-container-4.block-title, .block-columns .block-latest-posts .column-container-4[class^=latest-posts-], .block-latest-posts .block-columns .column-container-4[class^=latest-posts-], .block-columns .column-container-4.nav-container, .block-columns .container.column-container-6, .block-columns .block .column-container-6.block-title, .block .block-columns .column-container-6.block-title, .block-columns .block-latest-posts .column-container-6[class^=latest-posts-], .block-latest-posts .block-columns .column-container-6[class^=latest-posts-], .block-columns .column-container-6.nav-container {
+      .block-columns .container.column-container-2, .block-columns .block-latest-posts .column-container-2[class^=latest-posts-], .block-latest-posts .block-columns .column-container-2[class^=latest-posts-], .block-columns .column-container-2.nav-container, .block-columns .container.column-container-4, .block-columns .block-latest-posts .column-container-4[class^=latest-posts-], .block-latest-posts .block-columns .column-container-4[class^=latest-posts-], .block-columns .column-container-4.nav-container, .block-columns .container.column-container-6, .block-columns .block-latest-posts .column-container-6[class^=latest-posts-], .block-latest-posts .block-columns .column-container-6[class^=latest-posts-], .block-columns .column-container-6.nav-container {
         grid-template-columns: 1fr 1fr; }
-      .block-columns .container.column-container-3, .block-columns .block .column-container-3.block-title, .block .block-columns .column-container-3.block-title, .block-columns .block-latest-posts .column-container-3[class^=latest-posts-], .block-latest-posts .block-columns .column-container-3[class^=latest-posts-], .block-columns .column-container-3.nav-container {
+      .block-columns .container.column-container-3, .block-columns .block-latest-posts .column-container-3[class^=latest-posts-], .block-latest-posts .block-columns .column-container-3[class^=latest-posts-], .block-columns .column-container-3.nav-container {
         grid-template-columns: 1fr 1fr 1fr; }
-      .block-columns .container.column-container-5, .block-columns .block .column-container-5.block-title, .block .block-columns .column-container-5.block-title, .block-columns .block-latest-posts .column-container-5[class^=latest-posts-], .block-latest-posts .block-columns .column-container-5[class^=latest-posts-], .block-columns .column-container-5.nav-container {
+      .block-columns .container.column-container-5, .block-columns .block-latest-posts .column-container-5[class^=latest-posts-], .block-latest-posts .block-columns .column-container-5[class^=latest-posts-], .block-columns .column-container-5.nav-container {
         grid-template-columns: 1fr 1fr; }
-        .block-columns .container.column-container-5 :nth-child(2), .block-columns .block .column-container-5.block-title :nth-child(2), .block .block-columns .column-container-5.block-title :nth-child(2), .block-columns .block-latest-posts .column-container-5[class^=latest-posts-] :nth-child(2), .block-latest-posts .block-columns .column-container-5[class^=latest-posts-] :nth-child(2), .block-columns .column-container-5.nav-container :nth-child(2) {
+        .block-columns .container.column-container-5 :nth-child(2), .block-columns .block-latest-posts .column-container-5[class^=latest-posts-] :nth-child(2), .block-latest-posts .block-columns .column-container-5[class^=latest-posts-] :nth-child(2), .block-columns .column-container-5.nav-container :nth-child(2) {
           grid-column: 1 / span 2; } }
     @media (min-width: 992px) {
-      .block-columns .container.column-container-3, .block-columns .block .column-container-3.block-title, .block .block-columns .column-container-3.block-title, .block-columns .block-latest-posts .column-container-3[class^=latest-posts-], .block-latest-posts .block-columns .column-container-3[class^=latest-posts-], .block-columns .column-container-3.nav-container, .block-columns .container.column-container-6, .block-columns .block .column-container-6.block-title, .block .block-columns .column-container-6.block-title, .block-columns .block-latest-posts .column-container-6[class^=latest-posts-], .block-latest-posts .block-columns .column-container-6[class^=latest-posts-], .block-columns .column-container-6.nav-container {
+      .block-columns .container.column-container-3, .block-columns .block-latest-posts .column-container-3[class^=latest-posts-], .block-latest-posts .block-columns .column-container-3[class^=latest-posts-], .block-columns .column-container-3.nav-container, .block-columns .container.column-container-6, .block-columns .block-latest-posts .column-container-6[class^=latest-posts-], .block-latest-posts .block-columns .column-container-6[class^=latest-posts-], .block-columns .column-container-6.nav-container {
         grid-template-columns: 1fr 1fr 1fr; }
-      .block-columns .container.column-container-4, .block-columns .block .column-container-4.block-title, .block .block-columns .column-container-4.block-title, .block-columns .block-latest-posts .column-container-4[class^=latest-posts-], .block-latest-posts .block-columns .column-container-4[class^=latest-posts-], .block-columns .column-container-4.nav-container {
+      .block-columns .container.column-container-4, .block-columns .block-latest-posts .column-container-4[class^=latest-posts-], .block-latest-posts .block-columns .column-container-4[class^=latest-posts-], .block-columns .column-container-4.nav-container {
         grid-template-columns: 1fr 1fr 1fr 1fr; }
-      .block-columns .container.column-container-5, .block-columns .block .column-container-5.block-title, .block .block-columns .column-container-5.block-title, .block-columns .block-latest-posts .column-container-5[class^=latest-posts-], .block-latest-posts .block-columns .column-container-5[class^=latest-posts-], .block-columns .column-container-5.nav-container {
+      .block-columns .container.column-container-5, .block-columns .block-latest-posts .column-container-5[class^=latest-posts-], .block-latest-posts .block-columns .column-container-5[class^=latest-posts-], .block-columns .column-container-5.nav-container {
         grid-template-columns: 1fr 1fr; }
-        .block-columns .container.column-container-5 :nth-child(2), .block-columns .block .column-container-5.block-title :nth-child(2), .block .block-columns .column-container-5.block-title :nth-child(2), .block-columns .block-latest-posts .column-container-5[class^=latest-posts-] :nth-child(2), .block-latest-posts .block-columns .column-container-5[class^=latest-posts-] :nth-child(2), .block-columns .column-container-5.nav-container :nth-child(2) {
+        .block-columns .container.column-container-5 :nth-child(2), .block-columns .block-latest-posts .column-container-5[class^=latest-posts-] :nth-child(2), .block-latest-posts .block-columns .column-container-5[class^=latest-posts-] :nth-child(2), .block-columns .column-container-5.nav-container :nth-child(2) {
           grid-column: 1 / span 2; } }
     @media (min-width: 1200px) {
-      .block-columns .container.column-container-3, .block-columns .block .column-container-3.block-title, .block .block-columns .column-container-3.block-title, .block-columns .block-latest-posts .column-container-3[class^=latest-posts-], .block-latest-posts .block-columns .column-container-3[class^=latest-posts-], .block-columns .column-container-3.nav-container, .block-columns .container.column-container-6, .block-columns .block .column-container-6.block-title, .block .block-columns .column-container-6.block-title, .block-columns .block-latest-posts .column-container-6[class^=latest-posts-], .block-latest-posts .block-columns .column-container-6[class^=latest-posts-], .block-columns .column-container-6.nav-container {
+      .block-columns .container.column-container-3, .block-columns .block-latest-posts .column-container-3[class^=latest-posts-], .block-latest-posts .block-columns .column-container-3[class^=latest-posts-], .block-columns .column-container-3.nav-container, .block-columns .container.column-container-6, .block-columns .block-latest-posts .column-container-6[class^=latest-posts-], .block-latest-posts .block-columns .column-container-6[class^=latest-posts-], .block-columns .column-container-6.nav-container {
         grid-template-columns: 1fr 1fr 1fr; }
-      .block-columns .container.column-container-4, .block-columns .block .column-container-4.block-title, .block .block-columns .column-container-4.block-title, .block-columns .block-latest-posts .column-container-4[class^=latest-posts-], .block-latest-posts .block-columns .column-container-4[class^=latest-posts-], .block-columns .column-container-4.nav-container {
+      .block-columns .container.column-container-4, .block-columns .block-latest-posts .column-container-4[class^=latest-posts-], .block-latest-posts .block-columns .column-container-4[class^=latest-posts-], .block-columns .column-container-4.nav-container {
         grid-template-columns: 1fr 1fr 1fr 1fr; }
-      .block-columns .container.column-container-5, .block-columns .block .column-container-5.block-title, .block .block-columns .column-container-5.block-title, .block-columns .block-latest-posts .column-container-5[class^=latest-posts-], .block-latest-posts .block-columns .column-container-5[class^=latest-posts-], .block-columns .column-container-5.nav-container {
+      .block-columns .container.column-container-5, .block-columns .block-latest-posts .column-container-5[class^=latest-posts-], .block-latest-posts .block-columns .column-container-5[class^=latest-posts-], .block-columns .column-container-5.nav-container {
         grid-template-columns: 1fr 1fr 1fr 1fr; }
-        .block-columns .container.column-container-5 :nth-child(2), .block-columns .block .column-container-5.block-title :nth-child(2), .block .block-columns .column-container-5.block-title :nth-child(2), .block-columns .block-latest-posts .column-container-5[class^=latest-posts-] :nth-child(2), .block-latest-posts .block-columns .column-container-5[class^=latest-posts-] :nth-child(2), .block-columns .column-container-5.nav-container :nth-child(2) {
+        .block-columns .container.column-container-5 :nth-child(2), .block-columns .block-latest-posts .column-container-5[class^=latest-posts-] :nth-child(2), .block-latest-posts .block-columns .column-container-5[class^=latest-posts-] :nth-child(2), .block-columns .column-container-5.nav-container :nth-child(2) {
           grid-column: 1 / span 4; } }
 
 .block-google-map {
@@ -4592,26 +4557,48 @@ pre {
     margin-bottom: 0; }
 
 .block-latest-posts [class^=latest-posts-] {
-  display: flex; }
+  display: flex;
+  grid-column-gap: var(--global-margin);
+  grid-template-columns: 1fr; }
   .block-latest-posts [class^=latest-posts-] .article-summary {
     flex: 1 1 0;
     padding-right: var(--global-padding);
-    grid-template-rows: 400px auto;
-    grid-template-areas: "thumb thumb thumb thumb thumb thumb" "head head head head head head" "time time time time time time" "tax tax tax tax tax tax"; }
+    grid-template-rows: 200px auto;
+    grid-template-areas: "thumb thumb thumb thumb thumb thumb" "head head head head head head" "time time time time time time" "tax tax tax tax tax tax";
+    grid-row-gap: 1rem; }
     .block-latest-posts [class^=latest-posts-] .article-summary:last-child {
       padding-right: 0; }
     .block-latest-posts [class^=latest-posts-] .article-summary .summary {
       display: none; }
+    .block-latest-posts [class^=latest-posts-] .article-summary header {
+      align-items: flex-start; }
+      .block-latest-posts [class^=latest-posts-] .article-summary header h3 {
+        margin: 0; }
+    .block-latest-posts [class^=latest-posts-] .article-summary .thumbnail {
+      height: 200px;
+      padding: 0 !important; }
+      .block-latest-posts [class^=latest-posts-] .article-summary .thumbnail .thumbnail-link {
+        padding: 0 !important;
+        width: 100%;
+        height: inherit; }
+      .block-latest-posts [class^=latest-posts-] .article-summary .thumbnail img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; }
 
-.block-logos .container, .block-logos .block .block-title, .block .block-logos .block-title, .block-logos .block-latest-posts [class^=latest-posts-], .block-latest-posts .block-logos [class^=latest-posts-], .block-logos .nav-container {
+.block-logos .container, .block-logos .block-latest-posts [class^=latest-posts-], .block-latest-posts .block-logos [class^=latest-posts-], .block-logos .nav-container {
   display: flex;
   justify-content: center; }
-  .block-logos .container .item, .block-logos .block .block-title .item, .block .block-logos .block-title .item, .block-logos .block-latest-posts [class^=latest-posts-] .item, .block-latest-posts .block-logos [class^=latest-posts-] .item, .block-logos .nav-container .item {
+  .block-logos .container .item, .block-logos .block-latest-posts [class^=latest-posts-] .item, .block-latest-posts .block-logos [class^=latest-posts-] .item, .block-logos .nav-container .item {
     flex-basis: 200px;
     display: flex;
     align-items: center;
     justify-content: center; }
-    .block-logos .container .item img, .block-logos .block .block-title .item img, .block .block-logos .block-title .item img, .block-logos .block-latest-posts [class^=latest-posts-] .item img, .block-latest-posts .block-logos [class^=latest-posts-] .item img, .block-logos .nav-container .item img {
+    .block-logos .container .item img, .block-logos .block-latest-posts [class^=latest-posts-] .item img, .block-latest-posts .block-logos [class^=latest-posts-] .item img, .block-logos .nav-container .item img {
       width: 85%;
       height: auto; }
 
@@ -5205,7 +5192,7 @@ legend {
     height: 100%;
     filter: sepia(15%) brightness(100%);
     z-index: -1; }
-  .hero .container, .hero .block .block-title, .block .hero .block-title, .hero .block-latest-posts [class^=latest-posts-], .block-latest-posts .hero [class^=latest-posts-], .hero .nav-container {
+  .hero .container, .hero .block-latest-posts [class^=latest-posts-], .block-latest-posts .hero [class^=latest-posts-], .hero .nav-container {
     height: 100%;
     position: relative;
     width: 100%;
@@ -6435,9 +6422,7 @@ legend {
         background-color: #5F336A; }
 
 .thumbnail {
-  margin-bottom: var(--global-margin);
-  display: flex;
-  align-items: stretch; }
+  margin-bottom: var(--global-margin); }
   .thumbnail a {
     display: block;
     padding-bottom: 52.6%;
@@ -6451,6 +6436,9 @@ legend {
       height: 100%;
       object-fit: cover; }
 
+/** 
+ * Body Grid
+ **/
 html {
   background-color: #FFFCEF; }
   @media (prefers-color-scheme: dark) {
@@ -6458,9 +6446,6 @@ html {
       color: #FFFCEF;
       background-color: #534D48; } }
 
-/** 
- * Body Grid
- **/
 body {
   position: relative;
   margin-left: auto;
@@ -6471,7 +6456,7 @@ body {
   padding-right: 0;
   padding-top: 0;
   padding-bottom: 0;
-  display: grid;
+  overflow-z: hidden;
   grid-column-gap: 0;
   grid-row-gap: 0;
   font-display: falback;
@@ -6545,29 +6530,29 @@ body {
       color: #FFFCEF;
       background-color: #534D48; } }
 
-.container, .block .block-title, .block-latest-posts [class^=latest-posts-], .nav-container {
+.container, .block-latest-posts [class^=latest-posts-], .nav-container {
   margin: 0 auto;
   width: 100%; }
   @media (min-width: 0) {
-    .container, .block .block-title, .block-latest-posts [class^=latest-posts-], .nav-container {
+    .container, .block-latest-posts [class^=latest-posts-], .nav-container {
       max-width: calc( 100vw - 36px); } }
   @media (min-width: 576px) {
-    .container, .block .block-title, .block-latest-posts [class^=latest-posts-], .nav-container {
+    .container, .block-latest-posts [class^=latest-posts-], .nav-container {
       max-width: 540px; } }
   @media (min-width: 768px) {
-    .container, .block .block-title, .block-latest-posts [class^=latest-posts-], .nav-container {
+    .container, .block-latest-posts [class^=latest-posts-], .nav-container {
       max-width: 720px; } }
   @media (min-width: 992px) {
-    .container, .block .block-title, .block-latest-posts [class^=latest-posts-], .nav-container {
+    .container, .block-latest-posts [class^=latest-posts-], .nav-container {
       max-width: 960px; } }
   @media (min-width: 1200px) {
-    .container, .block .block-title, .block-latest-posts [class^=latest-posts-], .nav-container {
+    .container, .block-latest-posts [class^=latest-posts-], .nav-container {
       max-width: 1164px; } }
   @media (min-width: 1400px) {
-    .container, .block .block-title, .block-latest-posts [class^=latest-posts-], .nav-container {
+    .container, .block-latest-posts [class^=latest-posts-], .nav-container {
       max-width: 1360px; } }
   @media (min-width: 2200px) {
-    .container, .block .block-title, .block-latest-posts [class^=latest-posts-], .nav-container {
+    .container, .block-latest-posts [class^=latest-posts-], .nav-container {
       max-width: 2100px; } }
 
 .site-header {
@@ -7022,15 +7007,7 @@ body.sidebar .wrap {
  * Main Grid
  **/
 main {
-  grid-area: main;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  padding-bottom: 0; }
+  grid-area: main; }
 
 /** 
  * footer Grid
@@ -7295,7 +7272,7 @@ nav li a {
     display: block;
     opacity: 1;
     transform: translateX(-50%) translateY(1rem) rotateX(0); }
-  .nav-horizontal .dropdown-menu .container, .nav-horizontal .dropdown-menu .block .block-title, .block .nav-horizontal .dropdown-menu .block-title, .nav-horizontal .dropdown-menu .block-latest-posts [class^=latest-posts-], .block-latest-posts .nav-horizontal .dropdown-menu [class^=latest-posts-], .nav-horizontal .dropdown-menu .nav-container {
+  .nav-horizontal .dropdown-menu .container, .nav-horizontal .dropdown-menu .block-latest-posts [class^=latest-posts-], .block-latest-posts .nav-horizontal .dropdown-menu [class^=latest-posts-], .nav-horizontal .dropdown-menu .nav-container {
     display: block; }
   .nav-horizontal .dropdown-menu ul {
     display: flex;
@@ -7558,7 +7535,7 @@ nav li a {
   .nav-vertical .dropdown-menu.open {
     display: block;
     opacity: 1; }
-  .nav-vertical .dropdown-menu .container, .nav-vertical .dropdown-menu .block .block-title, .block .nav-vertical .dropdown-menu .block-title, .nav-vertical .dropdown-menu .block-latest-posts [class^=latest-posts-], .block-latest-posts .nav-vertical .dropdown-menu [class^=latest-posts-], .nav-vertical .dropdown-menu .nav-container {
+  .nav-vertical .dropdown-menu .container, .nav-vertical .dropdown-menu .block-latest-posts [class^=latest-posts-], .block-latest-posts .nav-vertical .dropdown-menu [class^=latest-posts-], .nav-vertical .dropdown-menu .nav-container {
     display: block; }
   .nav-vertical .dropdown-menu ul {
     display: flex;
