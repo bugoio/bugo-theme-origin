@@ -1,17 +1,22 @@
-body.landing-page {
-  .wrap {
+body.landing-page,
+body.home {
+  .wrap.container {
     padding: 0;
+    max-width: none !important;
   }
   .hero {
     margin-bottom: 0;
   }
 
-  .wrap {
-    padding-top: 0 !important;
-    max-width: 100vw;
-  }
-
-  main {
+  .wrap.container {
+    // Spacing & Dimensions
+    margin: 0 auto;
+    width: 100%;
     
+    @each $key, $value in $breakpoints {
+      @media ( min-width: $value ) {
+        max-width: none;
+      }
+    }
   }
 }
