@@ -1,5 +1,4 @@
 .container {
-
   // Spacing & Dimensions
   margin: 0 auto;
   width: 100%;
@@ -9,6 +8,4 @@
       max-width: map-get( $container-max-widths, $key );
     }
   }
-
-  // Colors
 }
