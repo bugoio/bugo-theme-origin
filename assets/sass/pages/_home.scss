@@ -1,7 +1,7 @@
 body.home {
   .hero {
     // set padding bottom
-    @include aspect-ratio( $home-hero-aspect-ratio );
+    // @include aspect-ratio( $home-hero-aspect-ratio );
   }
 
   .wrap {

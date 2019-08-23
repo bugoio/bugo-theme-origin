@@ -3,7 +3,7 @@
  * Hero Default
  *
  **/
-
+$hero-show:         true;
 $hero-container:    false; // true limits the width of the hero to the page container
 $hero-maxchar:      45ch; // Limits the width of the hero to a charachter count.
 $hero-color:        $black;
@@ -15,9 +15,8 @@ $hero-border-color: $accent-2;
 $hero-border-width: 0; // modular scale
 
 // Adds padding to the hero to force height of the hero repsonsively.
-$hero-aspect-ratio: ( 
- xs: ms( 9 ),  sm: ms( 9 ),  md: ms( 9 ),  lg: ms( 9 ),  xl: ms( 9 ),  xxl: ms( 10 ),  xxxl: ms( 11 )
- );
+$hero-padding-top:      9; // modular scale
+$hero-padding-bottom:   4; // modular scale
 
 // hero Font Sizes using Modular Scale
 $hero-1: ( xs: 5,  sm: 5,  md: 6,  lg: 6,  xl: 7,  xxl:  7,  xxxl: 7 );
@@ -36,10 +35,10 @@ $hero-screen-display: block; // none | block
 $hero-screen-bg:      transparentize( $light, .15 ); //any background shorthand
 
 // hero spacer used on pages that do not have a hero,  in case spacing is necessary
-$hero-spacer-height: 136px;
+$hero-spacer-height: $hero-padding-top; // modular scale
 
 /**
- *
+ *[
  * Hero Video
  *
  **/
@@ -59,9 +58,9 @@ $hero-control-bg:           transparent;
  **/
 
 // landing pages
-$landing-hero-aspect-ratio: $hero-aspect-ratio; 
+// $landing-hero-aspect-ratio: $hero-padding-y; 
 // ( 
 //  xs: 120%,  sm: 80%,  md: 80%,  lg: 60%,  xl: 60%,  xxl: 50%,  xxxl: 40%
 // );
 // home page
-$home-hero-aspect-ratio: $landing-hero-aspect-ratio;
+// $home-hero-aspect-ratio: $landing-hero-aspect-ratio;

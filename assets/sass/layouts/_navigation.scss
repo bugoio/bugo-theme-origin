@@ -19,7 +19,6 @@ nav {
       &.current {
         font-weight: bold;
       }
-      
 
       a {
       }
@@ -27,11 +26,10 @@ nav {
   }
 
   .dropdown-menu {
-    @include space-element-x( margin, $dropdown-margin-left, $dropdown-margin-right );
-    @include space-element-y( margin, $dropdown-margin-top, $dropdown-margin-bottom );
-    @include space-element-x( padding, $dropdown-padding-left, $dropdown-padding-right );
-    @include space-element-y( padding, $dropdown-padding-top, $dropdown-padding-bottom );
-
+    @include space-element-x(margin, $dropdown-margin-left, $dropdown-margin-right);
+    @include space-element-y(margin, $dropdown-margin-top, $dropdown-margin-bottom);
+    @include space-element-x(padding, $dropdown-padding-left, $dropdown-padding-right);
+    @include space-element-y(padding, $dropdown-padding-top, $dropdown-padding-bottom);
 
     position: $dropdown-position;
     width: $dropdown-width;
@@ -50,7 +48,7 @@ nav {
     box-shadow: $dropdown-shadow;
     border-radius: $dropdown-radius;
 
-    &::before{
+    &::before {
       content: "";
       display: block;
       width: 0;
@@ -61,13 +59,13 @@ nav {
       position: absolute;
       bottom: 100%;
       left: 50%;
-      transform: translateX( -50% );
+      transform: translateX(-50%);
     }
 
     &.open {
       display: block;
       opacity: $dropdown-open-opacity;
-      transform:  $dropdown-open-transform;
+      transform: $dropdown-open-transform;
     }
 
     .container {
@@ -83,12 +81,11 @@ nav {
 
     a {
       margin: 0.5rem 0;
-      @include space-element( margin, $dropdown-link-margin-x, $dropdown-link-margin-y );
-      @include space-element( padding, $dropdown-link-padding-x, $dropdown-link-padding-y );
+      @include space-element(margin, $dropdown-link-margin-x, $dropdown-link-margin-y);
+      @include space-element(padding, $dropdown-link-padding-x, $dropdown-link-padding-y);
     }
   }
 }
-
 
 /**
  *
@@ -105,15 +102,14 @@ nav {
     li {
       position: relative;
       list-style-type: none;
-      @include ms-respond( margin-right, -1 );
+      @include ms-respond(margin-right, -1);
 
       &.current {
         font-weight: bold;
       }
-      
 
       a {
-        @include ms-respond( padding, -1 );
+        @include ms-respond(padding, -1);
         margin: 0;
       }
     }
@@ -125,28 +121,28 @@ nav {
     position: absolute;
     width: auto;
     top: 50%;
-    left: calc( 100% + 1rem );
-    transform: translateX( 0 ) translateY( -50% );
+    left: calc(100% + 1rem);
+    transform: translateX(0) translateY(-50%);
     transition: all 0.5s;
     white-space: nowrap;
     opacity: 0;
     display: none;
-    @include ms-respond( padding, -1 );
-    background-color: #E0E0E0;
+    @include ms-respond(padding, -1);
+    background-color: #e0e0e0;
     margin-top: 0;
 
-    &::before{
+    &::before {
       content: "";
       display: none;
       width: 0;
       height: 0;
       border-left: 0.5rem solid transparent;
       border-right: 0.5rem solid transparent;
-      border-bottom: 1rem solid #E0E0E0;
+      border-bottom: 1rem solid #e0e0e0;
       position: absolute;
       top: 50%;
       right: 100%;
-      transform: translateY( -50% ) rotate( 270deg );
+      transform: translateY(-50%) rotate(270deg);
     }
 
     &.open {

@@ -2,31 +2,31 @@
  * wrap-sidebar Grid
  **/
 
-$wrap-sidebar-template-areas: ( 
-  xs: $wrap-sidebar-xs-template-areas, 
-  sm: $wrap-sidebar-sm-template-areas, 
-  md: $wrap-sidebar-md-template-areas, 
-  lg: $wrap-sidebar-lg-template-areas, 
-  xl: $wrap-sidebar-xl-template-areas, 
-  xxl: $wrap-sidebar-xxl-template-areas, 
+$wrap-sidebar-template-areas: (
+  xs: $wrap-sidebar-xs-template-areas,
+  sm: $wrap-sidebar-sm-template-areas,
+  md: $wrap-sidebar-md-template-areas,
+  lg: $wrap-sidebar-lg-template-areas,
+  xl: $wrap-sidebar-xl-template-areas,
+  xxl: $wrap-sidebar-xxl-template-areas,
   xxxl: $wrap-sidebar-xxxl-template-areas
- );
+);
 
-$wrap-sidebar-template-columns: ( 
-  xs: $wrap-sidebar-xs-template-columns, 
-  sm: $wrap-sidebar-sm-template-columns, 
-  md: $wrap-sidebar-md-template-columns, 
-  lg: $wrap-sidebar-lg-template-columns, 
-  xl: $wrap-sidebar-xl-template-columns, 
-  xxl: $wrap-sidebar-xxl-template-columns, 
+$wrap-sidebar-template-columns: (
+  xs: $wrap-sidebar-xs-template-columns,
+  sm: $wrap-sidebar-sm-template-columns,
+  md: $wrap-sidebar-md-template-columns,
+  lg: $wrap-sidebar-lg-template-columns,
+  xl: $wrap-sidebar-xl-template-columns,
+  xxl: $wrap-sidebar-xxl-template-columns,
   xxxl: $wrap-sidebar-xxxl-template-columns
- );
+);
 
 body.sidebar .wrap {
   display: grid;
-  @include grid-gaps( $wrap-sidebar-column-gap, $wrap-sidebar-row-gap );
-  @include responsive-property( $wrap-sidebar-template-areas, 'grid-template-areas' );
-  @include responsive-property( $wrap-sidebar-template-columns, 'grid-template-columns' );
+  @include grid-gaps($wrap-sidebar-column-gap, $wrap-sidebar-row-gap);
+  @include responsive-property($wrap-sidebar-template-areas, "grid-template-areas");
+  @include responsive-property($wrap-sidebar-template-columns, "grid-template-columns");
   aside {
     display: block;
   }

@@ -12,9 +12,9 @@ body.home {
     // Spacing & Dimensions
     margin: 0 auto;
     width: 100%;
-    
+
     @each $key, $value in $breakpoints {
-      @media ( min-width: $value ) {
+      @media (min-width: $value) {
         max-width: none;
       }
     }

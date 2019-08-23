@@ -1,15 +1,14 @@
-
 .blocks {
   display: grid;
   grid-template-columns: 1fr;
-  margin-bottom: var( --global-margin );
+  margin-bottom: var(--global-margin);
 }
 
 .block {
   // grid-area: block;
-  padding-top: var( --global-padding );
-  padding-bottom: var( --global-padding );
-  max-width: 100vw;
+  padding-top: var(--global-padding);
+  padding-bottom: var(--global-padding);
+  max-width: 100%;
   position: relative;
   background-size: cover;
   background-position: 50%;
@@ -19,10 +18,21 @@
     @extend .container;
     text-align: center;
     display: block;
-    margin-bottom: var( --global-margin ) !important;
+    margin-bottom: var(--global-margin) !important;
   }
 
-  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
     margin-top: 0;
   }
 
@@ -39,7 +49,7 @@
     object-fit: cover;
   }
 
-  @include respond-to( 'md' ){
+  @include respond-to("md") {
     video {
       display: block;
     }

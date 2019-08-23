@@ -1,8 +1,8 @@
-.site-header{
+.site-header {
   grid-area: head;
   display: block;
-  @include space-element( margin, $header-margin-x, $header-margin-y );
-  @include space-element( padding, $header-padding-x, $header-padding-y );
+  @include space-element(margin, $header-margin-x, $header-margin-y);
+  @include space-element(padding, $header-padding-x, $header-padding-y);
   width: $header-width;
   height: $header-height;
   position: $header-position;
@@ -12,12 +12,12 @@
   right: $header-right;
   z-index: $header-z;
 
-  color:            $header-color;
+  color: $header-color;
   background-color: $header-bg;
 
-  @media ( prefers-color-scheme: dark ) {
-      color:            $header-text-color-dark;
-      background-color: $header-bg-dark;
+  @media (prefers-color-scheme: dark) {
+    color: $header-text-color-dark;
+    background-color: $header-bg-dark;
   }
 
   a {
@@ -25,8 +25,8 @@
     color: $header-link-color;
     font-weight: $header-link-weight;
 
-    @media ( prefers-color-scheme: dark ) {
-        color: $header-link-color-dark;
+    @media (prefers-color-scheme: dark) {
+      color: $header-link-color-dark;
     }
 
     &:hover {
@@ -51,28 +51,26 @@
       width: $brand-width;
       max-width: $brand-max-width;
       height: auto;
-    }   
+    }
   }
 
   .search-container {
     .search-form {
       input {
-        @include ms-respond(font-size,$search-font);
+        @include ms-respond(font-size, $search-font);
       }
       button {
-        @include ms-respond(font-size,$search-font);
+        @include ms-respond(font-size, $search-font);
       }
     }
   }
 }
 
 .site-header {
-
-
   .nav-main {
     display: none;
 
-    @include respond-to( md ){
+    @include respond-to(md) {
       display: block;
     }
   }
@@ -80,7 +78,7 @@
   .nav-secondary {
     display: none;
 
-    @include respond-to( md ){
+    @include respond-to(md) {
       display: block;
     }
   }
@@ -88,7 +86,7 @@
   .search-container {
     display: none;
 
-    @include respond-to( md ){
+    @include respond-to(md) {
       display: block;
     }
 
@@ -96,11 +94,12 @@
       margin: 0;
       display: flex;
       float: right;
-      
-      button,  input {
+
+      button,
+      input {
         // padding: $header-search-field-padding;
         margin: $header-search-field-margin;
-        @include ms-respond( font-size, $header-search-font-size );
+        @include ms-respond(font-size, $header-search-font-size);
       }
     }
   }

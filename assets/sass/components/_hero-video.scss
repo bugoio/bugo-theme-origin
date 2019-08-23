@@ -41,15 +41,15 @@
     }
 
     svg {
-      @include ms-respond( width, $hero-control-icon-width );
-      @include ms-respond( height, $hero-control-icon-height );
+      @include ms-respond(width, $hero-control-icon-width);
+      @include ms-respond(height, $hero-control-icon-height);
       width: 32px;
       height: 32px;
     }
   }
 
-  @include respond-to( 'lg' ){
-    video, 
+  @include respond-to("lg") {
+    video,
     #video-bg-control {
       display: block;
     }

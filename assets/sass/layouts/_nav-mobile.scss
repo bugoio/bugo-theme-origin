@@ -3,20 +3,20 @@
   z-index: -1;
   top: 100%;
   bottom: auto;
-  
-  width: 100vw;
+
+  width: 100%;
   left: 50%;
 
-  @include respond-to( md ){
+  @include respond-to(md) {
     display: none;
   }
 
   &.active {
     .nav-mobile {
-      transform: translateY( 0 ) translateX( -50% );
+      transform: translateY(0) translateX(-50%);
     }
   }
-  
+
   .nav-mobile {
     position: absolute;
     z-index: -1;
@@ -25,7 +25,7 @@
     background-color: $mobile-nav-bg;
     width: 100vw;
     left: 0;
-    transform: translateY( -100% ) translateX( -50% );
+    transform: translateY(-100%) translateX(-50%);
     transition: transform 0.5s;
 
     a {
@@ -46,19 +46,17 @@
   z-index: 1000000;
   // width: 100%;
   height: auto;
-  @include space-element( margin, $mobile-nav-margin-x, $mobile-nav-margin-y );
-  @include space-element( padding, $mobile-nav-padding-x, $mobile-nav-padding-y );  
-
+  @include space-element(margin, $mobile-nav-margin-x, $mobile-nav-margin-y);
+  @include space-element(padding, $mobile-nav-padding-x, $mobile-nav-padding-y);
 
   svg {
-    @include ms-respond( width, $mobile-nav-icon-width);
-    @include ms-respond( height, $mobile-nav-icon-height);
+    @include ms-respond(width, $mobile-nav-icon-width);
+    @include ms-respond(height, $mobile-nav-icon-height);
     height: $mobile-nav-button-height;
     display: block;
   }
-  
-  @include respond-to( md ){
+
+  @include respond-to(md) {
     display: none;
   }
 }
-

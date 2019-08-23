@@ -12,47 +12,48 @@ $body-margin-y:   false; // false | modular scale ratio
 $body-padding-x:  false; // false | modular scale ratio
 $body-padding-y:  false; // false | modular scale ratio
 
-$body-color: $global-font-color;
+$body-color:      $global-font-color;
 $body-color-dark: $global-font-color-dark; // dark mode
-$body-bg: $light;
-$body-bg-dark: $dark;  // dark mode
+$body-bg:         $light;
+$body-bg-dark:    $dark;  // dark mode
 
 $body-grid-column-gap: 0;
 $body-grid-row-gap: 0;
 
-$body-xs-template-areas: "head" "hero" "bread" "wrap" "footer";
-$body-sm-template-areas: $body-xs-template-areas;
-$body-md-template-areas: $body-xs-template-areas;
-$body-lg-template-areas: $body-xs-template-areas;
-$body-xl-template-areas: $body-xs-template-areas;
-$body-xxl-template-areas: $body-xs-template-areas;
-$body-xxxl-template-areas: $body-xs-template-areas;
+$body-xs-template-areas:    "head" "hero" "bread" "wrap" "footer";
+$body-sm-template-areas:    $body-xs-template-areas;
+$body-md-template-areas:    $body-xs-template-areas;
+$body-lg-template-areas:    $body-xs-template-areas;
+$body-xl-template-areas:    $body-xs-template-areas;
+$body-xxl-template-areas:   $body-xs-template-areas;
+$body-xxxl-template-areas:  $body-xs-template-areas;
 
-$body-xs-template-columns: repeat( 1, 1fr );
-$body-sm-template-columns: $body-xs-template-columns;
-$body-md-template-columns: $body-xs-template-columns;
-$body-lg-template-columns: $body-xs-template-columns;
-$body-xl-template-columns: $body-xs-template-columns;
-$body-xxl-template-columns: $body-xs-template-columns;
-$body-xxxl-template-columns: $body-xs-template-columns;
+$body-xs-template-columns:    repeat( 1, 1fr );
+$body-sm-template-columns:    $body-xs-template-columns;
+$body-md-template-columns:    $body-xs-template-columns;
+$body-lg-template-columns:    $body-xs-template-columns;
+$body-xl-template-columns:    $body-xs-template-columns;
+$body-xxl-template-columns:   $body-xs-template-columns;
+$body-xxxl-template-columns:  $body-xs-template-columns;
 
 /**
  *
  * Header
  *
  **/
-$header-color: $dark;
-$header-color-dark: $light;
-$header-bg: $light;
-$header-bg-dark: $dark;
-$header-link-color: $global-link-color;
-$header-link-dark: $global-link-dark;
-$header-link-focus: $global-link-focus;
-$header-link-weight: normal;
+$header-color:        $dark;
+$header-color-dark:   $light;
+$header-bg:           transparent;
+$header-bg-dark:      transparent;
+$header-link-color:   $global-link-color;
+$header-link-dark:    $global-link-dark;
+$header-link-focus:   $global-link-focus;
+$header-link-weight:  normal;
+
 
 // Dimensions
-$header-width: 100%;
-$header-height: auto;
+$header-width:      100%;
+$header-height:     auto;
 
 $header-margin-x:   false; // false | modular scale ratio
 $header-margin-y:   false; // false | modular scale ratio
@@ -60,19 +61,20 @@ $header-padding-x:  false; // false | modular scale ratio
 $header-padding-y:  false; // false | modular scale ratio
 
 // Positioning
-$header-position: relative;
-$header-top: auto;
-$header-right: auto;
-$header-bottom: auto;
-$header-left: auto;
-$header-z: 2000;
+$header-position:   absolute;
+$header-top:        0;
+$header-right:      0;
+$header-bottom:     auto;
+$header-left:       0;
+$header-z:          2000;
 
 /**
  *
  * Header Nav Container
  *
  **/
-$nav-con-bg: $light;
+$nav-con-bg:      $header-bg;
+$nav-con-bg-dark: $header-bg-dark;
 
 $nav-con-margin-x:   auto; // false | modular scale ratio
 $nav-con-margin-y:   false; // false | modular scale ratio

@@ -1,30 +1,31 @@
 /*csslint outline-none:false*/
 
-button, .button {
-    font-family: inherit;
-    font-size: 100%;
-    padding: 0.5em 1em;
-    border: 1px solid #999;  /*IE 6/7/8*/
-    border: none rgba( 0, 0, 0, 0 );  /*IE9 + everything else*/
-    background-color: $button-default-bg;
-    color: $button-default-color;
-    @media ( prefers-color-scheme: dark ) {
-      background-color: $button-default-bg-dark;
-      color: $button-default-color-dark;
-    }     
-    text-decoration: none;
-    border-radius: $button-radius;
-    /* Structure */
-    display: inline-block;
-    zoom: 1;
-    line-height: normal;
-    white-space: nowrap;
-    vertical-align: middle;
-    text-align: center;
-    cursor: pointer;
-    -webkit-user-drag: none;
-    user-select: none;
-    box-sizing: border-box;
+button,
+.button {
+  font-family: inherit;
+  font-size: 100%;
+  padding: 0.5em 1em;
+  border: 1px solid #999; /*IE 6/7/8*/
+  border: none rgba(0, 0, 0, 0); /*IE9 + everything else*/
+  background-color: $button-default-bg;
+  color: $button-default-color;
+  @media (prefers-color-scheme: dark) {
+    background-color: $button-default-bg-dark;
+    color: $button-default-color-dark;
+  }
+  text-decoration: none;
+  border-radius: $button-radius;
+  /* Structure */
+  display: inline-block;
+  zoom: 1;
+  line-height: normal;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  user-select: none;
+  box-sizing: border-box;
 }
 
 .button-lg {
@@ -39,54 +40,53 @@ button, .button {
   font-size: 60%;
 }
 
-
-button:hover, 
-button:focus, 
-.button:hover, 
+button:hover,
+button:focus,
+.button:hover,
 .button:focus {
-    background-image: linear-gradient( transparent, rgba( 0, 0, 0, 0.05 ) 40%, rgba( 0, 0, 0, 0.10 ) );
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
 }
-button:focus, 
+button:focus,
 .button:focus {
-    outline: 0;
+  outline: 0;
 }
 
-button::-moz-focus-inner, 
+button::-moz-focus-inner,
 .button::-moz-focus-inner {
-    padding: 0;
-    border: 0;
+  padding: 0;
+  border: 0;
 }
 
-button:active, 
-.button-active, 
+button:active,
+.button-active,
 .button:active {
-    box-shadow: 0 0 0 1px rgba( 0, 0, 0, 0.15 ) inset, 0 0 6px rgba( 0, 0, 0, 0.20 ) inset;
-    border-color: #000;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
+  border-color: #000;
 }
 
-button[disabled], 
-.button[disabled], 
-.button-disabled, 
-.button-disabled:hover, 
-.button-disabled:focus, 
+button[disabled],
+.button[disabled],
+.button-disabled,
+.button-disabled:hover,
+.button-disabled:focus,
 .button-disabled:active {
-    border: none;
-    background-image: none;
-    /* csslint ignore:start */
-    filter: alpha( opacity=40 );
-    /* csslint ignore:end */
-    opacity: 0.40;
-    cursor: not-allowed;
-    box-shadow: none;
-    pointer-events: none;
+  border: none;
+  background-image: none;
+  /* csslint ignore:start */
+  filter: alpha(opacity=40);
+  /* csslint ignore:end */
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+  pointer-events: none;
 }
 
 .button-hidden {
-    display: none;
+  display: none;
 }
 
 @each $name, $color in $theme-colors {
-  .button-#{$name}, 
+  .button-#{$name},
   a.button-#{$name} {
     background-color: $color;
     color: #fff;
@@ -97,38 +97,37 @@ button[disabled],
 
 /* Inherit .g styles */
 .button-group {
-    letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
-    *letter-spacing: normal; /* reset IE < 8 */
-    *word-spacing: -0.43em; /* IE < 8: collapse white-space between units */
-    text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
+  letter-spacing: -0.31em; /* Webkit: collapse white-space between units */
+  *letter-spacing: normal; /* reset IE < 8 */
+  *word-spacing: -0.43em; /* IE < 8: collapse white-space between units */
+  text-rendering: optimizespeed; /* Webkit: fixes text-rendering: optimizeLegibility */
 }
 
-.opera-only :-o-prefocus, 
+.opera-only :-o-prefocus,
 .button-group {
-    word-spacing: -0.43em;
+  word-spacing: -0.43em;
 }
 
-.button-group .button, 
+.button-group .button,
 .button-group button {
-    margin: 0;
-    border-radius: 0;
-    border-right: 1px solid #111;  /* fallback color for rgba( ) for IE7/8 */
-    border-right: 1px solid rgba( 0, 0, 0, 0.2 );
-
+  margin: 0;
+  border-radius: 0;
+  border-right: 1px solid #111; /* fallback color for rgba( ) for IE7/8 */
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .button-group .button:first-child {
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 .button-group .button:last-child {
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-    border-right: none;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-right: none;
 }
 
 @each $name, $color in $theme-colors {
-  .button-#{$name}{
+  .button-#{$name} {
     background-color: $color;
     color: white;
   }

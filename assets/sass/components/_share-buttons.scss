@@ -1,19 +1,19 @@
 .share-buttons {
   margin: $share-margin;
   padding: $share-padding;
-  @include ms-respond( font-size, $share-font-size );
+  @include ms-respond(font-size, $share-font-size);
 
   a {
     text-decoration: none;
     margin: $share-link-margin;
     padding: $share-link-padding;
     svg {
-      @include ms-respond( width, $share-icon-width );
+      @include ms-respond(width, $share-icon-width);
       height: auto;
       fill: $link-text-color;
-      @media ( prefers-color-scheme: dark ) {
-          fill: $link-text-color-dark;
-      }   
+      @media (prefers-color-scheme: dark) {
+        fill: $link-text-color-dark;
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 .block-latest-posts {
-  [class^=latest-posts-] {
+  [class^="latest-posts-"] {
     @extend .container;
 
     display: flex;
@@ -8,7 +8,7 @@
 
     .article-summary {
       flex: 1 1 0;
-      padding-right: var( --global-padding );
+      padding-right: var(--global-padding);
 
       &:last-child {
         padding-right: 0;
@@ -20,13 +20,12 @@
         "time"
         "tax"
         "head";
-    
+
       .summary {
         display: none;
       }
 
       .thumbnail {
-
       }
     }
   }

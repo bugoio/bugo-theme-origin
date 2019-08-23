@@ -24,7 +24,7 @@ $breakpoints: (
  ) !default;
 
 $container-max-widths : ( 
-  xs: calc( 100vw - 36px ), 
+  xs: calc( 100% - 36px ), 
   sm: 540px, 
   md: 720px, 
   lg: 960px, 

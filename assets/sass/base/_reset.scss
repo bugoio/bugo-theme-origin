@@ -1,13 +1,25 @@
 @import "sanitize";
 
-//resets 
+//resets
 //use margin downward only
 
-h1, h2, h3, h4, h5, h6, hgroup, 
-ul, ol, dd, 
-p, figure, 
-pre, table, fieldset, hr{
-    @include ms-respond( margin-bottom, 2 );
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hgroup,
+ul,
+ol,
+dd,
+p,
+figure,
+pre,
+table,
+fieldset,
+hr {
+  @include ms-respond(margin-bottom, 2);
 }
 
 pre {
@@ -22,8 +34,6 @@ pre {
 //     outline-offset: 0;
 //   }
 // }
-
-
 
 // $font-family-base
 // $font-size-base
