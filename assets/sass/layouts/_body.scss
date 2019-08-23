@@ -21,14 +21,24 @@ $body-template-columns: (
   xxxl: $body-xxxl-template-columns
  );
 
+html {
+  background-color: $body-bg;
+
+  @media ( prefers-color-scheme: dark ) {
+    color: $base-text-color-dark;
+    background-color: $body-bg-dark;
+  }
+}
+
 body{
   // Spacing & Dimensions
   position: relative;
   @include space-element( margin, $body-margin-x, $body-margin-y );
   @include space-element( padding, $body-padding-x, $body-padding-y );
+  overflow-z: hidden;
 
   // Grid
-  display: grid;
+  // display: grid;
   grid-column-gap: $body-grid-column-gap;
   grid-row-gap: $body-grid-row-gap;
 
