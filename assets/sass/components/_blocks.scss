@@ -6,19 +6,19 @@
 
 .block {
   // grid-area: block;
-  padding-top: var(--global-padding);
-  padding-bottom: var(--global-padding);
+  @include space-element(margin, $blocks-container-margin-x, $blocks-container-margin-y);
+  @include space-element(padding, $blocks-container-padding-x, $blocks-container-padding-y);
+
   max-width: 100%;
   position: relative;
-  background-size: cover;
   background-position: 50%;
-  // text-align: center;
 
   .block-title {
     @extend .container;
     text-align: center;
     display: block;
-    margin-bottom: var(--global-margin) !important;
+    @include space-element(margin, $block-title-margin-x, $block-title-margin-y);
+    @include space-element(padding, $block-title-padding-x, $block-title-padding-y);
   }
 
   h1,
@@ -66,14 +66,6 @@
 
   &.has-bg-image,
   &.has-bg-video {
-    @include space-element-y(padding, 4, 4);
-    // /* Full height */
-    // height: 100%; 
-
-    // /* Create the parallax scrolling effect */
-    // background-attachment: fixed;
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: cover;
+    @include space-element(padding, $block-has-bg-padding-x, $block-has-bg-padding-y);
   }
 }

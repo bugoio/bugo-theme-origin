@@ -4829,7 +4829,7 @@ pre {
       padding-right: 0; }
     .block-columns .item > *:last-child {
       margin-bottom: 0 !important; }
-  .block-columns.no-container .column-container-1 .item {
+  .block-columns.no-container .item {
     padding-left: var(--global-padding);
     padding-right: var(--global-padding); }
   .block-columns .container, .block-columns .block .block-title, .block .block-columns .block-title, .block-columns .block-latest-posts [class^="latest-posts-"], .block-latest-posts .block-columns [class^="latest-posts-"], .block-columns .nav-container {
@@ -4842,17 +4842,8 @@ pre {
         flex-wrap: nowrap; } }
     .block-columns .container .item, .block-columns .block .block-title .item, .block .block-columns .block-title .item, .block-columns .block-latest-posts [class^="latest-posts-"] .item, .block-latest-posts .block-columns [class^="latest-posts-"] .item, .block-columns .nav-container .item {
       flex: 1 1 auto;
-      padding: var(--global-padding); }
-    @media (min-width: 0) {
-      .block-columns .container, .block-columns .block .block-title, .block .block-columns .block-title, .block-columns .block-latest-posts [class^="latest-posts-"], .block-latest-posts .block-columns [class^="latest-posts-"], .block-columns .nav-container {
-        min-width: 100%; } }
-    @media (min-width: 576px) {
-      .block-columns .container, .block-columns .block .block-title, .block .block-columns .block-title, .block-columns .block-latest-posts [class^="latest-posts-"], .block-latest-posts .block-columns [class^="latest-posts-"], .block-columns .nav-container {
-        min-width: 100%; } }
-    @media (min-width: 768px) {
-      .block-columns .container, .block-columns .block .block-title, .block .block-columns .block-title, .block-columns .block-latest-posts [class^="latest-posts-"], .block-latest-posts .block-columns [class^="latest-posts-"], .block-columns .nav-container {
-        min-width: none;
-        max-width: 33%; } }
+      padding-top: var(--global-padding);
+      padding-bottom: var(--global-padding); }
 
 .block-google-map {
   padding: var(--global-padding); }

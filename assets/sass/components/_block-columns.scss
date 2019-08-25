@@ -1,64 +1,35 @@
 .block-columns {
   position: relative;
-  padding: 0;
+  @include space-element(margin, $columns-margin-x, $columns-margin-y);
+  @include space-element(padding, $columns-padding-x, $columns-padding-y);
 
-  .block-title {
-    margin-bottom: var(--global-padding);
+  .container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    @include responsive-property($columns-flex-wrap, flex-wrap);
   }
 
   .item {
+    flex: 1 1 auto;
     align-items: center;
-    padding: 0 var(--global-padding);
+    @include space-element(margin, $columns-item-margin-x, $columns-item-margin-y);
+    @include space-element(padding, $columns-item-padding-x, $columns-item-padding-y);
 
-    &:first-child {
-      padding-left: 0;
-    }
-
-    &:last-child {
-      padding-right: 0;
+    @include respond-to(md){
+      &:first-child {
+        padding-left: 0;
+      }
+  
+      &:last-child {
+        padding-right: 0;
+      }
     }
 
     > * {
       &:last-child {
         margin-bottom: 0 !important;
       }
-    }
-  }
-
-  &.no-container {
-    .column-container-1 {
-      .item {
-        padding-left: var(--global-padding);
-        padding-right: var(--global-padding);
-      }
-    }
-  }
-
-  .container {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-wrap: wrap;
-
-    @include respond-to('md') {
-      flex-wrap: nowrap;
-    }
-
-    .item {
-      flex: 1 1 auto;
-      padding: var(--global-padding);
-    }
-
-    @include respond-to('xs'){
-      min-width: 100%;
-    }
-    @include respond-to('sm'){
-      min-width: 100%;
-    }
-
-    @include respond-to('md'){
-      min-width: none;
-      max-width: 33%;
     }
   }
 }

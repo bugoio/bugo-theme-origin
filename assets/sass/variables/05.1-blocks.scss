@@ -1,0 +1,37 @@
+/**
+ *
+ * Blocks
+ *
+ **/
+$blocks-container-margin-x: false; // false | modular scale ratio
+$blocks-container-margin-y: false; // false | modular scale ratio
+$blocks-container-padding-x: 2; // false | modular scale ratio
+$blocks-container-padding-y: 2; // false | modular scale ratio
+
+$block-title-margin-x: false;
+$block-title-margin-y: false;
+$block-title-padding-x: false;
+$block-title-padding-y: false;
+
+$block-has-bg-padding-x: false;
+$block-has-bg-padding-y: 9;
+
+/**
+ *
+ * Columns
+ *
+ **/
+
+$columns-margin-x: false; // false | modular scale ratio
+$columns-margin-y: false; // false | modular scale ratio
+$columns-padding-x: false; // false | modular scale ratio
+$columns-padding-y: 2; // false | modular scale ratio
+$columns-flex-wrap: (
+  xs: wrap,
+  md: nowrap
+);
+
+$columns-item-margin-x: false; // false | modular scale ratio
+$columns-item-margin-y: false; // false | modular scale ratio
+$columns-item-padding-x: $blocks-container-padding-x; // false | modular scale ratio
+$columns-item-padding-y: $blocks-container-padding-y; // false | modular scale ratio
