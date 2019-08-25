@@ -2,12 +2,14 @@
   display: grid;
   grid-template-columns: 1fr;
   margin-bottom: var(--global-margin);
+  @include space-element(margin, $blocks-container-margin-x, $blocks-container-margin-y);
+  @include space-element(padding, $blocks-container-padding-x, $blocks-container-padding-y);
 }
 
 .block {
   // grid-area: block;
-  @include space-element(margin, $blocks-container-margin-x, $blocks-container-margin-y);
-  @include space-element(padding, $blocks-container-padding-x, $blocks-container-padding-y);
+  @include space-element(margin, $block-margin-x, $block-margin-y);
+  @include space-element(padding, $block-padding-x, $block-padding-y);
 
   max-width: 100%;
   position: relative;
