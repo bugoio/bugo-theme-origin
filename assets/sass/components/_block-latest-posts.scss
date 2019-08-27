@@ -1,10 +1,6 @@
 .block-latest-posts {
   [class^="latest-posts-"] {
-    @extend .container;
-
     display: flex;
-    // grid-column-gap: var( --global-margin );
-    // grid-template-columns: 1fr;
 
     .article-summary {
       flex: 1 1 0;
