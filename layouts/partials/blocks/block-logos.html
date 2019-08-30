@@ -12,9 +12,6 @@
         <source src="{{ . }}" type="video/mp4">
       </video>
   {{ end }}
-  <div class="container">
-    <h2 class="block-title {{ if eq .block.block_options.show_title false }} sr-only {{ end }}">{{ .block.title }}</h2>
-  </div>
   <div class="container logos-container logos-container-{{ len .block.logos }}">
     {{ $page := .page }}
     {{ range .block.logos }}

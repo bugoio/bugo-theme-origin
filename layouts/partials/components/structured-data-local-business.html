@@ -1,0 +1,46 @@
+<!-- JSON-LD Local Business markup for Google Structured Data -->
+<script type="application/ld+json">
+  {
+  "@context" : "http://schema.org",
+  "@type" : "LocalBusiness",
+  {{- with $.Site.Title -}}
+    "name" : "{{ . }}",
+  {{- end -}}
+  {{ with $.Site.Data.config.seo_logo.image }}
+    "image" : "{{ partial "utilities/image-url" (dict "page" $.Page "url" . ) }}",
+  {{ end }}
+
+  {{- with $.Site.Data.config.phone -}}
+  "telephone" : "+1{{ . }}",
+  {{- end -}}
+
+  {{- with .info.company_email -}}
+  "email" : "{{ . }}",
+  {{- end -}}
+  "address" : {
+    "@type" : "PostalAddress",
+
+    {{ $address2 := .address_2 }}
+    {{- with .address_1 -}}
+    "streetAddress" : "{{ . }} {{ $address2 }}",
+    {{- end -}}
+
+    {{- with .city -}}
+    "addressLocality" : "{{ . }}",
+    {{- end -}}
+
+    {{- with .state -}}
+    "addressRegion" : "{{ . }}",
+    {{- end -}}
+
+    {{- with .country -}}
+    "addressCountry" : "{{ . }}",
+    {{- end -}}
+
+    {{- with .zip_code -}}
+    "postalCode" : "{{ . }}"
+    {{- end -}}
+  },
+  "url" : "{{ $.Permalink }}"
+  }
+</script>

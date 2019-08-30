@@ -1,40 +1,46 @@
 .breadcrumbs {
-  padding: var(--global-padding) 0;
+  grid-area: bread;
+  @include space-element-x(margin, $breadcrumbs-margin-left, $breadcrumbs-margin-right);
+  @include space-element-y(margin, $breadcrumbs-margin-top, $breadcrumbs-margin-bottom);
+  @include space-element-x(padding, $breadcrumbs-padding-left, $breadcrumbs-padding-right);
+  @include space-element-y(padding, $breadcrumbs-padding-top, $breadcrumbs-padding-bottom);
 
-    ol {
+  ol {
     display: flex;
     margin: 0;
     padding: 0;
+    flex-wrap: nowrap;
 
     li {
-      margin: 0 2rem 0 0;
+      display: inline;
+      margin: 0;
       position: relative;
+      white-space: nowrap;
 
       &:not(:first-child) {
+        margin-left: 0.5em;
         &::before {
-          content: "»";
-          display: block;
-          position: absolute;
-          top: -0.125rem;
-          margin-left: -1.25rem;
-          @include ms-respond(font-size,2);
+          margin: 0;
+          padding: 0;
+          content: $breadcrumbs-char;
+          display: inline;
+        }
+      }
+
+      &:last-child {
+        a {
+          font-weight: bold;
         }
       }
 
       a {
-        display: block;
+        white-space: nowrap;
+        display: inline;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 40ch;
-
-        @include respond-to('md') {
-          max-width: 50ch;
-        }
-
-        @include respond-to('lg') {
-          max-width: 65ch;
-        }
+        font-weight: normal;
+        @include responsive-property($breadcrumbs-max-chars, "max-width");
       }
     }
   }

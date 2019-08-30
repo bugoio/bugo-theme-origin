@@ -1,14 +1,15 @@
 .message {
   max-width: 768px;
+  // float: left;
   margin: var(--global-margin) auto;
   padding: 0.5rem;
   grid-gap: 1rem;
   display: grid;
   grid-template-columns: 40px 1fr;
   align-items: center;
-  border: 2px solid;
+  border: 1px solid;
   border-radius: $global-radius;
-  @include ms-respond(font-size,0);
+  @include ms-respond(font-size, 0);
 
   a {
     color: inherit;
@@ -16,26 +17,26 @@
   }
 
   &.danger {
-    border-color: darken($danger,20%);
-    color: color-level($danger);
-    background-color: $danger;
+    border-color: $danger;
+    color: color-yiq(lighten($danger, 65%), $danger, lighten($danger, 60%));
+    background-color: lighten($danger, 65%);
   }
 
   &.info {
-    border-color: darken($info,20%);
-    color: color-level($info);
-    background-color: $info;
+    border-color: $info;
+    color: $info;
+    background-color: lighten($info, 40%);
   }
 
   &.success {
-    border-color: darken($success,20%);
-    color: color-level($success);
-    background-color: $success;
+    border-color: $success;
+    color: $success;
+    background-color: lighten($success, 40%);
   }
 
   &.warning {
-    border-color: darken($warning,20%);
-    color: color-level($warning);
-    background-color: $warning;
+    border-color: $warning;
+    color: $warning;
+    background-color: lighten($warning, 40%);
   }
 }

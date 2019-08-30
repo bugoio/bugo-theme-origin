@@ -1,12 +1,15 @@
 .hero-video {
   position: relative;
   overflow: hidden;
+  z-index: 0;
+  background: $hero-background;
 
   img {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: $hero-image-filter;
   }
 
   video {
@@ -19,15 +22,18 @@
     height: 100%;
     display: none;
     object-fit: cover;
+    filter: $hero-image-filter;
   }
 
   #video-bg-control {
     display: none;
     position: absolute;
     z-index: 100;
-    right: var(--global-padding);
-    bottom: var(--global-padding);
-    background-color: transparent;
+    top: $hero-control-top;
+    right: $hero-control-right;
+    bottom: $hero-control-bottom;
+    left: $hero-control-left;
+    background-color: $hero-control-bg;
     opacity: 0.7;
 
     &:hover {
@@ -35,12 +41,14 @@
     }
 
     svg {
+      @include ms-respond(width, $hero-control-icon-width);
+      @include ms-respond(height, $hero-control-icon-height);
       width: 32px;
       height: 32px;
     }
   }
 
-  @include respond-to('lg'){
+  @include respond-to("lg") {
     video,
     #video-bg-control {
       display: block;

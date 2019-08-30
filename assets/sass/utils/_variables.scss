@@ -1,0 +1,155 @@
+
+
+/**
+ * Global Typography
+ **/
+$global-font:         var( --font-family-global ); // grab the font family from the forestry output
+$global-font-color:   $dark;
+$global-link-color:   $accent-1;
+$global-link-focus:   lighten( $accent-1, 20% );
+$global-font-size:    0; // modular scale
+
+/**
+ * Headings
+ **/
+$heading-font: var( --font-family-header );
+$heading-color: $primary;
+$heading-color-dark: $heading-color;
+$heading-link-color: lighten( $primary, 20% );
+$heading-link-focus: $primary;
+$heading-line-height: 1.2;
+$heading-font-weight: 400;
+$heading-margin: 0;
+$heading-padding: 0;
+
+// Heading Font Sizes using Modular Scale
+$heading-1: ( 
+  xs:   5, 
+  sm:   5, 
+  md:   5, 
+  lg:   5, 
+  xl:   5, 
+  xxl:  5, 
+  xxxl: 5
+ );
+
+$heading-2: ( 
+  xs:   4, 
+  sm:   4, 
+  md:   4, 
+  lg:   4, 
+  xl:   4, 
+  xxl:  4, 
+  xxxl: 4
+ );
+
+$heading-3: ( 
+  xs:   3, 
+  sm:   3, 
+  md:   3, 
+  lg:   3, 
+  xl:   3, 
+  xxl:  3, 
+  xxxl: 3
+ );
+
+$heading-4: ( 
+  xs:   2, 
+  sm:   2, 
+  md:   2, 
+  lg:   2, 
+  xl:   2, 
+  xxl:  2, 
+  xxxl: 2
+ );
+
+$heading-5: ( 
+  xs:   1, 
+  sm:   1, 
+  md:   1, 
+  lg:   1, 
+  xl:   1, 
+  xxl:  1, 
+  xxxl: 1
+ );
+
+$heading-6: ( 
+  xs:   0, 
+  sm:   0, 
+  md:   0, 
+  lg:   0, 
+  xl:   0, 
+  xxl:  0, 
+  xxxl: 0
+ );
+
+/**
+ *
+ * Heros
+ *
+ **/
+$hero-ratio:    8; // modular scale
+$hero-maxchar:  100ch;
+$hero-color:    $black;
+$hero-font-size:  1;
+
+// hero Font Sizes using Modular Scale
+$hero-1: ( 
+  xs:   5, 
+  sm:   5, 
+  md:   6, 
+  lg:   6, 
+  xl:   6.5, 
+  xxl:  6.5, 
+  xxxl: 6.5
+ );
+
+$hero-2: ( 
+  xs:   4, 
+  sm:   4, 
+  md:   4, 
+  lg:   4, 
+  xl:   4, 
+  xxl:  4, 
+  xxxl: 4
+ );
+
+$hero-3: ( 
+  xs:   3, 
+  sm:   3, 
+  md:   3, 
+  lg:   3, 
+  xl:   3, 
+  xxl:  3, 
+  xxxl: 3
+ );
+
+$hero-4: ( 
+  xs:   2, 
+  sm:   2, 
+  md:   2, 
+  lg:   2, 
+  xl:   2, 
+  xxl:  2, 
+  xxxl: 2
+ );
+
+$hero-5: ( 
+  xs:   1, 
+  sm:   1, 
+  md:   1, 
+  lg:   1, 
+  xl:   1, 
+  xxl:  1, 
+  xxxl: 1
+ );
+
+$hero-6: ( 
+  xs:   0, 
+  sm:   0, 
+  md:   0, 
+  lg:   0, 
+  xl:   0, 
+  xxl:  0, 
+  xxxl: 0
+ );

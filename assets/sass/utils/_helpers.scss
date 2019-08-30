@@ -1,8 +1,5 @@
-.flex {
-  display: flex;
-}
-
-.unstyled-list {
+.unstyled-list, 
+.list-unstyled {
   margin: 0;
   padding: 0;
 
@@ -11,23 +8,8 @@
 
     a {
       display: block;
-      @include ms-respond(margin-right,1);
+      @include ms-respond( margin-right, 1 );
     }
-  }
-}
-
-.full-width {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
-
-.no-container {
-  .container {
-    max-width: none !important;
   }
 }
 
@@ -43,8 +25,31 @@
   }
 }
 
-/* Responsive Images */
+/* Responsive Images*/
 .img-responsive {
   max-width: 100%;
   height: auto;
+}
+
+.no-container {
+  .container {
+    max-width: none;
+  }
+}
+
+// text alignment
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-justify {
+  text-align: justify !important;
 }

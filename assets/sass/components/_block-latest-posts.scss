@@ -1,19 +1,28 @@
 .block-latest-posts {
-  [class^=latest-posts-] {
-    @extend .container;
+  [class^="latest-posts-"] {
+    display: flex;
 
-    display: grid;
-    grid-column-gap: var(--global-margin);
-    grid-template-columns: 1fr;
+    .article-summary {
+      flex: 1 1 0;
+      padding-right: var(--global-padding);
 
-    h2 {
-      margin-top: 0 !important;
-      @include ms-respond(font-size,2);
-    }
+      &:last-child {
+        padding-right: 0;
+      }
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto 1fr auto auto;
+      grid-template-areas:
+        "thumb"
+        "time"
+        "tax"
+        "head";
 
-    @include respond-to('lg'){
-      grid-template-columns: repeat(3, 1fr);
+      .summary {
+        display: none;
+      }
+
+      .thumbnail {
+      }
     }
   }
 }
-

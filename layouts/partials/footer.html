@@ -33,11 +33,9 @@
 
     </div>
     <div class="text-center">
-      <small>
-        {{ if ne hugo.Environment "production" }}
-          {{ "[![Netlify Status](https://api.netlify.com/api/v1/badges/78d4f116-9dfd-442c-9296-c4d353c6c76f/deploy-status)](https://app.netlify.com/sites/bugo-vanilla/deploys)" | markdownify }} | 
-        {{ end }}
-        <a href="https://bugo.io" title="Bugo. Made with Bugo" tabindex="0"><img class="d-inline-block my-0 mr-2" src="https://bit.ly/2VF39WV" width="20" height="auto" alt="Bugo. "/>Made with Bugo.</a></small>
+      <small class="made-with-bugo">
+        <a href="https://bugo.io" title="Bugo. Made with Bugo" alt="Visit Bugo" tabindex="0"><img class="d-inline-block my-0 mr-2" src="https://bit.ly/2VF39WV" width="20" height="auto" alt="Bugo. "/> Made with Bugo.</a>
+      </small>
     </div>
   </div>
 </footer>

@@ -13,11 +13,12 @@
           {{ $lgOptions := dict "context" . "image" $image "transform" "c_fill,w_1600"}}
           {{ $lgURL := partial "utilities/cloudinary-transform" $lgOptions }}
           {{ $srcSet := printf "%v 576w %v 1440w" $mdURL $lgURL }}
+          {{ $alt := humanize (index (split (path.Base $image) ".") 0) }}
           <img
             class="" {{- printf "src=%q" $smURL | safeHTMLAttr -}}
-             {{- printf "srcset=%v" $srcSet | safeHTMLAttr -}}
+             
             aria-hidden="hidden"
-            alt=""
+            alt="{{ $alt }}"
             />
         {{ end }}
       {{ end }}

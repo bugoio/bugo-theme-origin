@@ -19,7 +19,6 @@ nav {
       &.current {
         font-weight: bold;
       }
-      
 
       a {
       }
@@ -27,27 +26,36 @@ nav {
   }
 
   .dropdown-menu {
-    position: absolute;
-    width: auto;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-100%);
-    transition: all 0.5s;
-    white-space: nowrap;
-    opacity: 0;
-    display: none;
-    @include ms-respond(padding,-1);
-    background-color: darken($light, 20%);
-    margin-top: 1.5rem;
+    @include space-element-x(margin, $dropdown-margin-left, $dropdown-margin-right);
+    @include space-element-y(margin, $dropdown-margin-top, $dropdown-margin-bottom);
+    @include space-element-x(padding, $dropdown-padding-left, $dropdown-padding-right);
+    @include space-element-y(padding, $dropdown-padding-top, $dropdown-padding-bottom);
 
-    &::before{
+    position: $dropdown-position;
+    width: $dropdown-width;
+    top: $dropdown-top;
+    right: $dropdown-right;
+    bottom: $dropdown-bottom;
+    left: $dropdown-left;
+    transform: $dropdown-transform;
+    transition: $dropdown-transition;
+    transform-origin: $dropdown-transform-origin;
+    white-space: nowrap;
+    opacity: $dropdown-opacity;
+    display: block;
+
+    background-color: $dropdown-bg;
+    box-shadow: $dropdown-shadow;
+    border-radius: $dropdown-radius;
+
+    &::before {
       content: "";
       display: block;
       width: 0;
       height: 0;
       border-left: 0.5rem solid transparent;
       border-right: 0.5rem solid transparent;
-      border-bottom: 1rem solid #E0E0E0;
+      border-bottom: 1rem solid $dropdown-bg;
       position: absolute;
       bottom: 100%;
       left: 50%;
@@ -56,8 +64,8 @@ nav {
 
     &.open {
       display: block;
-      opacity: 1;
-      transform:  translateX(-50%) translateY(0);
+      opacity: $dropdown-open-opacity;
+      transform: $dropdown-open-transform;
     }
 
     .container {
@@ -73,10 +81,11 @@ nav {
 
     a {
       margin: 0.5rem 0;
+      @include space-element(margin, $dropdown-link-margin-x, $dropdown-link-margin-y);
+      @include space-element(padding, $dropdown-link-padding-x, $dropdown-link-padding-y);
     }
   }
 }
-
 
 /**
  *
@@ -93,15 +102,14 @@ nav {
     li {
       position: relative;
       list-style-type: none;
-      @include ms-respond(margin-right,-1);
+      @include ms-respond(margin-right, -1);
 
       &.current {
         font-weight: bold;
       }
-      
 
       a {
-        @include ms-respond(padding,-1);
+        @include ms-respond(padding, -1);
         margin: 0;
       }
     }
@@ -119,18 +127,18 @@ nav {
     white-space: nowrap;
     opacity: 0;
     display: none;
-    @include ms-respond(padding,-1);
-    background-color: #E0E0E0;
+    @include ms-respond(padding, -1);
+    background-color: #e0e0e0;
     margin-top: 0;
 
-    &::before{
+    &::before {
       content: "";
       display: none;
       width: 0;
       height: 0;
       border-left: 0.5rem solid transparent;
       border-right: 0.5rem solid transparent;
-      border-bottom: 1rem solid #E0E0E0;
+      border-bottom: 1rem solid #e0e0e0;
       position: absolute;
       top: 50%;
       right: 100%;
@@ -140,7 +148,7 @@ nav {
     &.open {
       display: block;
       opacity: 1;
-      // transform:  translateX(0) translateY(0);
+      // transform:  translateX( 0 ) translateY( 0 );
     }
 
     .container {

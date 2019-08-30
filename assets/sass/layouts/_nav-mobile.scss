@@ -3,11 +3,11 @@
   z-index: -1;
   top: 100%;
   bottom: auto;
-  background: darken($light,20%);
-  width: 100vw;
+
+  width: 100%;
   left: 50%;
 
-  @include respond-to(md){
+  @include respond-to(md) {
     display: none;
   }
 
@@ -16,13 +16,13 @@
       transform: translateY(0) translateX(-50%);
     }
   }
-  
+
   .nav-mobile {
     position: absolute;
     z-index: -1;
     top: 100%;
     bottom: auto;
-    background: darken($light,20%);
+    background-color: $mobile-nav-bg;
     width: 100vw;
     left: 0;
     transform: translateY(-100%) translateX(-50%);
@@ -34,21 +34,29 @@
   }
 }
 
-.mobile-nav-button {
+.mobile-button-container {
+  grid-area: mbutton;
   position: relative;
+}
+
+.mobile-nav-button {
+  position: $mobile-nav-position;
+  right: 0;
+  align-self: end;
   z-index: 1000000;
-  width: 100%;
+  // width: 100%;
   height: auto;
-  padding: 0.25rem 0;
+  @include space-element(margin, $mobile-nav-margin-x, $mobile-nav-margin-y);
+  @include space-element(padding, $mobile-nav-padding-x, $mobile-nav-padding-y);
+
   svg {
-    width: 80% !important;
-    height: auto;
+    @include ms-respond(width, $mobile-nav-icon-width);
+    @include ms-respond(height, $mobile-nav-icon-height);
+    height: $mobile-nav-button-height;
     display: block;
-    margin: 0 auto;
   }
-  
-  @include respond-to(md){
+
+  @include respond-to(md) {
     display: none;
   }
 }
-
