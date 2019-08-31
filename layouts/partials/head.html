@@ -72,4 +72,5 @@
     {{ $styles := $base | toCSS | minify | fingerprint "sha512" }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
   {{ end }}
+  {{ resources.Match "**/**.js" }}
 </head>
