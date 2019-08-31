@@ -1,8 +1,8 @@
 //Vendors
-@import "../../node_modules/mathsass/dist/math";
-@import "../../node_modules/modularscale-sass/stylesheets/modularscale";
-@import "../../node_modules/sweetalert2/src/sweetalert2.scss";
-@import "../../node_modules/flexslider/flexslider";
+@import "../vendors/mathsass/dist/math";
+@import "../vendors/modularscale-sass/stylesheets/modularscale";
+@import "../vendors/sweetalert2/src/sweetalert2";
+@import "../vendors/FlexSlider/flexslider";
 
 @import "utils/functions";
 @import "utils/mixins";
@@ -11,7 +11,7 @@
  *
  * Hugo Commands
  *
- * This section can be evaluated by Hugo at build. Always provide a default. 
+ * This section can be evaluated by Hugo at build. Always provide a default.
  * Hugo can only process the commands in this file. All imported files are ignored
  * due to a system limitation.
  **/
@@ -45,7 +45,7 @@ $danger:        {{ .Site.Data.styles.theme_colors.danger | default "#dc3545" }} 
  *
  **/
 
-{{ range $index, $mix := .Site.Data.styles.color_mixes }}  
+{{ range $index, $mix := .Site.Data.styles.color_mixes }}
   @include color-mixes( {{ $mix.name | anchorize }}, {{ $mix.text_color | anchorize }}, {{ $mix.background_color | anchorize }}, {{ $mix.heading_color | anchorize }} );
 {{ end }}
 
