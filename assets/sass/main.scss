@@ -32,7 +32,7 @@ $dark:          {{ .Site.Data.styles.theme_colors.dark | default "#5B5551" }} !d
 $white:         {{ .Site.Data.styles.theme_colors.white | default "#FFFCF6" }} !default;
 $black:         {{ .Site.Data.styles.theme_colors.black | default "#252524" }} !default;
 $success:       {{ .Site.Data.styles.theme_colors.success | default "#28a745" }} !default;
-$info:          {{ .Site.Data.styles.theme_colors.info | default "##17a2b8" }} !default;
+$info:          {{ .Site.Data.styles.theme_colors.info | default "#17a2b8" }} !default;
 $warning:       {{ .Site.Data.styles.theme_colors.warning | default "#ffc107" }} !default;
 $danger:        {{ .Site.Data.styles.theme_colors.danger | default "#dc3545" }} !default;
 
