@@ -3,4 +3,4 @@ module:
   - disable: false
     ignoreConfig: false
     path: github.com/bugoio/bugo-sass-utilities
-  - path: bugo-theme-origin
+  - path: bugo-sass-utilities

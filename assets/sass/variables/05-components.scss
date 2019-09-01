@@ -15,7 +15,7 @@ $asum-padding-left:    false; // false | modular scale ratio
 
 $asum-column-gap: 2; // false | modular scale ratio
 $asum-row-gap: false;  // false | modular scale ratio
-$asum-xs-template-areas: 
+$asum-xs-template-areas:
   "thumb thumb head head head head"
   "thumb thumb time time time time"
   "thumb thumb tax tax tax tax"
@@ -42,7 +42,7 @@ $asum-summary-margin-top: $asum-column-gap; // false | modular scale ratio
 /**
  *
  * Breadcrumbs
- * 
+ *
  **/
 $breadcrumbs-margin-top:      $global-margin; // false | modular scale ratio
 $breadcrumbs-margin-right:    false; // false | modular scale ratio
@@ -69,7 +69,7 @@ $breadcrumbs-max-chars: (
 /**
  *
  * Buttons
- * 
+ *
  **/
 
 
@@ -86,3 +86,45 @@ $button-default-color-dark:   $dark;
  **/
 
  $thumbnail-scale-on-hover: true;
+
+
+/**
+ * Share Buttons
+ **/
+$share-margin:        0;
+$share-padding:       0;
+$share-font-size:     2; //modularscale ratio
+$share-icon-width:    3; //modularscale raito
+$share-link-margin:   0 0.125rem;
+$share-link-padding:  0.125rem;
+
+/**
+ * Slideshow
+ **/
+$sl-margin: var( --global-margin ) 0;
+$sl-padding: 0;
+$sl-controls-size: 2rem;
+$sl-controls-bg: $dark;
+$sl-controls-color: $secondary;
+$sl-controls-shadow: 1px 1px 3px $dark;
+$sl-inidicator-size: 1rem;
+$sl-indicator-bg:        $dark;
+$sl-indicator-highlight: $secondary;
+
+/**
+ * Forms
+ **/
+
+ $form-font-size: 1; //modularscale ratio
+ $form-margin: 0;
+ $form-padding: 0;
+
+ $field-font-size: 1; // modularscale raito
+ $field-margin: 0;
+ $field-padding: 0.5em 0.6em;
+ $field-border: 1px solid #ccc;
+ $field-box-shadow: inset 0 1px 3px #ddd;
+ $field-border-radius: $global-radius;
+ $field-border-color: #ccc;
+ $field-focus-color: #129FEA;
+ $field-background: #eaeded;

@@ -51,6 +51,22 @@ $header-link-focus:   $global-link-focus;
 $header-link-weight:  normal;
 
 
+/**
+ * Header Variables
+ * margin and padding is in _grid-header.scss
+ **/
+ $header-bg:               transparent;
+ $header-bg-dark:          $dark;
+ $header-text-color:       $dark;
+ $header-text-color-dark:  $light;
+ $header-link-color:       $dark;
+ $header-link-color-dark:  $light;
+
+ $header-search-font-size:     0; //modularscale raito
+ $header-search-field-margin:  0 0 0 0.5rem;
+ $header-search-field-padding: 0.25rem 0.5rem;
+ $header-search-button-margin: 0 0 0 0.5rem;
+
 // Dimensions
 $header-width:      100%;
 $header-height:     auto;
@@ -87,7 +103,7 @@ $nav-con-row-gap: 2;  // false | modular scale ratio
 $nav-con-xs-template-areas:
   "brand brand brand ... ... ... ... ... ... mbutton mbutton mbutton";
 $nav-con-sm-template-areas: $nav-con-xs-template-areas;
-$nav-con-md-template-areas: 
+$nav-con-md-template-areas:
   "brand brand ... ... ... ... ... ... ... ... search search"
   "brand brand ... ... ... ... ... nmain nmain nmain nmain nmain";
 $nav-con-lg-template-areas:
