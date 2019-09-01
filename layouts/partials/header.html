@@ -9,21 +9,17 @@
    */}}
 
 <a class="skip-link" aria-label="Go to Content" href="#main" tabindex="0">Go to Content</a>
-{{ if .Site.Data.config.layout_options.header.blocks }}
-<div class="promotional-content">
-  {{ partial "blocks/blocks" (dict "page" .Page "site" .Site "content" .Site.Data.config.layout_options.header.blocks) }}
-</div>
-{{ end }}
 <header class="site-header" tabindex="-1">
-  <div class="nav-container">
+  <div class="container nav-container">
     <div class="site-brand">
       <a href="/" title="Go to the home page" tabindex="0">
         {{ if .Site.Data.organization.header_logo }}
             {{ $imageParams := (dict "page" .Page "site" .Site "url" .Site.Data.organization.header_logo "transform" false ) }}
             <img 
-              class="img-responsive" 
+              class="" 
               src="{{ partial "utilities/image-url" $imageParams }}" 
-              alt="" 
+              aria-hidden="true"
+              alt="{{ .Site.Data.organization.organization_name }} Logo" 
             />
         {{ else }}
           {{ .Site.Data.organization.organization_name }}        
@@ -45,9 +41,11 @@
     <div class="search-container">
       {{ partial "components/search-form" }}
     </div>
-    <button class="mobile-nav-button toggler" type="button" data-target-class="active" data-target="#mobile-nav" aria-controls="mobile-nav-container" aria-expanded="false" aria-label="Toggle navigation">
-      {{ partial "icons/menu-toggle" }}
-    </button>
+    <div class="mobile-button-container">
+      <button class="mobile-nav-button toggler" type="button" data-target-class="active" data-target="#mobile-nav" aria-controls="mobile-nav-container" aria-expanded="false" aria-label="Toggle navigation">
+        {{ partial "icons/menu-toggle" }}
+      </button>
+    </div>
     <!-- Mobile Navigation -->
     {{ if .Site.Menus.mobile }}
       {{ .Scratch.Set "location" "mobile" }}
@@ -57,20 +55,4 @@
       </div>
     {{ end }}
   </div>
-  {{ block "hero" . }}{{ end }}
-  {{ if .Params.videos }}
-    {{ partial "components/hero-video" . }}
-  {{ else if .Params.images}}
-    {{ partial "components/hero" . }}
-  {{ else }}
-    <div class="container">
-      <h1>{{ .Title }}</h1>
-    </div>
-  {{ end }}
-
-  {{ if and (not .IsHome) (ne .Params.layout "landing") (.Site.Data.config.show_breadcrumbs) }}
-    <div class="breadcrumbs">
-      {{ partial "components/breadcrumbs" . }}
-    </div>
-  {{ end }}
 </header>

@@ -9,7 +9,7 @@
    *
    * 
    */}}
-{{ if $.context.Site.Params.google_cloud_api }}
+{{ if .context.Site.Params.google_cloud_api }}
 <div class="map-container">
   <iframe
     src="https://www.google.com/maps/embed/v1/place?key={{ $.context.Site.Params.google_cloud_api }}&q={{ .block.address_1 }}%20{{ .block.address_2 }}%20{{ .block.city }}%20{{ .block.state }}%20{{ .block.zip_code }} "

@@ -1,0 +1,64 @@
+/**
+ *
+ * Global Spacing
+ *
+ * Spacing is determined by using modular scale based on the global font size.
+ * To edit the scale, edit /assets/sass/utils/variables/_modularscale.scss
+ *
+ **/
+
+$global-margin:   2;
+$global-padding:  2;
+$global-radius:   2px;
+$global-shadow:   1px 1px 2px transparentize($dark,0.2);
+
+/* Breakpoints */
+$breakpoints: ( 
+  xs: 0, 
+  sm: 576px, 
+  md: 768px, 
+  lg: 992px, 
+  xl: 1200px, 
+  xxl: 1400px, 
+  xxxl: 2200px
+ ) !default;
+
+$container-max-widths : ( 
+  xs: calc( 100% - 36px ), 
+  sm: 540px, 
+  md: 720px, 
+  lg: 960px, 
+  xl: 1164px, 
+  xxl: 1360px, 
+  xxxl: 2100px
+ ) !default;
+
+
+:root {
+  @include ms-respond( --global-margin, 4 );
+  @include ms-respond( --global-padding, 4 );
+  @include ms-respond( --heading-margin-top, 4 );
+  @include ms-respond( --heading-margin-bottom, 2 );
+}
+
+/**
+ * Global Typography
+ **/
+$global-font:               var( --font-family-global ); // grab the font family from the forestry output
+$global-font-color:         $dark;
+$global-font-color-dark:    $light;
+$global-link-color:         $accent-2;
+$global-link-dark:          $white;
+$global-link-focus:         lighten( $accent-2, 20% );
+$global-link-weight:        bold;
+$global-font-size:          0; // modular scale
+$global-line-height:        1.75;
+$global-small:              $global-font-size - 1;
+$global-small-line-height:  1.2;
+
+/**
+ *
+ * Navigation
+ *
+ **/
+$global-menu-bg: lighten($accent-1, 0.5);

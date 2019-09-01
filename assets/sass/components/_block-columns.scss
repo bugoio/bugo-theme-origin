@@ -1,76 +1,35 @@
 .block-columns {
   position: relative;
+  @include space-element(margin, $columns-margin-x, $columns-margin-y);
+  @include space-element(padding, $columns-padding-x, $columns-padding-y);
 
-    .container {
+  .container {
     position: relative;
     z-index: 1;
-    display: grid;
-    grid-template-columns: 100%;
+    display: flex;
+    @include responsive-property($columns-flex-wrap, flex-wrap);
+  }
 
-    .item {
-      align-items: center;
-    }
-    
-    @include respond-to('md'){
+  .item {
+    flex: 1 1 auto;
+    align-items: center;
+    @include space-element(margin, $columns-item-margin-x, $columns-item-margin-y);
+    @include space-element(padding, $columns-item-padding-x, $columns-item-padding-y);
 
-      &.column-container-2,
-      &.column-container-4,
-      &.column-container-6 {
-        grid-template-columns: 1fr 1fr;
+    @include respond-to(md){
+      &:first-child {
+        padding-left: 0;
       }
-
-      &.column-container-3 {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-
-      &.column-container-5 {
-        grid-template-columns: 1fr 1fr;
-
-        :nth-child(2) {
-          grid-column: 1 / span 2;
-        }
+  
+      &:last-child {
+        padding-right: 0;
       }
     }
 
-    @include respond-to('lg'){
-      &.column-container-3,
-      &.column-container-6 {
-        grid-template-columns: 1fr 1fr 1fr;
+    > * {
+      &:last-child {
+        margin-bottom: 0 !important;
       }
-
-      &.column-container-4 {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-      }
-
-      &.column-container-5 {
-        grid-template-columns: 1fr 1fr;
-
-        :nth-child(2) {
-          grid-column: 1 / span 2;
-        }
-      }
-    }
-
-    @include respond-to('xl'){
-      &.column-container-3,
-      &.column-container-6 {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-
-      &.column-container-4 {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-      }
-
-      &.column-container-5 {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-
-        :nth-child(2) {
-          grid-column: 1 / span 4;
-        }
-      }
-    }
-    .item {
-        padding: var(--global-padding);
     }
   }
 }

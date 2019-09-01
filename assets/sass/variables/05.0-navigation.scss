@@ -1,0 +1,56 @@
+$dropdown-position: absolute;
+$dropdown-width: auto;
+
+$dropdown-margin-top:      false; // false | modular scale ratio
+$dropdown-margin-right:    false; // false | modular scale ratio
+$dropdown-margin-bottom:   false; // false | modular scale ratio
+$dropdown-margin-left:     false; // false | modular scale ratio
+
+$dropdown-padding-top:     -2; // false | modular scale ratio
+$dropdown-padding-right:   -2; // false | modular scale ratio
+$dropdown-padding-bottom:  -2; // false | modular scale ratio
+$dropdown-padding-left:    -2; // false | modular scale ratio
+
+// Positioning
+$dropdown-position:   absolute;
+$dropdown-top:        100%;
+$dropdown-right:      auto;
+$dropdown-bottom:     auto;
+$dropdown-left:       50%;
+$dropdown-z:          -1;
+
+// Colors
+$dropdown-radius: 0;
+$dropdown-bg: $global-menu-bg;
+$dropdown-color: $dark;
+$dropdown-link: $global-link-color;
+$dropdown-opacity: 0;
+$dropdown-shadow: $global-shadow;
+
+// Transition
+$dropdown-easing: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+$dropdown-transition: all 0.5s $dropdown-easing;
+$dropdown-transform-origin: 0 -1rem -1rem;
+$dropdown-transform:  translateX( -50% ) translateY( 1rem ) rotateX( 90deg );
+
+// Open
+$dropdown-open-transform: translateX( -50% ) translateY( 1rem ) rotateX( 0 );
+$dropdown-open-opacity: 1;
+
+$dropdown-link-margin-x: -2; // false | modular scale ratio
+$dropdown-link-margin-y: -4; // false | modular scale ratio
+$dropdown-link-padding-x: -2; // false | modular scale ratio
+$dropdown-link-padding-y: -4; // false | modular scale ratio
+
+$mobile-nav-position: absolute;
+$mobile-nav-button-width: auto;
+$mobile-nav-button-height: auto;
+$mobile-nav-icon-width: 2;
+$mobile-nav-icon-height: 2;
+
+$mobile-nav-margin-x:   auto; // false | modular scale ratio
+$mobile-nav-margin-y:   false; // false | modular scale ratio
+$mobile-nav-padding-x:  -2; // false | modular scale ratio
+$mobile-nav-padding-y:  -2; // false | modular scale ratio
+
+$mobile-nav-bg: $global-menu-bg;

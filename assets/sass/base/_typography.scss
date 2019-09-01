@@ -1,129 +1,101 @@
-html {
-  width: 100%;
-}
-
-body {
-  @include ms-respond(font-size,1);
-  @include ms-respond(padding-right,2);
-  @include ms-respond(padding-left,2);
-  line-height: 1.5;
-  max-width: 100%;
-  margin: 0 auto;
-  font-family: "Roboto";
-  font-display: auto;
-  color: $heading-text-color;
-  @media (prefers-color-scheme: dark) {
-      color: $heading-text-color-dark;
-  }   
-}
-
 a {
-  color: $link-text-color;
+  color: $global-link-color;
+  font-weight: $global-link-weight;
+
   @media (prefers-color-scheme: dark) {
-      color: $link-text-color-dark;
-  }   
+    color: $global-link-dark;
+  }
 
   &:hover {
-    color: darken($link-text-color,20%);
+    color: darken($global-link-color, 20%);
     @media (prefers-color-scheme: dark) {
-        color: darken($link-text-color-dark,20%);
-    }   
+      color: darken($global-link-dark, 20%);
+    }
   }
 }
 
-h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
-  font-family: "serif";
-  font-display: auto;
-  line-height: 1.2;
-  margin-top: var(--heading-margin-top);
-  margin-bottom: var(--heading-margin-bottom);
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: $heading-font;
+  font-weight: $heading-font-weight;
+  line-height: $heading-line-height;
+  @include space-element-x(margin, $heading-margin-left, $heading-margin-right);
+  @include space-element-y(margin, $heading-margin-top, $heading-margin-bottom);
+  @include space-element-x(padding, $heading-padding-left, $heading-padding-right);
+  @include space-element-y(padding, $heading-padding-top, $heading-padding-bottom);
 
-  color: $heading-text-color;
+  color: $heading-color;
+  background-color: $heading-bg;
   @media (prefers-color-scheme: dark) {
-      color: $heading-text-color-dark;
-  }   
+    color: $heading-color-dark;
+    background-color: $heading-bg-dark;
+  }
 
   a {
     text-decoration: none;
     color: $heading-link-color;
     @media (prefers-color-scheme: dark) {
-        color: $heading-link-color-dark;
+      color: $heading-link-color-dark;
     }
     &:hover {
-      color: darken($header-link-color,10%);
+      color: darken($header-link-color, 10%);
       @media (prefers-color-scheme: dark) {
-          color: darken($heading-link-color-dark,10%);
+        color: darken($heading-link-color-dark, 10%);
       }
-    }   
+    }
   }
 }
 
-h1 {
-  @include ms-respond(font-size,5);
-  margin-top: 0 !important;
-  line-height: 1.1;
+@include heading-size(h1, $heading-1);
+@include heading-size(h2, $heading-2);
+@include heading-size(h3, $heading-3);
+@include heading-size(h4, $heading-4);
+@include heading-size(h5, $heading-5);
+@include heading-size(h6, $heading-6);
 
-  @include respond-to(md){
-    @include ms-respond(font-size,6);
-  }
+@include heading-size(aside h1, $heading-1, $heading-sidebar);
+@include heading-size(aside h2, $heading-2, $heading-sidebar);
+@include heading-size(aside h3, $heading-3, $heading-sidebar);
+@include heading-size(aside h4, $heading-4, $heading-sidebar);
+@include heading-size(aside h5, $heading-5, $heading-sidebar);
+@include heading-size(aside h6, $heading-6, $heading-sidebar);
 
-  @include respond-to(lg){
-    @include ms-respond(font-size,7);
-  }
-
-  @include respond-to(xl){
-    @include ms-respond(font-size,8);
-  }
+small,
+.small {
+  @include ms-respond(font-size, $global-small);
+  line-height: $global-small-line-height;
 }
 
-h2 {
-  @include ms-respond(font-size,5);
-}
-
-h3 {
-  @include ms-respond(font-size,4);
-}
-
-h4 {
-  @include ms-respond(font-size,3);
-  line-height: 1.5;
-}
-
-h5 {
-  @include ms-respond(font-size,2);
-  line-height: 1.5;
-}
-
-h6 {
-  @include ms-respond(font-size,1);
-  line-height: 1.5;
-}
-
-header {
-  h1 {
-    margin-top: 0 !important;
-  }
-}
-
-small,.small {
-  @include ms-respond(font-size,0);
-  line-height: 1.2;
-}
-
-p {
-  margin-bottom: var(--global-margin);
-  max-width: $max-char;
+p,
+pre {
+  @include space-element-x(margin, $paragraph-margin-left, $paragraph-margin-right);
+  @include space-element-y(margin, $paragraph-margin-top, $paragraph-margin-bottom);
+  @include space-element-x(padding, $paragraph-padding-left, $paragraph-padding-right);
+  @include space-element-y(padding, $paragraph-padding-top, $paragraph-padding-bottom);
 }
 
 blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
+  background: lighten($accent_2, 55%);
+  border-left: 10px solid $accent_2;
   quotes: "\201C""\201D""\2018""\2019";
+  @include space-element-x(margin, $blockquote-margin-left, $blockquote-margin-right);
+  @include space-element-y(margin, $blockquote-margin-top, $blockquote-margin-bottom);
+  @include space-element-x(padding, $blockquote-padding-left, $blockquote-padding-right);
+  @include space-element-y(padding, $blockquote-padding-top, $blockquote-padding-bottom);
 }
+
 blockquote:before {
-  color: #ccc;
+  color: $accent_2;
   content: open-quote;
   font-size: 4em;
   line-height: 0.1em;
@@ -134,60 +106,10 @@ blockquote p {
   display: inline;
 }
 
-blockquote {
-  p:last-child {
-    margin-bottom: 0 !important;
-  }
-}
-
-aside {
-  @include ms-respond(font-size,1);
-
-  h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
-    line-height: 1.2;
-    margin-bottom: var(--heading-margin-bottom);
-  }
-
-  h1 {
-    @include ms-respond(font-size,4);
-  }
-
-  h2 {
-    @include ms-respond(font-size,3);
-  }
-
-  h3 {
-    @include ms-respond(font-size,2);
-  }
-
-  h4 {
-    @include ms-respond(font-size,1);
-    line-height: 1.5;
-  }
-
-  h5 {
-    @include ms-respond(font-size,1);
-    line-height: 1.5;
-  }
-
-  h6 {
-    @include ms-respond(font-size,1);
-    line-height: 1.5;
-  }
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.text-justify {
-  text-align: justify;
+pre {
+  background-color: $pre-bg !important;
+  @include space-element-x(margin, $pre-margin-left, $pre-margin-right);
+  @include space-element-y(margin, $pre-margin-top, $pre-margin-bottom);
+  @include space-element-x(padding, $pre-padding-left, $pre-padding-right);
+  @include space-element-y(padding, $pre-padding-top, $pre-padding-bottom);
 }

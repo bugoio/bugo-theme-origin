@@ -19,8 +19,8 @@ Origin is meant to be used as a starter theme used by designers and developers a
 * Configurable Sidebar Widgets
 * Forestry.io Cloudinary support
 * Page/Post level galleries
-    * Images
-    * Videos
+  * Images
+  * Videos
 * Forestry enabled site options
 * So much more…
 
@@ -46,17 +46,20 @@ Follow the link below and follow the instructions. It will require a github or o
 ### Setup Netlify
 
 Go to https://netlify.com and sign up for an account. 
+
 * When asked link to the repository you created when you setup Forestry.io. 
 * Use the build command below when asked.
 
 ```bash
 hugo -d public -e staging
 ```
+
 > NOTE: Staging sites deploy disallowing robots.txt. You can change ```staging``` to ```production``` if you're deploying a production site. This can also be useful if you want to build the site up before submitting to search engines.
 
 ## Developer Installation
 
 Assuming you already have a Hugo project started, from your Hugo project root
+
 ```bash
 # If your project is already using forestry.io back it up.
 cp -r .forestry forestry
@@ -87,6 +90,7 @@ hugo server -d public --watch
 # In a second terminal from your project root
 cd themes/bugo-theme-origin && npm start
 ```
+
 Now Hugo will watch for changes sitewide. Origin will watch for changes in ```/themes/bugo-theme-origin/assests/js/```.
 
 Origin requires Hugo to build the site into the ```/public``` directory. Origin copies the compiled CSS into ```/themes/bugo-theme-origin/static/assets/css/``` when Hugo is done compiling the SASS.
@@ -96,4 +100,5 @@ Origin requires Hugo to build the site into the ```/public``` directory. Origin 
 ```base
 hugo server -d public -e production
 ```
+
 Origin is environement sensitive and will use fingerprinted versions of the compiled Origin styles and javascript assets.

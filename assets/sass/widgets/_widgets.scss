@@ -1,5 +1,88 @@
 .widget {
   margin: $widget-margin;
   padding: $widget-padding;
-  @include ms-respond(font-size,$widget-font-size); 
+  @include ms-respond( font-size, $widget-font-size ); 
+}
+
+.widget-latest-posts {
+  .article-summary {
+    display: grid;
+    // grid-template-columns: repeat( 1, 1fr );
+    grid-template-areas:
+    "thumb thumb thumb thumb thumb thumb"
+    "head head head head head head"
+    "time time time time time time"
+    "tax tax tax tax tax tax"
+    "summ summ summ summ summ summ";
+
+    margin: 0 0 2rem;
+
+    header {
+      margin-bottom: 0;
+
+      h3{
+        margin: 0;
+      }
+
+      .taxonomy {
+        margin: 0 0 1rem;
+        display: none;
+      }
+    }
+
+    .thumbnail {
+      display: none;
+    }
+
+    .summary {
+      display: none;
+    }
+
+    time {
+      // grid-area: time;
+    }
+
+    .taxonomy {
+      grid-area: tax;
+      margin-top: 0.25rem;
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+.widget-related-posts {
+  .article-summary {
+    display: grid;
+    grid-template-areas:
+      "thumb thumb thumb thumb thumb thumb"
+      "head head head head head head"
+      "time time time time time time"
+      "tax tax tax tax tax tax"
+      "summ summ summ summ summ summ";
+    grid-row-gap: 0;
+
+    margin: 0 0 2rem;
+
+    header {
+      h3{
+        margin: 0 0 1rem;
+      }
+
+      .taxonomy {
+        display: none;
+        margin: 0 0 1rem;
+      }
+    }
+
+    .thumbnail {
+      display: block;
+      margin-bottom: 0;
+    }
+
+    .summary {
+      display: none;
+      grid-area: summ;
+    }
+  }
 }

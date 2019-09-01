@@ -1,0 +1,29 @@
+{{/**
+   * Home Page Template
+	 *
+	 * Landing pages use content blocks to build the page.
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+{{ define "hero" }}
+{{ if .Params.videos }}
+{{ partial "components/hero-video" . }}
+{{ else if .Params.images}}
+{{ partial "components/hero" . }}
+{{ else }}
+<div class="hero spacer"></div>
+{{ end }}
+{{ end }}
+
+{{ define "breadcrumbs" }}
+<div class="empty"></div>
+{{ end }}
+
+{{ define "main" }}
+<main id="main" class="" tabindex="0">
+  <h1 class="sr-only">{{ .Title }}</h1>
+  {{ partial "blocks/blocks" . }}
+</main>
+{{ end }}

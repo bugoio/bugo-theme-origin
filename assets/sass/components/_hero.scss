@@ -1,58 +1,121 @@
 .hero {
   grid-area: hero;
-  display: grid;
+
+  @if $hero-show == false {
+    display: none;
+  } @else {
+    display: grid;
+  }
+  position: relative;
+  width: 100%;
+  @include ms-respond(padding-top, $hero-padding-top);
+  @include ms-respond(padding-bottom, $hero-padding-bottom);
+
+  @if $hero-container == true {
+    @extend .container;
+    @include ms-respond(padding-left, $global-padding);
+    @include ms-respond(padding-right, $global-padding);
+  }
+
   align-items: stretch;
   margin: 0;
-  background-size: cover; 
-  background-position: 50%;
-  padding-bottom: 120%;
-  position: relative;
-  // @include responsive-property($hero-min-height,'min-height');  
-  @include respond-to(sm){
-    padding-bottom: 70%;
+  z-index: 1;
+
+  @if $hero-border == true {
+    border-bottom-color: $hero-border-color;
+    border-bottom-style: $hero-border-style;
+    @include ms-respond(border-bottom-width, $hero-border-width);
   }
 
-  @include respond-to(md){
-    padding-bottom: 56.2%;
+  background-color: $hero-background;
+
+  // set padding y
+  // @include aspect-ratio( $hero-padding-y );
+
+  transition: padding-bottom 0.5s;
+
+  &.spacer {
+    padding: 0;
+    @include ms-respond(height, $hero-spacer-height);
+    background-color: transparent;
   }
 
-  @include respond-to(lg){
-    padding-bottom: 45%;
+  &::before {
+    content: "";
+    display: $hero-screen-display;
+    width: 100%;
+    height: 100%;
+    background: $hero-screen-bg;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    // width: 100vw;
+    // transform: translateX( -50% );
   }
 
-  @include respond-to(xxl){
-    padding-bottom: 36%;
+  .hero-image {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: $hero-image-filter;
+    z-index: -1;
   }
 
-  @include respond-to(xxxl){
-    padding-bottom: 30%;
-  }
   .container {
     height: 100%;
-    position: absolute;
+    position: relative;
     width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
     display: grid;
-    grid-template-columns: repeat(1,1fr);
-    grid-template-areas: 
-      "herotxt";
-    }
+    grid-template-columns: repeat(1, 1fr);
+    z-index: 1001;
+    grid-template-areas: "herotxt";
+  }
 
   .hero-text {
     grid-area: herotxt;
     position: relative;
-    z-index: 100;
-    color: $white;
-    text-shadow: ms(-5) ms(-5) ms(-2) #000;
+    color: $hero-color;
     align-self: center;
+    @include ms-respond(font-size, $hero-font);
+    font-family: $hero-font-family;
+    max-width: $hero-maxchar;
+    z-index: 10000000;
+    @include ms-respond(padding-bottom, $global-padding);
 
-    h1,h2,h3,h4,h5,h6 {
-      display: block;
-      color: #fff;
-      margin: 0;
-      @include respond-to(lg){
-        max-width: 20ch;
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+      color: $hero-color;
+    }
+
+    @include heading-size(h1, $hero-1);
+    @include heading-size(h2, $hero-2);
+    @include heading-size(h3, $hero-3);
+    @include heading-size(h4, $hero-4);
+    @include heading-size(h5, $hero-5);
+    @include heading-size(h6, $hero-6);
+
+    > * {
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }

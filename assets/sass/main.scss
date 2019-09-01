@@ -1,57 +1,75 @@
-//Colors from Hugo Site Data
-$primary:       {{ .Site.Data.styles.theme_colors.primary | default "#F983D1" }} !default;
-$secondary:     {{ .Site.Data.styles.theme_colors.secondary | default "#45D045" }} !default;
-$accent-1:      {{ .Site.Data.styles.theme_colors.accent_1 | default "#FAE44C" }};
-$accent-2:      {{ .Site.Data.styles.theme_colors.accent_2 | default "#77AEFA" }};
-$light:         {{ .Site.Data.styles.theme_colors.light | default "#EBEBEB" }} !default;
-$dark:          {{ .Site.Data.styles.theme_colors.dark | default "#22365D" }} !default;
-$white:         {{ .Site.Data.styles.theme_colors.white | default "#22365D" }} !default;
-$black:         {{ .Site.Data.styles.theme_colors.black | default "#22365D" }} !default;
-$success:       #28a745 !default;
-$info:          #17a2b8 !default;
-$warning:       #ffc107  !default;
-$danger:        #dc3545 !default;
-
-//Color mixes generated from Hugo Site Data
-{{ range $index, $mix := .Site.Data.styles.color_schemes.color_mixes }}  
-  .{{ $mix.name | anchorize }} {
-    background-color: ${{ $mix.background_color | default "none" | anchorize }};
-    color: ${{ $mix.text_color | anchorize }};
-    h1,h2,h3,h4,h5,h6 {
-      color: {{ if $mix.heading_color }}${{ end }}{{ $mix.heading_color | default "inherit" | anchorize }};
-
-      a {
-        color: {{ if $mix.heading_color }}${{ end }}{{ $mix.heading_color | default "inherit" | anchorize }};
-      }
-    }
-  }
-{{ end }}
-
 //Vendors
-@import "../../node_modules/mathsass/dist/math";
-@import "../../node_modules/modularscale-sass/stylesheets/modularscale";
-@import "../../node_modules/sweetalert2/src/sweetalert2.scss";
-@import "../../node_modules/flexslider/flexslider";
-//Utilities
+@import "vendors/mathsass/math";
+@import "vendors/modularscale/modularscale";
+
 @import "utils/functions";
 @import "utils/mixins";
-@import "utils/variables/global-variables";
+
+/**
+ *
+ * Hugo Commands
+ *
+ * This section can be evaluated by Hugo at build. Always provide a default.
+ * Hugo can only process the commands in this file. All imported files are ignored
+ * due to a system limitation.
+ **/
+
+/**
+ *
+ * Theme Color Variables
+ * Assigns global colors variables for use elsewhere.
+ *
+ **/
+
+$primary:       {{ .Site.Data.styles.theme_colors.primary | default "#AC5E0D" }} !default;
+$secondary:     {{ .Site.Data.styles.theme_colors.secondary | default "#536F48" }} !default;
+$accent-1:      {{ .Site.Data.styles.theme_colors.accent_1 | default "#FFDE2F" }};
+$accent-2:      {{ .Site.Data.styles.theme_colors.accent_2 | default "#5F336A" }};
+$light:         {{ .Site.Data.styles.theme_colors.light | default "#FFF5E7" }} !default;
+$dark:          {{ .Site.Data.styles.theme_colors.dark | default "#5B5551" }} !default;
+$white:         {{ .Site.Data.styles.theme_colors.white | default "#FFFCF6" }} !default;
+$black:         {{ .Site.Data.styles.theme_colors.black | default "#252524" }} !default;
+$success:       {{ .Site.Data.styles.theme_colors.success | default "#28a745" }} !default;
+$info:          {{ .Site.Data.styles.theme_colors.info | default "#17a2b8" }} !default;
+$warning:       {{ .Site.Data.styles.theme_colors.warning | default "#ffc107" }} !default;
+$danger:        {{ .Site.Data.styles.theme_colors.danger | default "#dc3545" }} !default;
+
 @import "utils/variables/colors";
+
+/**
+ *
+ * Generate theme color mixes
+ * returns a class for use with block level eleemnts
+ *
+ **/
+
+{{ range $index, $mix := .Site.Data.styles.color_mixes }}
+  @include color-mixes( {{ $mix.name | anchorize }}, {{ $mix.text_color | anchorize }}, {{ $mix.background_color | anchorize }}, {{ $mix.heading_color | anchorize }} );
+{{ end }}
+
+/**
+ *
+ * Include SASS files here.
+ *
+ **/
+
+//Utilities
+@import "utils/modularscale";
+@import "variables/00-vars";
 @import "utils/variables/components";
 @import "utils/variables/forms";
 @import "utils/variables/header";
-@import "utils/variables/hero";
 @import "utils/variables/widgets";
 @import "utils/helpers";
-@import "utils/wcag";
-@import "utils/responsive";
 
 //Base
 @import "base/reset";
 @import "base/typography";
+@import "base/wcag";
+@import "base/jarallax";
 
 //components
-@import "components/article";
+@import "components/article-summary";
 @import "components/blocks";
 @import "components/block-columns";
 @import "components/block-google-map";
@@ -63,6 +81,7 @@ $danger:        #dc3545 !default;
 @import "components/forms";
 @import "components/hero";
 @import "components/hero-video";
+@import "components/highlight";
 @import "components/messages";
 @import "components/pagination";
 @import "components/share-buttons";
@@ -70,10 +89,14 @@ $danger:        #dc3545 !default;
 @import "components/thumbnail";
 
 //layouts
-@import "layouts/grid/grid";
-@import "layouts/footer";
+@import "layouts/body";
+@import "layouts/container";
 @import "layouts/header";
+@import "layouts/nav-container";
+@import "layouts/wrap";
+@import "layouts/wrap-sidebar";
 @import "layouts/main";
+@import "layouts/footer";
 @import "layouts/navigation";
 @import "layouts/nav-main";
 @import "layouts/nav-mobile";
@@ -82,6 +105,7 @@ $danger:        #dc3545 !default;
 
 //widgets
 @import "widgets/widgets";
+@import "widgets/widget-categories";
 @import "widgets/widget-latest-posts";
 @import "widgets/widget-related-posts";
 @import "widgets/widget-search-form";
@@ -89,6 +113,5 @@ $danger:        #dc3545 !default;
 
 //pages
 @import "pages/landing-page";
-
-//themes
-@import "themes/front-end";
+@import "pages/list-page";
+@import "pages/home";
