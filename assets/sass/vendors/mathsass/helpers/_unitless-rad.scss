@@ -1,4 +1,0 @@
-// Convert to unitless rad
-@function unitless-rad ($angle) {
-    @return (0rad + $angle) / 1rad;
-}
