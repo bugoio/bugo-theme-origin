@@ -1,4 +1,9 @@
-@import "bugo-utilities";
+//Vendors
+@import "vendors/mathsass/math";
+@import "vendors/modularscale/modularscale";
+
+@import "utils/functions";
+@import "utils/mixins";
 
 /**
  *
