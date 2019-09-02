@@ -2,5 +2,3 @@ github.com/bugoio/bugo-mod-search v0.0.0-20190902043258-fad11c313553 h1:IA/8dic9
 github.com/bugoio/bugo-mod-search v0.0.0-20190902043258-fad11c313553/go.mod h1:yV+m2OdPR3f4n78R6r9GjAwbQiWCiTuDeNhyVXbHxjw=
 github.com/bugoio/bugo-sass-utilities v0.0.0-20190901033201-a51426964546 h1:v81Gp1ik61cF3AOnyKgvXFXGCKuLXMdX5pocgtqrvUc=
 github.com/bugoio/bugo-sass-utilities v0.0.0-20190901033201-a51426964546/go.mod h1:0tVnrsnCG61j64fUv88di5gpYw5/3fgqdQB4iUOjook=
-github.com/bugoio/bugo-sass-utilities v0.0.0-20190901164951-7054a05cf33d h1:K0RYK9EJ6d8SKJcF3OCCH0Umng+6Mb9y8bzfqOzJxgs=
-github.com/bugoio/bugo-sass-utilities v0.0.0-20190901164951-7054a05cf33d/go.mod h1:uXtAV/0yqw9ESv/mYtbbstrY4Vvq5Z5+ATeQn8gstTE=

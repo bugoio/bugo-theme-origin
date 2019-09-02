@@ -1,9 +1,9 @@
 //Vendors
-@import "vendors/mathsass/math";
-@import "vendors/modularscale/modularscale";
+@import "vendors/mathsass/math";  // from Bugo SASS Utilities Module
+@import "vendors/modularscale/modularscale";  // from Bugo SASS Utilities Module
 
-@import "utils/functions";
-@import "utils/mixins";
+@import "functions";
+@import "mixins";
 
 /**
  *
@@ -83,20 +83,21 @@ $container-max-widths: (
  *
  **/
 
-$primary:       {{ .Site.Data.styles.theme_colors.primary | default "#AC5E0D" }} !default;
-$secondary:     {{ .Site.Data.styles.theme_colors.secondary | default "#536F48" }} !default;
-$accent-1:      {{ .Site.Data.styles.theme_colors.accent_1 | default "#FFDE2F" }};
-$accent-2:      {{ .Site.Data.styles.theme_colors.accent_2 | default "#5F336A" }};
-$light:         {{ .Site.Data.styles.theme_colors.light | default "#FFF5E7" }} !default;
-$dark:          {{ .Site.Data.styles.theme_colors.dark | default "#5B5551" }} !default;
-$white:         {{ .Site.Data.styles.theme_colors.white | default "#FFFCF6" }} !default;
-$black:         {{ .Site.Data.styles.theme_colors.black | default "#252524" }} !default;
-$success:       {{ .Site.Data.styles.theme_colors.success | default "#28a745" }} !default;
-$info:          {{ .Site.Data.styles.theme_colors.info | default "##17a2b8" }} !default;
-$warning:       {{ .Site.Data.styles.theme_colors.warning | default "#ffc107" }} !default;
-$danger:        {{ .Site.Data.styles.theme_colors.danger | default "#dc3545" }} !default;
+$primary:       {{ .Site.Params.theme_colors.primary | default "#AC5E0D" }} !default;
+$secondary:     {{ .Site.Params.theme_colors.secondary | default "#536F48" }} !default;
+$accent-1:      {{ .Site.Params.theme_colors.accent_1 | default "#FFDE2F" }};
+$accent-2:      {{ .Site.Params.theme_colors.accent_2 | default "#5F336A" }};
+$light:         {{ .Site.Params.theme_colors.light | default "#FFF5E7" }} !default;
+$dark:          {{ .Site.Params.theme_colors.dark | default "#5B5551" }} !default;
+$white:         {{ .Site.Params.theme_colors.white | default "#FFFCF6" }} !default;
+$black:         {{ .Site.Params.theme_colors.black | default "#252524" }} !default;
+$success:       {{ .Site.Params.theme_colors.success | default "#28a745" }} !default;
+$info:          {{ .Site.Params.theme_colors.info | default "#17a2b8" }} !default;
+$warning:       {{ .Site.Params.theme_colors.warning | default "#ffc107" }} !default;
+$danger:        {{ .Site.Params.theme_colors.danger | default "#dc3545" }} !default;
 
-@import "utils/variables/colors";
+
+@import "colors";  // from Bugo SASS Utilities Module
 
 /**
  *
@@ -116,13 +117,12 @@ $danger:        {{ .Site.Data.styles.theme_colors.danger | default "#dc3545" }} 
  **/
 
 //Utilities
-@import "utils/modularscale";
+@import "modularscale"; // from Bugo SASS Utilities Module
 @import "variables/00-vars";
-@import "utils/variables/components";
-@import "utils/variables/forms";
-@import "utils/variables/header";
-@import "utils/variables/widgets";
-@import "utils/helpers";
+// @import "utils/variables/components";
+// @import "utils/variables/forms";
+// @import "utils/variables/header";
+// @import "utils/variables/widgets";
 
 //Base
 @import "base/reset";
