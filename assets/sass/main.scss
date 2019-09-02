@@ -1,8 +1,6 @@
 //Vendors
-@import "../../node_modules/mathsass/dist/math";
-@import "../../node_modules/modularscale-sass/stylesheets/modularscale";
-@import "../../node_modules/sweetalert2/src/sweetalert2.scss";
-@import "../../node_modules/flexslider/flexslider";
+@import "vendors/mathsass/math";
+@import "vendors/modularscale/modularscale";
 
 @import "utils/functions";
 @import "utils/mixins";
@@ -11,10 +9,72 @@
  *
  * Hugo Commands
  *
- * This section can be evaluated by Hugo at build. Always provide a default. 
+ * This section can be evaluated by Hugo at build. Always provide a default.
  * Hugo can only process the commands in this file. All imported files are ignored
  * due to a system limitation.
  **/
+
+ /* Breakpoints */
+$breakpoints: (
+    xs: {{ .Site.Params.breakpoints.xs.bp | default "0" }},
+    sm: {{ .Site.Params.breakpoints.sm.bp | default "576px" }},
+    md: {{ .Site.Params.breakpoints.md.bp | default "768px" }},
+    lg: {{ .Site.Params.breakpoints.lg.bp | default "992px" }},
+    xl: {{ .Site.Params.breakpoints.xl.bp | default "1200px" }},
+    xxl: {{ .Site.Params.breakpoints.xxl.bp | default "1400px" }},
+    xxxl: {{ .Site.Params.breakpoints.xxxl.bp | default "2200px" }}
+) !default;
+
+$container-max-widths: (
+    xs: {{ .Site.Params.breakpoints.xs.mw | default "0" }},
+    sm: {{ .Site.Params.breakpoints.sm.mw | default "576px" }},
+    md: {{ .Site.Params.breakpoints.md.mw | default "768px" }},
+    lg: {{ .Site.Params.breakpoints.lg.mw | default "992px" }},
+    xl: {{ .Site.Params.breakpoints.xl.mw | default "1200px" }},
+    xxl: {{ .Site.Params.breakpoints.xxl.mw | default "1400px" }},
+    xxxl: {{ .Site.Params.breakpoints.xxxl.mw | default "2200px" }}
+) !default;
+
+
+
+/**
+ *
+ * Modular Scale using the global breakpoints
+ *
+ * https://www.modularscale.com
+ * https://github.com/modularscale/modularscale-sass
+ *
+ **/
+ $modularscale: (
+    {{ .Site.Params.breakpoints.xs.bp }}:(
+        base: {{ .Site.Params.breakpoints.xs.base }},
+        ratio:  {{ .Site.Params.breakpoints.xs.ratio }}
+    ),
+    {{ .Site.Params.breakpoints.sm.bp }}:(
+        base: {{ .Site.Params.breakpoints.sm.base }},
+        ratio:  {{ .Site.Params.breakpoints.sm.ratio }}
+    ),
+    {{ .Site.Params.breakpoints.md.bp }}:(
+        base: {{ .Site.Params.breakpoints.md.base }},
+        ratio:  {{ .Site.Params.breakpoints.md.ratio }}
+    ),
+    {{ .Site.Params.breakpoints.lg.bp }}:(
+        base: {{ .Site.Params.breakpoints.lg.base }},
+        ratio:  {{ .Site.Params.breakpoints.lg.ratio }}
+    ),
+    {{ .Site.Params.breakpoints.xl.bp }}:(
+        base: {{ .Site.Params.breakpoints.xl.base }},
+        ratio:  {{ .Site.Params.breakpoints.xl.ratio }}
+    ),
+    {{ .Site.Params.breakpoints.xxl.bp }}:(
+        base: {{ .Site.Params.breakpoints.xxl.base }},
+        ratio:  {{ .Site.Params.breakpoints.xxl.ratio }}
+    ),
+    {{ .Site.Params.breakpoints.xxxl.bp }}:(
+        base: {{ .Site.Params.breakpoints.xxxl.base }},
+        ratio:  {{ .Site.Params.breakpoints.xxxl.ratio }}
+    ),
+   );
 
 /**
  *
@@ -45,7 +105,7 @@ $danger:        {{ .Site.Data.styles.theme_colors.danger | default "#dc3545" }} 
  *
  **/
 
-{{ range $index, $mix := .Site.Data.styles.color_mixes }}  
+{{ range $index, $mix := .Site.Data.styles.color_mixes }}
   @include color-mixes( {{ $mix.name | anchorize }}, {{ $mix.text_color | anchorize }}, {{ $mix.background_color | anchorize }}, {{ $mix.heading_color | anchorize }} );
 {{ end }}
 
@@ -72,11 +132,11 @@ $danger:        {{ .Site.Data.styles.theme_colors.danger | default "#dc3545" }} 
 
 //components
 @import "components/article-summary";
-@import "components/blocks";
-@import "components/block-columns";
-@import "components/block-google-map";
-@import "components/block-latest-posts";
-@import "components/block-logos";
+// @import "components/blocks";
+// @import "components/block-columns";
+// @import "components/block-google-map";
+// @import "components/block-latest-posts";
+// @import "components/block-logos";
 @import "components/block-slideshow";
 @import "components/breadcrumbs";
 @import "components/buttons";

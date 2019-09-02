@@ -1,5 +1,5 @@
 {{/**
-   * Section List Template
+   * Index Template
 	 *
 	 * The default list for the site.
    *
@@ -29,8 +29,18 @@
 <main id="main" class="" tabindex="0" aria-label="{{ .Title }}">
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  {{ partial "components/section-list.html" .Sections }}
-
+  {{ if gt (len .Data.Pages) 0 }}
+  {{ $site := .Site }}
+  <p class="post-count" tabindex="0">{{ len .Data.Pages }} {{ .Section | pluralize }} found. </p>
+  {{ range ( .Paginate ( first 50 .Pages )).Pages.ByLinkTitle  }}
+  {{ partial "components/article-summary" . }}
+  {{ end }}
+  <div class="pagination">
+    {{ partial "components/pagination.html" . }}
+  </div>
+  {{ else }}
+  {{ partial "messages/danger" "No posts found. You should add some posts."}}
+  {{ end }}
 </main>
 {{ end }}
 

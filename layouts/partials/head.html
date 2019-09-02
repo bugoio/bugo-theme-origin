@@ -7,69 +7,70 @@
    * @version 1.0.0
 	 *
    */}}
-{{- $page := . -}}
-{{- $site := .Site -}}
-{{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>
-    {{- if .Params.page_meta.meta_title -}}
-      {{- .Params.page_meta.meta_title -}}
-    {{- else -}}
-      {{- .Title -}}
-    {{- end -}}
-    {{- if (eq .Params.layout "list") -}}
-      {{- if  .Paginator }}
-        - Page {{- substr .Paginator -1 1 -}}
-      {{- end -}}
-    {{- end -}}
-  </title>
-  <meta name="description" content="
-    {{- if .Params.page_meta.meta_description -}}
-      {{ .Params.page_meta.meta_description }}
-    {{- else -}}
-      {{- .Summary | truncate 60 -}}
-    {{- end -}}
-  ">
-  {{- with .Params.page_meta.meta_keywords -}}
-  <meta name="keywords" content="{{ . }}">
-  {{- end -}}
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Open Graph Meta Data -->
-  {{- template "_internal/opengraph.html" . -}}
-  <!-- Twitter Card -->
-  {{- template "_internal/twitter_cards.html" . -}}
-  <!-- JSON-LD Organization markup for Google Structured Data -->
-  <script type="application/ld+json">
-    {{- partial "components/structured-data-organization" . | safeJS -}}
-  </script>
-  <!-- JSON-LD Article markup for Google Structured Data -->
-  <script type="application/ld+json">
-    {{- partial "components/structured-data-article" . | safeJS -}}
-  </script>
+   {{- $page := . -}}
+   {{- $site := .Site -}}
+   {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+   <head>
+     <meta charset="utf-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     <title>
+       {{- if .Params.page_meta.meta_title -}}
+         {{- .Params.page_meta.meta_title -}}
+       {{- else -}}
+         {{- .Title -}}
+       {{- end -}}
+       {{- if (eq .Params.layout "list") -}}
+         {{- if  .Paginator }}
+           - Page {{- substr .Paginator -1 1 -}}
+         {{- end -}}
+       {{- end -}}
+     </title>
+     <meta name="description" content="
+       {{- if .Params.page_meta.meta_description -}}
+         {{ .Params.page_meta.meta_description }}
+       {{- else -}}
+         {{- .Summary | truncate 60 -}}
+       {{- end -}}
+     ">
+     {{- with .Params.page_meta.meta_keywords -}}
+     <meta name="keywords" content="{{ . }}">
+     {{- end -}}
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- Open Graph Meta Data -->
+     {{- template "_internal/opengraph.html" . -}}
+     <!-- Twitter Card -->
+     {{- template "_internal/twitter_cards.html" . -}}
+     <!-- JSON-LD Organization markup for Google Structured Data -->
+     <script type="application/ld+json">
+       {{- partial "components/structured-data-organization" . | safeJS -}}
+     </script>
+     <!-- JSON-LD Article markup for Google Structured Data -->
+     <script type="application/ld+json">
+       {{- partial "components/structured-data-article" . | safeJS -}}
+     </script>
 
-  {{- range .Site.Data.config.addresses -}}
-    {{- partial "components/structured-data-local-business" . | safeJS -}}
-  {{- end -}}
-  <!-- Add fonts from forestry settings -->
-  {{- partial "components/head-fonts-scripts" . -}}
+     {{- range .Site.Data.config.addresses -}}
+       {{- partial "components/structured-data-local-business" . | safeJS -}}
+     {{- end -}}
+     <!-- Add fonts from forestry settings -->
+     {{- partial "components/head-fonts-scripts" . -}}
 
-  <!-- Custom Styles from .Site.Data.styles. Can also be set in Forestry -->
-  <style>
-    {{ with $page.Site.Data.styles.custom_css }}
-      {{ . | safeCSS }}
-    {{ end }}
-  </style>
-  {{ if eq hugo.Environment "development" }}
-    {{ $options := (dict "enableSourceMap" true ) }}
-    {{ $base := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "style.theme.scss" . }}
-    {{ $styles := $base | toCSS $options }}
+     <!-- Custom Styles from .Site.Data.styles. Can also be set in Forestry -->
+     <style>
+       {{ with $page.Site.Data.styles.custom_css }}
+         {{ . | safeCSS }}
+       {{ end }}
+     </style>
+     {{ $options := (dict "enableSourceMap" false ) }}
 
-    <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
-  {{ else }}
-    {{ $base := resources.Get "dist/style.theme.css" }}
-    {{ $styles := $base | toCSS | minify | fingerprint "sha512" }}
-    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
-  {{ end }}
-</head>
+     {{ $vendors := resources.Match "vendors/*.css" | resources.Concat "vendors.css" }}
+     <link rel="stylesheet" href="{{ $vendors.Permalink }}" media="screen">
+     {{ $components := resources.Match "sass/[!_]*.scss" }}
+     {{ $context := . }}
+     {{ range $index, $component := $components }}
+       {{ $name := printf "sass/component-%v.css" $index }}
+       {{ $scss := $component | resources.ExecuteAsTemplate $name $context }}
+       {{ $tmp := $scss | toCSS $options }}
+       <link rel="stylesheet" href="{{ $tmp.Permalink }}" media="screen">
+     {{ end }}
+   </head>

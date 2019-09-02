@@ -1,0 +1,16 @@
+/**
+ * Header Variables
+ * margin and padding is in _grid-header.scss
+ **/
+$header-bg:               transparent;
+$header-bg-dark:          $dark;
+$header-text-color:       $dark;
+$header-text-color-dark:  $light;
+$header-link-color:       $dark;
+$header-link-color-dark:  $light;
+
+$header-search-font-size:     0; //modularscale raito
+$header-search-field-margin:  0 0 0 0.5rem;
+$header-search-field-padding: 0.25rem 0.5rem;
+$header-search-button-margin: 0 0 0 0.5rem;
+
