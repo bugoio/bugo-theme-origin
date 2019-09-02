@@ -1,25 +1,41 @@
-
 .blocks {
   display: grid;
   grid-template-columns: 1fr;
   margin-bottom: var(--global-margin);
+  @include space-element(margin, $blocks-container-margin-x, $blocks-container-margin-y);
+  @include space-element(padding, $blocks-container-padding-x, $blocks-container-padding-y);
 }
 
 .block {
   // grid-area: block;
-  padding-top: var(--global-padding);
-  padding-bottom: var(--global-padding);
-  max-width: 100vw;
+  @include space-element(margin, $block-margin-x, $block-margin-y);
+  @include space-element(padding, $block-padding-x, $block-padding-y);
+
+  max-width: 100%;
   position: relative;
-  background-size: cover;
   background-position: 50%;
-  // text-align: center;
 
   .block-title {
     @extend .container;
     text-align: center;
     display: block;
-    margin-bottom: var(--global-margin) !important;
+    @include space-element(margin, $block-title-margin-x, $block-title-margin-y);
+    @include space-element(padding, $block-title-padding-x, $block-title-padding-y);
+  }
+
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    margin-top: 0;
   }
 
   video {
@@ -35,7 +51,7 @@
     object-fit: cover;
   }
 
-  @include respond-to('md'){
+  @include respond-to("md") {
     video {
       display: block;
     }
@@ -48,5 +64,10 @@
 
   img {
     max-width: 100%;
+  }
+
+  &.has-bg-image,
+  &.has-bg-video {
+    @include space-element(padding, $block-has-bg-padding-x, $block-has-bg-padding-y);
   }
 }

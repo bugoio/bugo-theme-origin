@@ -1,7 +1,63 @@
+/** 
+ * Body Grid
+ **/
+$body-template-areas: (
+  xs: $body-xs-template-areas,
+  sm: $body-sm-template-areas,
+  md: $body-md-template-areas,
+  lg: $body-lg-template-areas,
+  xl: $body-xl-template-areas,
+  xxl: $body-xxl-template-areas,
+  xxxl: $body-xxxl-template-areas
+);
+
+$body-template-columns: (
+  xs: $body-xs-template-columns,
+  sm: $body-sm-template-columns,
+  md: $body-md-template-columns,
+  lg: $body-lg-template-columns,
+  xl: $body-xl-template-columns,
+  xxl: $body-xxl-template-columns,
+  xxxl: $body-xxxl-template-columns
+);
+
 html {
   background-color: $body-bg;
+
   @media (prefers-color-scheme: dark) {
     color: $base-text-color-dark;
+    background-color: $body-bg-dark;
+  }
+}
+
+body {
+  // Spacing & Dimensions
+  position: relative;
+  @include space-element(margin, $body-margin-x, $body-margin-y);
+  @include space-element(padding, $body-padding-x, $body-padding-y);
+  overflow-z: hidden;
+
+  // Grid
+  // display: grid;
+  grid-column-gap: $body-grid-column-gap;
+  grid-row-gap: $body-grid-row-gap;
+
+  // Generate Responsive Grid
+  @include responsive-property($body-template-areas, "grid-template-areas");
+  @include responsive-property($body-template-columns, "grid-template-columns");
+
+  // Typography
+  font-display: falback;
+  font-family: $body-font;
+  line-height: $body-line-height;
+  @include ms-respond(font-size, $body-font-size);
+
+  // Colors
+  color: $base-text-color;
+  background-color: $body-bg;
+
+  @media (prefers-color-scheme: dark) {
+    color: $body-color-dark;
     background-color: $body-bg-dark;
   }
 }

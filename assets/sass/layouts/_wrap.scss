@@ -1,0 +1,39 @@
+/** 
+ * Wrap Grid
+ **/
+$wrap-template-areas: (
+  xs: $wrap-xs-template-areas,
+  sm: $wrap-sm-template-areas,
+  md: $wrap-md-template-areas,
+  lg: $wrap-lg-template-areas,
+  xl: $wrap-xl-template-areas,
+  xxl: $wrap-xxl-template-areas,
+  xxxl: $wrap-xxxl-template-areas
+);
+
+$wrap-template-columns: (
+  xs: $wrap-xs-template-columns,
+  sm: $wrap-sm-template-columns,
+  md: $wrap-md-template-columns,
+  lg: $wrap-lg-template-columns,
+  xl: $wrap-xl-template-columns,
+  xxl: $wrap-xxl-template-columns,
+  xxxl: $wrap-xxxl-template-columns
+);
+
+.wrap {
+  // Spacing
+  @include space-element(margin, $wrap-margin-x, $wrap-margin-y);
+  @include space-element(padding, $wrap-padding-x, $wrap-padding-y);
+
+  display: grid;
+  grid-area: wrap;
+  @include grid-gaps($wrap-column-gap, $wrap-row-gap);
+  // @include ms-respond( grid-row-gap, $wrap-row-gap );
+  @include responsive-property($wrap-template-areas, "grid-template-areas");
+  @include responsive-property($wrap-template-columns, "grid-template-columns");
+
+  aside {
+    display: none;
+  }
+}

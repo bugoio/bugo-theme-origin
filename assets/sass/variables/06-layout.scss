@@ -1,0 +1,226 @@
+/**
+ *
+ * Body
+ *
+ **/
+$body-font: $global-font;
+$body-font-size: $global-font-size;
+$body-line-height: $global-line-height;
+
+$body-margin-x:   auto; // false | modular scale ratio
+$body-margin-y:   false; // false | modular scale ratio
+$body-padding-x:  false; // false | modular scale ratio
+$body-padding-y:  false; // false | modular scale ratio
+
+$body-color:      $global-font-color;
+$body-color-dark: $global-font-color-dark; // dark mode
+$body-bg:         $light;
+$body-bg-dark:    $dark;  // dark mode
+
+$body-grid-column-gap: 0;
+$body-grid-row-gap: 0;
+
+$body-xs-template-areas:    "head" "hero" "bread" "wrap" "footer";
+$body-sm-template-areas:    $body-xs-template-areas;
+$body-md-template-areas:    $body-xs-template-areas;
+$body-lg-template-areas:    $body-xs-template-areas;
+$body-xl-template-areas:    $body-xs-template-areas;
+$body-xxl-template-areas:   $body-xs-template-areas;
+$body-xxxl-template-areas:  $body-xs-template-areas;
+
+$body-xs-template-columns:    repeat( 1, 1fr );
+$body-sm-template-columns:    $body-xs-template-columns;
+$body-md-template-columns:    $body-xs-template-columns;
+$body-lg-template-columns:    $body-xs-template-columns;
+$body-xl-template-columns:    $body-xs-template-columns;
+$body-xxl-template-columns:   $body-xs-template-columns;
+$body-xxxl-template-columns:  $body-xs-template-columns;
+
+/**
+ *
+ * Header
+ *
+ **/
+$header-color:        $dark;
+$header-color-dark:   $light;
+$header-bg:           transparent;
+$header-bg-dark:      transparent;
+$header-link-color:   $global-link-color;
+$header-link-dark:    $global-link-dark;
+$header-link-focus:   $global-link-focus;
+$header-link-weight:  normal;
+
+
+/**
+ * Header Variables
+ * margin and padding is in _grid-header.scss
+ **/
+ $header-bg:               transparent;
+ $header-bg-dark:          $dark;
+ $header-text-color:       $dark;
+ $header-text-color-dark:  $light;
+ $header-link-color:       $dark;
+ $header-link-color-dark:  $light;
+
+ $header-search-font-size:     0; //modularscale raito
+ $header-search-field-margin:  0 0 0 0.5rem;
+ $header-search-field-padding: 0.25rem 0.5rem;
+ $header-search-button-margin: 0 0 0 0.5rem;
+
+// Dimensions
+$header-width:      100%;
+$header-height:     auto;
+
+$header-margin-x:   false; // false | modular scale ratio
+$header-margin-y:   false; // false | modular scale ratio
+$header-padding-x:  false; // false | modular scale ratio
+$header-padding-y:  false; // false | modular scale ratio
+
+// Positioning
+$header-position:   absolute;
+$header-top:        0;
+$header-right:      0;
+$header-bottom:     auto;
+$header-left:       0;
+$header-z:          2000;
+
+/**
+ *
+ * Header Nav Container
+ *
+ **/
+$nav-con-bg:      $header-bg;
+$nav-con-bg-dark: $header-bg-dark;
+
+$nav-con-margin-x:   auto; // false | modular scale ratio
+$nav-con-margin-y:   false; // false | modular scale ratio
+$nav-con-padding-x:  false; // false | modular scale ratio
+$nav-con-padding-y:  1; // false | modular scale ratio
+
+$nav-con-column-gap: false; // false | modular scale ratio
+$nav-con-row-gap: 2;  // false | modular scale ratio
+
+$nav-con-xs-template-areas:
+  "brand brand brand ... ... ... ... ... ... mbutton mbutton mbutton";
+$nav-con-sm-template-areas: $nav-con-xs-template-areas;
+$nav-con-md-template-areas:
+  "brand brand ... ... ... ... ... ... ... ... search search"
+  "brand brand ... ... ... ... ... nmain nmain nmain nmain nmain";
+$nav-con-lg-template-areas:
+  "brand brand ... ... ... ... ... ... ... ... search search"
+  "brand brand ... ... ... ... ... nmain nmain nmain nmain nmain";
+$nav-con-xl-template-areas: $nav-con-md-template-areas;
+$nav-con-xxl-template-areas: $nav-con-md-template-areas;
+$nav-con-xxxl-template-areas: $nav-con-md-template-areas;
+
+$nav-con-xs-template-columns: repeat( 12, 1fr );
+$nav-con-sm-template-columns: $nav-con-xs-template-columns;
+$nav-con-md-template-columns: $nav-con-xs-template-columns;
+$nav-con-lg-template-columns: $nav-con-xs-template-columns;
+$nav-con-xl-template-columns: $nav-con-xs-template-columns;
+$nav-con-xxl-template-columns: $nav-con-xs-template-columns;
+$nav-con-xxxl-template-columns: $nav-con-xs-template-columns;
+
+/**
+ *
+ * Wrap
+ *
+ **/
+$wrap-margin-x:   auto; // false | modular scale ratio
+$wrap-margin-y:   false; // false | modular scale ratio
+$wrap-padding-x:  false; // false | modular scale ratio
+$wrap-padding-y:  false; // false | modular scale ratio
+
+$wrap-xs-template-areas: "main";
+$wrap-sm-template-areas: $wrap-xs-template-areas;
+$wrap-md-template-areas: $wrap-xs-template-areas;
+$wrap-lg-template-areas: $wrap-xs-template-areas;
+$wrap-xl-template-areas: $wrap-xs-template-areas;
+$wrap-xxl-template-areas: $wrap-xs-template-areas;
+$wrap-xxxl-template-areas: $wrap-xs-template-areas;
+
+$wrap-xs-template-columns: repeat( 1, 1fr );
+$wrap-sm-template-columns: $wrap-xs-template-columns;
+$wrap-md-template-columns: $wrap-xs-template-columns;
+$wrap-lg-template-columns: $wrap-xs-template-columns;
+$wrap-xl-template-columns: $wrap-xs-template-columns;
+$wrap-xxl-template-columns: $wrap-xs-template-columns;
+$wrap-xxxl-template-columns: $wrap-xs-template-columns;
+
+$wrap-column-gap: false;
+$wrap-row-gap:   0;
+
+
+/**
+ *
+ * Wrap with Sidebar
+ *
+ **/
+
+$wrap-sidebar-xs-template-areas: "main" "sidebar";
+$wrap-sidebar-sm-template-areas: $wrap-sidebar-xs-template-areas;
+$wrap-sidebar-md-template-areas: "main main sidebar";
+$wrap-sidebar-lg-template-areas: "main main sidebar";
+$wrap-sidebar-xl-template-areas: "main main main sidebar";
+$wrap-sidebar-xxl-template-areas: $wrap-sidebar-xl-template-areas;
+$wrap-sidebar-xxxl-template-areas: $wrap-sidebar-xl-template-areas;
+
+$wrap-sidebar-xs-template-columns: repeat( 1, 1fr );
+$wrap-sidebar-sm-template-columns: $wrap-sidebar-xs-template-columns;
+$wrap-sidebar-md-template-columns: repeat( 3, 1fr );
+$wrap-sidebar-lg-template-columns: repeat( 3, 1fr );
+$wrap-sidebar-xl-template-columns: repeat( 4, 1fr );
+$wrap-sidebar-xxl-template-columns: $wrap-sidebar-xl-template-columns;
+$wrap-sidebar-xxxl-template-columns: $wrap-sidebar-xl-template-columns;
+
+$wrap-sidebar-column-gap: 4;
+$wrap-sidebar-row-gap:   2;
+
+/**
+ *
+ * Main
+ *
+ **/
+$main-margin-x:   false; // false | modular scale ratio
+$main-margin-y:   false; // false | modular scale ratio
+$main-padding-x:  false; // false | modular scale ratio
+$main-padding-y:  false; // false | modular scale ratio
+
+/**
+ *
+ * Sidebar
+ *
+ **/
+$sidebar-margin-x:   false; // false | modular scale ratio
+$sidebar-margin-y:   false; // false | modular scale ratio
+$sidebar-padding-x:  false; // false | modular scale ratio
+$sidebar-padding-y:  false; // false | modular scale ratio
+
+/**
+ *
+ * Footer
+ *
+ **/
+$footer-margin-x:   false; // false | modular scale ratio
+$footer-margin-y:   false; // false | modular scale ratio
+$footer-padding-x:  false; // false | modular scale ratio
+$footer-padding-y:  2; // false | modular scale ratio
+
+$footer-column-gap: 0;
+$footer-row-gap: 0;
+
+$footer-xs-template-areas: "header" "wrap" "footer"; // TODO: need to define
+$footer-sm-template-areas: $footer-xs-template-areas;
+$footer-md-template-areas: $footer-xs-template-areas;
+$footer-lg-template-areas: $footer-xs-template-areas;
+$footer-xl-template-areas: $footer-xs-template-areas;
+$footer-xxl-template-areas: $footer-xs-template-areas;
+$footer-xxxl-template-areas: $footer-xs-template-areas;
+
+$footer-xs-template-columns: repeat( 1, 1fr );
+$footer-sm-template-columns: $footer-xs-template-columns;
+$footer-md-template-columns: $footer-xs-template-columns;
+$footer-lg-template-columns: $footer-xs-template-columns;
+$footer-xl-template-columns: $footer-xs-template-columns;
+$footer-xxl-template-columns: $footer-xs-template-columns;
+$footer-xxxl-template-columns: $footer-xs-template-columns;

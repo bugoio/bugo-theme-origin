@@ -13,6 +13,8 @@
   {{ partial "head" . }}
   <body class="{{ partial "utilities/body-class" . }} {{ partial "utilities/sidebar-class" . }}">
     {{- partial "header" . }}
+    {{ block "hero" . }}{{ end }}
+    {{ block "breadcrumbs" . }}{{ end }}
     <div class="wrap container">
       {{ block "main" . }}{{ end }}
       {{ block "aside" . }}{{ end }}
@@ -27,8 +29,11 @@
     </div>
     {{ end }}
     <!-- Javascript -->
-    {{ $js := resources.Get "dist/main.js" | resources.Fingerprint "sha512"}}
-    <script defer src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}" type="text/javascript"></script>
+    {{ $vendorJS := resources.Match "vendors/*.js" | resources.Concat "js/vendor-bundle.js"| resources.Fingerprint "sha512" }}
+    {{ $componentJS := resources.Match "js/*.js" | resources.Concat "js/component-bundle.js"| resources.Fingerprint "sha512" }}
+    <script defer src="{{ $vendorJS.Permalink }}" integrity="{{ $vendorJS.Data.Integrity }}" type="text/javascript"></script>
+    <script defer src="{{ $componentJS.Permalink }}" integrity="{{ $componentJS.Data.Integrity }}" type="text/javascript"></script>
+
     {{ template "_internal/google_analytics_async.html" . }}
     <div aria-hidden="true">
       {{ partial "icons/icon_sprite" . }}

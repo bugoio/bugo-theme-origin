@@ -1,0 +1,10 @@
+/** 
+ * sidebar Grid
+ **/
+
+aside.sidebar {
+  grid-area: sidebar;
+  display: block;
+  @include space-element(margin, $sidebar-margin-x, $sidebar-margin-y);
+  @include space-element(padding, $sidebar-padding-x, $sidebar-padding-y);
+}

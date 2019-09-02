@@ -1,0 +1,22 @@
+/**
+ * Share Buttons
+ **/
+$share-margin:        0;
+$share-padding:       0;
+$share-font-size:     2; //modularscale ratio
+$share-icon-width:    3; //modularscale raito
+$share-link-margin:   0 0.125rem;
+$share-link-padding:  0.125rem;
+
+/**
+ * Slideshow
+ **/
+$sl-margin: var( --global-margin ) 0;
+$sl-padding: 0;
+$sl-controls-size: 2rem;
+$sl-controls-bg: $dark;
+$sl-controls-color: $secondary;
+$sl-controls-shadow: 1px 1px 3px $dark;
+$sl-inidicator-size: 1rem;
+$sl-indicator-bg:        $dark;
+$sl-indicator-highlight: $secondary;
