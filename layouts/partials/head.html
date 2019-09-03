@@ -61,16 +61,23 @@
          {{ . | safeCSS }}
        {{ end }}
      </style>
-     {{ $options := (dict "enableSourceMap" false ) }}
-
-     {{ $vendors := resources.Match "vendors/*.css" | resources.Concat "vendors.css" }}
+     {{ $vendors := resources.Match "vendors/*.css" | resources.Concat "css/vendors.css" | resources.Minify }}
      <link rel="stylesheet" href="{{ $vendors.Permalink }}" media="screen">
+
      {{ $components := resources.Match "sass/[!_]*.scss" }}
      {{ $context := . }}
+     {{ $env := hugo.Environment }}
+     {{ $scratch := newScratch }}
      {{ range $index, $component := $components }}
-       {{ $name := printf "sass/component-%v.css" $index }}
+       {{ $name := index (split $component.Name "/") 1 }}
+       {{ $base := index (split $name ".") 0 }}
        {{ $scss := $component | resources.ExecuteAsTemplate $name $context }}
-       {{ $tmp := $scss | toCSS $options }}
+       {{ if eq $env "production" }}
+         {{ $scratch.Set "options" (dict "outputStyle" "compressed" "enableSourceMap" true "targetPath" (printf "css/%s.css" $base) ) }}
+       {{ else }}
+         {{ $scratch.Set "options" (dict "enableSourceMap" true "targetPath" (printf "css/%s.css" $base) ) }}
+       {{ end }}
+       {{ $tmp := $scss | toCSS ($scratch.Get "options") }}
        <link rel="stylesheet" href="{{ $tmp.Permalink }}" media="screen">
      {{ end }}
    </head>
