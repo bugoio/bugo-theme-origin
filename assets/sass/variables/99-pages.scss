@@ -1,0 +1,35 @@
+$home-article-thumbnail: false;
+$home-article-taxonomy: false;
+$home-article-summary: false;
+$home-article-time: false;
+$home-article-title: true;
+
+body.home {
+    .article-summary {
+        @if $home-article-title == false {
+            header {
+                display: none;
+            }
+        }
+        @if $home-article-thumbnail == false {
+            .thumnail {
+                display: none;
+            }
+        }
+        @if $home-article-taxonomy == false {
+            .taxonomy {
+                display: none;
+            }
+        }
+        @if $home-article-time == false {
+            time {
+                display: none;
+            }
+        }
+        @if $home-article-summary == false {
+            .summary {
+                display: none;
+            }
+        }
+    }
+}

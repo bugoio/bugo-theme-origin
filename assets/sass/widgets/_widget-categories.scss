@@ -4,4 +4,16 @@
     @extend .button-secondary !optional;
     margin-bottom: calc( var( --global-margin ) / 2 );
   }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0  0.5rem 0 0;
+    }
+  }
 }

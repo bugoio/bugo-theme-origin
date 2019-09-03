@@ -11,9 +11,9 @@
 {{ $site := .site }}
 {{ $related := .site.RegularPages.Related .page | first 5 }}
 {{ if $related }}
-    <h2 class="widget-title">{{ .widget.title }}</h2>
+    <h3 class="widget-title">{{ .widget.title }}</h3>
   {{ $widget := .widget }}
   {{ range first .widget.show_quantity $related  }}
-    {{ partial "components/article-summary" . }}
+    {{ partial "components/article-summary-widget" . }}
   {{ end }}
 {{ end }}

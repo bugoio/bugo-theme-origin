@@ -1,3 +1,9 @@
 .widget-latest-posts {
+    article {
+        grid-template-areas: "time" "tax" "head"
+    }
+}
 
+body.home .widget-latest-posts {
+    display: none;
 }

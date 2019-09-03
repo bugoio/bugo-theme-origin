@@ -10,7 +10,7 @@
 {{ $page := .page }}
 {{ $site := .site }}
 {{ range $index, $widget := .content }}
-  <section 
+  <section
     id="{{ $widget.title | urlize }}"
     aria-label="{{ $widget.title }}"
     class="widget {{ .template }}"

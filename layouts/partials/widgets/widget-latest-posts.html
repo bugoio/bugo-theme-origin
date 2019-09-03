@@ -10,9 +10,9 @@
 {{ $site := .site }}
 {{ $posts := where (where .site.RegularPages "Section" "posts") ".Title" "!=" .page.Title }}
 {{ if $posts }}
-    <h2 class="widget-title">{{ .widget.title }}</h2>
+    <h3 class="widget-title">{{ .widget.title }}</h3>
   {{ $widget := .widget }}
   {{ range first .widget.show_quantity $posts  }}
-    {{ partial "components/article-summary" . }}
+    {{ partial "components/article-summary-widget" . }}
   {{ end }}
 {{ end }}

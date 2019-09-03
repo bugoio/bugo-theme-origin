@@ -6,11 +6,18 @@
 
 /* Latest Posts */
 
-$widget-margin: 0 0 var( --global-margin );
-$widget-padding: 0;
-$widget-font-size: 0;
+$widgets-margin-x: false; // false | modular scale ratio
+$widgets-margin-y: false; // false | modular scale ratio
+$widgets-padding-x: false; // false | modular scale ratio
+$widgets-padding-y: false; // false | modular scale ratio
 
+$widget-margin-x: false; // false | modular scale ratio
+$widget-margin-y: false; // false | modular scale ratio
+$widget-padding-x: false; // false | modular scale ratio
+$widget-padding-y: false; // false | modular scale ratio
 
-$latest-thumbnail-display:  block;
-$latest-header-display:     block;
-$latest-summary-display:    block;
+$widget-font-size: -1; // modular scale ratio
+
+$latest-thumbnail-display:  widget;
+$latest-header-display:     widget;
+$latest-summary-display:    widget;

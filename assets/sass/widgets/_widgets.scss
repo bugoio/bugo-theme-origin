@@ -1,17 +1,27 @@
-.widget {
-  margin: $widget-margin;
-  padding: $widget-padding;
-  @include ms-respond( font-size, $widget-font-size ); 
+.widgets {
+  @include space-element-x(margin, $widgets-margin-x, $widgets-margin-x);
+  @include space-element-y(margin, $widgets-margin-y, $widgets-margin-y);
+  @include space-element-x(padding, $widgets-padding-x, $widgets-padding-x);
+  @include space-element-y(padding, $widgets-padding-y, $widgets-padding-y);
 }
 
+.widget {
+  @include space-element-x(margin, $widget-margin-x, $widget-margin-x);
+  @include space-element-y(margin, $widget-margin-y, $widget-margin-y);
+  @include space-element-x(padding, $widget-padding-x, $widget-padding-x);
+  @include space-element-y(padding, $widget-padding-y, $widget-padding-y);
+  @include ms-respond( font-size, $widget-font-size );
+}
+
+.widget-related-posts,
 .widget-latest-posts {
   .article-summary {
     display: grid;
     // grid-template-columns: repeat( 1, 1fr );
     grid-template-areas:
+    "time time time time time time"
     "thumb thumb thumb thumb thumb thumb"
     "head head head head head head"
-    "time time time time time time"
     "tax tax tax tax tax tax"
     "summ summ summ summ summ summ";
 
@@ -20,7 +30,7 @@
     header {
       margin-bottom: 0;
 
-      h3{
+      h4{
         margin: 0;
       }
 
@@ -46,43 +56,6 @@
       grid-area: tax;
       margin-top: 0.25rem;
       margin-bottom: 0;
-    }
-  }
-}
-
-
-.widget-related-posts {
-  .article-summary {
-    display: grid;
-    grid-template-areas:
-      "thumb thumb thumb thumb thumb thumb"
-      "head head head head head head"
-      "time time time time time time"
-      "tax tax tax tax tax tax"
-      "summ summ summ summ summ summ";
-    grid-row-gap: 0;
-
-    margin: 0 0 2rem;
-
-    header {
-      h3{
-        margin: 0 0 1rem;
-      }
-
-      .taxonomy {
-        display: none;
-        margin: 0 0 1rem;
-      }
-    }
-
-    .thumbnail {
-      display: block;
-      margin-bottom: 0;
-    }
-
-    .summary {
-      display: none;
-      grid-area: summ;
     }
   }
 }

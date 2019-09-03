@@ -50,6 +50,6 @@
 
 {{ define "aside" }}
 <aside class="sidebar" tabindex="0">
-  {{ partial "widgets/widgets" (dict "page" .Page "site" .Site "content" .Site.Data.config.sidebar_widgets.widgets ) }}
+  {{ partial "widgets/widgets" (dict "page" .Page "site" .Site "content" .Site.Params.sidebar_widgets.widgets ) }}
 </aside>
 {{ end }}

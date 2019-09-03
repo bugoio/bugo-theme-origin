@@ -1,0 +1,24 @@
+<article class="article-summary" tabindex="0">
+  <header>
+      <h4><a href="{{ .Page.Permalink | relURL }}">{{ .Page.Title}}</a></h4>
+  </header>
+  <time>{{ .Date.Format "January _2, 2006" }}</time>
+  <p class="taxonomy">
+    {{ with .Params.categories }}
+      {{ range . }}
+        <a class="button button-sm" href="{{ "categories" | absURL }}/{{ . | urlize }}">{{ . }}</a>
+      {{ end }}
+    {{ end }}
+    {{ with .Params.tags }}
+      <span class="tags">
+        {{ range . }}
+          <a class="button button-xs" href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a>
+        {{ end }}
+      </span>
+    {{ end }}
+  </p>
+  {{ partial "components/thumbnail" . }}
+  <div class="summary">
+    {{ .Page.Summary | markdownify }}
+  </div>
+</article>
