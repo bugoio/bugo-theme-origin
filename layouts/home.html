@@ -1,0 +1,47 @@
+{{/**
+   * Index Template
+	 *
+	 * The default list for the site.
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+{{ define "hero" }}
+{{ if .Params.videos }}
+{{ partial "components/hero-video" . }}
+{{ else if .Params.images}}
+{{ partial "components/hero" . }}
+{{ else }}
+<div class="hero spacer"></div> <!-- not exactly sure why this works but it does -->
+{{ end }}
+{{ end }}
+
+{{ define "breadcrumbs" }}
+{{ if and (not .IsHome) (ne .Params.layout "landing") (.Site.Data.config.show_breadcrumbs) }}
+<div class="breadcrumbs">
+  {{ partial "components/breadcrumbs" . }}
+</div>
+{{ end }}
+{{ end }}
+
+{{ define "main" }}
+<main id="main" class="" tabindex="0" aria-label="{{ .Title }}">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  {{ if gt (len .Site.RegularPages) 0 }}
+  {{ $site := .Site }}
+  {{ range first 3 .Site.RegularPages }}
+  {{ partial "components/article-summary" . }}
+  {{ end }}
+  {{ else }}
+  {{ partial "messages/danger" "No posts found. You should add some posts."}}
+  {{ end }}
+</main>
+{{ end }}
+
+{{ define "aside" }}
+<aside class="sidebar" tabindex="0">
+  {{ partial "widgets/widgets" (dict "page" .Page "site" .Site "content" .Site.Params.sidebar_widgets.widgets ) }}
+</aside>
+{{ end }}
