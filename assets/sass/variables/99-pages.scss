@@ -1,8 +1,8 @@
-$home-article-thumbnail: false;
-$home-article-taxonomy: false;
-$home-article-summary: false;
-$home-article-time: false;
-$home-article-title: true;
+$home-article-thumbnail: false !default;
+$home-article-taxonomy: false !default;
+$home-article-summary: false !default;
+$home-article-time: false !default;
+$home-article-title: true !default;
 
 body.home {
     .article-summary {

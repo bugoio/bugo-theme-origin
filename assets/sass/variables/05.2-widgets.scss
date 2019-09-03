@@ -6,18 +6,18 @@
 
 /* Latest Posts */
 
-$widgets-margin-x: false; // false | modular scale ratio
-$widgets-margin-y: false; // false | modular scale ratio
-$widgets-padding-x: false; // false | modular scale ratio
-$widgets-padding-y: false; // false | modular scale ratio
+$widgets-margin-x: false !default; // false | modular scale ratio
+$widgets-margin-y: false !default; // false | modular scale ratio
+$widgets-padding-x: false !default; // false | modular scale ratio
+$widgets-padding-y: false !default; // false | modular scale ratio
 
-$widget-margin-x: false; // false | modular scale ratio
-$widget-margin-y: false; // false | modular scale ratio
-$widget-padding-x: false; // false | modular scale ratio
-$widget-padding-y: false; // false | modular scale ratio
+$widget-margin-x: false !default; // false | modular scale ratio
+$widget-margin-y: false !default; // false | modular scale ratio
+$widget-padding-x: false !default; // false | modular scale ratio
+$widget-padding-y: false !default; // false | modular scale ratio
 
-$widget-font-size: -1; // modular scale ratio
+$widget-font-size: -1 !default; // modular scale ratio
 
-$latest-thumbnail-display:  widget;
-$latest-header-display:     widget;
-$latest-summary-display:    widget;
+$latest-thumbnail-display:  widget !default;
+$latest-header-display:     widget !default;
+$latest-summary-display:    widget !default;

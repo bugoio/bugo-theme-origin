@@ -1,35 +1,35 @@
 /**
  * Branding
  **/
-$branding-image-width: 5rem;
-$brand-position: relative;
-$brand-width: 100%;
-$brand-max-width: 60%;
-$brand-z: 100;
+$branding-image-width: 5rem !default;
+$brand-position: relative !default;
+$brand-width: 100% !default;
+$brand-max-width: 60% !default;
+$brand-z: 100 !default;
 
 
 /**
- * Main Navigation 
+ * Main Navigation
  **/
-$main-nav-margin:           0 -1rem 0 0;
-$main-nav-padding:          0;
-$main-nav-color:            $global-link-color;
-$main-nav-link-margin:      0 0.5rem;
-$main-nav-link-padding:     0.25rem 0.5rem;
-$main-dropdown-bg:          darken( $light, 10% );
-$main-dropdown-color:       $black;
-$main-dropdown-bg-dark:     lighten( $dark, 10% );
-$main-dropdown-color-dark:  $white;
+$main-nav-margin:           0 -1rem 0 0 !default;
+$main-nav-padding:          0 !default;
+$main-nav-color:            $global-link-color !default;
+$main-nav-link-margin:      0 0.5rem !default;
+$main-nav-link-padding:     0.25rem 0.5rem !default;
+$main-dropdown-bg:          darken( $light, 10% ) !default;
+$main-dropdown-color:       $black !default;
+$main-dropdown-bg-dark:     lighten( $dark, 10% ) !default;
+$main-dropdown-color-dark:  $white !default;
 
-$main-nav-margin-x:   false; // false | modular scale ratio
-$main-nav-margin-y:   false; // false | modular scale ratio
-$main-nav-padding-x:  false; // false | modular scale ratio
-$main-nav-padding-y:  false; // false | modular scale ratio
+$main-nav-margin-x:   false !default; // false | modular scale ratio
+$main-nav-margin-y:   false !default; // false | modular scale ratio
+$main-nav-padding-x:  false !default; // false | modular scale ratio
+$main-nav-padding-y:  false !default; // false | modular scale ratio
 
-$main-nav-justify: flex-end;
-$main-nav-whitespace: nowrap;
+$main-nav-justify: flex-end !default;
+$main-nav-whitespace: nowrap !default;
 
-$search-font: -2; // modular scale ratio
+$search-font: -2 !default; // modular scale ratio
 
 
 

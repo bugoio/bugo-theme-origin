@@ -2,33 +2,33 @@
  * Headings
  **/
 
-$heading-font:            var( --font-family-header );
-$heading-color:           $secondary;
-$heading-color-dark:      $heading-color;
-$heading-bg:              transparent;
-$heading-bg-dark:         transparent;
-$heading-link-color:      lighten( $secondary, 20% );
-$heading-link-color-dark: darken( $light, 25% );
-$heading-link-focus:      $primary;
-$heading-line-height:     1.2;
-$heading-font-weight:     400;
+$heading-font:            var( --font-family-header ) !default;
+$heading-color:           $secondary !default;
+$heading-color-dark:      $heading-color !default;
+$heading-bg:              transparent !default;
+$heading-bg-dark:         transparent !default;
+$heading-link-color:      lighten( $secondary, 20% ) !default;
+$heading-link-color-dark: darken( $light, 25% ) !default;
+$heading-link-focus:      $primary !default;
+$heading-line-height:     1.2 !default;
+$heading-font-weight:     400 !default;
 
 // Heading Font Sizes using Modular Scale
-$heading-1: ( xs: 5, sm: 5, md: 5, lg: 5, xl: 5, xxl: 5, xxxl: 5 );
-$heading-2: ( xs: 4, sm: 4, md: 4, lg: 4, xl: 4, xxl: 4, xxxl: 4 );
-$heading-3: ( xs: 3, sm: 3, md: 3, lg: 3, xl: 3, xxl: 3, xxxl: 3 );
-$heading-4: ( xs: 2, sm: 2, md: 2, lg: 2, xl: 2, xxl: 2, xxxl: 2 );
-$heading-5: ( xs: 1, sm: 1, md: 1, lg: 1, xl: 1, xxl: 1, xxxl: 1 );
-$heading-6: ( xs: 0, sm: 0, md: 0, lg: 0, xl: 0, xxl: 0, xxxl: 0 );
+$heading-1: ( xs: 5, sm: 5, md: 5, lg: 5, xl: 5, xxl: 5, xxxl: 5 ) !default;
+$heading-2: ( xs: 4, sm: 4, md: 4, lg: 4, xl: 4, xxl: 4, xxxl: 4 ) !default;
+$heading-3: ( xs: 3, sm: 3, md: 3, lg: 3, xl: 3, xxl: 3, xxxl: 3 ) !default;
+$heading-4: ( xs: 2, sm: 2, md: 2, lg: 2, xl: 2, xxl: 2, xxxl: 2 ) !default;
+$heading-5: ( xs: 1, sm: 1, md: 1, lg: 1, xl: 1, xxl: 1, xxxl: 1 ) !default;
+$heading-6: ( xs: 0, sm: 0, md: 0, lg: 0, xl: 0, xxl: 0, xxxl: 0 ) !default;
 
-$heading-margin-top:      false; // false | modular scale ratio
-$heading-margin-right:    false; // false | modular scale ratio
-$heading-margin-bottom:   $global-margin / 2; // false | modular scale ratio
-$heading-margin-left:     false; // false | modular scale ratio
+$heading-margin-top:      false !default; // false | modular scale ratio
+$heading-margin-right:    false !default; // false | modular scale ratio
+$heading-margin-bottom:   $global-margin / 2 !default; // false | modular scale ratio
+$heading-margin-left:     false !default; // false | modular scale ratio
 
-$heading-padding-top:     false; // false | modular scale ratio
-$heading-padding-bottom:  false; // false | modular scale ratio
-$heading-padding-right:   false; // false | modular scale ratio
-$heading-padding-left:    false; // false | modular scale ratio
+$heading-padding-top:     false !default; // false | modular scale ratio
+$heading-padding-bottom:  false !default; // false | modular scale ratio
+$heading-padding-right:   false !default; // false | modular scale ratio
+$heading-padding-left:    false !default; // false | modular scale ratio
 
-$heading-sidebar: 0.66; // scale of the heading sizes above in the sidebar
+$heading-sidebar: 0.66 !default; // scale of the heading sizes above in the sidebar

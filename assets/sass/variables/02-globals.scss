@@ -7,10 +7,10 @@
  *
  **/
 
-$global-margin:   2;
-$global-padding:  2;
-$global-radius:   2px;
-$global-shadow:   1px 1px 2px transparentize($dark,0.2);
+$global-margin:   2 !default;
+$global-padding:  2 !default;
+$global-radius:   2px !default;
+$global-shadow:   1px 1px 2px transparentize($dark,0.2) !default;
 
 // /* Breakpoints */
 // $breakpoints: (
@@ -21,7 +21,7 @@ $global-shadow:   1px 1px 2px transparentize($dark,0.2);
 //   xl: 1200px,
 //   xxl: 1400px,
 //   xxxl: 2200px
-//  ) !default;
+//  ) !default !default;
 
 // $container-max-widths : (
 //   xs: calc( 100% - 36px ),
@@ -31,7 +31,7 @@ $global-shadow:   1px 1px 2px transparentize($dark,0.2);
 //   xl: 1164px,
 //   xxl: 1360px,
 //   xxxl: 2100px
-//  ) !default;
+//  ) !default !default;
 
 
 :root {
@@ -44,21 +44,21 @@ $global-shadow:   1px 1px 2px transparentize($dark,0.2);
 /**
  * Global Typography
  **/
-$global-font:               var( --font-family-global ); // grab the font family from the forestry output
-$global-font-color:         $dark;
-$global-font-color-dark:    $light;
-$global-link-color:         $accent-2;
-$global-link-dark:          $white;
-$global-link-focus:         lighten( $accent-2, 20% );
-$global-link-weight:        bold;
-$global-font-size:          0; // modular scale
-$global-line-height:        1.75;
-$global-small:              $global-font-size - 1;
-$global-small-line-height:  1.2;
+$global-font:               var( --font-family-global ) !default; // grab the font family from the forestry output
+$global-font-color:         $dark !default;
+$global-font-color-dark:    $light !default;
+$global-link-color:         $accent-2 !default;
+$global-link-dark:          $white !default;
+$global-link-focus:         lighten( $accent-2, 20% ) !default;
+$global-link-weight:        bold !default;
+$global-font-size:          0 !default; // modular scale
+$global-line-height:        1.75 !default;
+$global-small:              $global-font-size - 1 !default;
+$global-small-line-height:  1.2 !default;
 
 /**
  *
  * Navigation
  *
  **/
-$global-menu-bg: lighten($accent-1, 0.5);
+$global-menu-bg: lighten($accent-1, 0.5) !default;
