@@ -97,6 +97,8 @@ $warning:       {{ .Site.Params.theme_colors.warning | default "#ffc107" }} !def
 $danger:        {{ .Site.Params.theme_colors.danger | default "#dc3545" }} !default;
 
 
+@import "custom-variables.scss";
+
 @import "colors";  // from Bugo SASS Utilities Module
 
 /**
@@ -171,3 +173,5 @@ $danger:        {{ .Site.Params.theme_colors.danger | default "#dc3545" }} !defa
 @import "widgets/widget-latest-posts";
 @import "widgets/widget-related-posts";
 @import "widgets/widget-search-form";
+
+@import "custom";
