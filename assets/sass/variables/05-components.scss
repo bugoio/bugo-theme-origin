@@ -16,10 +16,11 @@ $asum-padding-left:    false; // false | modular scale ratio
 $asum-column-gap: 2; // false | modular scale ratio
 $asum-row-gap: false;  // false | modular scale ratio
 $asum-xs-template-areas:
-  "thumb thumb head head head head"
-  "thumb thumb time time time time"
-  "thumb thumb tax tax tax tax"
-  "summ summ summ summ summ summ";
+  "thumb"
+  "head"
+  "time"
+  "tax"
+  "summ";
 $asum-sm-template-areas: $asum-xs-template-areas;
 $asum-md-template-areas: $asum-xs-template-areas;
 $asum-lg-template-areas: $asum-xs-template-areas;
@@ -27,7 +28,7 @@ $asum-xl-template-areas: $asum-xs-template-areas;
 $asum-xxl-template-areas: $asum-xs-template-areas;
 $asum-xxxl-template-areas: $asum-xs-template-areas;
 
-$asum-xs-template-columns: repeat( 6, 1fr );
+$asum-xs-template-columns: repeat( 1, 1fr );
 $asum-sm-template-columns: $asum-xs-template-columns;
 $asum-md-template-columns: $asum-xs-template-columns;
 $asum-lg-template-columns: $asum-xs-template-columns;

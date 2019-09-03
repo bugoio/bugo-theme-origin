@@ -108,6 +108,7 @@ blockquote p {
 
 pre {
   background-color: $pre-bg !important;
+  overflow-x: scroll;
   @include space-element-x(margin, $pre-margin-left, $pre-margin-right);
   @include space-element-y(margin, $pre-margin-top, $pre-margin-bottom);
   @include space-element-x(padding, $pre-padding-left, $pre-padding-right);

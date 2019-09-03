@@ -137,7 +137,7 @@ $danger:        {{ .Site.Params.theme_colors.danger | default "#dc3545" }} !defa
 // @import "components/block-google-map";
 // @import "components/block-latest-posts";
 // @import "components/block-logos";
-@import "components/block-slideshow";
+// @import "components/block-slideshow";
 @import "components/breadcrumbs";
 @import "components/buttons";
 @import "components/forms";
@@ -171,9 +171,3 @@ $danger:        {{ .Site.Params.theme_colors.danger | default "#dc3545" }} !defa
 @import "widgets/widget-latest-posts";
 @import "widgets/widget-related-posts";
 @import "widgets/widget-search-form";
-
-
-//pages
-@import "pages/landing-page";
-@import "pages/list-page";
-@import "pages/home";
