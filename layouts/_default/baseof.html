@@ -29,12 +29,15 @@
     </div>
     {{ end }}
     <!-- Javascript -->
-    {{ $vendorJS := resources.Match "vendors/*.js" | resources.Concat "js/vendor-bundle.js"| resources.Fingerprint "sha512" }}
-    {{ $componentJS := resources.Match "js/*.js" | resources.Concat "js/component-bundle.js"| resources.Fingerprint "sha512" }}
+    {{ $vendorJS := resources.Match "vendors/*.js" | resources.Concat "js/vendor-bundle.js"| resources.Minify | resources.Fingerprint "sha512" }}
+    {{ $componentJS := resources.Match "js/*.js" | resources.Concat "js/component-bundle.js"| resources.Minify | resources.Fingerprint "sha512" }}
     <script defer src="{{ $vendorJS.Permalink }}" integrity="{{ $vendorJS.Data.Integrity }}" type="text/javascript"></script>
     <script defer src="{{ $componentJS.Permalink }}" integrity="{{ $componentJS.Data.Integrity }}" type="text/javascript"></script>
 
+    {{ if ne hugo.Environment "production" }}
     {{ template "_internal/google_analytics_async.html" . }}
+    {{ end }}
+
     <div aria-hidden="true">
       {{ partial "icons/icon_sprite" . }}
     </div>
