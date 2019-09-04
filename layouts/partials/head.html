@@ -26,12 +26,14 @@
        {{- end -}}
      </title>
      {{ .Hugo.Generator }}
+     {- template "_internal/schema.html" . -}}
      {{/* NOTE: For Production make sure you add `HUGO_ENV="production"` before your build command */}}
      {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
      <meta name="robots" content="index, follow">
      {{ else }}
        <meta name="robots" content="noindex, nofollow">
      {{ end }}
+
      <meta name="description" content="
        {{- if .Params.page_meta.meta_description -}}
          {{ .Params.page_meta.meta_description }}
