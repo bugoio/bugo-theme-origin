@@ -15,13 +15,13 @@
 <footer class="site-footer">
 	<div class="container">
     <div class="site-footer-logo">
-      {{ if .Site.Data.organization.logos.footer_logo.image }}
-      {{ partial "components/figure" ( dict "page" .Page "site" .site "media" .Site.Data.organization.logos.footer_logo ) }}
+      {{ if .Site.Data.organization.footer_logo }}
+        <img class="footer-logo" src="{{ .Site.Data.organization.footer_logo }}" alt="{{ .Site.Title }}"/>
       {{ end }}
     </div>
     <div class="copyright text-center">
-      {{ with .Site.Data.organization.organization_name }}
-      <span tabindex="0">©{{ dateFormat "2006" now }} {{ . }} &nbsp;<span class="">•</span>&nbsp; All rights reserved.</span> 
+      {{ with .Site.Title }}
+      <span tabindex="0">©{{ dateFormat "2006" now }} {{ . }} &nbsp;<span class="">•</span>&nbsp; All rights reserved.</span>
       {{ end }}
       {{ if .Site.Menus.privacy }}
         {{ .Scratch.Set "location" "privacy" }}
