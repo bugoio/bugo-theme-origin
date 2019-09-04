@@ -1,4 +1,4 @@
-/** 
+/**
  * footer Grid
  **/
 
@@ -41,4 +41,10 @@ $footer-template-columns: (
       text-decoration: none;
     }
   }
+}
+.footer-logo {
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
 }
