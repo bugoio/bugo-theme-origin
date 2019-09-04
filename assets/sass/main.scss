@@ -4,6 +4,7 @@
 
 @import "functions";
 @import "mixins";
+@import "helpers";
 
 /**
  *
@@ -83,23 +84,23 @@ $container-max-widths: (
  *
  **/
 
-$primary:       {{ .Site.Params.theme_colors.primary | default "#AC5E0D" }} !default;
-$secondary:     {{ .Site.Params.theme_colors.secondary | default "#536F48" }} !default;
+$primary:       {{ .Site.Params.theme_colors.primary | default "#AC5E0D" }};
+$secondary:     {{ .Site.Params.theme_colors.secondary | default "#536F48" }};
 $accent-1:      {{ .Site.Params.theme_colors.accent_1 | default "#FFDE2F" }};
 $accent-2:      {{ .Site.Params.theme_colors.accent_2 | default "#5F336A" }};
-$light:         {{ .Site.Params.theme_colors.light | default "#FFF5E7" }} !default;
-$dark:          {{ .Site.Params.theme_colors.dark | default "#5B5551" }} !default;
-$white:         {{ .Site.Params.theme_colors.white | default "#FFFCF6" }} !default;
-$black:         {{ .Site.Params.theme_colors.black | default "#252524" }} !default;
-$success:       {{ .Site.Params.theme_colors.success | default "#28a745" }} !default;
-$info:          {{ .Site.Params.theme_colors.info | default "#17a2b8" }} !default;
-$warning:       {{ .Site.Params.theme_colors.warning | default "#ffc107" }} !default;
-$danger:        {{ .Site.Params.theme_colors.danger | default "#dc3545" }} !default;
+$light:         {{ .Site.Params.theme_colors.light | default "#FFF5E7" }};
+$dark:          {{ .Site.Params.theme_colors.dark | default "#5B5551" }};
+$white:         {{ .Site.Params.theme_colors.white | default "#FFFCF6" }};
+$black:         {{ .Site.Params.theme_colors.black | default "#252524" }};
+$success:       {{ .Site.Params.theme_colors.success | default "#28a745" }};
+$info:          {{ .Site.Params.theme_colors.info | default "#17a2b8" }};
+$warning:       {{ .Site.Params.theme_colors.warning | default "#ffc107" }};
+$danger:        {{ .Site.Params.theme_colors.danger | default "#dc3545" }};
 
-
-@import "custom-variables.scss";
 
 @import "colors";  // from Bugo SASS Utilities Module
+
+@import "custom-variables.scss";
 
 /**
  *

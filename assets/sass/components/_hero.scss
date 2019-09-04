@@ -10,6 +10,8 @@
   width: 100%;
   @include ms-respond(padding-top, $hero-padding-top);
   @include ms-respond(padding-bottom, $hero-padding-bottom);
+  @include ms-respond(margin-top, $hero-margin-top);
+  @include ms-respond(margin-bottom, $hero-margin-bottom);
 
   @if $hero-container == true {
     @extend .container;
@@ -104,6 +106,7 @@
     h6,
     .h6 {
       color: $hero-color;
+      font-weight: $hero-heading-weight;
     }
 
     @include heading-size(h1, $hero-1);
