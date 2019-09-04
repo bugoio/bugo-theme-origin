@@ -33,17 +33,6 @@
      {{ else }}
        <meta name="robots" content="noindex, nofollow">
      {{ end }}
-
-     <meta name="description" content="
-       {{- if .Params.page_meta.meta_description -}}
-         {{ .Params.page_meta.meta_description }}
-       {{- else -}}
-         {{- .Summary | truncate 60 -}}
-       {{- end -}}
-     ">
-     {{- with .Params.page_meta.meta_keywords -}}
-     <meta name="keywords" content="{{ . }}">
-     {{- end -}}
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <!-- Open Graph Meta Data -->
      {{- template "_internal/opengraph.html" . -}}
