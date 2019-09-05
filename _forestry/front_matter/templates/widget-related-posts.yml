@@ -1,0 +1,18 @@
+---
+label: Widget - Related Pages
+hide_body: true
+display_field: title
+fields:
+- type: text
+  name: title
+  label: Title
+  config:
+    required: true
+- type: field_group
+  name: widget_options
+  label: Widget Options
+  fields:
+  - type: include
+    name: widget_options
+    label: Widget Options
+    template: widget-options

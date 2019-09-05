@@ -1,0 +1,12 @@
+---
+label: Field - Widget Attributes
+hide_body: true
+fields:
+- type: text
+  label: Title
+  name: title
+  config:
+    required: true
+- type: boolean
+  name: show_title
+  label: Show Title

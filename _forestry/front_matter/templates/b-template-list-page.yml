@@ -82,8 +82,3 @@ fields:
       type: simple
   label: Redirects
   description: Enter URL's you'd like to redirect to this page.
-pages:
-- content/sample-pages/_index.md
-- content/posts/_index.md
-- content/sample-pages/video-hero.md
-- content/sample-pages/typography.md

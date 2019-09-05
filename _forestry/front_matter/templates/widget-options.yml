@@ -1,0 +1,94 @@
+---
+label: Field - Block Options
+hide_body: false
+fields:
+- name: text_size
+  type: select
+  default: Normal
+  config:
+    required: false
+    options:
+    - Normal
+    - Lead
+    - H1
+    - h2
+    - h3
+    - h4
+    - h5
+    - h6
+    - Display 1
+    - Display 2
+    - Display 3
+    - Display 4
+    - Small
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Text Size
+- name: text_alignment
+  type: select
+  default: Left
+  config:
+    required: false
+    options:
+    - Left
+    - Center
+    - Right
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Text Alignment
+- name: remove_padding
+  type: boolean
+  label: Remove Vertical Padding
+  description: 'Remove top and bottom padding from the outer block. '
+- name: remove_horizontal_padding
+  type: boolean
+  label: Remove Horizontal Padding
+- name: block_height
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - Auto
+    - Small
+    - Large
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Block Height
+  description: Select a height. Default is auto.
+- type: boolean
+  name: full_width
+  label: Full Width
+  default: true
+- name: content_full_width
+  type: boolean
+  label: Content Full Width
+  description: Only applies when he block has been set to full width
+  default: false
+- type: boolean
+  name: show_title
+  label: Show Title
+- type: boolean
+  name: remove_margin
+  label: Remove Margin
+- name: color_scheme
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: documents
+      section: site-styles
+      file: data/styles.yaml
+      path: color_scheme_dropdown
+  label: Color Scheme

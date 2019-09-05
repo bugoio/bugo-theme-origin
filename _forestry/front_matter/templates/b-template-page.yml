@@ -114,9 +114,11 @@ fields:
       type: simple
   label: Redirects
   description: Enter URL's you'd like to redirect to this page.
+- name: show_sidebar
+  type: boolean
+  label: Show Sidebar
+  description: Show the sidebar and widgets on the this page.
+  default: true
 pages:
-- content/privacy-policy.md
-- content/sample-pages/widgets.md
-- content/sample-pages/slideshow.md
-- content/_index.md
-- content/_index.md
+- content/contact-us.md
+- content/about-lance-shelton.md

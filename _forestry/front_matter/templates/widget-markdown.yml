@@ -1,0 +1,24 @@
+---
+label: Widget - Markdown
+hide_body: true
+display_field: title
+fields:
+- type: text
+  name: title
+  label: Title
+  config:
+    required: true
+- type: textarea
+  name: content
+  label: Content
+  description: Enter the content you want to display.
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+- type: field_group
+  name: widget_options
+  label: Widget Options
+  fields:
+  - type: include
+    template: widget-options
