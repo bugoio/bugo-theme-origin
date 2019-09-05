@@ -75,10 +75,10 @@ $breadcrumbs-max-chars: (
 
 
 $button-radius:               $global-radius !default;
-$button-default-bg:           $dark !default;
+$button-default-bg:           $secondary !default;
 $button-default-color:        $light !default;
-$button-default-bg-dark:      $light !default;
-$button-default-color-dark:   $dark !default;
+$button-default-bg-dark:      $secondary !default;
+$button-default-color-dark:   $light !default;
 
 /**
  *
@@ -92,12 +92,15 @@ $button-default-color-dark:   $dark !default;
 /**
  * Share Buttons
  **/
-$share-margin:        0 !default;
-$share-padding:       0 !default;
-$share-font-size:     2 !default; //modularscale ratio
-$share-icon-width:    3 !default; //modularscale raito
-$share-link-margin:   0 0.125rem !default;
-$share-link-padding:  0.125rem !default;
+$share-margin:          0 !default;
+$share-padding:         0 !default;
+$share-font-size:       1 !default; //modularscale ratio
+$share-icon-width:      2 !default; //modularscale raito
+$share-link-margin:     0 0.125rem !default;
+$share-link-padding:    0.125rem !default;
+$share-icon-fill:       $secondary;
+$share-icon-fill-dark:  $secondary;
+$share-text-color:      $primary;
 
 /**
  * Slideshow

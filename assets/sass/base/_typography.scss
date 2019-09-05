@@ -3,13 +3,13 @@ a {
   font-weight: $global-link-weight;
 
   @media (prefers-color-scheme: dark) {
-    color: $global-link-dark;
+    color: $global-link-color-dark;
   }
 
   &:hover {
     color: darken($global-link-color, 20%);
     @media (prefers-color-scheme: dark) {
-      color: darken($global-link-dark, 20%);
+      color: darken($global-link-color-dark, 20%);
     }
   }
 }

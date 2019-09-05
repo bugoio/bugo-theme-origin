@@ -36,7 +36,7 @@ $hero-image-filter: sepia( 15% ) brightness( 100% )  !default
 
 // pseudo element that displays over the hero image
 // can be used for tinting and other extra effects on the image.
-$hero-screen-display: block  !default // none | block
+$hero-screen-display: none  !default // none | block
 $hero-screen-bg:      transparentize( $light, .15 ) !default; //any background shorthand
 
 // hero spacer used on pages that do not have a hero,  in case spacing is necessary

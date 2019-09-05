@@ -9,7 +9,7 @@
       margin: 0 0.5rem 0 0;
 
       a {
-        @extend button;
+        @extend .button;
         color: $black;
       }
     }

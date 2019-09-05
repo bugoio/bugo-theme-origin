@@ -46,11 +46,11 @@ $global-shadow:   1px 1px 2px transparentize($dark,0.2) !default;
  **/
 $global-font:               var( --font-family-global ) !default; // grab the font family from the forestry output
 $global-font-color:         $dark !default;
-$global-font-color-dark:    $light !default;
-$global-link-color:         $accent-2 !default;
-$global-link-dark:          $white !default;
+$global-font-color-dark:    $dark !default;
+$global-link-color:         $primary !default;
+$global-link-color-dark:    $primary !default;
 $global-link-focus:         lighten( $accent-2, 20% ) !default;
-$global-link-weight:        bold !default;
+$global-link-weight:        normal !default;
 $global-font-size:          0 !default; // modular scale
 $global-line-height:        1.75 !default;
 $global-small:              $global-font-size - 1 !default;
@@ -61,4 +61,4 @@ $global-small-line-height:  1.2 !default;
  * Navigation
  *
  **/
-$global-menu-bg: lighten($accent-1, 0.5) !default;
+$global-menu-bg: lighten($primary, 0.5) !default;

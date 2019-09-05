@@ -1,6 +1,7 @@
 .share-buttons {
   margin: $share-margin;
   padding: $share-padding;
+  color: $share-text-color;
   @include ms-respond(font-size, $share-font-size);
 
   a {
@@ -10,9 +11,9 @@
     svg {
       @include ms-respond(width, $share-icon-width);
       height: auto;
-      fill: $link-text-color;
+      fill: $share-icon-fill;
       @media (prefers-color-scheme: dark) {
-        fill: $link-text-color-dark;
+        fill: $share-icon-fill-dark;
       }
     }
   }

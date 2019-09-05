@@ -15,7 +15,7 @@ $body-padding-y:  false !default; // false | modular scale ratio
 $body-color:      $global-font-color !default;
 $body-color-dark: $global-font-color-dark !default; // dark mode
 $body-bg:         $light !default;
-$body-bg-dark:    $dark !default;  // dark mode
+$body-bg-dark:    $light !default;  // dark mode
 
 $body-grid-column-gap: 0 !default;
 $body-grid-row-gap: 0 !default;
@@ -46,7 +46,7 @@ $header-color-dark:   $light !default;
 $header-bg:           transparent !default;
 $header-bg-dark:      transparent !default;
 $header-link-color:   $global-link-color !default;
-$header-link-dark:    $global-link-dark !default;
+$header-link-dark:    $global-link-color-dark !default;
 $header-link-focus:   $global-link-focus !default;
 $header-link-weight:  normal !default;
 

@@ -14,6 +14,7 @@ $brand-z: 100 !default;
 $main-nav-margin:           0 -1rem 0 0 !default;
 $main-nav-padding:          0 !default;
 $main-nav-color:            $global-link-color !default;
+$main-nav-color-dark:       $global-link-color-dark;
 $main-nav-link-margin:      0 0.5rem !default;
 $main-nav-link-padding:     0.25rem 0.5rem !default;
 $main-dropdown-bg:          darken( $light, 10% ) !default;
