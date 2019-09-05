@@ -130,6 +130,7 @@ nav {
     @include ms-respond(padding, -1);
     background-color: #e0e0e0;
     margin-top: 0;
+    padding: 1rem;
 
     &::before {
       content: "";
@@ -156,6 +157,7 @@ nav {
     }
 
     ul {
+
       display: flex;
       width: 100%;
       flex-direction: column;

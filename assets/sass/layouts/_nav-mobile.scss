@@ -23,13 +23,18 @@
     top: 100%;
     bottom: auto;
     background-color: $mobile-nav-bg;
-    width: 100vw;
+    width: 100%;
     left: 0;
     transform: translateY(-100%) translateX(-50%);
     transition: transform 0.5s;
 
     a {
-      color: $dark;
+      color: $dropdown-color;
+      @include ms-respond(font-size,2);
+    }
+
+    ul {
+      padding: 1rem;
     }
   }
 }
