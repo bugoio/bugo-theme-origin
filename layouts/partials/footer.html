@@ -13,29 +13,33 @@
 </div>
 {{ end }}
 <footer class="site-footer">
-	<div class="container">
+  <div class="container">
     <div class="site-footer-logo">
       {{ if .Site.Data.organization.footer_logo }}
-        <img class="footer-logo" src="{{ .Site.Data.organization.footer_logo }}" alt="{{ .Site.Title }}"/>
+      <img class="footer-logo" src="{{ .Site.Data.organization.footer_logo }}" alt="{{ .Site.Title }}" />
       {{ end }}
     </div>
     <div class="copyright text-center">
-      {{ with .Site.Title }}
-      <span tabindex="0">©{{ dateFormat "2006" now }} {{ . }} &nbsp;<span class="">•</span>&nbsp; All rights reserved.</span>
+      {{ with.Site.Title }}
+      <span tabindex="0">©{{ dateFormat "2006" now }} {{ . }} &nbsp;<span class="">•</span>&nbsp; All rights
+        reserved.</span>
       {{ end }}
       {{ if .Site.Menus.privacy }}
-        {{ .Scratch.Set "location" "privacy" }}
-        {{ .Scratch.Set "menu" .Site.Menus.privacy }}
-        <div id="privacy-nav" class="">
-          {{ partial "nav-horizontal" . }}
-        </div>
+      {{ .Scratch.Set "location" "privacy" }}
+      {{ .Scratch.Set "menu" .Site.Menus.privacy }}
+      <div id="privacy-nav" class="">
+        {{ partial "nav-horizontal" . }}
+      </div>
       {{ end }}
-
     </div>
+    {{ if .Site.Params.show_bugo }}
     <div class="text-center">
       <small class="made-with-bugo">
-        <a href="https://bugo.io" title="Bugo. Made with Bugo" alt="Visit Bugo" tabindex="0"><img class="d-inline-block my-0 mr-2" src="https://bit.ly/2VF39WV" width="20" height="auto" alt="Bugo. "/> Made with Bugo.</a>
+        <a href="https://bugo.io" title="Crafted with Bugo" alt="Visit Bugo" tabindex="0"><img class=""
+            src="https://bit.ly/2VF39WV" width="20" height="auto" alt="" aria-hidden="true" />
+          Crafted with Bugo.</a>
       </small>
     </div>
+    {{ end }}
   </div>
 </footer>
