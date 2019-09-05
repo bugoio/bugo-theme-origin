@@ -14,8 +14,8 @@ $body-padding-y:  false !default; // false | modular scale ratio
 
 $body-color:      $global-font-color !default;
 $body-color-dark: $global-font-color-dark !default; // dark mode
-$body-bg:         $light !default;
-$body-bg-dark:    $light !default;  // dark mode
+$body-bg:         $global-background-color !default;
+$body-bg-dark:    $global-background-color-dark !default;  // dark mode
 
 $body-grid-column-gap: 0 !default;
 $body-grid-row-gap: 0 !default;

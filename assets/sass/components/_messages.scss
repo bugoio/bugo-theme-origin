@@ -1,15 +1,21 @@
 .message {
-  max-width: 768px;
+  // max-width: 768px;
   // float: left;
-  margin: var(--global-margin) auto;
-  padding: 0.5rem;
-  grid-gap: 1rem;
-  display: grid;
-  grid-template-columns: 40px 1fr;
+  @include space-element-x(margin, $message-margin-left, $message-margin-right);
+  @include space-element-y(margin, $message-margin-top, $message-margin-bottom);
+
+  @include space-element-x(padding, $message-padding-left, $message-padding-right);
+  @include space-element-y(padding, $message-padding-top, $message-padding-bottom);
+  @include ms-respond(grid-gap,$message-grid-gap);
+  display: $message-display;
+  grid-template-columns: $message-icon-width 1fr;
   align-items: center;
-  border: 1px solid;
-  border-radius: $global-radius;
-  @include ms-respond(font-size, 0);
+  border: $message-border;
+  border-radius: $message-border-radius;
+  @include ms-respond(font-size, $message-font-size);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 
   a {
     color: inherit;
@@ -17,26 +23,46 @@
   }
 
   &.danger {
-    border-color: $danger;
-    color: color-yiq(lighten($danger, 65%), $danger, lighten($danger, 60%));
-    background-color: lighten($danger, 65%);
+    border-color: $danger-border-color;
+    color: $danger-color;
+    background-color: $danger-bg;
+    svg {
+      fill:  $danger-icon;
+      color:  $danger-icon;
+    }
   }
+
 
   &.info {
-    border-color: $info;
-    color: $info;
-    background-color: lighten($info, 40%);
+    border-color: $info-border-color;
+    color: $info-color;
+    background-color: $info-bg;
+    svg {
+      fill:  $info-icon;
+      color:  $info-icon;
+    }
   }
+
 
   &.success {
-    border-color: $success;
-    color: $success;
-    background-color: lighten($success, 40%);
+    border-color: $success-border-color;
+    color: $success-color;
+    background-color: $success-bg;
+    svg {
+      fill:  $success-icon;
+      color:  $success-icon;
+    }
   }
 
+
   &.warning {
-    border-color: $warning;
-    color: $warning;
-    background-color: lighten($warning, 40%);
+    border-color: $warning-border-color;
+    color: $warning-color;
+    background-color: $warning-bg;
+    svg {
+      fill:  $warning-icon;
+      color:  $warning-icon;
+    }
   }
+
 }
