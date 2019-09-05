@@ -12,6 +12,7 @@
 <html class="" lang="en">
   {{ partial "head" . }}
   <body class="{{ partial "utilities/body-class" . }} {{ partial "utilities/sidebar-class" . }}">
+
     {{- partial "header" . }}
     {{ block "hero" . }}{{ end }}
     {{ block "breadcrumbs" . }}{{ end }}
@@ -29,10 +30,10 @@
     </div>
     {{ end }}
     <!-- Javascript -->
-    {{ $vendorJS := resources.Match "vendors/*.js" | resources.Concat "js/vendor-bundle.js"| resources.Minify | resources.Fingerprint "sha512" }}
-    {{ $componentJS := resources.Match "js/*.js" | resources.Concat "js/component-bundle.js"| resources.Minify | resources.Fingerprint "sha512" }}
-    <script defer src="{{ $vendorJS.Permalink }}" integrity="{{ $vendorJS.Data.Integrity }}" type="text/javascript"></script>
-    <script defer src="{{ $componentJS.Permalink }}" integrity="{{ $componentJS.Data.Integrity }}" type="text/javascript"></script>
+    {{ $vendorJS := resources.Match "vendors/*.js" | resources.Concat "js/vendor-bundle.js"| resources.Minify }}
+    {{ $componentJS := resources.Match "js/*.js" | resources.Concat "js/component-bundle.js"| resources.Minify }}
+    <script defer src="{{ $vendorJS.Permalink }}" type="text/javascript"></script>
+    <script defer src="{{ $componentJS.Permalink }}" type="text/javascript"></script>
 
     {{ if ne hugo.Environment "production" }}
     {{ template "_internal/google_analytics_async.html" . }}
