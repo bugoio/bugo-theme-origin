@@ -29,9 +29,10 @@
 <main id="main" class="" tabindex="0" aria-label="{{ .Title }}">
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  {{ if gt (len .Site.RegularPages) 0 }}
+
+  {{ if gt (len ($.Site.GetPage "posts" .Section).Pages ) 0 }}
   {{ $site := .Site }}
-  {{ range first 3 .Site.RegularPages }}
+  {{ range first 3 ($.Site.GetPage "posts" .Section).Pages }}
   {{ partial "components/article-summary" . }}
   {{ end }}
   {{ else }}
