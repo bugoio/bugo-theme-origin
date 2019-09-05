@@ -33,7 +33,7 @@ Origin is meant to be used as a starter theme used by designers and developers a
 * Cloudindary image transformation support
 
 ## Installation
-Origin is meant to be used with Forestry.io and Bugo Site. You can install it on your site, but you'll need to add some parameters to your config file and some data files in `/Data`. You can save a lot of time by using Bugo Site. Instructions are provided if you need to reinstall from a Bugo Site project.
+Origin is meant to be used with Forestry.io and Bugo Site, which has Origin installed. You can install it on your site, but you'll need to add some parameters to your config file and some data files in `/Data`. You can save a lot of time by using Bugo Site. Instructions are provided if you need to reinstall from a Bugo Site project.
 
 From your Hugo site's root, you need to initialize your site as a Hugo module.
 
@@ -60,3 +60,5 @@ module:
 ```
 
 That should do it. 
+
+
