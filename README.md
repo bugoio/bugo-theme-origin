@@ -9,8 +9,7 @@ Origin is meant to be used as a starter theme used by designers and developers a
 * Responsive layouts
 * Includes Foresty.io templates and install script
 * Heros & Video Heros
-* Landing page templates with content blocks
-* Beautiful Typography based on modular scale
+* Beautiful typography and grid based on modular scale
 * CSS Grids for layouts and blocks
 * Responsive Sliders
 * SEO Ready
@@ -21,20 +20,21 @@ Origin is meant to be used as a starter theme used by designers and developers a
 * Page/Post level galleries
   * Images
   * Videos
-* Forestry enabled site options
+* Forestry enabled site config and options
 * So much more…
 
 ## Dev Features
 
 * Hugo Module
-* SASS with tons of variables
-* Hugo/Forestry theme enabled SASS. 
+* SASS with tons of variables 
 * WooCommerce FlexSlider
 * Validator
 * Sweet Alert 2
 * Cloudindary image transformation support
 
 ## Installation
+Origin is meant to be used with Forestry.io and Bugo Site. You can install it on your site, but you'll need to add some parameters to your config file and some data files in `/Data`. You can save a lot of time by using Bugo Site
+
 From your Hugo site's root, you need to initialize your site as a Hugo module.
 
 ```bash
@@ -56,7 +56,7 @@ module:
   - disable: false
     ignoreConfig: false
     path: github.com/bugoio/bugo-theme-origin //repository
-  - path: bugo-theme-origin                   //stored in themes/
+  - path: bugo-theme-origin                   //stored in /themes/
 ```
 
 That should do it. 
