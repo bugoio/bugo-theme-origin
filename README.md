@@ -1,4 +1,4 @@
-# Bugo Origin Theme
+# Origin Theme
 
 Blogging with Hugo's Origin Theme is meant to be used as a starter theme used by designers and developers alike. Origin is best used with Forestry.io for content management and Netlify.com for hosting.
 
