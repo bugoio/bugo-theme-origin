@@ -6,22 +6,16 @@ Origin is meant to be used as a starter theme used by designers and developers a
 
 ## Theme Features
 
-* Responsive layouts
-* Includes Foresty.io templates and install script
+* Responsive layouts based on modular scale
+* Includes Foresty.io templates
 * Heros & Video Heros
 * Beautiful typography and grid based on modular scale
 * CSS Grids for layouts and blocks
-* Responsive Sliders
-* SEO Ready
-* Social Media Ready
-* Google Maps
 * Configurable Sidebar Widgets
-* Forestry.io Cloudinary support
+* Cloudinary support
 * Page/Post level galleries
   * Images
   * Videos
-* Forestry enabled site config and options
-* So much more…
 
 ## Dev Features
 
