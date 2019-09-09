@@ -1,25 +1,34 @@
 /**
+ *  HTML & Body Tag
+ *
+ *  * All body styles are stored here
+ *
+ **/
+
+
+/**
  * Body Grid
  **/
-$body-template-areas: (
-  xs: $body-xs-template-areas,
-  sm: $body-sm-template-areas,
-  md: $body-md-template-areas,
-  lg: $body-lg-template-areas,
-  xl: $body-xl-template-areas,
-  xxl: $body-xxl-template-areas,
-  xxxl: $body-xxxl-template-areas
-);
 
-$body-template-columns: (
-  xs: $body-xs-template-columns,
-  sm: $body-sm-template-columns,
-  md: $body-md-template-columns,
-  lg: $body-lg-template-columns,
-  xl: $body-xl-template-columns,
-  xxl: $body-xxl-template-columns,
-  xxxl: $body-xxxl-template-columns
-);
+    $body-template-areas: (
+      xs: $body-xs-template-areas,
+      sm: $body-sm-template-areas,
+      md: $body-md-template-areas,
+      lg: $body-lg-template-areas,
+      xl: $body-xl-template-areas,
+      xxl: $body-xxl-template-areas,
+      xxxl: $body-xxxl-template-areas
+    );
+
+    $body-template-columns: (
+      xs: $body-xs-template-columns,
+      sm: $body-sm-template-columns,
+      md: $body-md-template-columns,
+      lg: $body-lg-template-columns,
+      xl: $body-xl-template-columns,
+      xxl: $body-xxl-template-columns,
+      xxxl: $body-xxxl-template-columns
+    );
 
 html {
   background-color: $body-bg;
@@ -34,10 +43,9 @@ body {
   position: relative;
   @include space-element(margin, $body-margin-x, $body-margin-y);
   @include space-element(padding, $body-padding-x, $body-padding-y);
-  overflow-z: hidden;
+  overflow-x: hidden;
 
   // Grid
-  // display: grid;
   grid-column-gap: $body-grid-column-gap;
   grid-row-gap: $body-grid-row-gap;
 

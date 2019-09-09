@@ -1,0 +1,27 @@
+/**
+ * Article Summary
+ **/
+
+    $summary-column-gap: 2 !default; // false | modular scale ratio
+    $summary-row-gap: false !default;  // false | modular scale ratio
+    $summary-xs-template-areas:
+      "thumb"
+      "head"
+      "time"
+      "tax"
+      "summ" !default;
+
+    $summary-sm-template-areas: $summary-xs-template-areas !default;
+    $summary-md-template-areas: $summary-xs-template-areas !default;
+    $summary-lg-template-areas: $summary-xs-template-areas !default;
+    $summary-xl-template-areas: $summary-xs-template-areas !default;
+    $summary-xxl-template-areas: $summary-xs-template-areas !default;
+    $summary-xxxl-template-areas: $summary-xs-template-areas !default;
+
+    $summary-xs-template-columns: repeat( 1, 1fr ) !default;
+    $summary-sm-template-columns: $summary-xs-template-columns !default;
+    $summary-md-template-columns: $summary-xs-template-columns !default;
+    $summary-lg-template-columns: $summary-xs-template-columns !default;
+    $summary-xl-template-columns: $summary-xs-template-columns !default;
+    $summary-xxl-template-columns: $summary-xs-template-columns !default;
+    $summary-xxxl-template-columns: $summary-xs-template-columns !default;

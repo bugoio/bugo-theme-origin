@@ -1,134 +1,75 @@
-/**
- *
- * Article Summary
- *
- **/
-$asum-margin-top:      false !default; // false | modular scale ratio
-$asum-margin-right:    false !default; // false | modular scale ratio
-$asum-margin-bottom:   $global-margin * 1 !default; // false | modular scale ratio
-$asum-margin-left:     false !default; // false | modular scale ratio
-
-$asum-padding-top:     false !default; // false | modular scale ratio
-$asum-padding-bottom:  false !default; // false | modular scale ratio
-$asum-padding-right:   false !default; // false | modular scale ratio
-$asum-padding-left:    false !default; // false | modular scale ratio
-
-$asum-column-gap: 2 !default; // false | modular scale ratio
-$asum-row-gap: false !default;  // false | modular scale ratio
-$asum-xs-template-areas:
-  "thumb"
-  "head"
-  "time"
-  "tax"
-  "summ" !default;
-$asum-sm-template-areas: $asum-xs-template-areas !default;
-$asum-md-template-areas: $asum-xs-template-areas !default;
-$asum-lg-template-areas: $asum-xs-template-areas !default;
-$asum-xl-template-areas: $asum-xs-template-areas !default;
-$asum-xxl-template-areas: $asum-xs-template-areas !default;
-$asum-xxxl-template-areas: $asum-xs-template-areas !default;
-
-$asum-xs-template-columns: repeat( 1, 1fr ) !default;
-$asum-sm-template-columns: $asum-xs-template-columns !default;
-$asum-md-template-columns: $asum-xs-template-columns !default;
-$asum-lg-template-columns: $asum-xs-template-columns !default;
-$asum-xl-template-columns: $asum-xs-template-columns !default;
-$asum-xxl-template-columns: $asum-xs-template-columns !default;
-$asum-xxxl-template-columns: $asum-xs-template-columns !default;
-
-$asum-header-margin: false !default;
-$asum-thumb-margin: false !default;
-$asum-summary-margin-top: $asum-column-gap !default; // false | modular scale ratio
 
 /**
- *
  * Breadcrumbs
- *
  **/
-$breadcrumbs-margin-top:      $global-margin !default; // false | modular scale ratio
-$breadcrumbs-margin-right:    false !default; // false | modular scale ratio
-$breadcrumbs-margin-bottom:   $global-margin !default; // false | modular scale ratio
-$breadcrumbs-margin-left:     false !default; // false | modular scale ratio
 
-$breadcrumbs-padding-top:     false !default; // false | modular scale ratio
-$breadcrumbs-padding-bottom:  false !default; // false | modular scale ratio
-$breadcrumbs-padding-right:   false !default; // false | modular scale ratio
-$breadcrumbs-padding-left:    false !default; // false | modular scale ratio
+    $breadcrumbs-char: "/\00a0" !default;
 
-$breadcrumbs-char: "/\00a0" !default;
-
-$breadcrumbs-max-chars: (
-  xs: 35ch,
-  sm: 40ch,
-  md: 45ch,
-  lg: 50ch,
-  xl: 60ch,
-  xxl: 70ch,
-  xxxl: 80ch
-) !default;
+    $breadcrumbs-max-chars: (
+      xs: 35ch,
+      sm: 40ch,
+      md: 45ch,
+      lg: 50ch,
+      xl: 60ch,
+      xxl: 70ch,
+      xxxl: 80ch
+    ) !default;
 
 /**
- *
  * Buttons
- *
  **/
 
-
-$button-radius:               $global-radius !default;
-$button-default-bg:           $secondary !default;
-$button-default-color:        $light !default;
-$button-default-bg-dark:      $secondary !default;
-$button-default-color-dark:   $light !default;
+    $button-radius:               $global-radius !default;
 
 /**
- *
  * Thumbnails
- *
  **/
 
- $thumbnail-scale-on-hover: true !default;
+    $thumbnail-scale-on-hover: true !default;
 
 
 /**
  * Share Buttons
  **/
-$share-margin:          0 !default;
-$share-padding:         0 !default;
-$share-font-size:       1 !default; //modularscale ratio
-$share-icon-width:      2 !default; //modularscale raito
-$share-link-margin:     0 0.125rem !default;
-$share-link-padding:    0.125rem !default;
-$share-icon-fill:       $secondary;
-$share-icon-fill-dark:  $secondary;
-$share-text-color:      $primary;
+
+    $button-share-margin:          0 !default;
+    $button-share-padding:         0 !default;
+    $button-share-font-size:       1 !default; //modularscale ratio
+    $button-share-icon-width:      2 !default; //modularscale raito
+    $button-share-link-margin:     0 0.125rem !default;
+    $button-share-link-padding:    0.125rem !default;
+    $button-share-icon-fill:       $secondary;
+    $button-share-icon-fill-dark:  $secondary;
+    $button-share-text-color:      $primary;
 
 /**
  * Slideshow
  **/
-$sl-margin: var( --global-margin ) 0 !default;
-$sl-padding: 0 !default;
-$sl-controls-size: 2rem !default;
-$sl-controls-bg: $dark !default;
-$sl-controls-color: $secondary !default;
-$sl-controls-shadow: 1px 1px 3px $dark !default;
-$sl-inidicator-size: 1rem !default;
-$sl-indicator-bg:        $dark !default;
-$sl-indicator-highlight: $secondary !default;
+
+    $slideshow-margin: var( --global-margin ) 0 !default;
+    $slideshow-padding: 0 !default;
+    $slideshow-controls-size: 2rem !default;
+    $slideshow-controls-bg: $dark !default;
+    $slideshow-controls-color: $secondary !default;
+    $slideshow-controls-shadow: 1px 1px 3px $dark !default;
+    $slideshow-inidicator-size: 1rem !default;
+    $slideshow-indicator-bg:        $dark !default;
+    $slideshow-indicator-highlight: $secondary !default;
 
 /**
  * Forms
  **/
 
- $form-font-size: 1 !default; //modularscale ratio
- $form-margin: 0 !default;
- $form-padding: 0 !default;
+    $form-font-size: 1 !default; //modularscale ratio
+    $form-margin: 0 !default;
+    $form-padding: 0 !default;
 
- $field-font-size: 1 !default; // modularscale raito
- $field-margin: 0 !default;
- $field-padding: 0.5em 0.6em !default;
- $field-border: 1px solid #ccc !default;
- $field-box-shadow: inset 0 1px 3px #ddd !default;
- $field-border-radius: $global-radius !default;
- $field-border-color: #ccc !default;
- $field-focus-color: #129FEA !default;
- $field-background: #eaeded !default;
+    $field-font-size: 1 !default; // modularscale raito
+    $field-margin: 0 !default;
+    $field-padding: 0.5em 0.6em !default;
+    $field-border: 1px solid #ccc !default;
+    $field-box-shadow: inset 0 1px 3px #ddd !default;
+    $field-border-radius: $global-radius !default;
+    $field-border-color: #ccc !default;
+    $field-focus-color: #129FEA !default;
+    $field-background: #eaeded !default;

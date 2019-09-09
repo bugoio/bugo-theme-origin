@@ -2,13 +2,13 @@ a {
   color: $global-link-color;
   font-weight: $global-link-weight;
 
-  @media (prefers-color-scheme: dark) {
+  @media (codefers-color-scheme: dark) {
     color: $global-link-color-dark;
   }
 
   &:hover {
     color: darken($global-link-color, 20%);
-    @media (prefers-color-scheme: dark) {
+    @media (codefers-color-scheme: dark) {
       color: darken($global-link-color-dark, 20%);
     }
   }
@@ -36,7 +36,7 @@ h6,
 
   color: $heading-color;
   background-color: $heading-bg;
-  @media (prefers-color-scheme: dark) {
+  @media (codefers-color-scheme: dark) {
     color: $heading-color-dark;
     background-color: $heading-bg-dark;
   }
@@ -44,13 +44,13 @@ h6,
   a {
     text-decoration: none;
     color: $heading-link-color;
-    @media (prefers-color-scheme: dark) {
+    @media (codefers-color-scheme: dark) {
       color: $heading-link-color-dark;
     }
     &:hover {
-      color: darken($header-link-color, 10%);
-      @media (prefers-color-scheme: dark) {
-        color: darken($heading-link-color-dark, 10%);
+      color: darken($header-link-focus, 10%);
+      @media (codefers-color-scheme: dark) {
+        color: darken($heading-link-focus-dark, 10%);
       }
     }
   }
@@ -77,7 +77,7 @@ small,
 }
 
 p,
-pre {
+code {
   @include space-element-x(margin, $paragraph-margin-left, $paragraph-margin-right);
   @include space-element-y(margin, $paragraph-margin-top, $paragraph-margin-bottom);
   @include space-element-x(padding, $paragraph-padding-left, $paragraph-padding-right);
@@ -85,32 +85,44 @@ pre {
 }
 
 blockquote {
-  background: lighten($accent_2, 55%);
-  border-left: 10px solid $accent_2;
+  color: $quote-color;
+  background: $quote-bg;
+  border-left: 10px solid $quote-accent;
   quotes: "\201C""\201D""\2018""\2019";
   @include space-element-x(margin, $blockquote-margin-left, $blockquote-margin-right);
   @include space-element-y(margin, $blockquote-margin-top, $blockquote-margin-bottom);
   @include space-element-x(padding, $blockquote-padding-left, $blockquote-padding-right);
   @include space-element-y(padding, $blockquote-padding-top, $blockquote-padding-bottom);
+
+  @media (prefers-color-scheme: dark) {
+    color: $quote-color-dark;
+    background: $quote-bg;
+    border-left: 10px solid $quote-accent;
+  }
 }
 
 blockquote:before {
-  color: $accent_2;
+  color: $quote-accent;
   content: open-quote;
   font-size: 4em;
   line-height: 0.1em;
   margin-right: 0.25em;
   vertical-align: -0.4em;
+
+  @media (codefers-color-scheme: dark) {
+    color: $quote-accent-dark;
+  }
 }
-blockquote p {
+
+blockquote p:first-of-type {
   display: inline;
 }
 
 pre {
-  background-color: $pre-bg !important;
+  background-color: $code-bg !important;
   overflow-x: scroll;
-  @include space-element-x(margin, $pre-margin-left, $pre-margin-right);
-  @include space-element-y(margin, $pre-margin-top, $pre-margin-bottom);
-  @include space-element-x(padding, $pre-padding-left, $pre-padding-right);
-  @include space-element-y(padding, $pre-padding-top, $pre-padding-bottom);
+  @include space-element-x(margin, $code-margin-left, $code-margin-right);
+  @include space-element-y(margin, $code-margin-top, $code-margin-bottom);
+  @include space-element-x(padding, $code-padding-left, $code-padding-right);
+  @include space-element-y(padding, $code-padding-top, $code-padding-bottom);
 }

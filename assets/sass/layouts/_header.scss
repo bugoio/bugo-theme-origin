@@ -1,3 +1,8 @@
+/**
+ *  Site Header
+ *
+ **/
+
 .site-header {
   grid-area: head;
   display: block;
@@ -20,36 +25,36 @@
     background-color: $header-bg-dark;
   }
 
-  a {
-    text-decoration: none;
-    color: $header-link-color;
-    font-weight: $header-link-weight;
+  // a {
+  //   text-decoration: none;
+  //   color: $header-link-color;
+  //   font-weight: $header-link-weight;
 
-    @media (prefers-color-scheme: dark) {
-      color: $header-link-color-dark;
-    }
+  //   @media (prefers-color-scheme: dark) {
+  //     color: $header-link-color-dark;
+  //   }
 
-    &:hover {
-      color: $header-link-focus;
-    }
-  }
+  //   &:hover {
+  //     color: $header-link-focus;
+  //   }
+  // }
 
-  li.current {
-    a {
-      font-weight: bold;
-    }
-  }
+  // li.current {
+  //   a {
+  //     font-weight: bold;
+  //   }
+  // }
 
   .site-brand {
     grid-area: brand;
-    position: $brand-position;
-    z-index: $brand-z;
+    position: $header-brand-position;
+    z-index: $header-brand-z;
     white-space: nowrap;
 
     img {
       display: block;
-      width: $brand-width;
-      max-width: $brand-max-width;
+      width: $header-brand-image-width;
+      max-width: $header-brand-image-max-width;
       height: auto;
     }
   }
@@ -57,10 +62,10 @@
   .search-container {
     .search-form {
       input {
-        @include ms-respond(font-size, $search-font);
+        @include ms-respond(font-size, $header-search-font);
       }
       button {
-        @include ms-respond(font-size, $search-font);
+        @include ms-respond(font-size, $header-search-font);
       }
     }
   }
@@ -71,7 +76,7 @@
     display: none;
 
     @include respond-to(md) {
-      display: grid;
+      display: block;
     }
   }
 

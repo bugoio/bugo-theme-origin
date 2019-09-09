@@ -1,36 +1,44 @@
 /**
  * Branding
  **/
-$branding-image-width: 5rem !default;
-$brand-position: relative !default;
-$brand-width: 100% !default;
-$brand-max-width: 60% !default;
-$brand-z: 100 !default;
+
+    $header-brand-position: relative !default;
+    $header-brand-width: 100% !default;
+    $header-brand-z: 100 !default;
+    $header-brand-image-width: 5rem !default;
+    $header-brand-image-max-width: 60% !default;
 
 
 /**
  * Main Navigation
  **/
-$main-nav-margin:           0 -1rem 0 0 !default;
-$main-nav-padding:          0 !default;
-$main-nav-color:            $global-link-color !default;
-$main-nav-color-dark:       $global-link-color-dark;
-$main-nav-link-margin:      0 0.5rem !default;
-$main-nav-link-padding:     0.25rem 0.5rem !default;
-$main-dropdown-bg:          darken( $light, 10% ) !default;
-$main-dropdown-color:       $black !default;
-$main-dropdown-bg-dark:     lighten( $dark, 10% ) !default;
-$main-dropdown-color-dark:  $white !default;
 
-$main-nav-margin-x:   false !default; // false | modular scale ratio
-$main-nav-margin-y:   false !default; // false | modular scale ratio
-$main-nav-padding-x:  false !default; // false | modular scale ratio
-$main-nav-padding-y:  false !default; // false | modular scale ratio
+    $main-menu-margin:           0 -1rem 0 0 !default;
+    $main-menu-padding:          0 !default;
+    $main-menu-color:            $global-link-color !default;
+    $main-menu-color-dark:       $global-link-color-dark;
 
-$main-nav-justify: flex-end !default;
-$main-nav-whitespace: nowrap !default;
+    $main-menu-link-margin:      0 0.5rem !default;
+    $main-menu-link-padding:     0.25rem 0.5rem !default;
 
-$search-font: -2 !default; // modular scale ratio
+    $main-menu-dropdown-bg:          darken( $light, 10% ) !default;
+    $main-menu-dropdown-color:       $black !default;
+    $main-menu-dropdown-bg-dark:     lighten( $dark, 10% ) !default;
+    $main-menu-dropdown-color-dark:  $white !default;
+
+    $main-menu-margin-x:   false !default; // false | modular scale ratio
+    $main-menu-margin-y:   false !default; // false | modular scale ratio
+    $main-menu-padding-x:  false !default; // false | modular scale ratio
+    $main-menu-padding-y:  false !default; // false | modular scale ratio
+
+    $main-menu-justify: flex-end !default;
+    $main-menu-whitespace: normal !default;
+
+/**
+ * Header Search Form
+ **/
+
+    $header-search-font: -2 !default; // modular scale ratio
 
 
 

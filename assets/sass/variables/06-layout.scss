@@ -89,37 +89,35 @@ $header-z:          2000 !default;
  * Header Nav Container
  *
  **/
-$nav-con-bg:      $header-bg !default;
-$nav-con-bg-dark: $header-bg-dark !default;
+$header-nav-container-bg:      $header-bg !default;
+$header-nav-container-bg-dark: $header-bg-dark !default;
 
-$nav-con-margin-x:   auto !default; // false | modular scale ratio
-$nav-con-margin-y:   false !default; // false | modular scale ratio
-$nav-con-padding-x:  false !default; // false | modular scale ratio
-$nav-con-padding-y:  1 !default; // false | modular scale ratio
+$header-nav-container-margin-x:   auto !default; // false | modular scale ratio
+$header-nav-container-margin-y:   false !default; // false | modular scale ratio
+$header-nav-container-padding-x:  false !default; // false | modular scale ratio
+$header-nav-container-padding-y:  1 !default; // false | modular scale ratio
 
-$nav-con-column-gap: false !default; // false | modular scale ratio
-$nav-con-row-gap: 2 !default;  // false | modular scale ratio
+$header-nav-container-column-gap: false !default; // false | modular scale ratio
+$header-nav-container-row-gap: 2 !default;  // false | modular scale ratio
 
-$nav-con-xs-template-areas:
+$header-nav-container-xs-template-areas:
   "brand brand brand ... ... ... ... ... ... mbutton mbutton mbutton" !default;
-$nav-con-sm-template-areas: $nav-con-xs-template-areas !default;
-$nav-con-md-template-areas:
-  "brand brand ... ... ... ... ... ... ... ... search search"
-  "brand brand ... ... ... ... ... nmain nmain nmain nmain nmain" !default;
-$nav-con-lg-template-areas:
-  "brand brand ... ... ... ... ... ... ... ... search search"
-  "brand brand ... ... ... ... ... nmain nmain nmain nmain nmain" !default;
-$nav-con-xl-template-areas: $nav-con-md-template-areas !default;
-$nav-con-xxl-template-areas: $nav-con-md-template-areas !default;
-$nav-con-xxxl-template-areas: $nav-con-md-template-areas !default;
+$header-nav-container-sm-template-areas: $header-nav-container-xs-template-areas !default;
+$header-nav-container-md-template-areas:
+  "brand brand search search search search search search search search search search"
+  "brand brand nmain nmain nmain nmain nmain nmain nmain nmain nmain nmain" !default;
+$header-nav-container-lg-template-areas: $header-nav-container-md-template-areas;
+$header-nav-container-xl-template-areas: $header-nav-container-md-template-areas !default;
+$header-nav-container-xxl-template-areas: $header-nav-container-md-template-areas !default;
+$header-nav-container-xxxl-template-areas: $header-nav-container-md-template-areas !default;
 
-$nav-con-xs-template-columns: repeat( 12, 1fr ) !default;
-$nav-con-sm-template-columns: $nav-con-xs-template-columns !default;
-$nav-con-md-template-columns: $nav-con-xs-template-columns !default;
-$nav-con-lg-template-columns: $nav-con-xs-template-columns !default;
-$nav-con-xl-template-columns: $nav-con-xs-template-columns !default;
-$nav-con-xxl-template-columns: $nav-con-xs-template-columns !default;
-$nav-con-xxxl-template-columns: $nav-con-xs-template-columns !default;
+$header-nav-container-xs-template-columns: repeat( 12, 1fr ) !default;
+$header-nav-container-sm-template-columns: $header-nav-container-xs-template-columns !default;
+$header-nav-container-md-template-columns: $header-nav-container-xs-template-columns !default;
+$header-nav-container-lg-template-columns: $header-nav-container-xs-template-columns !default;
+$header-nav-container-xl-template-columns: $header-nav-container-xs-template-columns !default;
+$header-nav-container-xxl-template-columns: $header-nav-container-xs-template-columns !default;
+$header-nav-container-xxxl-template-columns: $header-nav-container-xs-template-columns !default;
 
 /**
  *

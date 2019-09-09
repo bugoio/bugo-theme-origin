@@ -1,26 +1,26 @@
 .nav-main {
   position: relative;
   z-index: 100;
-  color: $main-nav-color;
-  @include space-element(margin, $main-nav-margin-x, $main-nav-margin-y);
-  @include space-element(padding, $main-nav-padding-x, $main-nav-padding-y);
+  color: $main-menu-color;
+  @include space-element(margin, $main-menu-margin-x, $main-menu-margin-y);
+  @include space-element(padding, $main-menu-padding-x, $main-menu-padding-y);
 
   ul {
-    justify-content: $main-nav-justify;
+    justify-content: $main-menu-justify;
   }
 
   a {
-    color: $main-nav-color;
-    white-space: $main-nav-whitespace;
-    padding: $main-nav-link-padding;
-    margin: $main-nav-link-margin;
+    color: $main-menu-color;
+    white-space: $main-menu-whitespace;
+    padding: $main-menu-link-padding;
+    margin: $main-menu-link-margin;
     @media (prefers-color-scheme: dark) {
-      color: $main-nav-color-dark;
+      color: $main-menu-color-dark;
     }
   }
 
   .dropdown-menu {
-    // background-color: $main-dropdown-bg;
+    // background-color: $main-menu-dropdown-bg;
     // box-shadow: $global-box-shadow;
     // border-radius: $global-radius;
 
@@ -31,11 +31,11 @@
     //   height: 0;
     //   border-left: 0.5rem solid transparent;
     //   border-right: 0.5rem solid transparent;
-    //   border-bottom: 1rem solid $main-dropdown-bg;
+    //   border-bottom: 1rem solid $main-menu-dropdown-bg;
     // }
 
     @media (prefers-color-scheme: dark) {
-      // background-color: $main-dropdown-bg-dark;
+      // background-color: $main-menu-dropdown-bg-dark;
       &::before {
         content: "";
         display: block;
@@ -43,7 +43,7 @@
         height: 0;
         border-left: 0.5rem solid transparent;
         border-right: 0.5rem solid transparent;
-        border-bottom: 1rem solid $main-dropdown-bg-dark;
+        border-bottom: 1rem solid $main-menu-dropdown-bg-dark;
         // position: absolute;
         // bottom: 100%;
         // left: 50%;

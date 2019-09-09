@@ -18,10 +18,11 @@
     {{ block "breadcrumbs" . }}{{ end }}
     <div class="wrap container">
       {{ block "main" . }}{{ end }}
-      {{ block "aside" . }}{{ end }}
+      {{ if .Page.Params.show_sidebar }}
+        {{ block "aside" . }}{{ end }}
+      {{ end }}
     </div>
     {{ partial "footer" . }}
-    {{ block "footer" . }}{{ end }}
     {{ if .Site.Data.organization.footer_dislaimer }}
     <div class="footer-disclaimer py-4{{ with .Site.Data.config.layout_options.footer.color_scheme }} {{ . | urlize }} {{ end }}">
       <div class="container">
@@ -30,6 +31,7 @@
     </div>
     {{ end }}
     <!-- Javascript -->
+    {{ block "footer-scripts" . }}{{ end }}
     {{ $vendorJS := resources.Match "vendors/*.js" | resources.Concat "js/vendor-bundle.js"| resources.Minify }}
     {{ $componentJS := resources.Match "js/*.js" | resources.Concat "js/component-bundle.js"| resources.Minify }}
     <script defer src="{{ $vendorJS.Permalink }}" type="text/javascript"></script>

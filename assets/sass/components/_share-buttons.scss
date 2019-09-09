@@ -1,19 +1,19 @@
 .share-buttons {
-  margin: $share-margin;
-  padding: $share-padding;
-  color: $share-text-color;
-  @include ms-respond(font-size, $share-font-size);
+  margin: $button-share-margin;
+  padding: $button-share-padding;
+  color: $button-share-text-color;
+  @include ms-respond(font-size, $button-share-font-size);
 
   a {
     text-decoration: none;
-    margin: $share-link-margin;
-    padding: $share-link-padding;
+    margin: $button-share-link-margin;
+    padding: $button-share-link-padding;
     svg {
-      @include ms-respond(width, $share-icon-width);
+      @include ms-respond(width, $button-share-icon-width);
       height: auto;
-      fill: $share-icon-fill;
+      fill: $button-share-icon-fill;
       @media (prefers-color-scheme: dark) {
-        fill: $share-icon-fill-dark;
+        fill: $button-share-icon-fill-dark;
       }
     }
   }

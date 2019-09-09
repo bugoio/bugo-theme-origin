@@ -42,10 +42,6 @@
      <script type="application/ld+json">
        {{- partial "components/structured-data-organization" . | safeJS -}}
      </script>
-     <!-- JSON-LD Article markup for Google Structured Data -->
-     <script type="application/ld+json">
-       {{- partial "components/structured-data-article" . | safeJS -}}
-     </script>
 
      {{- range .Site.Data.config.addresses -}}
        {{- partial "components/structured-data-local-business" . | safeJS -}}
@@ -79,3 +75,4 @@
        <link rel="stylesheet" href="{{ $tmp.Permalink }}" media="screen">
      {{ end }}
    </head>
+<!-- end head -->

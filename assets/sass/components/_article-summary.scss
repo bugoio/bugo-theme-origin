@@ -8,43 +8,43 @@
   }
 }
 
-$asum-template-areas: (
-  xs: $asum-xs-template-areas,
-  sm: $asum-sm-template-areas,
-  md: $asum-md-template-areas,
-  lg: $asum-lg-template-areas,
-  xl: $asum-xl-template-areas,
-  xxl: $asum-xxl-template-areas,
-  xxxl: $asum-xxxl-template-areas
+$summary-template-areas: (
+  xs: $summary-xs-template-areas,
+  sm: $summary-sm-template-areas,
+  md: $summary-md-template-areas,
+  lg: $summary-lg-template-areas,
+  xl: $summary-xl-template-areas,
+  xxl: $summary-xxl-template-areas,
+  xxxl: $summary-xxxl-template-areas
 );
 
-$asum-template-columns: (
-  xs: $asum-xs-template-columns,
-  sm: $asum-sm-template-columns,
-  md: $asum-md-template-columns,
-  lg: $asum-lg-template-columns,
-  xl: $asum-xl-template-columns,
-  xxl: $asum-xxl-template-columns,
-  xxxl: $asum-xxxl-template-columns
+$summary-template-columns: (
+  xs: $summary-xs-template-columns,
+  sm: $summary-sm-template-columns,
+  md: $summary-md-template-columns,
+  lg: $summary-lg-template-columns,
+  xl: $summary-xl-template-columns,
+  xxl: $summary-xxl-template-columns,
+  xxxl: $summary-xxxl-template-columns
 );
 
 .article-summary {
-  @include space-element-x(margin, $asum-margin-left, $asum-margin-right);
-  @include space-element-y(margin, $asum-margin-top, $asum-margin-bottom);
-  @include space-element-x(padding, $asum-padding-left, $asum-padding-right);
-  @include space-element-y(padding, $asum-padding-top, $asum-padding-bottom);
+  @include space-element-x(margin, $summary-margin-left, $summary-margin-right);
+  @include space-element-y(margin, $summary-margin-top, $summary-margin-bottom);
+  @include space-element-x(padding, $summary-padding-left, $summary-padding-right);
+  @include space-element-y(padding, $summary-padding-top, $summary-padding-bottom);
 
   display: grid;
   // Generate Responsive Grid
-  @include responsive-property($asum-template-areas, "grid-template-areas");
-  @include responsive-property($asum-template-columns, "grid-template-columns");
-  @include grid-gaps($asum-column-gap, $asum-row-gap);
+  @include responsive-property($summary-template-areas, "grid-template-areas");
+  @include responsive-property($summary-template-columns, "grid-template-columns");
+  @include grid-gaps($summary-column-gap, $summary-row-gap);
 
   header {
     grid-area: head;
 
     h3 {
-      margin-top: $asum-header-margin;
+      margin-top: $summary-header-margin;
     }
   }
 
@@ -59,6 +59,6 @@ $asum-template-columns: (
 
   .summary {
     grid-area: summ;
-    @include ms-respond(margin-top, $asum-summary-margin-top);
+    @include ms-respond(margin-top, $summary-summary-margin-top);
   }
 }

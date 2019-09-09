@@ -4,24 +4,24 @@
  *
  **/
 
-$nav-con-template-areas: (
-  xs: $nav-con-xs-template-areas,
-  sm: $nav-con-sm-template-areas,
-  md: $nav-con-md-template-areas,
-  lg: $nav-con-lg-template-areas,
-  xl: $nav-con-xl-template-areas,
-  xxl: $nav-con-xxl-template-areas,
-  xxxl: $nav-con-xxxl-template-areas
+$header-nav-container-template-areas: (
+  xs: $header-nav-container-xs-template-areas,
+  sm: $header-nav-container-sm-template-areas,
+  md: $header-nav-container-md-template-areas,
+  lg: $header-nav-container-lg-template-areas,
+  xl: $header-nav-container-xl-template-areas,
+  xxl: $header-nav-container-xxl-template-areas,
+  xxxl: $header-nav-container-xxxl-template-areas
 );
 
-$nav-con-template-columns: (
-  xs: $nav-con-xs-template-columns,
-  sm: $nav-con-sm-template-columns,
-  md: $nav-con-md-template-columns,
-  lg: $nav-con-lg-template-columns,
-  xl: $nav-con-xl-template-columns,
-  xxl: $nav-con-xxl-template-columns,
-  xxxl: $nav-con-xxxl-template-columns
+$header-nav-container-template-columns: (
+  xs: $header-nav-container-xs-template-columns,
+  sm: $header-nav-container-sm-template-columns,
+  md: $header-nav-container-md-template-columns,
+  lg: $header-nav-container-lg-template-columns,
+  xl: $header-nav-container-xl-template-columns,
+  xxl: $header-nav-container-xxl-template-columns,
+  xxxl: $header-nav-container-xxxl-template-columns
 );
 
 .nav-container {
@@ -32,19 +32,19 @@ $nav-con-template-columns: (
 .nav-container {
   grid-area: ncon;
   display: grid;
-  background-color: $nav-con-bg;
+  background-color: $header-nav-container-bg;
 
   @extend .container;
-  @include space-element(margin, $nav-con-margin-x, $nav-con-margin-y);
-  @include space-element(padding, $nav-con-padding-x, $nav-con-padding-y);
+  @include space-element(margin, $header-nav-container-margin-x, $header-nav-container-margin-y);
+  @include space-element(padding, $header-nav-container-padding-x, $header-nav-container-padding-y);
 
-  @include grid-gaps($nav-con-column-gap, $nav-con-row-gap);
-  @include responsive-property($nav-con-template-areas, "grid-template-areas");
-  @include responsive-property($nav-con-template-columns, "grid-template-columns");
+  @include grid-gaps($header-nav-container-column-gap, $header-nav-container-row-gap);
+  @include responsive-property($header-nav-container-template-areas, "grid-template-areas");
+  @include responsive-property($header-nav-container-template-columns, "grid-template-columns");
 
   &::before {
     content: "";
-    background-color: $nav-con-bg;
+    background-color: $header-nav-container-bg;
     position: absolute;
     top: 0;
     right: -100%;

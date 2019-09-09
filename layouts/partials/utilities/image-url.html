@@ -6,12 +6,13 @@
    * @version 1.0.0
 	 *
    */}}
-{{- if and (.site.Data.config.media.cloudinary_name) (not (strings.Contains .url "cloudinary.com")) -}}
+{{/*  {{- if and (.site.Data.config.media.cloudinary_name) (not (strings.Contains .url "cloudinary.com")) -}}
 {{- if .transform -}}
-{{ (printf "https://res.cloudinary.com/%s/image/upload/%s%s" .site.Data.config.media.cloudinary_name .transform .url)}}
+{{ (printf "https://res.cloudinary.com/%s/image/upload/%s%s" .transform .url)}}
 {{- else -}}
-{{- (printf "https://res.cloudinary.com/%s/image/upload%s" .site.Data.config.media.cloudinary_name .url) -}}
+{{- (printf .url) -}}
 {{- end -}}
 {{- else -}}
 {{- .url | absURL -}}
-{{- end -}}
+{{- end -}}  */}}
+{{ .url }}

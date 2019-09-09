@@ -1,9 +1,10 @@
-// @import "01-modular-scale";
-@import "02-globals";
-// @import "03-headings";
-@import "04-typography";
+@import "01-globals";
+@import "02-colors";
+@import "03-typography";
+@import "04-spacing";
+@import "05-grid-flex";
 @import "05-components";
-@import "05.0-navigation";
+@import "05-navigation";
 @import "05.1-blocks";
 @import "05.2-widgets";
 @import "06-layout";
