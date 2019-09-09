@@ -47,7 +47,7 @@
 
     // Main Navigation
     $main-menu-color:                $global-link-color;
-    $main-menu-dropdown-bg:          lighten( $dark, 10% ) !default;
+    $main-menu-dropdown-bg:          $primary !default;
     $main-menu-dropdown-color:       $white !default;
 
     // Code Blocks
