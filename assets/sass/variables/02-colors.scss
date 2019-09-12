@@ -45,10 +45,13 @@
     $header-link-color:             $light !default;
     $header-nav-container-bg:       $header-bg !default;
 
+    // Branding
+    $branding-color:           $white !default // text and svg fill if svg fills with currentColor
+
     // Main Navigation
-    $main-menu-color:                $global-link-color;
+    $main-menu-color:           $white;
     $main-menu-dropdown-bg:          $primary !default;
-    $main-menu-dropdown-color:       $white !default;
+    $main-menu-dropdown-color:  $white !default;
 
     // Code Blocks
     $code-bg:                       darken( $light, 5% ) !default;
@@ -96,8 +99,12 @@
     $header-link-color-dark:        $light !default;
     $header-nav-container-bg-dark:  $header-bg-dark !default;
 
+    // Branding
+    $branding-color-dark:           $white !default // text and svg fill if svg fills with currentColor
+
+
     // Main Navigation
-    $main-menu-color-dark:           $global-link-color-dark;
+    $main-menu-color-dark:           $white;
     $main-menu-dropdown-bg-dark:     lighten( $dark, 10% ) !default;
     $main-menu-dropdown-color-dark:  $white !default;
 

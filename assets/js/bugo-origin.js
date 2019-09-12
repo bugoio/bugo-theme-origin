@@ -70,6 +70,8 @@ $(document).ready(function () {
     console.log('clicked');
     if(!$this.hasClass('hasParent')){
       $('.open').not($thisDropdown).toggleClass('open');
+    }else{
+      $('.open').not($thisDropdown).not($this.parents()).toggleClass('open');
     }
     $thisDropdown.toggleClass('open');
     return false;

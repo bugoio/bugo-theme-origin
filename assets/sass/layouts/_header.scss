@@ -50,6 +50,14 @@
     position: $header-brand-position;
     z-index: $header-brand-z;
     white-space: nowrap;
+    @include ms-respond(font-size,$branding-font-size);
+    a {
+      color: $branding-color;
+
+      @media (prefers-color-scheme: dark) {
+        color: $branding-color-dark;
+      }
+    }
 
     img {
       display: block;

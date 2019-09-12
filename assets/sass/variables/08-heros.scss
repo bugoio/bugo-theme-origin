@@ -31,8 +31,8 @@ $hero-heading-weight: $heading-font-weight !default;
 
 $hero-text-max-width: 45ch !default;
 
-$hero-background: transparentize !default;
-$hero-image-filter: sepia( 15% ) brightness( 100% )  !default
+$hero-background: $primary !default;
+$hero-image-filter: brightness( 75% )  !default
 
 // pseudo element that displays over the hero image
 // can be used for tinting and other extra effects on the image.
