@@ -15,4 +15,4 @@
 {{- else -}}
 {{- .url | absURL -}}
 {{- end -}}  */}}
-{{ .url }}
+{{ .url | safeHTMLAttr }}

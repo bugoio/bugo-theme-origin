@@ -21,7 +21,7 @@
             {{ $imageParams := (dict "page" .Page "site" .Site "url" .Site.Data.organization.header_logo "transform" false ) }}
             <img
               class=""
-              src="{{ partial "utilities/image-url" $imageParams }}"
+              src="{{ .Site.Data.organization.header_logo | safeHTMLAttr }}"
               aria-hidden="true"
               alt="{{ .Site.Data.organization.organization_name }} Logo"
             />
