@@ -12,16 +12,17 @@
 <html class="" lang="en">
   {{ partial "head" . }}
   <body class="{{ partial "utilities/body-class" . }} {{ partial "utilities/sidebar-class" . }}">
-
+    {{ block "pre-header" . }}{{ end }}
     {{- partial "header" . }}
     {{ block "hero" . }}{{ end }}
     {{ block "breadcrumbs" . }}{{ end }}
     <div class="wrap container">
       {{ block "main" . }}{{ end }}
-      {{ if .Page.Params.show_sidebar }}
+      {{ if (or .Page.Params.show_sidebar (eq .Page.Type "post")) }}
         {{ block "aside" . }}{{ end }}
       {{ end }}
     </div>
+    {{ block "pre-footer" . }}{{ end }}
     {{ partial "footer" . }}
     {{ if .Site.Data.organization.footer_dislaimer }}
     <div class="footer-disclaimer py-4{{ with .Site.Data.config.layout_options.footer.color_scheme }} {{ . | urlize }} {{ end }}">
@@ -45,5 +46,25 @@
       {{ partial "icons/icon_sprite" . }}
     </div>
     {{ $scss := .Scratch }}
+    {{ if eq .Site.Params.debug true }}
+    <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th>Index</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range $i, $param := .Params }}
+          <tr>
+              <td>{{ $i }}</td>
+              <td>{{ $param }}</td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+      </div>
+    {{ end }}
   </body>
 </html>
