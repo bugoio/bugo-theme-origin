@@ -1,4 +1,4 @@
-<article class="article-summary" tabindex="0">
+<article class="article-summary {{ if .Params.images }} has-thumbnail {{ end }}" tabindex="0">
   <header>
       <h3><a href="{{ .Page.Permalink | relURL }}">{{ .Page.Title}}</a></h3>
   </header>
@@ -12,7 +12,7 @@
     {{ with .Params.tags }}
       <span class="tags">
         {{ range . }}
-          <a class="button button-xs" href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a> 
+          <a class="button button-xs" href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a>
         {{ end }}
       </span>
     {{ end }}
