@@ -1,4 +1,4 @@
-/** 
+/**
  * Main Grid
  **/
 
@@ -60,4 +60,13 @@ main {
   // Spacing
   @include space-element(margin, $main-margin-x, $main-margin-y);
   @include space-element(padding, $main-padding-x, $main-padding-y);
+
+  > article {
+    img {
+      // display: block;
+      max-width: 50%;
+      margin: 4rem 0 4rem 4rem;
+      float: right;
+    }
+  }
 }

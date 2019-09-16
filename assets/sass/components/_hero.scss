@@ -39,7 +39,7 @@
   &.spacer {
     padding: 0;
     @include ms-respond(height, $hero-spacer-height);
-    background-color: transparent;
+    background-color: $hero-background;
   }
 
   &::before {
