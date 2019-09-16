@@ -1,0 +1,10 @@
+.columns {
+  display: flex;
+  padding: 0;
+
+  .column {
+    flex: 1 1 0;
+    @include space-element(margin, $main-margin-x, $main-margin-y);
+    @include space-element(padding, $main-padding-x, $main-padding-y);
+  }
+}
