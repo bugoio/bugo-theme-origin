@@ -100,7 +100,7 @@ $danger:        {{ .Site.Params.theme_colors.danger | default "#dc3545" }};
 
 @import "colors";  // from Bugo SASS Utilities Module
 
-@import "custom-variables.scss";
+@import "custom-variables";
 
 /**
  *
