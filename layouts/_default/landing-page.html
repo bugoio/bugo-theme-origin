@@ -9,6 +9,7 @@
 
 
 {{/**  Hero **/}}
+
 {{ define "hero" }}
 {{ if .Params.videos }}
 {{ partial "components/hero-video" . }}
@@ -18,7 +19,9 @@
 <div class="hero spacer"></div>
 {{ end }}
 {{ end }}
+
 {{/**  Main **/}}
+
 {{ define "main" }}
 <main id="main" class="" tabindex="0" aria-label="{{ .Title }}">
   {{/**  Get Landing Page Leaf Bundle **/}}
@@ -53,5 +56,7 @@
 </main>
 {{ end }}
 
+{{/** Sidebar **/}}
 {{ define "aside" }}
+
 {{ end }}
