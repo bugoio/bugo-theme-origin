@@ -1,7 +1,12 @@
 article {
+  @include ms-respond(margin-top,$global-margin * 2);
+  @include ms-respond(margin-bottom,$global-margin * 2);
+
   .content {
     img {
       max-width: 100%;
+      @include ms-respond(margin-top,$global-margin);
+      @include ms-respond(margin-bottom,$global-margin);
     }
   }
 }

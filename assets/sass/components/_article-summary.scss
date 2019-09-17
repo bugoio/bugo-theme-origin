@@ -29,10 +29,13 @@ $summary-template-columns: (
 );
 
 .article-summary {
-  @include space-element-x(margin, $summary-margin-left, $summary-margin-right);
-  @include space-element-y(margin, $summary-margin-top, $summary-margin-bottom);
-  @include space-element-x(padding, $summary-padding-left, $summary-padding-right);
-  @include space-element-y(padding, $summary-padding-top, $summary-padding-bottom);
+  // @include space-element-x(margin, $summary-margin-left, $summary-margin-right);
+  // @include space-element-y(margin, $summary-margin-top, $summary-margin-bottom);
+  // @include space-element-x(padding, $summary-padding-left, $summary-padding-right);
+  // @include space-element-y(padding, $summary-padding-top, $summary-padding-bottom);
+  @include ms-respond(margin-top,$global-margin * 2);
+  @include ms-respond(margin-bottom,$global-margin * 2);
+
 
   display: grid;
   // Generate Responsive Grid
