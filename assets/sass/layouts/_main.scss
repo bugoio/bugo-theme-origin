@@ -57,6 +57,7 @@ $main-template-columns: (
 
 main {
   grid-area: main;
+  max-width: 100%;
   // Spacing
   @include space-element(margin, $main-margin-x, $main-margin-y);
   @include space-element(padding, $main-padding-x, $main-padding-y);
