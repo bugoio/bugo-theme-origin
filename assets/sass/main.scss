@@ -27,7 +27,7 @@ $breakpoints: (
 ) !default;
 
 $container-max-widths: (
-    xs: {{ .Site.Params.breakpoints.xs.mw | default "0" }},
+    xs: {{ .Site.Params.breakpoints.xs.mw | default "none" }},
     sm: {{ .Site.Params.breakpoints.sm.mw | default "576px" }},
     md: {{ .Site.Params.breakpoints.md.mw | default "768px" }},
     lg: {{ .Site.Params.breakpoints.lg.mw | default "992px" }},
@@ -134,6 +134,7 @@ $danger:        {{ .Site.Params.theme_colors.danger | default "#dc3545" }};
 @import "base/jarallax";
 
 //components
+@import "components/article";
 @import "components/article-summary";
 // @import "components/blocks";
 @import "components/columns";
