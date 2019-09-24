@@ -1,0 +1,17 @@
+/**
+ * Share Buttons
+ **/
+
+
+$button-share-font-size     : 1 !default; //modularscale ratio
+$button-share-icon-width    : 2 !default; //modularscale raito
+$button-share-icon-fill     : $button-icon-fill !default;
+$button-share-icon-fill-dark: $button-icon-fill-dark !default;
+$button-share-text-color    : $primary !default;
+
+// TODO need to convert to the full modular scale spacint
+$button-share-margin        : 0 !default;
+$button-share-padding       : 0 !default;
+
+$button-share-link-margin   : 0 0.125rem !default;
+$button-share-link-padding  : 0.125rem !default;

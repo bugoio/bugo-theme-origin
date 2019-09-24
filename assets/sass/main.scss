@@ -119,13 +119,8 @@ $danger:        {{ .Site.Params.theme_colors.danger | default "#dc3545" }};
  *
  **/
 
-//Utilities
-@import "modularscale"; // from Bugo SASS Utilities Module
-@import "variables/00-vars";
-// @import "utils/variables/components";
-// @import "utils/variables/forms";
-// @import "utils/variables/header";
-// @import "utils/variables/widgets";
+// * Variables
+@import "_variables/index";
 
 //Base
 @import "base/reset";

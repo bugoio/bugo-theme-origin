@@ -1,0 +1,23 @@
+/**
+ * Code Block
+ *
+ **/
+
+$code-bg            : darken( $light, 5% ) !default;
+
+// * Margin
+// * false | modular scale ratio
+
+$code-margin-top    : false !default;
+$code-margin-right  : false !default;
+$code-margin-bottom : $global-margin !default;
+$code-margin-left   : false !default;
+
+
+// * Padding
+// * false | modular scale ratio
+
+$code-padding-top   : 1 !default;
+$code-padding-bottom: 1 !default;
+$code-padding-right : 1 !default;
+$code-padding-left  : 1 !default;

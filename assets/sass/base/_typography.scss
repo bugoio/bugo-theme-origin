@@ -29,6 +29,7 @@ h6,
   font-family: $heading-font;
   font-weight: $heading-font-weight;
   line-height: $heading-line-height;
+  text-transform: $heading-text-transform;
   @include space-element-x(margin, $heading-margin-left, $heading-margin-right);
   @include space-element-y(margin, $heading-margin-top, $heading-margin-bottom);
   @include space-element-x(padding, $heading-padding-left, $heading-padding-right);

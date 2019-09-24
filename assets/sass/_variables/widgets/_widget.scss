@@ -1,13 +1,15 @@
 /**
  *
- * Widgets
- *
+ * Widget
+ * TODO add all widgets to this directory
+ * TODO add spacing rules to each widget
+ * TODO doesn't seem to work. Check widgets styles to make sure vars are being used
  **/
 
 /* Latest Posts */
 
 $widgets-margin-x: false !default; // false | modular scale ratio
-$widgets-margin-y: false !default; // false | modular scale ratio
+$widgets-margin-y: 2 !default; // false | modular scale ratio
 $widgets-padding-x: false !default; // false | modular scale ratio
 $widgets-padding-y: false !default; // false | modular scale ratio
 

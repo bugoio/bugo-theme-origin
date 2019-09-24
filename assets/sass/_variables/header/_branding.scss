@@ -1,0 +1,13 @@
+/**
+ * Branding
+ **/
+
+$branding-font-size          : 2 !default; // modular scale
+$branding-color              : $white !default; // text and svg fill if svg fills with currentColor
+$branding-color-dark         : $white !default;// text and svg fill if svg fills with currentColor
+
+$header-brand-position       : relative !default;
+$header-brand-width          : 100% !default;
+$header-brand-z              : 100 !default;
+$header-brand-image-width    : 100% !default;
+$header-brand-image-max-width: 100% !default;

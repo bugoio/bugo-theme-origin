@@ -1,0 +1,72 @@
+/**
+ * Dropdowns
+ **/
+
+$dropdown-position        : absolute !default;
+$dropdown-width           : auto !default;
+$dropdown-whitespace      : nowrap !default;
+
+
+// * Margin
+// false | modular scale ratio
+
+$dropdown-margin-top      : false !default; // false | modular scale ratio
+$dropdown-margin-right    : false !default; // false | modular scale ratio
+$dropdown-margin-bottom   : false !default; // false | modular scale ratio
+$dropdown-margin-left     : false !default; // false | modular scale ratio
+
+
+// * Padding
+// false | modular scale ratio
+
+$dropdown-padding-top     : -2 !default; // false | modular scale ratio
+$dropdown-padding-right   : -2 !default; // false | modular scale ratio
+$dropdown-padding-bottom  : -2 !default; // false | modular scale ratio
+$dropdown-padding-left    : -2 !default; // false | modular scale ratio
+
+
+// * Positioning
+
+$dropdown-position        : absolute !default;
+$dropdown-top             : 100% !default;
+$dropdown-right           : auto !default;
+$dropdown-bottom          : auto !default;
+$dropdown-left            : 50% !default;
+$dropdown-z               : -1 !default;
+
+
+// * Colors
+
+$dropdown-radius          : 0 !default; // CSS unit
+$dropdown-bg              : $global-menu-bg !default;
+$dropdown-color           : $white !default;
+$dropdown-link            : $global-link-color !default;
+$dropdown-opacity         : 0 !default; // value 0 - 1
+$dropdown-shadow          : $global-shadow !default;
+
+
+// * Transition
+
+$dropdown-easing          : cubic-bezier(0.250, 0.460, 0.450, 0.940) !default;
+$dropdown-transition      : all 0.5s $dropdown-easing !default;
+$dropdown-transform-origin: 0 -1rem -1rem !default;
+$dropdown-transform       : translateX( -50% ) translateY( 1rem ) rotateX( 90deg ) !default;
+
+
+// * Open
+
+$dropdown-open-transform  : translateX( -50% ) translateY( 1rem ) rotateX( 0 ) !default;
+$dropdown-open-opacity    : 1 !default;
+
+
+// * Link Margin
+// false | modular scale ratio
+
+$dropdown-link-margin-x   : -2 !default; // false | modular scale ratio
+$dropdown-link-margin-y   : -4 !default; // false | modular scale ratio
+
+// * Link Padding
+// false | modular scale ratio
+
+$dropdown-link-padding-x  : -2 !default; // false | modular scale ratio
+$dropdown-link-padding-y  : -4 !default; // false | modular scale ratio

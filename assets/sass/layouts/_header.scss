@@ -21,7 +21,7 @@
   background-color: $header-bg;
 
   @media (prefers-color-scheme: dark) {
-    color: $header-text-color-dark;
+    color: $header-color-dark;
     background-color: $header-bg-dark;
   }
 

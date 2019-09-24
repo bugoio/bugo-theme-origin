@@ -1,0 +1,64 @@
+/**
+ * Messages
+ *
+ **/
+
+
+// * Message Defaults
+
+$message-display       : inline-grid;
+$message-font-size     : 1;  // modular scale only
+$message-grid-gap      : 0;
+$message-icon-width    : 30px; // css unit
+$message-border        : 1px solid $dark; // width style color
+$message-border-radius : $global-radius;
+
+
+// * Danger Messages
+
+$danger-border-color   : transparent;
+$danger-color          : $dark;
+$danger-bg             : transparent;
+$danger-icon           : $danger;
+
+
+// * Informational Messages
+
+$info-border-color     : transparent;
+$info-color            : $dark;
+$info-bg               : transparent;
+$info-icon             : $info;
+
+
+// * Success Messages
+
+$success-border-color  : transparent;
+$success-color         : $dark;
+$success-bg            : transparent;
+$success-icon          : $success;
+
+
+// * Warning Messages
+
+$warning-border-color  : transparent;
+$warning-color         : $dark;
+$warning-bg            : transparent;
+$warning-icon          : $warning;
+
+
+// * Padding
+// * false | modular scale ratio
+
+$message-margin-top    : 2;
+$message-margin-bottom : 2;
+$message-margin-left   : false;
+$message-margin-right  : false;
+
+
+// * Padding
+// * false | modular scale ratio
+
+$message-padding-top   : 0;
+$message-padding-bottom: 0;
+$message-padding-left  : 0;
+$message-padding-right : 0;

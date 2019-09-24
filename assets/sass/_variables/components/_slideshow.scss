@@ -1,0 +1,22 @@
+/**
+ * Slideshow
+ **/
+
+
+// * Defaults
+
+$slideshow-controls-size: 2rem !default;
+$slideshow-controls-bg: $dark !default;
+$slideshow-controls-color: $secondary !default;
+$slideshow-controls-shadow: 1px 1px 3px $dark !default;
+$slideshow-inidicator-size: 1rem !default;
+$slideshow-indicator-bg:        $dark !default;
+$slideshow-indicator-highlight: $secondary !default;
+
+
+// * Spacing
+// TODO convert to full spacing modular scale
+
+$slideshow-margin: var( --global-margin ) 0 !default;
+$slideshow-padding: 0 !default;
+

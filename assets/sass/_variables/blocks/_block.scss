@@ -1,0 +1,25 @@
+/**
+ * Block Default Styles
+ *
+ **/
+
+
+
+$blocks-container-margin-x: false !default; // false | modular scale ratio
+$blocks-container-margin-y: false !default; // false | modular scale ratio
+$blocks-container-padding-x: false !default; // false | modular scale ratio
+$blocks-container-padding-y: false !default; // false | modular scale ratio
+
+$block-margin-x: false !default; // false | modular scale ratio
+$block-margin-y: false !default; // false | modular scale ratio
+$block-padding-x: false !default; // false | modular scale ratio
+$block-padding-y: false !default; // false | modular scale ratio
+
+
+$block-title-margin-x: false !default;
+$block-title-margin-y: false !default;
+$block-title-padding-x: false !default;
+$block-title-padding-y: false !default;
+
+$block-has-bg-padding-x: false !default;
+$block-has-bg-padding-y: 9 !default;

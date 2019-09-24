@@ -1,0 +1,45 @@
+/**
+ * Header Navigation Container
+ * * wrapper around all navigation4
+ **/
+
+
+// * Light Mode
+
+$header-nav-container-bg                   : $header-bg !default;
+
+
+// * Dark Mode
+
+$header-nav-container-bg-dark              : $header-bg-dark !default;
+
+// * CSS Grid
+$header-nav-container-bg                   : $header-bg !default;
+$header-nav-container-bg-dark              : $header-bg-dark !default;
+
+$header-nav-container-margin-x             : auto !default; // false | modular scale ratio
+$header-nav-container-margin-y             : false !default; // false | modular scale ratio
+$header-nav-container-padding-x            : false !default; // false | modular scale ratio
+$header-nav-container-padding-y            : 1 !default; // false | modular scale ratio
+
+$header-nav-container-column-gap           : false !default; // false | modular scale ratio
+$header-nav-container-row-gap              : 2 !default;  // false | modular scale ratio
+
+$header-nav-container-xs-template-areas    :
+  "brand brand brand ... ... ... ... ... ... mbutton mbutton mbutton" !default;
+$header-nav-container-sm-template-areas    : $header-nav-container-xs-template-areas !default;
+$header-nav-container-md-template-areas    :
+  "brand brand search search search search search search search search search search"
+  "brand brand nmain nmain nmain nmain nmain nmain nmain nmain nmain nmain" !default;
+$header-nav-container-lg-template-areas    : $header-nav-container-md-template-areas;
+$header-nav-container-xl-template-areas    : $header-nav-container-md-template-areas !default;
+$header-nav-container-xxl-template-areas   : $header-nav-container-md-template-areas !default;
+$header-nav-container-xxxl-template-areas  : $header-nav-container-md-template-areas !default;
+
+$header-nav-container-xs-template-columns  : repeat( 12, 1fr ) !default;
+$header-nav-container-sm-template-columns  : $header-nav-container-xs-template-columns !default;
+$header-nav-container-md-template-columns  : $header-nav-container-xs-template-columns !default;
+$header-nav-container-lg-template-columns  : $header-nav-container-xs-template-columns !default;
+$header-nav-container-xl-template-columns  : $header-nav-container-xs-template-columns !default;
+$header-nav-container-xxl-template-columns : $header-nav-container-xs-template-columns !default;
+$header-nav-container-xxxl-template-columns: $header-nav-container-xs-template-columns !default;

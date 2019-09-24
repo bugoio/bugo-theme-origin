@@ -1,0 +1,18 @@
+/**
+ * Paragraphs
+ **/
+
+// * Margin
+// * value: false | modular scale ratio
+$paragraph-margin-top:      false !default;
+$paragraph-margin-right:    false !default;
+$paragraph-margin-bottom:   $global-margin !default;
+$paragraph-margin-left:     false !default;
+
+// * Padding
+// * value: false | modular scale ratio
+$paragraph-padding-top:     false !default;
+$paragraph-padding-bottom:  false !default;
+$paragraph-padding-right:   false !default;
+$paragraph-padding-left:    false !default;
+

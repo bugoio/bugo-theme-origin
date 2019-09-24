@@ -1,0 +1,54 @@
+/**
+ *
+ * Wrap
+ *
+ **/
+ $wrap-margin-x:   auto !default; // false | modular scale ratio
+ $wrap-margin-y:   false !default; // false | modular scale ratio
+ $wrap-padding-x:  false !default; // false | modular scale ratio
+ $wrap-padding-y:  false !default; // false | modular scale ratio
+
+ $wrap-xs-template-areas: "main" !default;
+ $wrap-sm-template-areas: $wrap-xs-template-areas !default;
+ $wrap-md-template-areas: $wrap-xs-template-areas !default;
+ $wrap-lg-template-areas: $wrap-xs-template-areas !default;
+ $wrap-xl-template-areas: $wrap-xs-template-areas !default;
+ $wrap-xxl-template-areas: $wrap-xs-template-areas !default;
+ $wrap-xxxl-template-areas: $wrap-xs-template-areas !default;
+
+ $wrap-xs-template-columns: repeat( 1, 1fr ) !default;
+ $wrap-sm-template-columns: $wrap-xs-template-columns !default;
+ $wrap-md-template-columns: $wrap-xs-template-columns !default;
+ $wrap-lg-template-columns: $wrap-xs-template-columns !default;
+ $wrap-xl-template-columns: $wrap-xs-template-columns !default;
+ $wrap-xxl-template-columns: $wrap-xs-template-columns !default;
+ $wrap-xxxl-template-columns: $wrap-xs-template-columns !default;
+
+ $wrap-column-gap: false !default;
+ $wrap-row-gap:   0 !default;
+
+
+ /**
+  *
+  * Wrap with Sidebar
+  *
+  **/
+
+ $wrap-sidebar-xs-template-areas: "main" "sidebar" !default;
+ $wrap-sidebar-sm-template-areas: $wrap-sidebar-xs-template-areas !default;
+ $wrap-sidebar-md-template-areas: "main main sidebar" !default;
+ $wrap-sidebar-lg-template-areas: "main main sidebar" !default;
+ $wrap-sidebar-xl-template-areas: "main main main sidebar" !default;
+ $wrap-sidebar-xxl-template-areas: $wrap-sidebar-xl-template-areas !default;
+ $wrap-sidebar-xxxl-template-areas: $wrap-sidebar-xl-template-areas !default;
+
+ $wrap-sidebar-xs-template-columns: repeat( 1, 1fr ) !default;
+ $wrap-sidebar-sm-template-columns: $wrap-sidebar-xs-template-columns !default;
+ $wrap-sidebar-md-template-columns: repeat( 3, 1fr ) !default;
+ $wrap-sidebar-lg-template-columns: repeat( 3, 1fr ) !default;
+ $wrap-sidebar-xl-template-columns: repeat( 4, 1fr ) !default;
+ $wrap-sidebar-xxl-template-columns: $wrap-sidebar-xl-template-columns !default;
+ $wrap-sidebar-xxxl-template-columns: $wrap-sidebar-xl-template-columns !default;
+
+ $wrap-sidebar-column-gap: 4 !default;
+ $wrap-sidebar-row-gap:   2 !default;
