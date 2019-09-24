@@ -1,0 +1,20 @@
+/**
+ * Buttons
+ *
+ **/
+
+
+// * Button Defaults
+
+$button-radius              : $global-radius !default;
+$button-default-bg          : $secondary !default;
+$button-default-color       : $light !default;
+
+$button-default-bg-dark     : $secondary !default;
+$button-default-color-dark  : $light !default;
+
+
+// * Button Icon
+
+$button-icon-fill     : $secondary;
+$button-icon-fill-dark: $secondary;
