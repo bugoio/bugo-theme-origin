@@ -6,7 +6,8 @@
    * @version 1.0.0
 	 *
    */}}
-{{/*  {{- if and (.site.Data.config.media.cloudinary_name) (not (strings.Contains .url "cloudinary.com")) -}}
+{{/*
+{{- if and (.site.Data.config.media.cloudinary_name) (not (strings.Contains .url "cloudinary.com")) -}}
 {{- if .transform -}}
 {{ (printf "https://res.cloudinary.com/%s/image/upload/%s%s" .transform .url)}}
 {{- else -}}
@@ -14,5 +15,7 @@
 {{- end -}}
 {{- else -}}
 {{- .url | absURL -}}
-{{- end -}}  */}}
-{{ .url | safeHTMLAttr }}
+{{- end -}}
+{{ return .url | safeHTMLAttr }}
+*/}}
+{{ return "shit" }}

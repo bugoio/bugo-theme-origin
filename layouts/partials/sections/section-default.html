@@ -1,0 +1,24 @@
+{{ $options := dict "context" . "image" .Params.background_image "transform" "w_1600"}}
+{{ $imgURL := partial "utilities/cloudinary-transform" $options }}
+
+<div
+id="{{ .Title | anchorize }}-block"
+{{ if .Params.background_image }}
+  style="background-image: url({{ $imgURL }});"
+{{ end }}
+class="block
+{{ if .Params.no_container }} no-container {{ end }}
+{{ if .Params.no_padding }} no-padding {{ end }}
+{{ with.Params.text_alignment }} text-{{ . | urlize }} {{ end }}
+{{ with.Params.color_scheme }} {{ . | urlize }} {{ end }}
+{{ if .Params.Params.background_image }} has-bg-image {{ end }}
+{{ if .Params.parallax_background }} jarallax {{ end }}
+{{ if .Params.background_video_url }} has-bg-video {{ end }}"
+aria-label="{{ .Title }}"
+role="region"
+tabindex="0"
+>
+<div class="container">
+  {{ .Content }}
+</div>
+</div>

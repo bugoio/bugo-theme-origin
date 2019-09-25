@@ -1,0 +1,25 @@
+{{ $site := $.Site }}
+{{ $options := dict "image" .Params.hero_image "transform" "w_1600"}}
+{{ $imgURL := partial "utilities/cloudinary-transform" $options }}
+<div
+id="{{ .Title | anchorize }}-block"
+class="block
+{{ if .Params.no_container }} no-container {{ end }}
+{{ if .Params.no_padding }} no-padding {{ end }}
+{{ with.Params.text_alignment }} text-{{ . | urlize }} {{ end }}
+{{ with.Params.color_scheme }} {{ . | urlize }} {{ end }}
+{{ if .Params.hero_image }} has-bg-image {{ end }}
+{{ if .Params.parallax_background }} jarallax {{ end }}
+{{ if .Params.background_video_url }} has-bg-video {{ end }}"
+{{ .Params.section_layout }}
+aria-label="{{ .Title }}"
+role="region"
+tabindex="0"
+{{ if .Params.hero_image }}
+  style="background-image: url({{ $imgURL }});"
+{{ end }}
+>
+<div class="container">
+  {{ .Content }}
+</div>
+</div>

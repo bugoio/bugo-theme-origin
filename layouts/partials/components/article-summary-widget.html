@@ -1,6 +1,6 @@
 <article class="article-summary" tabindex="0">
   <header>
-      <h4><a href="{{ .Page.Permalink | relURL }}">{{ .Page.Title}}</a></h4>
+      <h4><a href="{{ .Page.Permalink | relURL }}">{{ .Page.Title  | markdownify}}</a></h4>
   </header>
   <time>{{ .Date.Format "January _2, 2006" }}</time>
   <p class="taxonomy">

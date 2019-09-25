@@ -24,16 +24,16 @@
   <ul class="">
     {{ range .Site.Pages }}
     {{ if eq .Section "" }}
-    <li><a href="{{ .Permalink | relURL }}" title="{{.Title}}">{{.Title}} {{ .Section }}</a></li>
+    <li><a href="{{ .Permalink | relURL }}" title="{{.Title}}">{{ .Title | markdownify }} {{ .Section }}</a></li>
     {{ end }}
     {{ end }}
   </ul>
   <h2>Sections</h2>
   {{ range .Site.Sections }}
-  <h3>{{ .Title }}</h3>
+  <h3>{{ .Title | markdownify }}</h3>
   <ul>
     {{ range .Pages }}
-    <li><a href="{{ .Permalink | relURL }}" title="{{.Title}}">{{.Title}}</a></li>
+    <li><a href="{{ .Permalink | relURL }}" title="{{.Title}}">{{ .Title | markdownify }}</a></li>
     {{ end }}
   </ul>
   {{ end }}

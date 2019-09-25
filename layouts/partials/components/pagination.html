@@ -1,5 +1,7 @@
 {{ $page := $.Paginator }}
+
 {{ if gt $page.TotalPages 1 }}
+
 <ul class="pagination-list">
     {{ with $page.First }}
     <li class="page-item">
