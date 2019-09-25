@@ -131,7 +131,7 @@ $danger:        {{ .Site.Params.theme_colors.danger | default "#dc3545" }};
 //components
 @import "components/article";
 @import "components/article-summary";
-// @import "components/blocks";
+@import "components/blocks";
 @import "components/columns";
 // @import "components/block-google-map";
 // @import "components/block-latest-posts";
