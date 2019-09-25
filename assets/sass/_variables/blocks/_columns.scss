@@ -7,7 +7,7 @@
  $columns-margin-x: false !default; // false | modular scale ratio
  $columns-margin-y: false !default; // false | modular scale ratio
  $columns-padding-x: false !default; // false | modular scale ratio
- $columns-padding-y: 2 !default; // false | modular scale ratio
+ $columns-padding-y: $global-padding !default; // false | modular scale ratio
  $columns-flex-wrap: (
    xs: wrap,
    md: nowrap
@@ -15,5 +15,5 @@
 
  $columns-item-margin-x: false !default; // false | modular scale ratio
  $columns-item-margin-y: false !default; // false | modular scale ratio
- $columns-item-padding-x: $blocks-container-padding-x !default; // false | modular scale ratio
- $columns-item-padding-y: $blocks-container-padding-y !default; // false | modular scale ratio
+ $columns-item-padding-x: $global-padding !default; // false | modular scale ratio
+ $columns-item-padding-y: $global-padding !default; // false | modular scale ratio

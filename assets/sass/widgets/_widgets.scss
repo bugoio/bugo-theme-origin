@@ -11,6 +11,10 @@
   @include space-element-x(padding, $widget-padding-x, $widget-padding-x);
   @include space-element-y(padding, $widget-padding-y, $widget-padding-y);
   @include ms-respond( font-size, $widget-font-size );
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 .widget-related-posts,

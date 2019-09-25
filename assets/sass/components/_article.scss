@@ -1,6 +1,9 @@
 article {
-  @include ms-respond(margin-top,$global-margin * 2);
-  @include ms-respond(margin-bottom,$global-margin * 2);
+  @include space-element-x(margin, $article-margin-left, $article-margin-right);
+  @include space-element-y(margin, $article-margin-top, $article-margin-bottom);
+  @include space-element-x(padding, $article-padding-left, $article-padding-right);
+  @include space-element-y(padding, $article-padding-top, $article-padding-bottom);
+
 
   .content {
     img {

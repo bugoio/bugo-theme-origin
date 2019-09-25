@@ -23,7 +23,7 @@ $summary-padding-left:      false !default; // false | modular scale ratio
 
 // * Grid
 
-$summary-column-gap:        2 !default; // false | modular scale ratio
+$summary-column-gap:        $global-padding !default; // false | modular scale ratio
 $summary-row-gap:           false !default;  // false | modular scale ratio
 $summary-xs-template-areas:
   "thumb"

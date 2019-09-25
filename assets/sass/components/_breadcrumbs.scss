@@ -29,7 +29,7 @@
 
       &:last-child {
         a {
-          font-weight: bold;
+          font-weight: $breadcrumbs-active-font-weight;
         }
       }
 
@@ -39,7 +39,8 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        font-weight: normal;
+        font-weight: $breadcrumbs-font-weight;
+        @include ms-respond(font-size,$breadcrumbs-font-size);
         @include responsive-property($breadcrumbs-max-chars, "max-width");
       }
     }

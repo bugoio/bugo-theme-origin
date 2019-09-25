@@ -22,4 +22,4 @@ $block-title-padding-x: false !default;
 $block-title-padding-y: false !default;
 
 $block-has-bg-padding-x: false !default;
-$block-has-bg-padding-y: 9 !default;
+$block-has-bg-padding-y: $global-padding * 2 !default;
