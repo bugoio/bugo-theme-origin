@@ -9,7 +9,6 @@
 
 {{ $page := .page }}
 <div class="email-list">
-
   {{/* loop through email addresses */}}
   {{ range .email_addresses }}
   <div class="email email-{{ .label | urlize }}">
