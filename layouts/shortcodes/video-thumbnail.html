@@ -1,0 +1,7 @@
+<div class="video-thumbnail {{ range .Params }}{{ . }} {{ end }}">
+    <a href="#" class="video-link" data-target="modal-{{ .Get 0 }}">
+        <img src="https://img.youtube.com/vi/{{ .Get 0 }}/maxresdefault.jpg"/>
+        {{ partial "icons/play" }}
+    </a>
+    {{ partial "components/video-modal" . }}
+</div>

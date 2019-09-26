@@ -1,3 +1,9 @@
+.blocks{
+  @include space-element-x(margin, $blocks-margin-left, $blocks-margin-right);
+  @include space-element-y(margin, $blocks-margin-top, $blocks-margin-bottom);
+  @include space-element-x(padding, $blocks-padding-left, $blocks-padding-right);
+}
+
 .block{
   @include space-element-x(margin, $block-margin-left, $block-margin-right);
   @include space-element-y(margin, $block-margin-top, $block-margin-bottom);

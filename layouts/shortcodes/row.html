@@ -1,0 +1,3 @@
+<div class="row {{ range .Params }}{{ . }} {{ end }}">
+  {{ .Inner | markdownify }}
+</div>

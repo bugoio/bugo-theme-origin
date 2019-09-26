@@ -13,7 +13,7 @@
    md: nowrap
  ) !default;
 
- $columns-item-margin-x: false !default; // false | modular scale ratio
- $columns-item-margin-y: false !default; // false | modular scale ratio
- $columns-item-padding-x: $global-padding !default; // false | modular scale ratio
- $columns-item-padding-y: $global-padding !default; // false | modular scale ratio
+ $column-margin-x: false !default; // false | modular scale ratio
+ $column-margin-y: false !default; // false | modular scale ratio
+ $column-padding-x: $global-padding !default; // false | modular scale ratio
+ $column-padding-y: $global-padding !default; // false | modular scale ratio

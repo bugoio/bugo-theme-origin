@@ -3,12 +3,15 @@
  *
  **/
 
+$blocks-margin-left: false; // false | modular scale ratio
+$blocks-margin-right: false; // false | modular scale ratio
+$blocks-margin-top: false; // false | modular scale ratio
+$blocks-margin-bottom: false; // false | modular scale ratio
 
-
-$blocks-container-margin-x: false !default; // false | modular scale ratio
-$blocks-container-margin-y: false !default; // false | modular scale ratio
-$blocks-container-padding-x: false !default; // false | modular scale ratio
-$blocks-container-padding-y: false !default; // false | modular scale ratio
+$blocks-padding-left: false; // false | modular scale ratio
+$blocks-padding-right: false; // false | modular scale ratio
+$blocks-padding-top: false; // false | modular scale ratio
+$blocks-padding-bottom: false; // false | modular scale ratio
 
 $block-margin-x: false !default; // false | modular scale ratio
 $block-margin-y: false !default; // false | modular scale ratio
