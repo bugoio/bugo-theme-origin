@@ -1,12 +1,6 @@
-<div class="recent-posts {{ range .Params }}{{ . }} {{ end }}">
-{{ partials "blocks/block-latest-posts" }}
-</div>
-<div class="latest-posts-{{ .Get 0 }}">
-  {{/*  {{ $page := .page }}
-  {{ $posts := where .context.Site.RegularPages "Section" "posts" }}
-  {{ $site := .site }}
-  {{ $block := .block }}
-  {{ range first .Get 0 $posts }}
+<div class="recent-posts-{{ .Get 0 }}  {{ range .Params }}{{ . }} {{ end }}">
+  {{ $posts := where $.Site.RegularPages "Section" "posts" }}
+  {{ range first (.Get 0) $posts }}
     {{ partial "components/article-summary" . }}
-  {{ end }}  */}}
+  {{ end }}
 </div>
