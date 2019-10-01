@@ -1,7 +1,7 @@
 .widget-categories {
   a {
-    @extend .button !optional;
-    @extend .button-secondary !optional;
+    // @extend .button !optional;
+    // @extend .button-secondary !optional;
     margin-bottom: calc( var( --global-margin ) / 2 );
   }
 

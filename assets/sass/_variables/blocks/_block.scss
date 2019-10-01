@@ -13,11 +13,15 @@ $blocks-padding-right: false; // false | modular scale ratio
 $blocks-padding-top: false; // false | modular scale ratio
 $blocks-padding-bottom: false; // false | modular scale ratio
 
-$block-margin-x: false !default; // false | modular scale ratio
-$block-margin-y: false !default; // false | modular scale ratio
-$block-padding-x: false !default; // false | modular scale ratio
-$block-padding-y: false !default; // false | modular scale ratio
+$block-margin-left: false; // false | modular scale ratio
+$block-margin-right: false; // false | modular scale ratio
+$block-margin-top: 8; // false | modular scale ratio
+$block-margin-bottom: 8; // false | modular scale ratio
 
+$block-padding-left: false; // false | modular scale ratio
+$block-padding-right: false; // false | modular scale ratio
+$block-padding-top: false; // false | modular scale ratio
+$block-padding-bottom: false; // false | modular scale ratio
 
 $block-title-margin-x: false !default;
 $block-title-margin-y: false !default;

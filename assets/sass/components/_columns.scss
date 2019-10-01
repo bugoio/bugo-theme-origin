@@ -9,11 +9,11 @@
     @include space-element(margin, $column-margin-x, $column-margin-y);
     @include space-element(padding, $column-padding-x, $column-padding-y);
 
-    &:first-child {
-      padding-left: 0;
-    }
-    &:last-child {
-      padding-right: 0;
-    }
+    // &:first-child {
+    //   padding-left: 0;
+    // }
+    // &:last-child {
+    //   padding-right: 0;
+    // }
   }
 }

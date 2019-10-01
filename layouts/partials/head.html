@@ -7,72 +7,74 @@
    * @version 1.0.0
 	 *
    */}}
-   {{- $page := . -}}
-   {{- $site := .Site -}}
-   {{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
-   <head>
-     <meta charset="utf-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-     <title>
-       {{- if .Params.page_meta.meta_title -}}
-         {{- .Params.page_meta.meta_title -}}
-       {{- else -}}
-         {{- .Title -}}
-       {{- end -}}
-       {{- if (eq .Params.layout "list") -}}
-         {{- if  .Paginator }}
-           - Page {{- substr .Paginator -1 1 -}}
-         {{- end -}}
-       {{- end -}}
-     </title>
-     {{ hugo.Generator }}
-     {{- template "_internal/schema.html" . -}}
-     {{/* NOTE: For Production make sure you add `HUGO_ENV="production"` before your build command */}}
-     {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
-     <meta name="robots" content="index, follow">
-     {{ else }}
-       <meta name="robots" content="noindex, nofollow">
-     {{ end }}
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <!-- Open Graph Meta Data -->
-     {{- template "_internal/opengraph.html" . -}}
-     <!-- Twitter Card -->
-     {{- template "_internal/twitter_cards.html" . -}}
-     <!-- JSON-LD Organization markup for Google Structured Data -->
-     <script type="application/ld+json">
-       {{- partial "components/structured-data-organization" . | safeJS -}}
-     </script>
+{{- $page := . -}}
+{{- $site := .Site -}}
+{{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    {{- if .Params.page_meta.meta_title -}}
+    {{- .Params.page_meta.meta_title -}}
+    {{- else -}}
+    {{- .Title -}}
+    {{- end -}}
+    {{- if (eq .Params.layout "list") -}}
+    {{- if  .Paginator }}
+    - Page {{- substr .Paginator -1 1 -}}
+    {{- end -}}
+    {{- end -}}
+  </title>
+  {{ hugo.Generator }}
+  {{- template "_internal/schema.html" . -}}
+  {{/* NOTE: For Production make sure you add `HUGO_ENV="production"` before your build command */}}
+  {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
+  <meta name="robots" content="index, follow" />
+  {{ else }}
+  <meta name="robots" content="noindex, nofollow" />
+  {{ end }}
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Open Graph Meta Data -->
+  {{- template "_internal/opengraph.html" . -}}
+  <!-- Twitter Card -->
+  {{- template "_internal/twitter_cards.html" . -}}
+  <!-- JSON-LD Organization markup for Google Structured Data -->
+  <script type="application/ld+json">
+    {{- partial "components/structured-data-organization" . | safeJS -}}
+  </script>
 
-     {{- range .Site.Data.config.addresses -}}
-       {{- partial "components/structured-data-local-business" . | safeJS -}}
-     {{- end -}}
-     <!-- Add fonts from forestry settings -->
-     {{- partial "components/head-fonts-scripts" . -}}
+  {{- range .Site.Data.config.addresses -}}
+  {{- partial "components/structured-data-local-business" . | safeJS -}}
+  {{- end -}}
+  <!-- Add fonts from forestry settings -->
+  {{- partial "components/head-fonts-scripts" . -}}
 
-     <!-- Custom Styles from .Site.Data.styles. Can also be set in Forestry -->
-     <style>
-       {{ with $page.Site.Data.styles.custom_css }}
-         {{ . | safeCSS }}
-       {{ end }}
-     </style>
-     {{ $vendors := resources.Match "vendors/*.css" | resources.Concat "css/vendors.css" | resources.Minify }}
-     <link rel="stylesheet" href="{{ $vendors.Permalink }}" media="screen">
+  <!-- Custom Styles from .Site.Data.styles. Can also be set in Forestry -->
+  <style>
+    {{ with $page.Site.Data.styles.custom_css }}
+      {{ . | safeCSS }}
+    {{ end }}
+  </style>
+  {{ $vendors := resources.Match "vendors/*.css" | resources.Concat "css/vendors.css" | resources.Minify }}
+  <link rel="stylesheet" href="{{ $vendors.Permalink }}" media="screen" />
 
-     {{ $components := resources.Match "sass/[!_]*.scss" }}
-     {{ $context := . }}
-     {{ $env := hugo.Environment }}
-     {{ $scratch := newScratch }}
-     {{ range $index, $component := $components }}
-       {{ $name := index (split $component.Name "/") 1 }}
-       {{ $base := index (split $name ".") 0 }}
-       {{ $scss := $component | resources.ExecuteAsTemplate $name $context }}
-       {{ if eq $env "production" }}
-         {{ $scratch.Set "options" (dict "outputStyle" "compressed" "enableSourceMap" true "targetPath" (printf "css/%s.css" $base) ) }}
-       {{ else }}
-         {{ $scratch.Set "options" (dict "enableSourceMap" true "targetPath" (printf "css/%s.css" $base) ) }}
-       {{ end }}
-       {{ $tmp := $scss | toCSS ($scratch.Get "options") }}
-       <link rel="stylesheet" href="{{ $tmp.Permalink }}" media="screen">
-     {{ end }}
-   </head>
+  {{ $components := resources.Match "sass/[!_]*.scss" }}
+  {{ $context := . }}
+  {{ $env := hugo.Environment }}
+
+  {{/** Get all Bugo module stylesheets **/}}
+  {{ $scratch := newScratch }}
+  {{- range $index, $component := $components -}}
+    {{- $name := index (split $component.Name "/") 1 -}}
+    {{- $base := index (split $name ".") 0 -}}
+    {{- $scss := $component | resources.ExecuteAsTemplate $name $context -}}
+    {{- if eq $env "production" -}}
+      {{ $scratch.Set "options" (dict "outputStyle" "compressed" "enableSourceMap" true "targetPath" (printf "css/%s.css" $base) ) }}
+    {{ else }}
+      {{ $scratch.Set "options" (dict "enableSourceMap" true "targetPath" (printf "css/%s.css" $base) ) }}
+    {{ end }}
+    {{ $tmp := $scss | toCSS ($scratch.Get "options") }}
+    <link rel="stylesheet" href="{{ $tmp.Permalink }}" media="screen" />
+  {{ end }}
+</head>
 <!-- end head -->

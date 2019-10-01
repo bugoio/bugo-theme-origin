@@ -4,11 +4,11 @@
 	 * Display profile or organization social accounts
    *
    * @version 1.0.0
+   * @paraom social_accounts
 	 *
    */}}
 
-{{ $page := .page }}
-<div class="social-list justify-content-center my-4">
+<div class="social-list">
   {{ range $index, $account := .social_accounts }}
     {{ if gt ( len . ) 0 }}
       <div class="social social-{{ $index | urlize }}">
