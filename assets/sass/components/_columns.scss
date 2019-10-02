@@ -2,18 +2,15 @@
   @include space-element(margin, $columns-margin-x, $columns-margin-y);
   @include space-element(padding, $columns-padding-x, $columns-padding-y);
   display: flex;
-  padding: 0;
 
   .column {
-    flex: 1 1 0;
+    flex: 1 1 0%;
     @include space-element(margin, $column-margin-x, $column-margin-y);
     @include space-element(padding, $column-padding-x, $column-padding-y);
 
-    // &:first-child {
-    //   padding-left: 0;
-    // }
-    // &:last-child {
-    //   padding-right: 0;
-    // }
+    /* IE fix */
+    .columns {
+      flex: 1 1 100%;
+    }
   }
 }
