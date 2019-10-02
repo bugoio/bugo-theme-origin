@@ -13,10 +13,11 @@ import WebFont from "webfontloader";
 import animateScrollTo from 'animated-scroll-to';
 
 
+
 //Load fonts
 WebFont.load({
   google: {
-    families: fontFamilies
+    families: window.fontFamilies
   }
 });
 
