@@ -73,7 +73,7 @@
     {{ else }}
       {{ $scratch.Set "options" (dict "enableSourceMap" true "targetPath" (printf "css/%s.css" $base) ) }}
     {{ end }}
-    {{ $tmp := $scss | toCSS ($scratch.Get "options") }}
+    {{ $tmp := $scss | toCSS ($scratch.Get "options") | resources.PostCSS (dict "config" "postcss.config.js" "noMap" true) }}
     <link rel="stylesheet" href="{{ $tmp.Permalink }}" media="screen" />
   {{ end }}
 </head>
