@@ -130,14 +130,6 @@ $danger:        {{ .Site.Params.theme_colors.danger | default "#dc3545" }};
 @import "components/article";
 @import "components/article-summary";
 @import "components/blocks";
-@import "components/columns";
-
-/*
-@import "components/block-google-map";
-@import "components/block-latest-posts";
-@import "components/block-logos";
-@import "components/block-slideshow";
-*/
 @import "components/breadcrumbs";
 @import "components/buttons";
 @import "components/forms";
