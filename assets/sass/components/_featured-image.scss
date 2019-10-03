@@ -1,0 +1,13 @@
+.featured-image {
+  padding-top: 56.2%;
+  position: relative;
+  @include ms-respond(margin-bottom,4);
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}

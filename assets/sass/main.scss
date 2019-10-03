@@ -132,6 +132,7 @@ $danger:        {{ .Site.Params.theme_colors.danger | default "#dc3545" }};
 @import "components/blocks";
 @import "components/breadcrumbs";
 @import "components/buttons";
+@import "components/featured-image";
 @import "components/forms";
 @import "components/hero";
 @import "components/hero-video";
