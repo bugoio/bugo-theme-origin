@@ -1,9 +1,24 @@
-{{/**
-   * Featured Image
-	 *
-	 * Display a featured image at the top of the page
-   *
-   * @version 1.0.0
-	 *
-   */}}
-{{ partial "components/featured-image-default" . }}
+{{ if .Params.images }}
+  <div class="featured-image">
+      {{ range $index, $image := .Params.images }}
+        {{ $ext := path.Ext $image }}
+        {{ $jp2 := replace $image $ext ".jp2" }}
+
+        {{ if eq $index 0 }}
+          {{ $smOptions := dict "context" . "image" $image "transform" "c_fill,w_300"}}
+          {{ $smURL := partial "utilities/cloudinary-transform" $smOptions }}
+          {{ $mdOptions := dict "context" . "image" $image "transform" "c_fill,w_768"}}
+          {{ $mdURL := partial "utilities/cloudinary-transform" $mdOptions }}
+          {{ $lgOptions := dict "context" . "image" $image "transform" "c_fill,w_1600"}}
+          {{ $lgURL := partial "utilities/cloudinary-transform" $lgOptions }}
+          {{ $srcSet := printf "%v 576w %v 1440w" $mdURL $lgURL }}
+          {{ $alt := humanize (index (split (path.Base $image) ".") 0) }}
+          <img
+            class="" {{- printf "src=%q" $mdURL | safeHTMLAttr -}}
+            aria-hidden="hidden"
+            alt="{{ $alt }}"
+            />
+        {{ end }}
+      {{ end }}
+  </div>
+{{ end }}

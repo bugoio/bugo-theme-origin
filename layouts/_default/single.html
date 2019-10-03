@@ -31,7 +31,7 @@
       <h1>{{ .Title | markdownify }}</h1>
     </header>
     {{ if eq .Site.Data.config.media.default_featured_image.show_featured_image_in_content true }}
-    {{ partial "components/thumbnail" (dict "page" .Page "site" .Site ) }}
+    {{ partial "components/thumbnail" . }}
     {{end}}
     {{ if .Page.Params.show_slideshow }}
     {{ partial "components/slideshow" . }}
