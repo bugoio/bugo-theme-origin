@@ -6,7 +6,7 @@ id="{{ .Title | anchorize }}-block"
 {{ if .Params.background_image }}
   style="background-image: url({{ $imgURL }});"
 {{ end }}
-class="block
+class="section
 {{ if .Params.no_container }} no-container {{ end }}
 {{ if .Params.no_padding }} no-padding {{ end }}
 {{ with.Params.text_alignment }} text-{{ . | urlize }} {{ end }}
