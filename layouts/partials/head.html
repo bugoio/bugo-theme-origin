@@ -70,7 +70,7 @@
   {{ $vendors := resources.Match "vendors/*.css" | resources.Concat "css/vendors.css" | resources.Minify }}
   <link rel="stylesheet" href="{{ $vendors.Permalink }}" media="screen" />
 
-  <!-- Add all Bugo stylesheets -->
+  <!-- Process SASS Files. https://github.com/bugoio/bugo-sass-utilities.  -->
   {{ $stylesheet := partial "utilities/bugo-stylesheets" . }}
   <link rel="stylesheet" href="{{ $stylesheet }}" media="screen" />
 </head>
