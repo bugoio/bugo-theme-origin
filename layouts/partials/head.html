@@ -69,23 +69,23 @@
   {{ $vendors := resources.Match "vendors/*.css" | resources.Concat "css/vendors.css" | resources.Minify }}
   <link rel="stylesheet" href="{{ $vendors.Permalink }}" media="screen" />
 
-  {{ $components := resources.Match "sass/[!_]*.scss" }}
-  {{ $context := . }}
   {{ $env := hugo.Environment }}
 
-  {{/** Get all Bugo module stylesheets **/}}
-  {{ $scratch := newScratch }}
-  {{- range $index, $component := $components -}}
-    {{- $name := index (split $component.Name "/") 1 -}}
-    {{- $base := index (split $name ".") 0 -}}
-    {{- $scss := $component | resources.ExecuteAsTemplate $name $context -}}
-    {{- if eq $env "production" -}}
-      {{ $scratch.Set "options" (dict "outputStyle" "compressed" "enableSourceMap" true "targetPath" (printf "css/%s.css" $base) ) }}
-    {{ else }}
-      {{ $scratch.Set "options" (dict "enableSourceMap" true "targetPath" (printf "css/%s.css" $base) ) }}
-    {{ end }}
-    {{ $tmp := $scss | toCSS ($scratch.Get "options") | resources.PostCSS (dict "config" "postcss.config.js" "noMap" true) }}
-    <link rel="stylesheet" href="{{ $tmp.Permalink }}" media="screen" />
+  <!-- Get bugo-utilities.scss first. It contains most of the vendors & global styles set by Hugo config Params. -->
+  {{ $files := slice ( resources.Get "sass/_bugo-utilities.scss" ) }}
+  <!-- Get all scss files not starting with "_". All the major files -->
+  {{ $components := resources.Match "sass/[!_]*.scss" }}
+  <!-- Add all components to the files array -->
+  {{ range $components }}
+    {{ $files = $files | append . }}
   {{ end }}
+  <!-- concatenate all the files togther -->
+  {{ $scssConcat := $files | resources.Concat "sass/concat-scss.scss" }}
+  <!-- process all files as Hugo templates then process to CSS -->
+
+  {{ $scssProcessed := $scssConcat | resources.ExecuteAsTemplate "components-processed.scss" . | resources.ToCSS }}
+  <link rel="stylesheet" href="{{ $scssProcessed.Permalink }}" media="screen" />
+
+
 </head>
 <!-- end head -->

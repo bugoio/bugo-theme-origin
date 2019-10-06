@@ -31,7 +31,7 @@
   </a>
   <!-- Email -->
   <a href="mailto:?subject={{ .Title | urlize }}&body={{ .Title  | urlize }}%0A%0A{{ .Permalink | absURL | urlize }}%0A%0A{{ .Summary  | urlize }}" target="new" class="btn share-btn email" title="Share by Email (Opens in a new window)" aria-label="Share by Email (Opens in a new window)" tabindex="0">
-    {{ partial "icons/email" }}
+    {{ partial "icons/envelope" }}
     <span class="sr-only">Share by Email (Opens in a new window)</span>
   </a>
 </div>
