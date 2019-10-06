@@ -12,8 +12,9 @@
 <html class="" lang="en">
 
   {{ partial "head" . }}
-
-  <body class="{{ partial "utilities/body-class" . }} {{ partial "utilities/sidebar-class" . }}">
+  {{ $bodyClass := partial "utilities/body-class" . }}
+  {{ $bodySidebar := partial "utilities/sidebar-class" . }}
+  <body class="{{ $bodyClass }} {{ $bodySidebar }}">
     {{ block "pre-header" . }}{{ end }}
 
     {{- partial "header" . -}}
