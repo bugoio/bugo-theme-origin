@@ -25,8 +25,7 @@
     <div class="wrap container">
 
       {{ block "main" . }}{{ end }}
-
-      {{ if (or .Page.Params.show_sidebar (eq .Page.Type "post")) }}
+      {{ if (or .Params.show_sidebar (eq .Page.Type "post")) }}
         {{ block "aside" . }}{{ end }}
       {{ end }}
 
@@ -51,11 +50,6 @@
     {{ if ne hugo.Environment "production" }}
     {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}
-
-    {{/** Icon Library **/}}
-    <div aria-hidden="true">
-      {{ partial "icons/icon_sprite" . }}
-    </div>
 
     {{/** Debugging **/}}
     {{ if eq .Site.Params.debug true }}
