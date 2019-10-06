@@ -1,10 +1,7 @@
 module.exports = {
-  plugins: {
+    plugins: {
       autoprefixer: {
-          grid: true,
-          browsers: [
-              ">1%"
-          ]
-      },
-  },
-}
+        grid: true
+      }
+    }
+  };
