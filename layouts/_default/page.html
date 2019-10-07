@@ -21,7 +21,7 @@
 {{ define "breadcrumbs" }}
 {{ if and (not .IsHome) (ne .Params.layout "landing") (.Site.Data.config.show_breadcrumbs) }}
 <div class="breadcrumbs">
-  {{ partial "components/breadcrumbs" . }}
+  {{ partial "breadcrumbs" . }}
 </div>
 {{ end }}
 {{ end }}
