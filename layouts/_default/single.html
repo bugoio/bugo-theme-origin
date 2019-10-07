@@ -26,29 +26,12 @@
 
 {{ define "main" }}
 <main id="main" tabindex="0">
-  <article class="main-article">
-    <header>
-      <h1>{{ .Title | markdownify }}</h1>
-    </header>
-    {{ if eq .Site.Data.config.media.default_featured_image.show_featured_image_in_content true }}
-    {{ partial "components/thumbnail" . }}
-    {{end}}
-    {{ if .Page.Params.show_slideshow }}
-    {{ partial "components/slideshow" . }}
-    {{ end }}
-
-    <div class="content">
-      {{ .Content }}
-    </div>
-    <footer>
-      {{ partial "components/share_buttons" . }}
-    </footer>
-  </article>
+  {{ partial "article" . }}
 </main>
 {{ end }}
 
 {{ define "aside" }}
 <aside class="sidebar" tabindex="0">
-  {{ partial "widgets/widgets" (dict "page" .Page "site" .Site "content" .Site.Params.sidebar_widgets.widgets ) }}
+  {{ partial "widgets" (dict "page" .Page "site" .Site "content" .Site.Params.sidebar_widgets.widgets ) }}
 </aside>
 {{ end }}

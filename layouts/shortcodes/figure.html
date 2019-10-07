@@ -1,4 +1,0 @@
-<figure class="shortcode-figure mt-4">
-  {{ $content := .Inner | markdownify }}
-  {{ replace $content "<p></p>" ""  | safeHTML }}
-</figure>
