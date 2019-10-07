@@ -3,10 +3,10 @@ module github.com/bugoio/bugo-theme-origin
 go 1.12
 
 require (
-	github.com/bugoio/bugo-font-awesome v0.1.4 // indirect
+	github.com/bugoio/bugo-font-awesome v0.1.5 // indirect
 	github.com/bugoio/bugo-mod-article v0.0.1 // indirect
 	github.com/bugoio/bugo-mod-share v0.0.2 // indirect
-	github.com/bugoio/bugo-mod-widgets v0.0.1 // indirect
+	github.com/bugoio/bugo-mod-widgets v0.0.2 // indirect
 )
 
 replace github.com/bugoio/bugo-theme-origin => C:\Users\matta\Documents\Bugo\bugo-theme-origin
