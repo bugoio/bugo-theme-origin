@@ -11,23 +11,6 @@ require (
 	github.com/bugoio/bugo-mod-search v0.0.4 // indirect
 	github.com/bugoio/bugo-mod-share v0.0.3 // indirect
 	github.com/bugoio/bugo-mod-widgets v0.0.3 // indirect
+	github.com/bugoio/bugo-sass-typography v0.0.1 // indirect
 	github.com/bugoio/bugo-utility-partials v0.0.3 // indirect
 )
-
-replace github.com/bugoio/bugo-sass-utilities => C:\Users\matta\Documents\Bugo\bugo-sass-utilities
-
-replace github.com/bugoio/bugo-mod-search => C:\Users\matta\Documents\Bugo\bugo-mod-search
-
-replace github.com/bugoio/bugo-mod-landing-page => C:\Users\matta\Documents\Bugo\bugo-mod-landing-page
-
-replace github.com/bugoio/bugo-utility-partials => C:\Users\matta\Documents\Bugo\bugo-utility-partials
-
-replace github.com/bugoio/bugo-font-awesome => C:\Users\matta\Documents\Bugo\bugo-font-awesome
-
-replace github.com/bugoio/bugo-mod-article => C:\Users\matta\Documents\Bugo\bugo-mod-article
-
-replace github.com/bugoio/bugo-mod-widgets => C:\Users\matta\Documents\Bugo\bugo-mod-widgets
-
-replace github.com/bugoio/bugo-mod-netlify-contact-form => C:\Users\matta\Documents\Bugo\bugo-mod-netlify-contact-form
-
-replace github.com/bugoio/bugo-mod-breadcrumbs => C:\Users\matta\Documents\Bugo\bugo-mod-breadcrumbs

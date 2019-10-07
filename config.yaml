@@ -5,6 +5,9 @@ module:
     path: github.com/bugoio/bugo-sass-utilities
   - disable: false
     ignoreConfig: false
+    path: github.com/bugoio/bugo-sass-typography
+  - disable: false
+    ignoreConfig: false
     path: github.com/bugoio/bugo-utility-partials
   - disable: false
     ignoreConfig: false
@@ -30,3 +33,6 @@ module:
   - disable: false
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-breadcrumbs
+  - disable: false
+    ignoreConfig: false
+    path: github.com/bugoio/bugo-mod-share
