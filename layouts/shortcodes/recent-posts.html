@@ -1,6 +1,0 @@
-<div class="recent-posts-{{ .Get 0 }}  {{ range .Params }}{{ . }} {{ end }}">
-  {{ $posts := where $.Site.RegularPages "Section" "posts" }}
-  {{ range first (.Get 0) $posts }}
-    {{ partial "components/article-summary" . }}
-  {{ end }}
-</div>
