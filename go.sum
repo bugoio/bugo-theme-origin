@@ -25,6 +25,7 @@ github.com/bugoio/bugo-mod-share v0.0.6/go.mod h1:3qSdKgUJVPUl2XSUYekh/wX1a+lzpW
 github.com/bugoio/bugo-mod-share v0.0.7/go.mod h1:3qSdKgUJVPUl2XSUYekh/wX1a+lzpWLMAs+wJqYO8TQ=
 github.com/bugoio/bugo-mod-share v0.0.8/go.mod h1:3qSdKgUJVPUl2XSUYekh/wX1a+lzpWLMAs+wJqYO8TQ=
 github.com/bugoio/bugo-mod-share v0.0.9/go.mod h1:3qSdKgUJVPUl2XSUYekh/wX1a+lzpWLMAs+wJqYO8TQ=
+github.com/bugoio/bugo-mod-share v0.0.10/go.mod h1:3qSdKgUJVPUl2XSUYekh/wX1a+lzpWLMAs+wJqYO8TQ=
 github.com/bugoio/bugo-mod-widgets v0.0.0-20191006225501-ce47fbf89592 h1:aM6vcXcWtUvcz7rDXKyLbqX1ceu65UNoNxrGWBgp1Xw=
 github.com/bugoio/bugo-mod-widgets v0.0.0-20191006225501-ce47fbf89592/go.mod h1:kSJuI1FPLYvCqmEFXsnJlP1gfPvabvtwg9XulfR8kdk=
 github.com/bugoio/bugo-mod-widgets v0.0.1/go.mod h1:kSJuI1FPLYvCqmEFXsnJlP1gfPvabvtwg9XulfR8kdk=
