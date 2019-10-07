@@ -85,8 +85,8 @@
     position: relative;
     color: $hero-color;
     align-self: center;
-    @include ms-respond(font-size, $hero-font);
-    font-family: $hero-font-family;
+    // @include ms-respond(font-size, $hero-font);
+    // font-family: $hero-font-family;
     max-width: $hero-maxchar;
     z-index: 10000000;
     @include ms-respond(padding-bottom, $global-padding);
@@ -104,7 +104,7 @@
     h6,
     .h6 {
       color: $hero-color;
-      font-weight: $hero-heading-weight;
+      // font-weight: $hero-heading-weight;
     }
 
     @include heading-size(h1, $hero-1);
