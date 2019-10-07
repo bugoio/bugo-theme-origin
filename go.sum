@@ -4,6 +4,12 @@ github.com/bugoio/bugo-mod-article v0.0.0-20191006223219-574994ec76ed h1:ZmqmyxU
 github.com/bugoio/bugo-mod-article v0.0.0-20191006223219-574994ec76ed/go.mod h1:B7BW3J5B7ecDc38P5tHDeQvYNzCZKG1EvJda7W1tIro=
 github.com/bugoio/bugo-mod-article v0.0.1 h1:PJRkZ5DNgZdzC5W5PtSW5BdaeLU0gw7v/bbA0iWIrVI=
 github.com/bugoio/bugo-mod-article v0.0.1/go.mod h1:B7BW3J5B7ecDc38P5tHDeQvYNzCZKG1EvJda7W1tIro=
+github.com/bugoio/bugo-mod-breadcrumbs v0.0.1 h1:quGWU+e6Xis6c2sOuIiKoJL+xewfXiw7feqnpyWuiGE=
+github.com/bugoio/bugo-mod-breadcrumbs v0.0.1/go.mod h1:+SfRkMQQ4Gzhd9j5Tvqyb3JhgQuf4OmLTEwRalWXyzE=
+github.com/bugoio/bugo-mod-columns v0.0.6 h1:FhH5aCrXXo0mRVN+XKLR9y0NsXTQquXNoHF/DUOdiRk=
+github.com/bugoio/bugo-mod-columns v0.0.6/go.mod h1:VptlOl2TmwqbB5BfJhck9NcdNQN9tlgcU6kNycEG/No=
+github.com/bugoio/bugo-mod-netlify-contact-form v0.0.8 h1:2fKyEp5dcGgCrkj67Hmv77ouWuH/qj6p8E56ygM4ydE=
+github.com/bugoio/bugo-mod-netlify-contact-form v0.0.8/go.mod h1:60ffxSp/eGfNA446d8dOu/zC92JyoPYWGEAuVP4HoqQ=
 github.com/bugoio/bugo-mod-share v0.0.2 h1:oMuIntGcT0XOpRCrTgFaZyk9Gz5Mxb8ejn3BWTeq9K4=
 github.com/bugoio/bugo-mod-share v0.0.2/go.mod h1:i/lLezF94qr2su0XDvcDxyFB/bfldRCQMLPHDb8v11Q=
 github.com/bugoio/bugo-mod-widgets v0.0.0-20191006225501-ce47fbf89592 h1:aM6vcXcWtUvcz7rDXKyLbqX1ceu65UNoNxrGWBgp1Xw=

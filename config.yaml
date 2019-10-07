@@ -5,6 +5,9 @@ module:
     path: github.com/bugoio/bugo-sass-utilities
   - disable: false
     ignoreConfig: false
+    path: github.com/bugoio/bugo-utility-partials
+  - disable: false
+    ignoreConfig: false
     path: github.com/bugoio/bugo-font-awesome
   - disable: false
     ignoreConfig: false
@@ -12,3 +15,18 @@ module:
   - disable: false
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-article
+  - disable: false
+    ignoreConfig: false
+    path: github.com/bugoio/bugo-mod-search
+  - disable: false
+    ignoreConfig: false
+    path: github.com/bugoio/bugo-mod-columns
+  - disable: false
+    ignoreConfig: false
+    path: github.com/bugoio/bugo-mod-landing-page
+  - disable: false
+    ignoreConfig: false
+    path: github.com/bugoio/bugo-mod-netlify-contact-form
+  - disable: false
+    ignoreConfig: false
+    path: github.com/bugoio/bugo-mod-breadcrumbs
