@@ -1,0 +1,67 @@
+{{/**
+   * Default List Template
+	 *
+	 * The default list for the site.
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+{{/** Hero **/}}
+{{ define "hero" }}
+  {{ if .Params.videos }}
+    {{ partial "components/hero-video" . }}
+    {{ else if .Params.images}}
+    {{ partial "components/hero" . }}
+  {{ else }}
+    <div class="hero spacer"></div>
+  {{ end }}
+{{ end }}
+
+{{/** Breadcrumbs **/}}
+{{ define "breadcrumbs" }}
+  <div class="breadcrumbs">
+    {{ partial "breadcrumbs" . }}
+  </div>
+{{ end }}
+
+{{/** Main **/}}
+{{ define "main" }}
+<main id="main" class="" tabindex="0" aria-label="{{ .Title }}">
+  <h1>{{ .Title | markdownify }}</h1>
+  {{ .Content }}
+  {{/** Posts **/}}
+  {{ if gt (len .Data.Pages) 0 }}
+    {{ $site := .Site }}
+
+    <p class="post-count" tabindex="0">
+      {{ len .Data.Pages }} posts found.
+    </p>
+
+    {{/** Paginated Posts **/}}
+    {{ $paginator :=  .Paginate ( first 50 .Pages ) }}
+
+    <div class="articles articles-{{ $paginator.PageNumber }}">
+      {{ range $paginator.Pages.ByLinkTitle  }}
+      {{ partial "article-summary" . }}
+      {{ end }}
+    </div>
+    <div class="pagination">
+      {{ partial "components/pagination.html" . }}
+    </div>
+
+  {{ else }}
+
+  {{/** Show Error **/}}
+  {{ partial "messages/danger" "No posts found. You should add some posts."}}
+
+  {{ end }}
+</main>
+{{ end }}
+
+{{/** Sidebar **/}}
+{{ define "aside" }}
+<aside class="sidebar" tabindex="0">
+  {{ partial "widgets" (dict "page" .Page "site" .Site "content" .Site.Params.sidebar_widgets.widgets ) }}
+</aside>
+{{ end }}

@@ -1,0 +1,8 @@
+<div class="term">
+    <h2><a href="{{ .Permalink }}" aria-label="{{ .Title }}">{{ .Title }} <small>{{ len .Pages }} posts</small></a></h2>
+    <div>
+      {{ range first 3 (where .Pages ".Params.type" "post")}}
+        {{ partial "article-summary" . }}
+      {{ end }}
+    </div>
+</div>
