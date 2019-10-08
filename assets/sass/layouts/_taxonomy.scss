@@ -1,0 +1,33 @@
+body.taxonomyterm {
+  .term {
+    @include ms-respond(margin-bottom,$global-margin);
+    > div {
+      display: flex;
+      align-content: flex-start;
+      margin-left: -#{ms(0)};
+      margin-right: -#{ms(0)};
+
+      > article {
+        padding-left: ms(0);
+        padding-right: ms(0);
+        flex-basis: 33%;
+        grid-template-areas: "head";
+
+        .summary,
+        .taxonomy,
+        time,
+        .thumbnail {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+body.taxonomy {
+  .articles {
+    .article-summary {
+      flex-basis: 100% !important;
+    }
+  }
+}
