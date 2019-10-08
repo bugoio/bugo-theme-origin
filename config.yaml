@@ -36,3 +36,6 @@ module:
   - disable: false
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-share
+  - disable: false
+    ignoreConfig: false
+    path: github.com/bugoio/bugo-mod-navigation
