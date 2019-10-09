@@ -25,21 +25,11 @@
 @import "base/wcag";
 @import "base/jarallax";
 
-// @import "components/article";
-// @import "components/article-summary";
-// @import "components/blocks";
-// @import "components/breadcrumbs";
-@import "components/buttons";
-@import "components/featured-image";
-@import "components/forms";
-@import "components/hero";
-@import "components/hero-video";
-@import "components/highlight";
-@import "components/messages";
+// @import "components/hero";
+// @import "components/hero-video";
 @import "components/pagination";
-// @import "components/share-buttons";
 @import "components/slideshow";
-@import "components/thumbnail";
+// @import "components/thumbnail";
 
 /* layouts */
 @import "layouts/body";
@@ -50,18 +40,10 @@
 @import "layouts/wrap-sidebar";
 @import "layouts/main";
 @import "layouts/footer";
-@import "layouts/navigation";
 @import "layouts/nav-main";
 @import "layouts/nav-mobile";
 @import "layouts/nav-secondary";
 @import "layouts/sidebar";
 @import "layouts/taxonomy";
-
-/* widgets */
-@import "widgets/widgets";
-@import "widgets/widget-categories";
-@import "widgets/widget-latest-posts";
-@import "widgets/widget-related-posts";
-@import "widgets/widget-search-form";
 
 @import "custom";
