@@ -20,7 +20,6 @@
 
  {{ define "main" }}
  <main id="main" class="" tabindex="0" aria-label="{{ .Title }}">
-   {{ if gt (len .Data.Pages) 0 }}
    {{ $site := .Site }}
    {{ $paginator :=  .Paginate ( sort .Data.Pages "Title" "asc") }}
    <div class="terms">
@@ -31,9 +30,6 @@
    <div class="pagination">
      {{ partial "components/pagination.html" . }}
    </div>
-   {{ else }}
-   {{ partial "messages/danger" "No posts found. You should add some posts."}}
-   {{ end }}
  </main>
  {{ end }}
 
