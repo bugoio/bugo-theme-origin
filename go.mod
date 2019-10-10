@@ -3,6 +3,7 @@ module github.com/bugoio/bugo-theme-origin
 go 1.12
 
 require (
+	github.com/bugoio/bugo-font-awesome v0.0.0-20191009185319-172f2ff81a47 // indirect
 	github.com/bugoio/bugo-mod-article v0.0.0-20191009055739-69a05c8b1d9c // indirect
 	github.com/bugoio/bugo-mod-breadcrumbs v0.0.0-20191009060009-f97b6f481209 // indirect
 	github.com/bugoio/bugo-mod-buttons v0.0.0-20191009060239-4863f11224f4 // indirect
