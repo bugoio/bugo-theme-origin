@@ -1,4 +1,4 @@
-/** 
+/**
  * wrap-sidebar Grid
  **/
 
@@ -24,10 +24,15 @@ $wrap-sidebar-template-columns: (
 
 body.sidebar .wrap {
   display: grid;
-  @include grid-gaps($wrap-sidebar-column-gap, $wrap-sidebar-row-gap);
+  // @include grid-gaps($wrap-sidebar-column-gap, $wrap-sidebar-row-gap);
   @include responsive-property($wrap-sidebar-template-areas, "grid-template-areas");
   @include responsive-property($wrap-sidebar-template-columns, "grid-template-columns");
+  main{
+    padding-right: ms($global-padding/2);
+  }
+
   aside {
     display: block;
+    padding-left: ms($global-padding/2);
   }
 }

@@ -9,9 +9,9 @@
 
 {{ define "hero" }}
 {{ if .Params.videos }}
-{{ partial "components/hero-video" . }}
+{{ partial "hero-video" . }}
 {{ else if .Params.images}}
-{{ partial "components/hero" . }}
+{{ partial "hero" . }}
 {{ else }}
 <div class="hero spacer"></div> <!-- not exactly sure why this works but it does -->
 {{ end }}
@@ -20,7 +20,7 @@
 {{ define "breadcrumbs" }}
 {{ if and (not .IsHome) (ne .Params.layout "landing") (.Site.Data.config.show_breadcrumbs) }}
 <div class="breadcrumbs">
-  {{ partial "components/breadcrumbs" . }}
+  {{ partial "breadcrumbs" . }}
 </div>
 {{ end }}
 {{ end }}
@@ -30,13 +30,9 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
 
-  {{ if gt (len ($.Site.GetPage "posts" .Section).Pages ) 0 }}
   {{ $site := .Site }}
   {{ range first 3 ($.Site.GetPage "posts" .Section).Pages }}
-  {{ partial "components/article-summary" . }}
-  {{ end }}
-  {{ else }}
-  {{ partial "messages/danger" "No posts found. You should add some posts."}}
+  {{ partial "article-summary" . }}
   {{ end }}
 </main>
 {{ end }}
