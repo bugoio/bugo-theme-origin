@@ -1,0 +1,82 @@
+/**
+ * BUGO ORGIN STYLES
+ **/
+
+@import "_bugo-origin-vars";
+@import "custom-variables";
+
+/**
+ * Include SASS files here.
+ **/
+
+// @import "_variables/index";
+
+@import "base/reset";
+// @import "base/typography";
+@import "base/wcag";
+// @import "base/jarallax";
+
+// @import "components/hero";
+// @import "components/hero-video";
+@import "components/pagination";
+@import "components/slideshow";
+// @import "components/thumbnail";
+
+/* layouts */
+@import "layouts/body";
+@import "layouts/container";
+// @import "layouts/nav-container";
+// @import "layouts/wrap";
+// @import "layouts/wrap-sidebar";
+@import "layouts/main";
+// @import "layouts/footer";
+// @import "layouts/nav-main";
+// @import "layouts/nav-mobile";
+
+@import "layouts/sidebar";
+@import "layouts/taxonomy";
+
+
+
+/**
+ * Wrap Grid
+ **/
+
+.wrap {
+  // Spacing
+  @include space-element(margin, $wrap-margin-x, $wrap-margin-y);
+  @include space-element(padding, $wrap-padding-x, $wrap-padding-y);
+
+  display: grid;
+  grid-area: wrap;
+  @include grid-gaps($wrap-column-gap, $wrap-row-gap);
+  // @include ms-respond( grid-row-gap, $wrap-row-gap );
+  @include responsive-property($wrap-template-areas, "grid-template-areas");
+  @include responsive-property($wrap-template-columns, "grid-template-columns");
+
+  aside {
+    display: none;
+  }
+}
+
+/**
+ * wrap-sidebar Grid
+ **/
+
+body.sidebar .wrap {
+  display: grid;
+  // @include grid-gaps($wrap-sidebar-column-gap, $wrap-sidebar-row-gap);
+  @include responsive-property($wrap-sidebar-template-areas, "grid-template-areas");
+  @include responsive-property($wrap-sidebar-template-columns, "grid-template-columns");
+  main{
+    padding-right: ms($global-padding/2);
+  }
+
+  aside {
+    display: block;
+    padding-left: ms($global-padding/2);
+  }
+}
+
+
+@import "custom";

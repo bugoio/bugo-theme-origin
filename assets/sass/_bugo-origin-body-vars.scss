@@ -1,0 +1,80 @@
+/**
+ * Body Grid
+ **/
+
+/**
+ * Body
+ *
+ **/
+
+// * Fonts
+
+$body-font                : $global-font !default;
+$body-font-size           : $global-font-size !default;
+$body-line-height         : $global-line-height !default;
+
+
+// * Light Mode
+
+$body-color               : $global-font-color !default;
+$body-bg                  : $global-background-color !default;
+
+
+// * Dark Mode
+
+$body-color-dark          : $global-font-color-dark !default;
+$body-bg-dark             : $global-background-color-dark !default;
+
+// * Margin
+// false | modular scale ratio
+
+$body-margin-x            : auto !default;
+$body-margin-y            : false !default;
+
+// * Padding
+// false | modular scale ratio
+
+$body-padding-x           : false !default;
+$body-padding-y           : false !default;
+
+
+// * Grid
+
+$body-grid-column-gap     : 0 !default;
+$body-grid-row-gap        : 0 !default;
+
+$body-xs-template-areas   : "head" "hero" "bread" "wrap" "footer" !default;
+$body-sm-template-areas   : $body-xs-template-areas !default;
+$body-md-template-areas   : $body-xs-template-areas !default;
+$body-lg-template-areas   : $body-xs-template-areas !default;
+$body-xl-template-areas   : $body-xs-template-areas !default;
+$body-xxl-template-areas  : $body-xs-template-areas !default;
+$body-xxxl-template-areas : $body-xs-template-areas !default;
+
+$body-xs-template-columns : repeat( 1, 1fr ) !default;
+$body-sm-template-columns : $body-xs-template-columns !default;
+$body-md-template-columns : $body-xs-template-columns !default;
+$body-lg-template-columns : $body-xs-template-columns !default;
+$body-xl-template-columns : $body-xs-template-columns !default;
+$body-xxl-template-columns: $body-xs-template-columns !default;
+$body-xxxl-template-columns:  $body-xs-template-columns !default;
+
+$body-template-areas: (
+  xs: $body-xs-template-areas,
+  sm: $body-sm-template-areas,
+  md: $body-md-template-areas,
+  lg: $body-lg-template-areas,
+  xl: $body-xl-template-areas,
+  xxl: $body-xxl-template-areas,
+  xxxl: $body-xxxl-template-areas
+);
+
+$body-template-columns: (
+  xs: $body-xs-template-columns,
+  sm: $body-sm-template-columns,
+  md: $body-md-template-columns,
+  lg: $body-lg-template-columns,
+  xl: $body-xl-template-columns,
+  xxl: $body-xxl-template-columns,
+  xxxl: $body-xxxl-template-columns
+);
