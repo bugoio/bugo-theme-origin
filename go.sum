@@ -31,10 +31,12 @@ github.com/bugoio/bugo-mod-header v0.0.0-20191009060554-b75c3ed91c15 h1:LG571jpt
 github.com/bugoio/bugo-mod-header v0.0.0-20191009060554-b75c3ed91c15/go.mod h1:UgmEx18YhrngwjoHQ2mH/r72ucCGVIWNWyYyQHtds64=
 github.com/bugoio/bugo-mod-header v0.0.0-20191013185719-36be0473d2fa/go.mod h1:UgmEx18YhrngwjoHQ2mH/r72ucCGVIWNWyYyQHtds64=
 github.com/bugoio/bugo-mod-header v0.0.0-20191013190658-e6c1f86192f9/go.mod h1:RIYrZbjDTuRCVlPD03rpn8JQnufvSDXyg8AtGnlqkxQ=
+github.com/bugoio/bugo-mod-header v0.0.0-20191018030954-37670d4e3ba2/go.mod h1:cJGD+xY7pPHtgL8zXKKvT7V08OJWgO4MkH9t17C8r0s=
 github.com/bugoio/bugo-mod-hero v0.0.0-20191009060748-ebd62d12b5b5 h1:b4HAnNGjyxdBPKRFQk3LPqFN+nbF6FTs7v1qt9oMTQc=
 github.com/bugoio/bugo-mod-hero v0.0.0-20191009060748-ebd62d12b5b5/go.mod h1:mFxettAV3Wxt2ySgK8+GTiC1xy6WTpxiruX5OHyunMg=
 github.com/bugoio/bugo-mod-hero v0.0.0-20191009190337-f31507c5232e/go.mod h1:mFxettAV3Wxt2ySgK8+GTiC1xy6WTpxiruX5OHyunMg=
 github.com/bugoio/bugo-mod-hero v0.0.0-20191013190726-023247cdfc1e/go.mod h1:qLKlbqixs14d6MFEy3f1s/nYFohj+2wSCJx0rZxRQq0=
+github.com/bugoio/bugo-mod-hero v0.0.0-20191018031108-767763a458c1/go.mod h1:EXtxNo3dTfDQGmM2wP2yxQVB/Y+RVdQId3dpIkhrYF0=
 github.com/bugoio/bugo-mod-landing-page v0.0.0-20191009060825-117183cc5514 h1:szG+1Zmsw67HzHuUhinpEn0dyLkQxEo/MCTUC00I06c=
 github.com/bugoio/bugo-mod-landing-page v0.0.0-20191009060825-117183cc5514/go.mod h1:iYm1xzrViy6S6sJYdsJ29Nivz2znklNankFBJyPNbYA=
 github.com/bugoio/bugo-mod-landing-page v0.0.0-20191009185621-8227c3daa7db/go.mod h1:iYm1xzrViy6S6sJYdsJ29Nivz2znklNankFBJyPNbYA=

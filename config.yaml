@@ -1,53 +1,53 @@
 module:
   imports:
-  - disable: false
+  - disable: true
     ignoreConfig: false
     path: github.com/bugoio/bugo-sass-utilities
-  - disable: false
+  - disable: true
     ignoreConfig: false
     path: github.com/bugoio/bugo-sass-typography
-  - disable: false
+  - disable: true
     ignoreConfig: false
     path: github.com/bugoio/bugo-utility-partials
   - disable: false
-    ignoreConfig: false
+    ignoreConfig: true
     path: github.com/bugoio/bugo-font-awesome
-  - disable: false
+  - disable: true
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-widgets
-  - disable: false
+  - disable: true
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-article
-  - disable: false
+  - disable: true
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-search
-  - disable: false
+  - disable: true
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-columns
-  - disable: false
+  - disable: true
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-landing-page
-  - disable: false
+  - disable: true
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-netlify-contact-form
-  - disable: false
+  - disable: true
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-breadcrumbs
-  - disable: false
+  - disable: true
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-share
-  - disable: false
+  - disable: true
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-navigation
-  - disable: false
+  - disable: true
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-forms
-  - disable: false
+  - disable: true
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-header
-  - disable: false
+  - disable: true
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-buttons
-  - disable: false
+  - disable: true
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-hero

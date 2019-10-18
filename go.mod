@@ -8,8 +8,8 @@ require (
 	github.com/bugoio/bugo-mod-buttons v0.0.0-20191013190436-017f32e16ece // indirect
 	github.com/bugoio/bugo-mod-columns v0.0.0-20191018024733-298ee1294307 // indirect
 	github.com/bugoio/bugo-mod-forms v0.0.0-20191018025320-1201405fc205 // indirect
-	github.com/bugoio/bugo-mod-header v0.0.0-20191013190658-e6c1f86192f9 // indirect
-	github.com/bugoio/bugo-mod-hero v0.0.0-20191013190726-023247cdfc1e // indirect
+	github.com/bugoio/bugo-mod-header v0.0.0-20191018030954-37670d4e3ba2 // indirect
+	github.com/bugoio/bugo-mod-hero v0.0.0-20191018031108-767763a458c1 // indirect
 	github.com/bugoio/bugo-mod-landing-page v0.0.0-20191018025413-05aa921c3d66 // indirect
 	github.com/bugoio/bugo-mod-navigation v0.0.0-20191018025711-da1313cb20d2 // indirect
 	github.com/bugoio/bugo-mod-netlify-contact-form v0.0.0-20191018025751-260ebd8909b8 // indirect
