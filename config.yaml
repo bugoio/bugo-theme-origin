@@ -1,53 +1,38 @@
 module:
   imports:
-  - disable: true
+  - disable: false
     ignoreConfig: false
     path: github.com/bugoio/bugo-sass-utilities
-  - disable: true
+  - disable: false
     ignoreConfig: false
     path: github.com/bugoio/bugo-sass-typography
-  - disable: true
+  - disable: false
     ignoreConfig: false
     path: github.com/bugoio/bugo-utility-partials
   - disable: false
-    ignoreConfig: true
-    path: github.com/bugoio/bugo-font-awesome
-  - disable: true
-    ignoreConfig: false
-    path: github.com/bugoio/bugo-mod-widgets
-  - disable: true
-    ignoreConfig: false
-    path: github.com/bugoio/bugo-mod-article
-  - disable: true
-    ignoreConfig: false
-    path: github.com/bugoio/bugo-mod-search
-  - disable: true
-    ignoreConfig: false
-    path: github.com/bugoio/bugo-mod-columns
-  - disable: true
-    ignoreConfig: false
-    path: github.com/bugoio/bugo-mod-landing-page
-  - disable: true
-    ignoreConfig: false
-    path: github.com/bugoio/bugo-mod-netlify-contact-form
-  - disable: true
-    ignoreConfig: false
-    path: github.com/bugoio/bugo-mod-breadcrumbs
-  - disable: true
-    ignoreConfig: false
-    path: github.com/bugoio/bugo-mod-share
-  - disable: true
-    ignoreConfig: false
-    path: github.com/bugoio/bugo-mod-navigation
-  - disable: true
-    ignoreConfig: false
-    path: github.com/bugoio/bugo-mod-forms
-  - disable: true
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-header
-  - disable: true
+  - disable: false
     ignoreConfig: false
-    path: github.com/bugoio/bugo-mod-buttons
-  - disable: true
+    path: github.com/bugoio/bugo-mod-footer
+  - disable: false
+    ignoreConfig: true
+    path: github.com/bugoio/bugo-font-awesome
+  - disable: false
+    ignoreConfig: true
+    path: github.com/bugoio/bugo-mod-breadcrumbs
+  - disable: false
+    ignoreConfig: true
+    path: github.com/bugoio/bugo-mod-article
+  - disable: false
     ignoreConfig: false
-    path: github.com/bugoio/bugo-mod-hero
+    path: github.com/bugoio/bugo-mod-share
+  - disable: false
+    ignoreConfig: false
+    path: github.com/bugoio/bugo-mod-widgets
+  - disable: false
+    ignoreConfig: false
+    path: github.com/bugoio/bugo-mod-search
+  - disable: false
+    ignoreConfig: false
+    path: github.com/bugoio/bugo-mod-navigation
