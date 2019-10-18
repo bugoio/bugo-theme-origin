@@ -1,15 +1,4 @@
 
-/**
- *
- * Generate theme color mixes
- * returns a class for use with block level eleemnts
- *
- **/
-
-{{ range $index, $mix := .Site.Data.styles.color_mixes }}
-  @include color-mixes( {{ $mix.name | anchorize }}, {{ $mix.text_color | anchorize }}, {{ $mix.background_color | anchorize }}, {{ $mix.heading_color | anchorize }} );
-{{ end }}
-
 @import "custom-variables";
 
 /**
