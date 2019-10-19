@@ -17,8 +17,9 @@ html {
 body {
   // Spacing & Dimensions
   position: relative;
-  @include space-element(margin, $body-margin-x, $body-margin-y);
-  @include space-element(padding, $body-padding-x, $body-padding-y);
+  @include set-margin($body-margin-top,$body-margin-right,$body-margin-bottom,$body-margin-top);
+  @include set-padding($body-padding-top,$body-padding-right,$body-padding-bottom,$body-padding-top);
+
   overflow-x: hidden;
 
   // Grid
