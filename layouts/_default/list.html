@@ -33,11 +33,11 @@
     </p>
 
     {{/** Paginated Posts **/}}
-    {{ $paginator :=  .Paginate ( first 50 .Pages ) }}
+    {{ $paginator :=  .Paginate .Pages }}
 
     <div class="articles articles-{{ $paginator.PageNumber }}">
       {{ range $paginator.Pages.ByLinkTitle  }}
-      {{ partial "article-summary" . }}
+      {{ partial "article-summary-large" . }}
       {{ end }}
     </div>
     <div class="pagination">
