@@ -1,0 +1,5 @@
+{{/** Load Vendor and Module Javascript **/}}
+{{ $vendorJS := resources.Match "vendors/*.js" | resources.Concat "js/vendor-bundle.js"| resources.Minify }}
+{{ $componentJS := resources.Match "js/*.js" | resources.Concat "js/component-bundle.js"| resources.Minify }}
+<script defer src="{{ $vendorJS.Permalink }}" type="text/javascript"></script>
+<script defer src="{{ $componentJS.Permalink }}" type="text/javascript"></script>
