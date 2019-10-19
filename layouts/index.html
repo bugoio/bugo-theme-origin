@@ -27,13 +27,12 @@
 
 {{ define "main" }}
 <main id="main" class="" tabindex="0" aria-label="{{ .Title }}">
-  <h1>{{ .Title }}</h1>
+  <h1 class="sr-only">{{ .Title }}</h1>
   {{ .Content }}
-
   {{ $site := .Site }}
-  {{ range first 3 ($.Site.GetPage "posts" .Section).Pages }}
-  {{ partial "article-summary" . }}
-  {{ end }}
+  <div>
+    {{ partial "recent-articles-h2" . }}
+  </div>
 </main>
 {{ end }}
 
