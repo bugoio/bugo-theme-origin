@@ -36,7 +36,7 @@
     {{ $paginator :=  .Paginate .Pages }}
 
     <div class="articles articles-{{ $paginator.PageNumber }}">
-      {{ range $paginator.Pages.ByLinkTitle  }}
+      {{ range $paginator.Pages  }}
       {{ partial "article-summary-large" . }}
       {{ end }}
     </div>
