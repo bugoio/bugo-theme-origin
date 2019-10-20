@@ -36,7 +36,5 @@
 {{ end }}
 
 {{ define "aside" }}
-<aside class="sidebar">
-  {{ partial "widgets" (dict "page" .Page "site" .Site "content" .Site.Data.config.sidebar_widgets.widgets ) }}
-</aside>
+  {{ partial "sidebar" . }}
 {{ end }}

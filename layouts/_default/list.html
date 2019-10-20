@@ -48,7 +48,5 @@
 
 {{/** Sidebar **/}}
 {{ define "aside" }}
-<aside class="sidebar" tabindex="0">
-  {{ partial "widgets" (dict "page" .Page "site" .Site "content" .Site.Params.sidebar_widgets.widgets ) }}
-</aside>
+  {{ partial "sidebar" . }}
 {{ end }}
