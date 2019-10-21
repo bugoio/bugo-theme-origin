@@ -29,9 +29,6 @@ module:
     path: github.com/bugoio/bugo-mod-share
   - disable: false
     ignoreConfig: false
-    path: github.com/bugoio/bugo-mod-widgets
-  - disable: false
-    ignoreConfig: false
     path: github.com/bugoio/bugo-mod-search
   - disable: false
     ignoreConfig: false

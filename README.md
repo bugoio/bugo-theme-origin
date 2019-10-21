@@ -1,49 +1,25 @@
 # Origin Theme
 
-Blogging with Hugo's Origin Theme is meant to be used as a starter theme used by designers and developers alike. Origin is best used with Forestry.io for content management and Netlify.com for hosting.
-
-> NOTE: Still in prerelease development. Report any issues you may run into.
+Blogging with Hugo's Origin Theme is meant to be used as a starter theme used by designers and developers to create their own themes.
 
 ## Theme Features
 
 * Responsive layouts based on modular scale
-* Includes Foresty.io templates
-* Heros & Video Heros
 * Beautiful typography and grid based on modular scale
-* CSS Grids for layouts and blocks
-* Configurable Sidebar Widgets
 * Cloudinary support
-* Page/Post level galleries
-  * Images
-  * Videos
 
 ## Dev Features
 * Hugo Module
-* SASS with tons of variables 
-* WooCommerce FlexSlider
-* Validator
-* Sweet Alert 2
+* SASS with tons of variables
 * Cloudindary image transformation support
 
-### Origins doesn't do
-* ES6/Babel transpiling. If you need to Internet Expoerer need to add a transpiler. It's on my list of things to do.
-
 ## Installation
-Origin is meant to be used with Forestry.io and not a standalone theme. Bugo Site uses Origin by default. You can install it on your site, but you'll need to add some parameters to your config file and some data files in `/Data`. You can save a lot of time by using Bugo Site. Instructions are provided if you need to reinstall from a Bugo Site project.
 
 From your Hugo site's root, you need to initialize your site as a Hugo module.
 
 ```bash
-# hugo mod init
-```bash
-
-Next create a directory and add the latest realease of Origin to your site's module configuration
-
-```bash
-# hugo mkdir themes/bugo-theme-origin
-# hugo mod get github.com/bugoio/bugo-theme-origin
+hugo mod init
 ```
-
 Head over to your Hugo config file and add the module. Shown in yaml.
 
 ```yaml
@@ -52,9 +28,48 @@ module:
   - disable: false
     ignoreConfig: false
     path: github.com/bugoio/bugo-theme-origin //repository
-  - path: bugo-theme-origin                   //stored in /themes/
+```
+Start Hugo
+
+```bash
+hugo server -d public
 ```
 
-That should do it. 
+That should do it.
 
+## Usage
+
+### Customization
+
+#### Hugo Config
+You can customize the basic features of your site in the Hugo Config File in the params section.
+
+
+
+### Dependencies
+
+#### Bugo Modules
+
+* Bugo SASS Utilties
+  https://github.com/bugoio/bugo-sass-utilities
+* Bugo Typography
+  https://github.com/bugoio/bugo-sass-typography
+* Bugo Utilities
+  https://github.com/bugoio/bugo-utility-partials
+* Bugo Header
+  https://github.com/bugoio/bugo-mod-header
+* Bugo Footer
+  https://github.com/bugoio/bugo-mod-footer
+* Bugo Font Awesome
+  https://github.com/bugoio/bugo-font-awesome
+* Bugo Breadcrumbs
+  https://github.com/bugoio/bugo-mod-breadcrumbs
+* Bugo Article
+  https://github.com/bugoio/bugo-mod-article
+* Bugo Share
+  https://github.com/bugoio/bugo-mod-share
+* Bugo Search
+  https://github.com/bugoio/bugo-mod-search
+* Bugo Navigation
+  https://github.com/bugoio/bugo-mod-navigation
 

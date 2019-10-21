@@ -9,6 +9,7 @@ github.com/bugoio/bugo-mod-article v0.0.0-20191009055739-69a05c8b1d9c h1:ldAG+bi
 github.com/bugoio/bugo-mod-article v0.0.0-20191009055739-69a05c8b1d9c/go.mod h1:8Yryq5lif7mrrut1Co6bkk5qiIqFWrdTKdPqS99MNBI=
 github.com/bugoio/bugo-mod-article v0.0.0-20191013184035-490da0e7a184/go.mod h1:8Yryq5lif7mrrut1Co6bkk5qiIqFWrdTKdPqS99MNBI=
 github.com/bugoio/bugo-mod-article v0.0.0-20191013190156-7ae01b81c345/go.mod h1:Sy8l4X/LoXtiNUBrznfeoB543XSxmdT5o9tHvlUnprA=
+github.com/bugoio/bugo-mod-article v0.0.0-20191018024116-b286db7b101a/go.mod h1:K7Aa5UaG6GeDGmQkAxXxuwlgPw+lndfqbSH4YHHb8z0=
 github.com/bugoio/bugo-mod-breadcrumbs v0.0.0-20191009060009-f97b6f481209 h1:BhgWQMxr4YAP4/XSp05Mu2OzS8YoA4F40X5ZUUoONdc=
 github.com/bugoio/bugo-mod-breadcrumbs v0.0.0-20191009060009-f97b6f481209/go.mod h1:8iGFPglf0sDHcK6VLMdeTIa5TdvzB6vvb3adeUkwAL4=
 github.com/bugoio/bugo-mod-breadcrumbs v0.0.0-20191009185451-a0e68bc8384c/go.mod h1:8iGFPglf0sDHcK6VLMdeTIa5TdvzB6vvb3adeUkwAL4=
@@ -18,6 +19,7 @@ github.com/bugoio/bugo-mod-buttons v0.0.0-20191009060239-4863f11224f4 h1:KDfomM5
 github.com/bugoio/bugo-mod-buttons v0.0.0-20191009060239-4863f11224f4/go.mod h1:Z0vjijIbpM0faTijntFeAJy4qdCAKSOc9i4WH1LdX8Q=
 github.com/bugoio/bugo-mod-buttons v0.0.0-20191009185503-36555ddbd6ee/go.mod h1:Z0vjijIbpM0faTijntFeAJy4qdCAKSOc9i4WH1LdX8Q=
 github.com/bugoio/bugo-mod-buttons v0.0.0-20191013190436-017f32e16ece/go.mod h1:CIsKPcoJdSLC0whjG569T+ekGjzA2o8PsMRtAu+rJSQ=
+github.com/bugoio/bugo-mod-buttons v0.0.0-20191018024648-0949e0438136/go.mod h1:aWYYElh0773vUGxG8ZtkD3EkePQ9BPwdkWVALOWCViU=
 github.com/bugoio/bugo-mod-columns v0.0.0-20191009060323-20321171972d h1:aDj0cCex4oJGxK2HE5Dc9KFncSa8/XHv1qKEuzzsemU=
 github.com/bugoio/bugo-mod-columns v0.0.0-20191009060323-20321171972d/go.mod h1:2/c1CYg6TNm26P2m/WLH48IqDjtFgXAEKiGj2OXdS4o=
 github.com/bugoio/bugo-mod-columns v0.0.0-20191013185551-14a3f3e1c36d/go.mod h1:2/c1CYg6TNm26P2m/WLH48IqDjtFgXAEKiGj2OXdS4o=
@@ -47,6 +49,7 @@ github.com/bugoio/bugo-mod-landing-page v0.0.0-20191009185621-8227c3daa7db/go.mo
 github.com/bugoio/bugo-mod-landing-page v0.0.0-20191013190804-d30afbc6d89b/go.mod h1:elcU8iV06RC+gui0vfXPfKeuZHWK0gvp6AQEsQ2og6c=
 github.com/bugoio/bugo-mod-landing-page v0.0.0-20191018025413-05aa921c3d66/go.mod h1:UtULjEjAtHrvMmGZumH3WO/5X7KONmzZ7Uxv0n4UMwA=
 github.com/bugoio/bugo-mod-locations v0.0.0-20191013191009-548895f0c217/go.mod h1:eUdcaD71QRtOitsY+XO9Gtb7CwIKL1toRdDEYNGOaN4=
+github.com/bugoio/bugo-mod-locations v0.0.0-20191018030807-310aa23a1c51/go.mod h1:rqVw70m1YoV31mOVOJRB4zZc7UX0LVavVGo2+hy5OB0=
 github.com/bugoio/bugo-mod-navigation v0.0.0-20191009061020-e2bb3b2decef h1:AkzAeMTKf8G/WUgqDVCBto3wPEYKFovTXGEX0n1ymY0=
 github.com/bugoio/bugo-mod-navigation v0.0.0-20191009061020-e2bb3b2decef/go.mod h1:MMnuxx5WEaMqDXQ1/gFbUcTdhsro9sAGuJl5rdJDMjU=
 github.com/bugoio/bugo-mod-navigation v0.0.0-20191009185645-efe420086f93/go.mod h1:MMnuxx5WEaMqDXQ1/gFbUcTdhsro9sAGuJl5rdJDMjU=

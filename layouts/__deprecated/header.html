@@ -17,16 +17,16 @@
     <!-- Logo -->
     <div class="site-brand h1s">
       <a href="/" title="Go to the home page" tabindex="0">
-        {{ if .Site.Data.organization.header_logo }}
-            {{ $imageParams := (dict "page" .Page "site" .Site "url" .Site.Data.organization.header_logo "transform" false ) }}
+        {{ if .Site.Params.headerLogo }}
+            {{ $imageParams := (dict "page" .Page "site" .Site "url" .Site.Params.headerLogo "transform" false ) }}
             <img
               class=""
-              src="{{ .Site.Data.organization.header_logo | safeHTMLAttr }}"
+              src="{{ .Site.Params.headerLogo | safeHTMLAttr }}"
               aria-hidden="true"
-              alt="{{ .Site.Data.organization.organization_name }} Logo"
+              alt="{{  partial "utilities/get-org-name" .  }} Logo"
             />
         {{ else }}
-          {{ .Site.Title }}
+          {{  partial "utilities/get-org-name" .  }}
         {{ end }}
       </a>
     </div>

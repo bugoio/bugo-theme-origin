@@ -38,25 +38,17 @@
   {{- template "_internal/opengraph.html" . -}}
   <!-- Twitter Card -->
   {{- template "_internal/twitter_cards.html" . -}}
-  <!-- JSON-LD Organization markup for Google Structured Data -->
-  <script type="application/ld+json">
-    {{- partial "components/structured-data-organization" . | safeJS -}}
-  </script>
-
-  {{- range .Site.Data.config.addresses -}}
-  {{- partial "components/structured-data-local-business" . | safeJS -}}
-  {{- end -}}
   <!-- Add fonts from forestry settings -->
   {{- partial "components/head-fonts-scripts" . -}}
   <style>
     :root {
-      --font-family-global: "{{ .Site.Params.google_fonts.base_font }}", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-      --font-family-header: "{{ .Site.Params.google_fonts.heading_font }}", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      --font-family-global: "{{ .Site.Params.googleFonts.baseFont }}", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      --font-family-header: "{{ .Site.Params.googleFonts.headingFont }}", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     }
 
     body {
       /* IE Fix Font Family */
-      font-family: "{{ .Site.Params.google_fonts.base_font }}", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-family: "{{ .Site.Params.googleFonts.baseFont }}", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     }
   </style>
 

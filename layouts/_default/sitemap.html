@@ -15,7 +15,7 @@
 
 {{ define "main" }}
 <main id="main">
-  <h1>{{ .Site.Title }}</h1>
+  <h1>{{  partial "utilities/get-org-name" .  }}</h1>
   <ul class="">
     {{ range .Site.Pages }}
     {{ if eq .Section "" }}
