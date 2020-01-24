@@ -15,7 +15,7 @@
       {{ end }}
       <div class="container">
         <div class="hero-text">
-            {{ with $context.Params.hero_text | markdownify }}
+            {{ with $context.Params.hero_text }}
               {{ . }}
             {{ else }}
               <h1>{{ $context.Title }}</h1>

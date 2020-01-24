@@ -8,9 +8,10 @@
 
 html {
   background-color: $body-bg;
-
-  @media (prefers-color-scheme: dark) {
-    background-color: $body-bg-dark;
+  @if $global-dark-mode {
+    @media (prefers-color-scheme: dark) {
+      background-color: $body-bg-dark;
+    }
   }
 }
 
@@ -39,9 +40,10 @@ body {
   // Colors
   color: $body-color;
   background-color: $body-bg;
-
-  @media (prefers-color-scheme: dark) {
-    color: $body-color-dark;
-    background-color: $body-bg-dark;
+  @if $global-dark-mode {
+    @media (prefers-color-scheme: dark) {
+      color: $body-color-dark;
+      background-color: $body-bg-dark;
+    }
   }
 }

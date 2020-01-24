@@ -1,0 +1,18 @@
+// Small Breakpoint
+@include respond-to(sm){
+  article, .article span{
+    // background: pink;
+    grid-template-areas: 
+    "head head head head head head head head head head head head";
+
+    .h2 {
+        margin-bottom: 0;
+        @include line-clamp(3,1.4);
+    }
+  }
+  article.has-thumbnail,
+  .article.has-thumbnail span {
+    grid-template-areas: 
+    "thumb thumb thumb head head head head head head head head head";  
+  }        
+}

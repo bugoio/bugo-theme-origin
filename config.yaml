@@ -33,3 +33,6 @@ module:
   - disable: false
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-navigation
+  - disable: false
+    ignoreConfig: false
+    path: github.com/bugoio/bugo-mod-thumbnail
