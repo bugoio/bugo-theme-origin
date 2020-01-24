@@ -15,12 +15,12 @@
 <footer class="site-footer">
   <div class="container">
     <div class="site-footer-logo">
-      {{ if .Site.Data.organization.footer_logo }}
-      <img class="footer-logo" src="{{ .Site.Data.organization.footer_logo }}" alt="{{ .Site.Title }}" />
+      {{ if .Site.Params.footerLogo }}
+      <img class="footer-logo" src="{{ .Site.Params.footerLogo }}" alt="{{  partial "utilities/get-org-name" .  }}" />
       {{ end }}
     </div>
     <div class="copyright text-center">
-      {{ with.Site.Title }}
+      {{ with  partial "utilities/get-org-name" .  }}
       <span tabindex="0">©{{ dateFormat "2006" now }} {{ . }} &nbsp;<span class="">•</span>&nbsp; All rights
         reserved.</span>
       {{ end }}
@@ -32,7 +32,7 @@
       </div>
       {{ end }}
     </div>
-    {{ if .Site.Params.show_bugo }}
+    {{ if .Site.Params.showBugo }}
     <div class="text-center">
       <small class="made-with-bugo">
         <a href="https://bugo.io" title="Crafted with Bugo" alt="Visit Bugo" tabindex="0"><img class=""

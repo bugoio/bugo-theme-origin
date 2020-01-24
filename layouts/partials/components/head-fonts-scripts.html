@@ -1,3 +1,4 @@
   <script type="text/javascript">
-    fontFamilies = {{ .Site.Params.google_fonts.import_fonts | jsonify | safeJS }};
+    {{ .Site.Params.googleFonts }}
+    fontFamilies = {{ .Site.Params.googleFonts.importFonts | jsonify | safeJS }};
   </script>

@@ -3,7 +3,7 @@
   {
   "@context" : "http://schema.org",
   "@type" : "LocalBusiness",
-  {{- with $.Site.Title -}}
+  {{- with   partial "utilities/get-org-name" .  -}}
     "name" : "{{ . }}",
   {{- end -}}
   {{ with $.Site.Data.config.seo_logo.image }}

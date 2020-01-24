@@ -1,0 +1,94 @@
+// first two articles on the first page
+.articles.articles-1 {
+    article,.article {
+        display: grid;
+        @include ms-respond(grid-gap,0,$modularscale,true);
+
+        .h2 {
+            @include line-clamp(4);
+        }
+
+        .time {
+            display: none;
+        }
+
+        .summary-text {
+            display: none;
+        }
+    }
+
+    article:nth-of-type(-n+2),
+    .article:nth-of-type(-n+2) {
+
+        &.has-thumbnail {
+            .thumbnail {
+                display: block !important;
+            }
+
+            grid-template-areas: 
+            "thumb thumb thumb thumb thumb thumb thumb thumb thumb thumb thumb thumb"
+            "head head head head head head head head head head head head";
+
+            .time, .summary-text {
+                display: none;
+            }
+
+            a {
+                padding-bottom: 56.2%;
+                position: relative;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+        @include respond-to(md) {
+            flex: 0 0 100%;
+            background-color: transparent !important;
+            color: $black;
+            align-items: start;
+            @include ms-respond(row-gap, -2);
+            grid-template-areas:
+                "head"
+                "time"
+                "summ";
+
+            header {
+                display: flex;
+                flex-direction: column;
+                @include ms-respond(--marginTop, 0);
+                @include ms-respond(--marginBottom, 1);
+                margin: var(--marginTop) 0 var(--marginBottom);
+            }
+
+            h3 {
+                line-height: 1.1;
+
+                a {
+                    @include ms-respond(font-size, 0.25);
+                    font-weight: 600;
+                    line-height: 1.1;
+                }
+            }
+        }
+    }
+
+    // all other articles on the first page
+    .article:nth-of-type(n+3) {
+        @include respond-to(md) {
+            flex: 0 0 100%;
+        }
+
+        &.has-thumbnail {
+            grid-template-areas:
+                "thumb thumb thumb thumb head head head head head head head head"
+                "thumb thumb thumb thumb time time time time time time time time"
+                "thumb thumb thumb thumb summ summ summ summ summ summ summ summ";
+
+            .thumbnail {
+                display: block !important;
+            }
+        }
+    }
+}

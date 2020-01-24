@@ -1,0 +1,33 @@
+article,
+.article span{
+
+    // Extra Large Breakpoint
+    @include respond-to(xl) {
+        grid-template-areas:
+            "head head head head head head head head head head head head"
+            "time time time time time time time time time time time time"
+            "summ summ summ summ summ summ summ summ summ summ summ summ";
+
+        .h2 {
+            margin-bottom: 0;
+            @include line-clamp(3);
+        }
+
+        .time {
+            display: block;
+        }
+
+        .summary-text {
+            color: $black;
+            @include line-clamp(3);
+            line-height: 1.75;
+        }
+
+        &.has-thumbnail {
+            grid-template-areas:
+                "thumb thumb thumb thumb head head head head head head head head"
+                "thumb thumb thumb thumb time time time time time time time time"
+                "thumb thumb thumb thumb summ summ summ summ summ summ summ summ";
+        }
+    }
+}

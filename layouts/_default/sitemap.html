@@ -9,31 +9,26 @@
    */}}
 
 {{ define "hero" }}
-{{ if .Params.videos }}
-{{ partial "components/hero-video" . }}
-{{ else if .Params.images}}
-{{ partial "components/hero" . }}
-{{ else }}
-<div class="hero spacer"></div>
+{{ partial "hero-spacer" . }}
 {{ end }}
-{{ end }}
+
 
 {{ define "main" }}
 <main id="main">
-  <h1>{{ .Site.Title }}</h1>
+  <h1>{{  partial "utilities/get-org-name" .  }}</h1>
   <ul class="">
     {{ range .Site.Pages }}
     {{ if eq .Section "" }}
-    <li><a href="{{ .Permalink | relURL }}" title="{{.Title}}">{{ .Title | markdownify }} {{ .Section }}</a></li>
+    <li><a href="{{ .Permalink | relURL }}" title="{{.Title}}">{{ .Title }} {{ .Section }}</a></li>
     {{ end }}
     {{ end }}
   </ul>
   <h2>Sections</h2>
   {{ range .Site.Sections }}
-  <h3>{{ .Title | markdownify }}</h3>
+  <h3>{{ .Title }}</h3>
   <ul>
     {{ range .Pages }}
-    <li><a href="{{ .Permalink | relURL }}" title="{{.Title}}">{{ .Title | markdownify }}</a></li>
+    <li><a href="{{ .Permalink | relURL }}" title="{{.Title}}">{{ .Title }}</a></li>
     {{ end }}
   </ul>
   {{ end }}
@@ -41,7 +36,5 @@
 {{ end }}
 
 {{ define "aside" }}
-<aside class="sidebar">
-  {{ partial "widgets" (dict "page" .Page "site" .Site "content" .Site.Data.config.sidebar_widgets.widgets ) }}
-</aside>
+  {{ partial "sidebar" . }}
 {{ end }}

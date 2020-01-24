@@ -1,0 +1,74 @@
+/**
+ * MAIN HTML ELEMENT
+ * TODO: Need to update using set-padding and set-margin
+ **/
+
+$main-margin-top            : false !default;
+$main-margin-right          : false !default;
+$main-margin-bottom:        false !default;
+$main-margin-left:          false !default;
+
+// * Padding
+// false | modular scale ratio
+
+$main-padding-top            : false !default;
+$main-padding-right          : false !default;
+$main-padding-bottom:        false !default;
+$main-padding-left:          false !default;
+
+/**
+ * Main Grid
+ **/
+
+// AREAS
+$main-grid-area: main;
+// xs
+$main-xs-template-areas: "article";
+// sm
+$main-sm-template-areas: $main-xs-template-areas;
+// md
+$main-md-template-areas: $main-xs-template-areas;
+// lg
+$main-lg-template-areas: $main-xs-template-areas;
+// xl
+$main-xl-template-areas: $main-xs-template-areas;
+// xxl
+$main-xxl-template-areas: $main-xs-template-areas;
+// xxxl
+$main-xxxl-template-areas: $main-xs-template-areas;
+
+// COLUMNS
+// xs
+$main-xs-template-columns: repeat(1, 1fr);
+// sm
+$main-sm-template-columns: $main-xs-template-columns;
+// md
+$main-md-template-columns: $main-xs-template-columns;
+// lg
+$main-lg-template-columns: $main-xs-template-columns;
+// xl
+$main-xl-template-columns: $main-xs-template-columns;
+// xxl
+$main-xxl-template-columns: $main-xs-template-columns;
+// xxxl
+$main-xxxl-template-columns: $main-xs-template-columns;
+
+$main-template-areas: (
+  xs: $main-xs-template-areas,
+  sm: $main-sm-template-areas,
+  md: $main-md-template-areas,
+  lg: $main-lg-template-areas,
+  xl: $main-xl-template-areas,
+  xxl: $main-xxl-template-areas,
+  xxxl: $main-xxxl-template-areas
+);
+
+$main-template-columns: (
+  xs: $main-xs-template-columns,
+  sm: $main-sm-template-columns,
+  md: $main-md-template-columns,
+  lg: $main-lg-template-columns,
+  xl: $main-xl-template-columns,
+  xxl: $main-xxl-template-columns,
+  xxxl: $main-xxxl-template-columns
+);

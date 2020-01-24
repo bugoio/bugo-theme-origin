@@ -1,2 +1,0 @@
-# Bugo Components SASS
-

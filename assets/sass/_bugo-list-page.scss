@@ -1,0 +1,65 @@
+body.list,
+body.categories {
+
+  // Article container
+  .articles {
+    display: flex;
+    flex-wrap: wrap;
+    @include ms-respond(--padding,$global-padding/4);
+    margin-left: calc( var(--padding) * -1);
+    margin-right: calc( var(--padding) * -1);
+  }
+
+  // Article Grid Areas
+  .article {
+    .thumbnail { grid-area: thumb; }
+    .h2 { grid-area: head; }
+    .time { grid-area: time; }
+    .summary-text { grid-area: summ; }
+  }
+
+  // Article as link
+  a.article {
+    span {
+      display: grid;
+    }
+    
+    text-decoration: none;
+    .h2 {
+      color: $primary;
+    }
+  }
+
+  // Article Spacing
+  .article span{
+    display: grid;
+    @include ms-respond(grid-column-gap,0,$modularscale,true);
+    @include ms-respond(grid-row-gap,-2,$modularscale,true);
+    @include ms-respond(padding-left,$global-padding/4);
+    @include ms-respond(padding-right,$global-padding/4);
+
+    @include ms-respond(margin-bottom,0.5);
+
+    @include respond-to(sm){
+      @include ms-respond(margin-bottom,1);
+    }
+
+    @include respond-to(md){
+      @include ms-respond(margin-bottom,$global-margin);
+    }
+  }
+
+  .thumbnail {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @import "list-page/list-page-xs";
+  @import "list-page/list-page-sm";
+  @import "list-page/list-page-md";
+  @import "list-page/list-page-lg";
+  @import "list-page/list-page-xl";
+  @import "list-page/list-page-xxl";
+  @import "list-page/list-page-xxxl";  
+}
+
