@@ -1,5 +1,0 @@
-{{- $name := partial "utilities/get-org-name" .  -}}
-{{- $url := .Site.BaseURL | absURL -}}
-{{- $logo :=  .Site.Data.organization.logos.seo_logo | absURL -}}
-{{- $data := (dict "@context" "http://schema.org" "@type" "Organization" "url" $url "logo" $logo "name" $name ) -}}
-{{- $data | jsonify -}}

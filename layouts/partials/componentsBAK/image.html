@@ -1,0 +1,11 @@
+{{ $alt := humanize (index (split (path.Base . ) ".") 0) }}
+<img 
+  src="{{ partial "utilities/cloudinary-transform" (dict "image" . "transform" "ar_16:9,c_fill,w_400") }}" 
+  sizes="(min-width: 0px),(min-width: 768px),(min-width: 1200px),(min-width: 2200px)"
+  srcset="
+    {{ partial "utilities/cloudinary-transform" (dict "image" . "transform" "ar_16:9,c_fill,w_400") }} 400w, 
+    {{ partial "utilities/cloudinary-transform" (dict "image" . "transform" "ar_16:9,c_fill,w_600") }} 600w,
+    {{ partial "utilities/cloudinary-transform" (dict "image" . "transform" "ar_16:9,c_fill,w_1200") }} 1400w,
+    {{ partial "utilities/cloudinary-transform" (dict "image" . "transform" "ar_16:9,c_fill,w_2000") }} 1600w
+  "
+  alt="{{ $alt }}"/>

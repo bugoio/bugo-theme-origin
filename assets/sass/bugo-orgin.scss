@@ -2,22 +2,27 @@
  * BUGO ORGIN STYLES
  **/
 
-@import "_bugo-origin-vars";
+// Variables
+@import "site-vars/index-vars";
+@import "hero/hero-vars";
+@import "pagination/pagination-vars";
 @import "custom-variables";
 
-@import "bugo-class-pagination";
+// Landmarks 
+@import "body/body";
+@import "main/main";
+@import "sidebar/sidebar";
 
-/** Elements **/
-@import "bugo-el-body";
-@import "bugo-el-main";
+// Layout
+@import "wrap/wrap";
+@import "container/container";
 
-/** Classes **/
-@import "bugo-class-container";
-@import "bugo-class-sidebar";
-@import "bugo-class-wrap";
+// Components
+@import "hero/hero";
+@import "pagination/pagination";
 
-/** List Page **/
-@import "bugo-list-page";
+// Pages
+@import "list-page/list-page";
 
-/** Custom CSS **/
+// Custom CSS
 @import "custom";

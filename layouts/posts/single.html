@@ -1,0 +1,29 @@
+{{/**
+   * Default Single Page Layout
+	 *
+	 * The default single for the site.
+   * All pages and posts will default to this template.
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+{{ define "hero" }}
+  {{ partial "hero" . }}
+{{ end }}
+
+{{ define "breadcrumbs" }}
+<div class="breadcrumbs">
+  {{ partial "breadcrumbs" . }}
+</div>
+{{ end }}
+
+{{ define "main" }}
+<main id="main" tabindex="0">
+  {{ partial "article" . }}
+</main>
+{{ end }}
+
+{{ define "aside" }}
+  {{ partial "sidebar" . }}
+{{ end }}

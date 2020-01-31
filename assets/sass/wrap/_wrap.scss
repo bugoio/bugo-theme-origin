@@ -1,0 +1,48 @@
+/**
+ * Wrap Grid
+ **/
+
+.wrap {
+  // Spacing
+  aside {
+    display: none;
+  }
+}
+
+/**
+ * wrap-sidebar Grid
+ **/
+
+body.sidebar .wrap {
+  display: flex !important;
+  flex-wrap: wrap;
+
+  @include respond-to(md){
+    flex-wrap: nowrap;
+  }
+  main{
+    flex: 0 0 100%;
+    @include respond-to(md){
+      flex: 0 0 70%;
+    }
+  }
+
+  main > article {
+    @include ms-respond(margin-right,$global-margin);
+  }
+
+  aside {
+    display: block;
+
+    > :first-child {
+      margin-top: 0 !important;
+    }
+
+    @include respond-to(md){
+      flex: 0 0 30%;
+      // > * {
+      //   @include ms-respond(margin-left,$global-padding);
+      // }
+    }
+  }
+}

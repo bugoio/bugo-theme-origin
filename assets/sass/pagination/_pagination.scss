@@ -1,0 +1,36 @@
+.pagination {
+  .pagination-list {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style-type: none;
+
+      a {
+        @include ms-respond(font-size,$pagination-font-size);
+        text-decoration: $pagination-text-decoration;
+
+        &:hover,
+        &:focus {
+          color: $pagination-text-focus-color;
+        }
+      }
+    }
+  }
+
+  @if $pagination-as-buttons == true {
+    li {
+      a {
+        @extend .button;
+      }
+
+      &.active {
+        a {
+          @extend .button-disabled;
+        }
+      }
+    }
+  }
+}

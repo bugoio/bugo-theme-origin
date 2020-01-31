@@ -1,0 +1,39 @@
+{{ $currentPage := .currentPage }}
+{{ $location := .location }}
+<a
+class="dropdown-trigger nav-link {{ if .hasParent }}hasParent{{ end }} {{ .menuItem.Name | urlize }} {{if or ($currentPage.IsMenuCurrent $location .menuItem ) ($currentPage.HasMenuCurrent $location .menuItem ) }} current{{end}}"
+href="#" id="navbarDropdown"
+role="button" data-toggle="dropdown"
+data-display="static"
+aria-haspopup="true" aria-expanded="false" tabindex="0"
+title="{{ .Name }}"
+aria-label="{{ .Name }}"
+>
+{{ .menuItem.Pre }}
+{{ .menuItem.Name  | title }}
+{{ .menuItem.Post }}
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+  <div class="container nav-link-container">
+    <ul>
+      {{ range .menuItem.Children }}
+      <li>
+        {{ if .HasChildren }}
+        {{ partial "components/dropdown" ( dict "currentPage" $currentPage "menuItem" . "location" $location "hasParent" true ) }}
+        {{ else }}
+        <a
+          class="dropdown-item {{ .Name | urlize }}{{ if $currentPage.IsMenuCurrent $location . }} current{{ end }}"
+          href="{{ .URL }}" {{ if or ( in .URL "http://" ) (in .URL "https://" )}}
+          target="new" {{ end }}
+          title="{{ .Name }}"
+          aria-label="{{ .Name }}"
+          tabindex="0"
+        >
+          {{ .Name | title }}
+        </a>
+        {{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</div>

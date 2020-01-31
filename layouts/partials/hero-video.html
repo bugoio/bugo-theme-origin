@@ -1,0 +1,47 @@
+
+{{ $images := .Params.images }}
+{{ $context := . }}
+{{ range $index, $video := .Params.videos }}
+  {{ if eq $index 0 }}
+    <div class="hero hero-video">
+      <video preload autoplay muted loop id="video-bg">
+          <source src="{{ $video }}" type="video/mp4">
+      </video>
+      {{ range $index, $image := $images }}
+        {{ if eq $index 0 }}
+          {{ $alt := humanize (index (split (path.Base $image) ".") 0) }}
+          <img src="{{ . }}" class="hero-image" alt="{{ $alt }}"/>
+        {{ end }}
+      {{ end }}
+      <div class="container">
+        <div class="hero-text">
+            {{ with $context.Params.hero_text }}
+              {{ . }}
+            {{ else }}
+              <h1>{{ $context.Title }}</h1>
+            {{ end }}
+        </details>
+      </div>
+      <button id="video-bg-control" onclick="myFunction()">{{ partial "icons/pause" }}</button>
+      </div>
+    </div>  
+    <script>
+    // Get the video
+    var video = document.getElementById("video-bg");
+    video.playbackRate = .7;
+    // Get the button
+    var btn = document.getElementById("video-bg-control");
+
+    // Pause and play the video, and change the button text
+    function myFunction() {
+      if (video.paused) {
+        video.play();
+        btn.innerHTML = '{{ partial "icons/pause" }}';
+      } else {
+        video.pause();
+        btn.innerHTML = '{{ partial "icons/play" }}';
+      }
+    }
+    </script>
+  {{ end }}
+{{ end }}

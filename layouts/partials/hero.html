@@ -1,0 +1,18 @@
+{{ $context := . }}
+{{ if and .Params.images .Params.hero_text }}
+  {{ range $index, $image := first 1 .Params.images }}
+    {{ if eq $index 0 }}
+      {{ $options := dict "context" $context "image" $image "transform" "w_1600"}}
+      {{ $imgURL := partial "utilities/cloudinary-transform" $options }}
+      {{ $alt := humanize (index (split (path.Base $image) ".") 0) }}
+      <div class="hero">
+        <img src="{{ $imgURL }}" class="hero-image" aria-label="hidden" width="100%" height="auto"/>
+        <div class="container">
+          <div class="hero-text">
+            {{ $context.Params.hero_text | markdownify }}
+          </div>
+        </div>
+      </div>
+    {{ end }}
+  {{ end }}
+{{ end }}

@@ -1,0 +1,41 @@
+/**
+ *  HTML & Body Tag
+ *
+ *  * All body styles are stored here
+ *
+ **/
+
+
+html {
+  background-color: $global-background-color;
+  @if $global-dark-mode {
+    @media (prefers-color-scheme: dark) {
+      background-color: $global-background-color-dark;
+    }
+  }
+}
+
+body {
+  // Spacing & Dimensions
+  position: relative;
+  overflow-x: hidden;
+
+  // Typography
+  font-display: falback;
+  font-family: $global-font;
+  line-height: $global-line-height;
+  @include ms-respond(font-size, $global-font-size);
+
+  // Colors
+  color: $global-font-color;
+  background-color: $global-background-color;
+
+  @if $global-dark-mode {
+    @media (prefers-color-scheme: dark) {
+      color: $global-font-color-dark;
+      background-color: $global-background-color-dark;
+    }
+  }
+  margin: 0;
+  padding: 0;
+}

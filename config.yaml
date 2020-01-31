@@ -36,3 +36,9 @@ module:
   - disable: false
     ignoreConfig: false
     path: github.com/bugoio/bugo-mod-thumbnail
+  - disable: false
+    ignoreConfig: false
+    path: github.com/bugoio/bugo-mod-buttons
+  - disable: false
+    ignoreConfig: false
+    path: github.com/bugoio/bugo-mod-columns

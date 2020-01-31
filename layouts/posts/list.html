@@ -1,0 +1,52 @@
+{{/**
+   * Default List Template
+	 *
+	 * The default list for the site.
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+{{/** Hero **/}}
+{{ define "hero" }}
+  {{ partial "hero" . }}
+{{ end }}
+
+{{/** Breadcrumbs **/}}
+{{ define "breadcrumbs" }}
+  <div class="breadcrumbs">
+    {{ partial "breadcrumbs" . }}
+  </div>
+{{ end }}
+
+{{/** Main **/}}
+{{ define "main" }}
+<main id="main" class="" tabindex="0" aria-label="{{ .Title }}">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  {{/** Posts **/}}
+    {{ $site := .Site }}
+
+    <p class="post-count" tabindex="0">
+      {{ len .Data.Pages }} {{ .Section | pluralize }} found.
+    </p>
+
+    {{/** Paginated Posts **/}}
+    {{ $paginator :=  .Paginate .Pages }}
+
+    <div class="articles articles-{{ $paginator.PageNumber }}">
+      {{ range $paginator.Pages  }}
+      {{ partial "article-summary-link" . }}
+      {{ end }}
+    </div>
+    <div class="pagination">
+      {{ partial "pagination.html" . }}
+    </div>
+</main>
+{{ end }}
+
+{{/** Sidebar **/}}
+{{ define "aside" }}
+  {{ partial "sidebar" . }}
+{{ end }}

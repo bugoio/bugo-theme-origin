@@ -1,7 +1,0 @@
-main {
-  grid-area: main;
-  max-width: 100%;
-  // Spacing
-  @include set-margin($main-margin-top,$main-margin-right,$main-margin-bottom,$main-margin-top);
-  @include set-padding($main-padding-top,$main-padding-right,$main-padding-bottom,$main-padding-top);
-}
