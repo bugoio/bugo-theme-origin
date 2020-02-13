@@ -14,12 +14,27 @@
   {{ partial "head" . }}
   {{ $bodyClass := partial "utilities/body-class" . }}
   {{ $bodySidebar := partial "utilities/sidebar-class" . }}
-  <body class="{{ $bodyClass }} {{ $bodySidebar }}">
+  <body class="msie no-js {{ $bodyClass }} {{ $bodySidebar }}">
+    <script>
+      // Remove no-js
+      document.body.classList.remove("no-js");
+  
+      // Remove Internet Explorer class
+      var ua = window.navigator.userAgent;
+      var msie = ua.indexOf("MSIE ");
+      if ( msie < 0 || msie,navigator.userAgent.match(/Trident.*rv\:11\./) == null ){
+        document.body.classList.remove("msie");
+      }
+    </script>
+    <div id="msie-warning">This site uses features not supported by Internet Explorer.</div>
     {{ block "pre-header" . }}{{ end }}
 
     {{- partial "header-simple" . -}}
 
+    {{ if .Site.Params.enableHeros }}
+    <!-- Hero -->
     {{ block "hero" . }}{{ end }}
+    {{ end }}
 
     {{ block "breadcrumbs" . }}{{ end }}
 

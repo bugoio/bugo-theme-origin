@@ -9,7 +9,7 @@
 
 {{/** Hero **/}}
 {{ define "hero" }}
-  {{ partial "hero-spacer" . }}
+  {{ partial "hero" . }}
 {{ end }}
 
 {{/** Breadcrumbs **/}}
@@ -37,11 +37,11 @@
 
     <div class="articles articles-{{ $paginator.PageNumber }}">
       {{ range $paginator.Pages  }}
-      {{ partial "article-summary-large" . }}
+      {{ partial "article-summary-link" . }}
       {{ end }}
     </div>
     <div class="pagination">
-      {{ partial "components/pagination.html" . }}
+      {{ partial "pagination.html" . }}
     </div>
 </main>
 {{ end }}

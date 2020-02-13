@@ -1,0 +1,30 @@
+{{/**
+   * Phone List
+	 *
+	 * Display profile or organization phones
+   *
+   * @version 1.0.0
+	 *
+   */}}
+
+{{ $page := .page }}
+<div class="phone-list">
+  {{ range .phones }}
+  <div class="phone phone-{{ .label | urlize }}">
+    <a href="mailto:{{ .phone }}" title="Phone {{ $page.Title }}">
+      <span class="sr-only">
+        Phone {{ $page.Title }}
+      </span>
+      {{ $iconName := "icons/phone" }}
+      {{ if .label }}
+      {{ $iconName := ( printf "icons/phone%s" .label | urlize )  }}
+      {{ end }}
+      {{ partial $iconName }}
+      {{ with .label }}
+      <span class="label">{{ . }}:</span>
+      {{ end }}
+      <span class="text">{{ .phone }}</span>
+    </a>
+  </div>
+  {{ end }}
+</div>

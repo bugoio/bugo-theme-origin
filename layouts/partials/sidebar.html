@@ -1,2 +1,4 @@
 <aside class="sidebar" tabindex="0">
+  {{ partial "recent-articles" (dict "qty" 3 "section" "posts" "site" .Site) }}
+  {{ partial "site-categories" . }} 
 </aside>

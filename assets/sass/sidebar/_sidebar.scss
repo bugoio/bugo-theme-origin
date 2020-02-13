@@ -1,0 +1,12 @@
+/** 
+ * sidebar Grid
+ **/
+
+aside.sidebar {
+  grid-area: sidebar;
+  display: block;
+
+  > *:first-child {
+    margin-top: 0 !important;
+  }
+}

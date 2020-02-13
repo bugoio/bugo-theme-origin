@@ -7,18 +7,18 @@
 	 *
    */}}
 
+{{/* Hero */}}
 {{ define "hero" }}
-{{ if .Params.videos }}
-{{ partial "hero-video" . }}
-{{ else if .Params.images}}
-{{ partial "hero" . }}
-{{ else }}
-<div class="hero spacer"></div> <!-- not exactly sure why this works but it does -->
-{{ end }}
+  {{ if .Params.videos }}
+    {{ partial "hero-video" . }}
+  {{ else if .Params.images}}
+    {{ partial "hero" . }}
+  {{ end }}
 {{ end }}
 
+{{/* Hero */}}
 {{ define "breadcrumbs" }}
-{{ if and (not .IsHome) (ne .Params.layout "landing") (.Site.Data.config.show_breadcrumbs) }}
+{{ if and (not .IsHome) (.Site.Params.show_breadcrumbs) }}
 <div class="breadcrumbs">
   {{ partial "breadcrumbs" . }}
 </div>
@@ -28,11 +28,7 @@
 {{ define "main" }}
 <main id="main" class="" tabindex="0" aria-label="{{ .Title }}">
   <h1 class="sr-only">{{ .Title }}</h1>
-  {{ .Content }}
-  {{ $site := .Site }}
-  <div>
-    {{ partial "recent-articles-h2" . }}
-  </div>
+  {{ .Content }}  
 </main>
 {{ end }}
 
