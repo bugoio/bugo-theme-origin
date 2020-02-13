@@ -24,5 +24,20 @@
 // Pages
 @import "list-page/list-page";
 
+
+#msie-warning {
+  position: relative;
+  z-index: 10000000;
+  padding: 1rem;
+  text-align: center;
+  background-color: $danger;
+  color: $white;
+  display: none;
+}
+
+body.msie #msie-warning{
+  display: block;
+}
+
 // Custom CSS
 @import "custom";

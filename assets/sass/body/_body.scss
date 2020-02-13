@@ -21,7 +21,6 @@ body {
   overflow-x: hidden;
 
   // Typography
-  font-display: falback;
   font-family: $global-font;
   line-height: $global-line-height;
   @include ms-respond(font-size, $global-font-size);
