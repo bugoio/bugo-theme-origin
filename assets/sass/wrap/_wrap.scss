@@ -2,6 +2,8 @@
  * Wrap Grid
  **/
 
+@import "../sidebar/sidebar-vars";
+
 .wrap {
   // Spacing
   aside {
@@ -23,7 +25,7 @@ body.sidebar .wrap {
   main{
     flex: 0 0 100%;
     @include respond-to(md){
-      flex: 0 0 70%;
+      flex: 0 0 calc(100% - #{$sidebar-width});
     }
   }
 
@@ -39,7 +41,7 @@ body.sidebar .wrap {
     }
 
     @include respond-to(md){
-      flex: 0 0 30%;
+      flex: 0 0 $sidebar-width;
       // > * {
       //   @include ms-respond(margin-left,$global-padding);
       // }
