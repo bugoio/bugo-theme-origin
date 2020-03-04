@@ -12,14 +12,16 @@ import $ from "jquery";
 import WebFont from "webfontloader";
 import animateScrollTo from 'animated-scroll-to';
 
+window.WebFont = WebFont;
 
-
-//Load fonts
-WebFont.load({
-  google: {
-    families: window.fontFamilies
-  }
-});
+if(window.fontFamilies){
+  //Load fonts
+  WebFont.load({
+    google: {
+      families: window.fontFamilies
+    }
+  });
+}
 
 
 
