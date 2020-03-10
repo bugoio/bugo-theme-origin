@@ -26,6 +26,8 @@ github.com/bugoio/bugo-mod-columns v0.0.4 h1:Qm7N3TmAE3P/CwY8B79PfGtTbGo45sumpH3
 github.com/bugoio/bugo-mod-columns v0.0.4/go.mod h1:VptlOl2TmwqbB5BfJhck9NcdNQN9tlgcU6kNycEG/No=
 github.com/bugoio/bugo-mod-columns v0.0.5 h1:/QlXFVHeYZuwdozQPJaXj7UiCddNTYH6x/JNuNoPKXE=
 github.com/bugoio/bugo-mod-columns v0.0.5/go.mod h1:VptlOl2TmwqbB5BfJhck9NcdNQN9tlgcU6kNycEG/No=
+github.com/bugoio/bugo-mod-columns v0.0.6 h1:lmRiwwYjo2lUDit3f9GeS4QEiWJyJGN1LgcU0hc24xo=
+github.com/bugoio/bugo-mod-columns v0.0.6/go.mod h1:VptlOl2TmwqbB5BfJhck9NcdNQN9tlgcU6kNycEG/No=
 github.com/bugoio/bugo-mod-footer v0.0.1/go.mod h1:msRK5571r/9VHOPi2X2j1dSQMWXesg5LhSRt+7qMRJ0=
 github.com/bugoio/bugo-mod-footer v0.0.2 h1:e8HBOvQtoGzaYlbpPlyO2HcCrlD+GIupg8+MMtfXpYg=
 github.com/bugoio/bugo-mod-footer v0.0.2/go.mod h1:msRK5571r/9VHOPi2X2j1dSQMWXesg5LhSRt+7qMRJ0=
