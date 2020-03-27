@@ -23,11 +23,13 @@
   },
   "homepage": "https://github.com/bugoio/bugo-vanilla#readme",
   "dependencies": {
+    "acorn": "^7.1.1",
     "animated-scroll-to": "^1.2.2",
     "flexslider": "^2.7.2",
     "jarallax": "^1.11.0",
     "jquery": "^3.4.1",
     "mathsass": "^0.10.1",
+    "minimist": "^1.2.5",
     "modularscale-sass": "^3.0.8",
     "normalize.css": "^8.0.1",
     "slippry": "^1.4.0",
