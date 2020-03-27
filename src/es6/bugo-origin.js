@@ -2,7 +2,6 @@
  * app.js
  * version: 1.0
  * * You can use ES6 Javscript here
- * * All ES6 is transpiles based on .browserlistrc
  * * Transpiled file is copied to /assets/js/app.js for bundling in Hugo
  *
  **/
@@ -50,7 +49,7 @@ $(document).ready(function () {
   // you can use the class to add backgrounds, hide, etc.
   $(window).on('scroll', function () {
     // we round here to reduce a little workload
-    stop = Math.round($(window).scrollTop());
+    const stop = Math.round($(window).scrollTop());
     if (stop > 0) {
       $('.site-header').addClass('scrolled');
     } else {
